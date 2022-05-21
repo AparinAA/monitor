@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "cheerio": "^1.0.0-rc.10",
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.1.1",
     "nodemo": "^1.0.0",
     "pino": "^7.11.0",
     "puppeteer": "^13.7.0",
