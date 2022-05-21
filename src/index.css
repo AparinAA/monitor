@@ -1,13 +1,72 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: sans-serif;
+    background-color: var(--tg-theme-bg-color, #ffffff);
+    color: var(--tg-theme-text-color, #222222);
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    color-scheme: var(--tg-color-scheme);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.list-exchange {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+.list-exchange > * {
+    border-radius: 5px;
+    border: 2px solid black;
+    margin: 5px;
+    padding: 5px;
+}
+
+.data-exchange {
+    display: flex;
+    flex-direction: column;
+}
+
+.data-exchange > * {
+    margin: 5px;
+}
+
+.triger-spread-green {
+    background-color: rgb(28, 136, 22);
+}
+.triger-spread-red {
+    background-color: red;
+}
+
+.best-order-book {
+    display: flex;
+}
+
+.best-order-book > * {
+    margin: 0 5px;
+}
+
+.ask {
+    color: red;
+}
+
+.bid {
+    color: green
+}
+
+.price {
+
+}
+.size {
+    
+}
+
+.curruncy-spread {
+    border: 2px solid #222222;
+    border-radius: 1%;
+    margin: 3px;
+}
+
+.list-currency-spread {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
 }
