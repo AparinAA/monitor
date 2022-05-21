@@ -53,6 +53,11 @@ const dictTicker = {
         'okx': 'ALPHA-USDT',
         'ftx': 'ALPHA/USD'
     },
+    'GODS': {
+        'okx': 'GODS-USDT',
+        'ftx': 'GODS/USD'
+    },
+    
 }
 
 const ftx = new FTXclient(secretDict_FTX.api_key, secretDict_FTX.secret_key);
