@@ -255,7 +255,7 @@ class CheckPrice extends React.Component {
             () => this.price(),
             1000
         );
-        this.getReq();
+        //this.getReq();
         
     }
 
