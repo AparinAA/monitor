@@ -264,7 +264,7 @@ class CheckPrice extends React.Component {
     }
 
     getReq() {
-        axios.get('http://192.168.1.2:8090/balance')
+        axios.get('http://195.133.1.56:8090/balance')
         .then( res => {
             this.setState({balance: this.props.exchange === 'ftx' ? res.data[0] : res.data[1]});
         })
@@ -274,7 +274,7 @@ class CheckPrice extends React.Component {
     price() {
         this.setState({currency: new URLSearchParams({'cur': this.props.currency}).toString()});
 
-        axios.get(`http://192.168.1.2:8090/spread?${this.state.currency}`)
+        axios.get(`http://195.133.1.56:8090/spread?${this.state.currency}`)
         .then( res => {
             this.setState({price: res.data[this.props.exchange]});
         })

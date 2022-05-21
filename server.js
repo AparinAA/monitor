@@ -61,7 +61,7 @@ const okx = new OKXclient(secretDict_OKX.api_key, secretDict_OKX.secret_key, sec
 const mark = {'buy': {'name': 'ftx', 'price': { 'countOrd': 2, 'orders': [[1, 1], [1.1, 1]] }}, 'sell': {'name': 'okx', 'price': ''}}
 
 
-const host = '192.168.1.2';
+const host = '195.133.1.56';
 const port = 8090;
 
 const requestListener = function (req, res) {
