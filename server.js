@@ -109,7 +109,7 @@ const requestListener = function (req, res) {
                     'Access-Control-Allow-Origin' : '*',
                     'Access-Control-Allow-Methods': 'GET'
                 });
-                res.end(JSON.stringify({'error': 'Error: not found balance'}));
+                res.end(JSON.stringify({'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}}, null, '\t'));
             });
         }
     }
