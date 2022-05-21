@@ -253,7 +253,7 @@ class CheckPrice extends React.Component {
     componentDidMount() {
         this.timeId = setInterval(
             () => this.price(),
-            1000
+            5000
         );
         this.getReq();
         
