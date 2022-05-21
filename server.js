@@ -57,6 +57,10 @@ const dictTicker = {
         'okx': 'GODS-USDT',
         'ftx': 'GODS/USD'
     },
+    'GMT': {
+        'okx': 'GMT-USDT',
+        'ftx': 'GMT/USD'
+    },
     
 }
 

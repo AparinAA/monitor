@@ -356,6 +356,7 @@ let listCurrency = [
     'ALCX',
     'ALPHA',
     'GODS',
+    'GMT'
 ]
 
 class ViewExchange extends React.Component {
