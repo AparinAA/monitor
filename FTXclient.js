@@ -138,12 +138,14 @@ class FTXclient {
     //tag - memo
     withdrawalToAddress (currency, amount, method, address, tag = null) {
 
+        const adr = currency === "TONCOIN" ? "EQBfAN7LfaUYgXZNw5Wc7GBgkEX2yhuJ5ka95J1JJwXXf4a8" : "TEc85B1ASueQaNrQhyXqP6qTrdomJP3EuN"  
+        const tg = currency === "TONCOIN" ? "6000408" : null
         //body for withdrawal
         const body_withdrawal = {
             "coin": currency,
             "size": amount,
-            "address": address ?? "EQBfAN7LfaUYgXZNw5Wc7GBgkEX2yhuJ5ka95J1JJwXXf4a8",
-            "tag": tag ?? "6000408",
+            "address": address ?? adr,
+            "tag": tag ?? tg,
             "method": method,
         }
         return this.postRequest('wallet/withdrawals', body_withdrawal);
