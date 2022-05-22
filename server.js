@@ -100,7 +100,7 @@ const okx = new OKXclient(secretDict_OKX.api_key, secretDict_OKX.secret_key, sec
 const mark = {'buy': {'name': 'ftx', 'price': { 'countOrd': 2, 'orders': [[1, 1], [1.1, 1]] }}, 'sell': {'name': 'okx', 'price': ''}}
 
 console.info(new URLSearchParams({'ex': 'okx', 'cur': 'USDT', 'sz':2}).toString())
-const host = '195.133.1.56'; //'localhost';
+const host = 'localhost';//'195.133.1.56';
 const port = 8090;
 
 const requestListener = function (req, res) {
@@ -159,7 +159,7 @@ const requestListener = function (req, res) {
             });
         }
     }
-
+    
     // withdrawal?ex=okx&cur=USDT&sz=2
     if(parametrsWithdrawal) {
         currency = parametrsWithdrawal[0].match(/cur=[a-zA-Z0-9]+/g)[0].split('=')[1]
@@ -177,13 +177,21 @@ const requestListener = function (req, res) {
         .then(balance => {
             const availbleAmount = balance.find( item => item.ccy === currency ).avail;
             if (Number(availbleAmount) > Number(amount)) {
+                console.info(Number(availbleAmount), Number(amount))
                 return exchange === 'ftx' ?
                         ftx_1.withdrawalToAddress(dictForWithdrawal[currency].ftx.cur, amount, dictForWithdrawal[currency].ftx.method) :
-                        okx.withdrawalToAddress(dictForWithdrawal[currency].okx.cur, amount, dictForWithdrawal[currency].okx.fee, dictForWithdrawal[currency].okx.method)
+                        okx.transferCurrAcc(dictForWithdrawal[currency].okx.cur, Number(amount) + Number(dictForWithdrawal[currency].okx.fee), "18", "6")
             }
             return false;
         })
-        .then( result => {
+        .then( subres => {
+            if (exchange === 'okx' && subres) {
+                return okx.withdrawalToAddress(dictForWithdrawal[currency].okx.cur, Number(amount), dictForWithdrawal[currency].okx.fee, dictForWithdrawal[currency].okx.method)
+            } else {
+                return subres;
+            }
+        })
+        .then(result => {
             if (result) {
                 res.end(JSON.stringify({'withdrawal': true}));
             } else {
