@@ -52,13 +52,6 @@ body {
     color: green
 }
 
-.price {
-
-}
-.size {
-    
-}
-
 .curruncy-spread {
     border: 2px solid #222222;
     border-radius: 1%;
@@ -69,4 +62,8 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
+}
+
+.list-balance-exchange {
+    display: flex;
 }

@@ -263,13 +263,6 @@ class CheckPrice extends React.Component {
         clearInterval(this.timeId);
     }
 
-    getReq() {
-        axios.get('http://195.133.1.56:8090/balance')
-        .then( res => {
-            this.setState({balance: this.props.exchange === 'ftx' ? res.data[0] : res.data[1]});
-        })
-        .catch(() => this.setState({balance: ['not connect']}));
-    }
 
     price() {
         this.setState({currency: new URLSearchParams({'cur': this.props.currency}).toString()});
@@ -439,9 +432,53 @@ class AddScan extends React.Component {
     }
 }
 
+class ViewBalanceExchange extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            balance: ['not found']
+        }
+    }
+    
+    componentDidMount() {
+        this.getReq();
+    }
+    
+
+    getReq() {
+        axios.get('http://195.133.1.56:8090/balance')
+        .then( res => {
+            this.setState({balance: this.props.exchange === 'ftx' ? res.data[0] : res.data[1]});
+        })
+        .catch(() => this.setState({balance: ['not connect']}));
+    }
+
+    render() {
+        const listBalance = this.state.balance.map( item => 
+            <div key={this.props.exchange + item.ccy}>{item.ccy} - {item.avail}</div>
+        );
+        return (
+            <div className='balance-exchange'>
+                <div>Баланс биржы {this.props.exchange === 'ftx' ? "FTX" : "OKX"}</div>
+                <div>
+                    {listBalance}
+                </div>
+            </div>
+            
+        );
+    }
+
+}
+
+
 function App() {
     return (
         <div>
+            <div className='list-balance-exchange'>
+                <ViewBalanceExchange exchange="okx" />
+                <ViewBalanceExchange exchange="ftx" />
+            </div>
+            
             <AddScan />
         </div>
         
