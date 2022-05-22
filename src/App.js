@@ -467,10 +467,17 @@ class ViewBalanceExchange extends React.Component {
         axios.get('http://195.133.1.56:8090/withdrawal?'+params)
         .then( result => {
             console.info(result.data.withdrawal);
+            const buttonWithdrawl = document.getElementById("withdrawal_"+this.props.exchange);
             if(result.data.withdrawal == true) {
-                console.info("TRUE");
+                if (buttonWithdrawl.classList.contains("error_withdrawal")) {
+                    buttonWithdrawl.classList.remove("error_withdrawal");
+                }
+                buttonWithdrawl.classList.add("success_withdrawal");
             } else {
-                console.info("FALSE");
+                if (buttonWithdrawl.classList.contains("success_withdrawal")) {
+                    buttonWithdrawl.classList.remove("success_withdrawal");
+                }
+                buttonWithdrawl.classList.add("error_withdrawal");
             }
         })
         .catch(() => console.info("error"));
@@ -511,8 +518,7 @@ class ViewBalanceExchange extends React.Component {
                         <input type="text" value={this.state.amount} onChange={this.onChangeAmount}/>
                     </label>
                     
-
-                    <input type="submit" value="Withdrawal"/>
+                    <input type="submit" value="Withdrawal" id={"withdrawal_"+this.props.exchange}/>
                 </form>
                 
             </div>

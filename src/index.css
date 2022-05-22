@@ -72,3 +72,12 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.error_withdrawal {
+    background-color: red;
+    color: white;
+}
+
+.success_withdrawal {
+    background-color: green;
+}
