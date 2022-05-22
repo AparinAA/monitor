@@ -5,8 +5,10 @@ const {FTXclient} = require('./FTXclient');
 const {OKXclient} = require('./OKXclient');
 
 const secretDict_FTX = {
-    'api_key': process.env.ftx_api_key,
-    'secret_key': process.env.ftx_api_secret,
+    'api_key_1': process.env.ftx_api_key_1,
+    'secret_key_1': process.env.ftx_api_secret_1,
+    'api_key_2': process.env.ftx_api_key_2,
+    'secret_key_2': process.env.ftx_api_secret_2,
 };
 
 //Init secret api OKX
@@ -15,6 +17,7 @@ const secretDict_OKX = {
     'passphrase': process.env.passphrase,
     'secret_key': process.env.secret_key,
 };
+
 
 const dictTicker = {
     'TON': {
@@ -64,21 +67,53 @@ const dictTicker = {
     
 }
 
-const ftx = new FTXclient(secretDict_FTX.api_key, secretDict_FTX.secret_key);
+const dictForWithdrawal = {
+    'TON': {
+        'okx': {
+            "cur": "TON",
+            'method': "TON-TON",
+            'fee': 0.01
+        },
+        'ftx': {
+            "cur": "TONCOIN",
+            "method": "ton",
+        }
+    },
+
+    'USDT': {
+        'okx': {
+            "cur": "USDT",
+            "method": "USDT-TRC20",
+            "fee": 0.8
+        },
+        'ftx': {
+            "cur": "USDT",
+            "method": "trx",
+        }
+    }
+}
+
+const ftx_1 = new FTXclient(secretDict_FTX.api_key_1, secretDict_FTX.secret_key_1);
+const ftx_2 = new FTXclient(secretDict_FTX.api_key_2, secretDict_FTX.secret_key_2);
 const okx = new OKXclient(secretDict_OKX.api_key, secretDict_OKX.secret_key, secretDict_OKX.passphrase);
 
 const mark = {'buy': {'name': 'ftx', 'price': { 'countOrd': 2, 'orders': [[1, 1], [1.1, 1]] }}, 'sell': {'name': 'okx', 'price': ''}}
 
-
-const host = '195.133.1.56';
+console.info(new URLSearchParams({'ex': 'okx', 'cur': 'USDT', 'sz':2}).toString())
+const host = '195.133.1.56'; //'localhost';
 const port = 8090;
 
 const requestListener = function (req, res) {
     res.setHeader("Content-Type", "application/json");
     const parametrsSpread = req.url.match(/(\/spread\?cur=[a-zA-Z0-9]+)/g);
+    const parametrsWithdrawal = req.url.match(/(\/withdrawal\?ex=[a-zA-Z]+&cur=[a-zA-Z0-9]+&sz=[0-9]+)/g);
+
     let currency;
+    let amount;
+    let exchange;
+
     if (req.url === '/balance') {
-        Promise.all([ftx.getBalance(), okx.getBalance()])
+        Promise.all([ftx_1.getBalance(), okx.getBalance()])
         .then(balance => {
             res.writeHead(200, {
                 'Access-Control-Allow-Origin' : '*',
@@ -100,7 +135,7 @@ const requestListener = function (req, res) {
         currency = parametrsSpread[0].split('=').length > 1 ? parametrsSpread[0].split('=')[1] : false;
         if (dictTicker[currency]) {
             
-            Promise.all([okx.getMarket(dictTicker[currency].okx,1), ftx.getMarket(dictTicker[currency].ftx,1)])
+            Promise.all([okx.getMarket(dictTicker[currency].okx,1), ftx_2.getMarket(dictTicker[currency].ftx,1)])
             .then(market => {
                 const spread_1 = 100 * (market[1].bid[0][0] - market[0].ask[0][0]) / market[1].bid[0][0];
                 const spread_2 = 100 * (market[0].bid[0][0] - market[1].ask[0][0]) / market[0].bid[0][0];
@@ -123,6 +158,44 @@ const requestListener = function (req, res) {
                 res.end(JSON.stringify({'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}}, null, '\t'));
             });
         }
+    }
+
+    // withdrawal?ex=okx&cur=USDT&sz=2
+    if(parametrsWithdrawal) {
+        currency = parametrsWithdrawal[0].match(/cur=[a-zA-Z0-9]+/g)[0].split('=')[1]
+        amount = parametrsWithdrawal[0].match(/sz=[0-9]+/g)[0].split('=')[1];
+        exchange = parametrsWithdrawal[0].match(/ex=[a-zA-Z]+/g)[0].split('=')[1];
+
+        res.writeHead(200, {
+            'Access-Control-Allow-Origin' : '*',
+            'Access-Control-Allow-Methods': 'GET'
+        });
+        
+        const curBalance = exchange === 'ftx' ? ftx_1.getBalance() : okx.getBalance() 
+        
+        curBalance
+        .then(balance => {
+            const availbleAmount = balance.find( item => item.ccy === currency ).avail;
+            if (Number(availbleAmount) > Number(amount)) {
+                return exchange === 'ftx' ?
+                        ftx_1.withdrawalToAddress(dictForWithdrawal[currency].ftx.cur, amount, dictForWithdrawal[currency].ftx.method) :
+                        okx.withdrawalToAddress(dictForWithdrawal[currency].okx.cur, amount, dictForWithdrawal[currency].okx.fee, dictForWithdrawal[currency].okx.method)
+            }
+            return false;
+        })
+        .then( result => {
+            if (result) {
+                res.end(JSON.stringify({'withdrawal': true}));
+            } else {
+                res.end(JSON.stringify({'withdrawal': false}));
+            }
+        })
+        .catch((e) => {
+            console.info(e.data);
+            res.end(JSON.stringify({'withdrawal': false}));
+        });
+
+
     }
 
 

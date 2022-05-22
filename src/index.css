@@ -67,3 +67,8 @@ body {
 .list-balance-exchange {
     display: flex;
 }
+
+.form-withdrawal {
+    display: flex;
+    flex-direction: column;
+}
