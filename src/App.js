@@ -466,6 +466,7 @@ class ViewBalanceExchange extends React.Component {
                 
         axios.get('http://195.133.1.56:8090/withdrawal?'+params)
         .then( result => {
+            console.info(result, result.data.withdrawal);
             if(result.data.withdrawal === "true") {
                 console.info("TRUE");
             } else {
