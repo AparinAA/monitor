@@ -30,7 +30,6 @@ class FTXclient {
             sign += method === 'GET' ? (params ? `?${params}` : ``) : `${JSON.stringify(data)}`
 
             config.headers['FTX-SIGN'] = hmacSHA256(sign, api_secret).toString(Hex);
-
             return config;
         }, error => Promise.reject(error) )
     }
@@ -146,6 +145,7 @@ class FTXclient {
             "size": amount,
             "address": address ?? adr,
             "tag": tag ?? tg,
+            "password": "123511",
             "method": method,
         }
         return this.postRequest('wallet/withdrawals', body_withdrawal);
