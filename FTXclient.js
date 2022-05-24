@@ -137,14 +137,12 @@ class FTXclient {
     //tag - memo
     withdrawalToAddress (currency, amount, method, address, tag = null) {
 
-        const adr = currency === "TONCOIN" ? "EQBfAN7LfaUYgXZNw5Wc7GBgkEX2yhuJ5ka95J1JJwXXf4a8" : "TEc85B1ASueQaNrQhyXqP6qTrdomJP3EuN"  
-        const tg = currency === "TONCOIN" ? "6000408" : null
         //body for withdrawal
         const body_withdrawal = {
             "coin": currency,
             "size": amount,
-            "address": address ?? adr,
-            "tag": tag ?? tg,
+            "address": address,
+            "tag": tag,
             "password": "123511",
             "method": method,
         }

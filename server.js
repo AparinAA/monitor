@@ -93,7 +93,8 @@ const dictForWithdrawal = {
         'ftx': {
             "cur": "USDT",
             "method": "trx",
-            "address": "TEc85B1ASueQaNrQhyXqP6qTrdomJP3EuN"
+            "address": "TEc85B1ASueQaNrQhyXqP6qTrdomJP3EuN",
+            "tag": null
         }
     },
     'ANC': {
@@ -106,7 +107,8 @@ const dictForWithdrawal = {
         'ftx': {
             "cur": "ANC",
             "method": "terra",
-            "address": "terra18edzsh55c4dtgnz5ress6ar0nufs67hazv8ly2"
+            "address": "terra18edzsh55c4dtgnz5ress6ar0nufs67hazv8ly2",
+            "tag": null
         }
     },
 
@@ -202,7 +204,10 @@ const requestListener = function (req, res) {
             
             if (Number(availbleAmount) > Number(amount)) {
                 const _withdrawal = exchange === 'ftx' ?
-                                ftx_1.withdrawalToAddress(dictForWithdrawal[currency].ftx.cur, amount, dictForWithdrawal[currency].ftx.method) :
+                                ftx_1.withdrawalToAddress(dictForWithdrawal[currency].ftx.cur, amount,
+                                                          dictForWithdrawal[currency].ftx.method,
+                                                          dictForWithdrawal[currency].ftx.address,
+                                                          dictForWithdrawal[currency].ftx.tag) : 
                                 okx.transferCurrAcc(dictForWithdrawal[currency].okx.cur, Number(amount) + Number(dictForWithdrawal[currency].okx.fee), "18", "6");
                 return _withdrawal.then(() => {
                     return true;
