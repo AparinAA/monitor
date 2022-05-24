@@ -73,8 +73,7 @@ const dictForWithdrawal = {
             "cur": "TON",
             'method': "TON-TON",
             'fee': 0.01,
-            "address": "EQCzFTXpNNsFu8IgJnRnkDyBCL2ry8KgZYiDi3Jt31ie8EIQ",
-            "tag": "56e66ef1-a404-4f85-a5da-06e9f5fbb7d8"
+            "address": "EQCzFTXpNNsFu8IgJnRnkDyBCL2ry8KgZYiDi3Jt31ie8EIQ:56e66ef1-a404-4f85-a5da-06e9f5fbb7d8",
         },
         'ftx': {
             "cur": "TONCOIN",
@@ -102,8 +101,7 @@ const dictForWithdrawal = {
             "cur": "ANC",
             "method": "ANC-Terra",
             "fee": "0.4",
-            "address": "terra1luagdjcr9c9yvp3ak4d7chjm5gldcmgln5rku5",
-            "tag": "148889632",
+            "address": "terra1luagdjcr9c9yvp3ak4d7chjm5gldcmgln5rku5:148889632",
         },
         'ftx': {
             "cur": "ANC",
@@ -219,7 +217,7 @@ const requestListener = function (req, res) {
                 const withokx = okx.withdrawalToAddress(dictForWithdrawal[currency].okx.cur, Number(amount),
                                                         dictForWithdrawal[currency].okx.fee,
                                                         dictForWithdrawal[currency].okx.method,
-                                                        dictForWithdrawal[currency].okx.address + ":" + dictForWithdrawal[currency].okx.tag);
+                                                        dictForWithdrawal[currency].okx.address);
                     
                     return withokx.then( (r) => {
                         if (r.data.code == '58350') {
@@ -228,7 +226,7 @@ const requestListener = function (req, res) {
                         }
                         return true;
                     })
-                    .catch( (e) => console.info(e.data))
+                    .catch( (e) => {return false});
             } else {
                 return subres;
             }
