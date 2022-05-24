@@ -119,7 +119,7 @@ const okx = new OKXclient(secretDict_OKX.api_key, secretDict_OKX.secret_key, sec
 //const mark = {'buy': {'name': 'ftx', 'price': { 'countOrd': 2, 'orders': [[1, 1], [1.1, 1]] }}, 'sell': {'name': 'okx', 'price': ''}}
 
 //console.info(new URLSearchParams({'ex': 'ftx', 'cur': 'TON', 'sz':2}).toString())
-const host = '195.133.1.56';//'localhost';
+const host = 'localhost';//'195.133.1.56';
 const port = 8090;
 
 const requestListener = function (req, res) {
@@ -214,11 +214,16 @@ const requestListener = function (req, res) {
         })
         .then( subres => {
             if (exchange === 'okx' && subres) {
-                return okx.withdrawalToAddress(dictForWithdrawal[currency].okx.cur, Number(amount), dictForWithdrawal[currency].okx.fee, dictForWithdrawal[currency].okx.method)
-                    .then( () => {return true}, () => {
-                        okx.transferCurrAcc(dictForWithdrawal[currency].okx.cur, Number(amount) + Number(dictForWithdrawal[currency].okx.fee), "6", "18")
-                        return false
-                    });
+                const withokx = okx.withdrawalToAddress(dictForWithdrawal[currency].okx.cur, Number(amount), dictForWithdrawal[currency].okx.fee, dictForWithdrawal[currency].okx.method)
+                    
+                    return withokx.then( (r) => {
+                        if (r.data.code == '58350') {
+                            okx.transferCurrAcc(dictForWithdrawal[currency].okx.cur, Number(amount) + Number(dictForWithdrawal[currency].okx.fee), "6", "18");
+                            return false;
+                        }
+                        return true;
+                    })
+                    .catch( (e) => console.info(e.data))
             } else {
                 return subres;
             }
