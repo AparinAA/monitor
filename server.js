@@ -100,8 +100,10 @@ const dictForWithdrawal = {
     'ANC': {
         'okx': {
             "cur": "ANC",
-            "method": "",
-            "fee": ""
+            "method": "ANC-Terra",
+            "fee": "0.4",
+            "address": "terra1luagdjcr9c9yvp3ak4d7chjm5gldcmgln5rku5",
+            "tag": "148889632",
         },
         'ftx': {
             "cur": "ANC",
@@ -214,7 +216,10 @@ const requestListener = function (req, res) {
         })
         .then( subres => {
             if (exchange === 'okx' && subres) {
-                const withokx = okx.withdrawalToAddress(dictForWithdrawal[currency].okx.cur, Number(amount), dictForWithdrawal[currency].okx.fee, dictForWithdrawal[currency].okx.method)
+                const withokx = okx.withdrawalToAddress(dictForWithdrawal[currency].okx.cur, Number(amount),
+                                                        dictForWithdrawal[currency].okx.fee,
+                                                        dictForWithdrawal[currency].okx.method,
+                                                        dictForWithdrawal[currency].okx.address + ":" + dictForWithdrawal[currency].okx.tag);
                     
                     return withokx.then( (r) => {
                         if (r.data.code == '58350') {
