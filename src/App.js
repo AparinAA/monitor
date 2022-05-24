@@ -509,6 +509,7 @@ class ViewBalanceExchange extends React.Component {
                         <select value={this.state.currencyWithdrawal} onChange={this.onChangeCurWithdrawal}>
                             <option value="TON">TON</option>
                             <option value="USDT">USDT</option>
+                            <option value="ANC">ANC</option>
                         </select>
                     </label>
                     

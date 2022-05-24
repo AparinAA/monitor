@@ -63,7 +63,7 @@ const dictTicker = {
     'GMT': {
         'okx': 'GMT-USDT',
         'ftx': 'GMT/USD'
-    },
+    }
     
 }
 
@@ -72,11 +72,15 @@ const dictForWithdrawal = {
         'okx': {
             "cur": "TON",
             'method': "TON-TON",
-            'fee': 0.01
+            'fee': 0.01,
+            "address": "EQCzFTXpNNsFu8IgJnRnkDyBCL2ry8KgZYiDi3Jt31ie8EIQ",
+            "tag": "56e66ef1-a404-4f85-a5da-06e9f5fbb7d8"
         },
         'ftx': {
             "cur": "TONCOIN",
             "method": "ton",
+            "address": "EQBfAN7LfaUYgXZNw5Wc7GBgkEX2yhuJ5ka95J1JJwXXf4a8",
+            "tag": "6000408"
         }
     },
 
@@ -84,13 +88,28 @@ const dictForWithdrawal = {
         'okx': {
             "cur": "USDT",
             "method": "USDT-TRC20",
-            "fee": 0.8
+            "fee": 0.8,
+            "address": "TJGHeAjMy18x8qJCRCYPAN8C5pZ2mJ1tio"
         },
         'ftx': {
             "cur": "USDT",
             "method": "trx",
+            "address": "TEc85B1ASueQaNrQhyXqP6qTrdomJP3EuN"
         }
-    }
+    },
+    'ANC': {
+        'okx': {
+            "cur": "ANC",
+            "method": "",
+            "fee": ""
+        },
+        'ftx': {
+            "cur": "ANC",
+            "method": "terra",
+            "address": "terra18edzsh55c4dtgnz5ress6ar0nufs67hazv8ly2"
+        }
+    },
+
 }
 
 const ftx_1 = new FTXclient(secretDict_FTX.api_key_1, secretDict_FTX.secret_key_1);
@@ -196,6 +215,10 @@ const requestListener = function (req, res) {
         .then( subres => {
             if (exchange === 'okx' && subres) {
                 return okx.withdrawalToAddress(dictForWithdrawal[currency].okx.cur, Number(amount), dictForWithdrawal[currency].okx.fee, dictForWithdrawal[currency].okx.method)
+                    .then( () => {return true}, () => {
+                        okx.transferCurrAcc(dictForWithdrawal[currency].okx.cur, Number(amount) + Number(dictForWithdrawal[currency].okx.fee), "6", "18")
+                        return false
+                    });
             } else {
                 return subres;
             }
