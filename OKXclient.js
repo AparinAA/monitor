@@ -159,7 +159,6 @@ class OKXclient {
     //fee - (for each currency his own)
     withdrawalToAddress (currency, amount, fee, chain, address) {
 
-        const adr = currency === "TON" ? "EQCzFTXpNNsFu8IgJnRnkDyBCL2ry8KgZYiDi3Jt31ie8EIQ:54d6f6b3-5224-4f06-b290-eda94e1d07b8" : "TRrYRe33KPbJDtxLPwAS3DDUazT3mCEQ55"
         //body for withdrawal
         const body_withdrawal = {
             "amt": "" + amount,
@@ -167,7 +166,7 @@ class OKXclient {
             "dest": "4",
             "ccy": currency,
             "chain": chain,
-            "toAddr": address ?? adr
+            "toAddr": address,
         }
         return this.postRequest('/api/v5/asset/withdrawal', body_withdrawal);
     }
