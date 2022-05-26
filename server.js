@@ -88,7 +88,7 @@ const dictForWithdrawal = {
             "cur": "USDT",
             "method": "USDT-TRC20",
             "fee": 0.8,
-            "address": "TJGHeAjMy18x8qJCRCYPAN8C5pZ2mJ1tio"
+            "address": "TRrYRe33KPbJDtxLPwAS3DDUazT3mCEQ55"
         },
         'ftx': {
             "cur": "USDT",
@@ -121,7 +121,7 @@ const okx = new OKXclient(secretDict_OKX.api_key, secretDict_OKX.secret_key, sec
 //const mark = {'buy': {'name': 'ftx', 'price': { 'countOrd': 2, 'orders': [[1, 1], [1.1, 1]] }}, 'sell': {'name': 'okx', 'price': ''}}
 
 //console.info(new URLSearchParams({'ex': 'ftx', 'cur': 'TON', 'sz':2}).toString())
-const host = '195.133.1.56'; //'localhost';
+const host = '195.133.1.56';//'localhost';//
 const port = 8090;
 
 const requestListener = function (req, res) {
@@ -225,7 +225,7 @@ const requestListener = function (req, res) {
                                                         dictForWithdrawal[currency].okx.address);
                     
                     return withokx.then( (r) => {
-                        if (r.data.code == '58350') {
+                        if (r.data.msg != '0') {
                             okx.transferCurrAcc(dictForWithdrawal[currency].okx.cur, Number(amount) + Number(dictForWithdrawal[currency].okx.fee), "6", "18");
                             return false;
                         }

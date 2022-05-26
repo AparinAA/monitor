@@ -1,6 +1,8 @@
 import './App.css';
 import React from 'react';
 import axios from 'axios';
+import Spinner from 'react-bootstrap/Spinner';
+import {Button, Form, InputGroup, ListGroup, Card,DropdownButton, Dropdown, CardGroup} from 'react-bootstrap';
 
 //округление до знака decimalPlaces после запятой
 function truncated(num, decimalPlaces) {    
@@ -11,234 +13,6 @@ function truncated(num, decimalPlaces) {
 function positiveNumber(number) {
     return number > 0.00000000000000001;
 }
-
-
-const currency = {
-    USD: {name: 'USDT', price: 1},
-    TON: {name: 'TONCOIN', price: 1.85},
-    BTC: {name: 'BITCOIN', price: 36834.2},
-    ETH: {name: 'ETHEREUM', price: 2832.1},
-};
-
-let listTicket = Object.keys(currency);
-
-class InputValue extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleChange = this.handleChange.bind(this);
-        this.handlerTicker = this.handlerTicker.bind(this);
-    }
-
-    handleChange(e) {
-        this.props.onCurrencyChange(e.target.value);
-    }
-    handlerTicker(e){
-        this.props.onChangeTicker(e.target.value);
-    }
-
-    render() {
-        const price = this.props.value;
-        const ticker = this.props.ticker
-        const from = this.props.from;
-
-        let options = listTicket.map( (element) => 
-            <option key={element + from} value={element}>{element}</option>
-        );
-        return (
-            <fieldset>
-                <select value={ticker} onChange={this.handlerTicker}>
-                    {options}
-                </select>
-                <label>{currency[ticker].name}</label>
-                <input value={price} onChange={this.handleChange} />
-            </fieldset>
-        );
-    }
-}
-
-class ConvertCurrency extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            from: {ticker: 'TON', amount: 1, from: true},
-            to: {ticker: 'USD', amount: currency.TON.price, from: true}
-        };
-        this.handleChangeFrom = this.handleChangeFrom.bind(this);
-        this.handleChangeTo = this.handleChangeTo.bind(this);
-        this.handleChangeTickerFrom = this.handleChangeTickerFrom.bind(this);
-        this.handleChangeTickerTo = this.handleChangeTickerTo.bind(this);
-
-    }
-
-    handleChangeFrom(amount) {
-        this.setState( (state) => ({
-            from: {
-                ticker: state.from.ticker,
-                amount: amount,
-                from: true,
-            },
-            to: {
-                ticker: state.to.ticker,
-                amount: amount,
-                from: true,
-            }
-        }));
-    }
-
-    handleChangeTo(amount) {
-        this.setState( (state) => ({
-            from: {
-                ticker: state.from.ticker,
-                amount: amount,
-                from: false,
-            },
-            to: {
-                ticker: state.to.ticker,
-                amount: amount,
-                from: false,
-            }
-        }));
-    }
-
-    handleChangeTickerFrom(ticker) {
-        this.setState( (state) => ({
-            from: {
-                ticker: ticker,
-                amount: state.from.amount,
-                from: true,
-            },
-            to: {
-                ticker: state.to.ticker,
-                amount: tryConvert2(
-                    {
-                        price: currency[ticker].price, amount: state.from.amount
-                    },
-                    currency[state.to.ticker].price
-                ),
-                from: true,
-            }
-        }));
-    }
-
-    handleChangeTickerTo(ticker) {
-        this.setState( (state) => ({
-            from: {
-                ticker: state.from.ticker,
-                amount: state.from.amount,
-                from: false,
-            },
-            to: {
-                ticker: ticker,
-                amount: tryConvert2(
-                    {
-                        price: currency[state.from.ticker].price,
-                        amount: state.from.amount
-                    },
-                    currency[ticker].price
-                ),
-                from: false,
-            }
-        }));
-    }
-
-    render() {
-        const currentPrice = this.props.currentprice;
-        const from = this.state.from.from;
-        
-        let priceFrom = 0;
-        let priceTo = 0;
-
-        if (from) {
-            priceFrom = this.state.from.amount;
-            priceTo = tryConvert2(
-                {
-                    price: currency[this.state.from.ticker].price,
-                    amount: this.state.from.amount,
-                },
-                currency[this.state.to.ticker].price,
-            );
-        } else {
-            priceTo = this.state.to.amount;
-            priceFrom = tryConvert2(
-                {
-                    price: currency[this.state.to.ticker].price,
-                    amount: this.state.to.amount,
-                },
-                currency[this.state.from.ticker].price,
-            );
-        }
-
-
-        return (
-            <div>
-                <p>Current price 1 TON = {currentPrice} USD</p>
-                <InputValue
-                    ticker={this.state.from.ticker}
-                    value={priceFrom}
-                    onCurrencyChange={this.handleChangeFrom}
-                    onChangeTicker={this.handleChangeTickerFrom} />
-                <InputValue
-                    ticker={this.state.to.ticker}
-                    value={priceTo}
-                    onCurrencyChange={this.handleChangeTo}
-                    onChangeTicker={this.handleChangeTickerTo} />
-            </div>
-        );
-    }
-}
-
-//функция рандом +-0.01 к цене
-function getRandomIntInclusive(min=0, max=1) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor((Math.random() + 0.1) * (max - min + 1)) + min; //Максимум и минимум включаются
-}
-
-//компонента для обновления цены
-class UpdateCurrentPrice extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { currentPrice: 1.85};
-    }
-
-    componentDidMount() {
-        this.timeId = setInterval(
-            () => this.tick1(),
-            5000
-        );
-
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.timeId);
-    }
-
-    tick1() {
-        //выводить рандомное число
-        this.setState( (state) => ({
-            currentPrice: state.currentPrice + (getRandomIntInclusive() ? 1 : -1) * Math.random() *0.01
-        }));
-    }
-
-    render() {
-        return (
-            <div>
-                <ConvertCurrency currentprice={this.state.currentPrice} />
-            </div>
-           
-        );
-    }
-    
-}
-
-//конвертирование from={price: , amount: } to currency2
-function tryConvert2(from, to) {
-    if(isNaN(from.amount)) {
-        return "0";
-    }
-    return (to > 0 && from.amount > 0? (from.price * from.amount / to) : 0).toString();
-}
-
 
 class CheckPrice extends React.Component {
     constructor(props) {
@@ -254,9 +28,7 @@ class CheckPrice extends React.Component {
         this.timeId = setInterval(
             () => this.price(),
             1000
-        );
-        //this.getReq();
-        
+        );        
     }
 
     componentWillUnmount() {
@@ -297,16 +69,10 @@ class CheckPrice extends React.Component {
                             }
                       </div>;
         
-        const listBalance = this.state.balance.map( item => 
-            <div key={item.ccy + `_${this.props.exchange}`}>
-                {item.ccy} - {item.avail}
-            </div>
-        );
         return (
-            <div>
-                <div>Биржа {this.props.exchange === 'ftx' ? "FTX" : "OKEX"}</div>
-                <div className='data-exchange'>
-                    
+            <Card style={{ width: '15rem' }}>
+                <Card.Header>Биржа {this.props.exchange === 'ftx' ? "FTX" : "OKEX"}</Card.Header>
+                <Card.Body className='data-exchange'>
                     <div>
                         <div>Лучшая цена в стакане</div>
                         <div>
@@ -331,23 +97,18 @@ class CheckPrice extends React.Component {
                         </div>
                         {element}
                     </div>
-    
-                </div>
-            </div>
+                </Card.Body>
+            </Card>
         );
     }
 }
 
 let listCurrency = [
+    'ANC',
     'TON',
     'BTC',
     'ETH',
-    'BTT',
-    'ANC',
     'GOG',
-    'BNT',
-    'ALCX',
-    'ALPHA',
     'GODS',
     'GMT'
 ]
@@ -356,34 +117,31 @@ class ViewExchange extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currency: "TON"
+            currency: "ANC"
         }
         this.handleChangeCurrency = this.handleChangeCurrency.bind(this);
     }
 
     handleChangeCurrency(event) {
-        this.setState({currency: event.target.value});
+        this.setState({currency: event});
     }
 
     render() {
         let options = listCurrency.map( item => 
-            <option key={item} value={item}>{item}</option>
+            <Dropdown.Item key={item} eventKey={item}>{item}</Dropdown.Item>
         )
         return (
-            <div className='curruncy-spread'>
+            <Card>
                 
-                <fieldset>
-                    <select value={this.state.currency} onChange={this.handleChangeCurrency}>
-                        {options}
-                    </select>
-                </fieldset>
-                
-
-                <div className='list-exchange'>
+                <DropdownButton title={this.state.currency} onSelect={this.handleChangeCurrency} variant='secondary' size='sm'>
+                    {options}
+                </DropdownButton>
+            
+                <CardGroup>
                     <CheckPrice exchange="okx" currency={this.state.currency} />
                     <CheckPrice exchange="ftx" currency={this.state.currency} />
-                </div>
-            </div>
+                </CardGroup>
+            </Card>
             
         );
     }
@@ -419,12 +177,12 @@ class AddScan extends React.Component {
         }
         return (
             <div>
-                <div className='list-currency-spread'>
+                <div>
                     {tableScan}
                 </div>
                 <div>
-                    <button onClick={this.AddScanEvent}> Добавить скан </button>
-                    <button onClick={this.DeleteScanEvent}>Удалить скан</button>
+                    <Button onClick={this.AddScanEvent} size='sm' variant='secondary'> Добавить скан </Button>
+                    <Button onClick={this.DeleteScanEvent} size='sm' variant='secondary'>Удалить скан</Button>
                 </div>
             </div>
             
@@ -439,6 +197,7 @@ class ViewBalanceExchange extends React.Component {
             balance: ['not found'],
             currencyWithdrawal: this.props.exchange === 'ftx' ? "TON" : "USDT",
             amount: this.props.exchange === 'ftx' ? "450" : "751",
+            spinner: 'secondary',
         }
         this.handleWithdrawal = this.handleWithdrawal.bind(this);
         this.onChangeCurWithdrawal = this.onChangeCurWithdrawal.bind(this);
@@ -450,7 +209,7 @@ class ViewBalanceExchange extends React.Component {
     }
     
     onChangeCurWithdrawal(event) {
-        this.setState({currencyWithdrawal: event.target.value});
+        this.setState({currencyWithdrawal: event});
     }
     
     onChangeAmount(event) {
@@ -463,24 +222,22 @@ class ViewBalanceExchange extends React.Component {
             'cur': this.state.currencyWithdrawal,
             'sz': this.state.amount
         }).toString();
-                
+        
+        this.setState({spinner: 'spinner'});
         axios.get('http://195.133.1.56:8090/withdrawal?'+params)
         .then( result => {
-            const buttonWithdrawl = document.getElementById("withdrawal_"+this.props.exchange);
-            if(result.data.withdrawal == true) {
-                if (buttonWithdrawl.classList.contains("error_withdrawal")) {
-                    buttonWithdrawl.classList.remove("error_withdrawal");
-                }
-                buttonWithdrawl.classList.add("success_withdrawal");
+            
+            //const buttonWithdrawl = document.getElementById("withdrawal_"+this.props.exchange);
+            if(result.data.withdrawal === "true") {
+                this.setState({spinner: "success"});
             } else {
-                if (buttonWithdrawl.classList.contains("success_withdrawal")) {
-                    buttonWithdrawl.classList.remove("success_withdrawal");
-                }
-                buttonWithdrawl.classList.add("error_withdrawal");
+                this.setState({spinner: "danger"});
             }
         })
-        .catch(() => console.info("error"));
-        
+        .catch((e) => {
+            console.info(e);
+        });
+                
         event.preventDefault();
     }
 
@@ -494,34 +251,38 @@ class ViewBalanceExchange extends React.Component {
 
     render() {
         const listBalance = this.state.balance.map( item => 
-            <div key={this.props.exchange + item.ccy}>{item.ccy} - {item.avail}</div>
+            <ListGroup.Item key={this.props.exchange + item.ccy}>{item.ccy} - {truncated(item.avail,2)} ({truncated(item.eqUsd,2)} USD)</ListGroup.Item>
         );
+        const spinner = this.state.spinner;
+                
+        const input = (spinner) => {
+            if (spinner === 'spinner') {
+                return <Spinner animation='grow' />;
+            } else {
+                return <Button type="submit" id={"withdrawal_"+this.props.exchange} size="sm" variant={spinner}>Withdrawal</Button>;
+            }
+        };
         return (
-            <div className='balance-exchange'>
-                <div>Баланс биржы {this.props.exchange === 'ftx' ? "FTX" : "OKX"}</div>
-                <div>
+            <Card style={{ width: '16rem' }}>
+                <Card.Header>Баланс биржы {this.props.exchange === 'ftx' ? "FTX" : "OKX"}</Card.Header>
+                <ListGroup variant="flush">
                     {listBalance}
-                </div>
+                </ListGroup>
                 Withdrawal from {this.props.exchange === 'ftx' ? "FTX" : "OKX"} to {this.props.exchange === 'ftx' ? "OKX" : "FTX"}
                 
-                <form className='form-withdrawal' onSubmit={this.handleWithdrawal}>
-                    <label>Выбрать монету для withdrawal
-                        <select value={this.state.currencyWithdrawal} onChange={this.onChangeCurWithdrawal}>
-                            <option value="TON">TON</option>
-                            <option value="USDT">USDT</option>
-                            <option value="ANC">ANC</option>
-                        </select>
-                    </label>
-                    
-
-                    <label>Укажите количество
-                        <input type="text" value={this.state.amount} onChange={this.onChangeAmount}/>
-                    </label>
-                    
-                    <input type="submit" value="Withdrawal" id={"withdrawal_"+this.props.exchange}/>
-                </form>
+                <Form onSubmit={this.handleWithdrawal}>
+                    <InputGroup size='sm'>
+                        <DropdownButton onSelect={this.onChangeCurWithdrawal} title={this.state.currencyWithdrawal} variant='secondary'>
+                            <Dropdown.Item eventKey="TON" >TON</Dropdown.Item>
+                            <Dropdown.Item eventKey="USDT" >USDT</Dropdown.Item>
+                            <Dropdown.Item eventKey="ANC" >ANC</Dropdown.Item>
+                        </DropdownButton>
+                        <Form.Control  type="text" placeholder="Amount" value={this.state.amount} onChange={this.onChangeAmount}/>
+                        {input(spinner)}
+                    </InputGroup>
+                </Form>
                 
-            </div>
+            </Card>
             
         );
     }
@@ -536,7 +297,6 @@ function App() {
                 <ViewBalanceExchange exchange="okx" />
                 <ViewBalanceExchange exchange="ftx" />
             </div>
-            
             <AddScan />
         </div>
         
