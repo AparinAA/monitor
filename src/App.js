@@ -228,7 +228,7 @@ class ViewBalanceExchange extends React.Component {
         .then( result => {
             
             //const buttonWithdrawl = document.getElementById("withdrawal_"+this.props.exchange);
-            if(result.data.withdrawal === "true") {
+            if(result.data.withdrawal == true) {
                 this.setState({spinner: "success"});
             } else {
                 this.setState({spinner: "danger"});
