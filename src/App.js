@@ -17,38 +17,11 @@ function positiveNumber(number) {
 class CheckPrice extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            price: {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},
-            balance: ['not connect'],
-            currency: new URLSearchParams({'cur': this.props.currency}).toString(),
-        };
-    }
-    
-    componentDidMount() {
-        this.timeId = setInterval(
-            () => this.price(),
-            1000
-        );        
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.timeId);
-    }
-
-
-    price() {
-        this.setState({currency: new URLSearchParams({'cur': this.props.currency}).toString()});
-
-        axios.get(`http://195.133.1.56:8090/spread?${this.state.currency}`)
-        .then( res => {
-            this.setState({price: res.data[this.props.exchange]});
-        })
-        .catch(() => this.setState({price: {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}}));
     }
 
     render() {
-        const spread_1 = truncated(this.state.price.spread[0],4);
-        const spread_2 = truncated(this.state.price.spread[1],4);
+        const spread_1 = truncated(this.props.price.spread[0],4);
+        const spread_2 = truncated(this.props.price.spread[1],4);
 
         const buyOKX = this.props.exchange === 'okx' && positiveNumber(spread_1);
         const buyFTX = this.props.exchange === 'ftx' && positiveNumber(spread_2);
@@ -78,15 +51,15 @@ class CheckPrice extends React.Component {
                         <div>
                             <div>Ask:</div>
                             <div className='best-order-book ask'>
-                                <div className='price'>{this.state.price?.ask[0][0]}</div>
-                                <div className='size'>{this.state.price?.ask[0][1]}</div>
+                                <div className='price'>{this.props.price?.ask[0][0]}</div>
+                                <div className='size'>{this.props.price?.ask[0][1]}</div>
                             </div>
                         </div>
                         <div>
                             <div>Bid:</div>
                             <div className='best-order-book bid'>
-                                <div className='price'>{this.state.price?.bid[0][0]}</div>
-                                <div className='size'>{this.state.price?.bid[0][1]}</div>
+                                <div className='price'>{this.props.price?.bid[0][0]}</div>
+                                <div className='size'>{this.props.price?.bid[0][1]}</div>
                             </div>
                         </div>
                     </div>
@@ -108,22 +81,57 @@ let listCurrency = [
     'TON',
     'BTC',
     'ETH',
-    'GOG',
-    'GODS',
-    'GMT'
+    'GMT',
+    'JOE',
+    'NEAR',
+    'WAVES',
 ]
 
 class ViewExchange extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currency: "ANC"
+            currency: "ANC",
+            price: {
+                'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},
+                'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}
+            },
+            curParams: new URLSearchParams({'cur': "ANC"})
         }
         this.handleChangeCurrency = this.handleChangeCurrency.bind(this);
     }
 
+    componentDidMount() {
+        this.timeId = setInterval(
+            () => this.price(),
+            1000
+        );        
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timeId);
+    }
+
+
+    price() {
+        axios.get(`http://195.133.1.56:8090/spread?${this.state.curParams}`)
+        .then( res => {
+            this.setState({price: res.data});
+        })
+        .catch(() => this.setState({
+            price: {
+                'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},
+                'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}
+            }
+        }));
+    }
+
+
     handleChangeCurrency(event) {
-        this.setState({currency: event});
+        this.setState({
+            currency: event,
+            curParams: new URLSearchParams({'cur': event})
+        });
     }
 
     render() {
@@ -138,8 +146,8 @@ class ViewExchange extends React.Component {
                 </DropdownButton>
             
                 <CardGroup>
-                    <CheckPrice exchange="okx" currency={this.state.currency} />
-                    <CheckPrice exchange="ftx" currency={this.state.currency} />
+                    <CheckPrice exchange="okx" price={this.state.price.okx} />
+                    <CheckPrice exchange="ftx" price={this.state.price.ftx} />
                 </CardGroup>
             </Card>
             
@@ -227,7 +235,6 @@ class ViewBalanceExchange extends React.Component {
         axios.get('http://195.133.1.56:8090/withdrawal?'+params)
         .then( result => {
             
-            //const buttonWithdrawl = document.getElementById("withdrawal_"+this.props.exchange);
             if(result.data.withdrawal == true) {
                 this.setState({spinner: "success"});
             } else {
@@ -262,6 +269,10 @@ class ViewBalanceExchange extends React.Component {
                 return <Button type="submit" id={"withdrawal_"+this.props.exchange} size="sm" variant={spinner}>Withdrawal</Button>;
             }
         };
+
+        const listTikers = listCurrency.map( (item, i) => 
+            <Dropdown.Item eventKey={item} key={'' + item + i}>{item}</Dropdown.Item>
+        );
         return (
             <Card style={{ width: '16rem' }}>
                 <Card.Header>Баланс биржы {this.props.exchange === 'ftx' ? "FTX" : "OKX"}</Card.Header>
@@ -273,9 +284,7 @@ class ViewBalanceExchange extends React.Component {
                 <Form onSubmit={this.handleWithdrawal}>
                     <InputGroup size='sm'>
                         <DropdownButton onSelect={this.onChangeCurWithdrawal} title={this.state.currencyWithdrawal} variant='secondary'>
-                            <Dropdown.Item eventKey="TON" >TON</Dropdown.Item>
-                            <Dropdown.Item eventKey="USDT" >USDT</Dropdown.Item>
-                            <Dropdown.Item eventKey="ANC" >ANC</Dropdown.Item>
+                            {listTikers}
                         </DropdownButton>
                         <Form.Control  type="text" placeholder="Amount" value={this.state.amount} onChange={this.onChangeAmount}/>
                         {input(spinner)}
@@ -294,8 +303,8 @@ function App() {
     return (
         <div>
             <div className='list-balance-exchange'>
-                <ViewBalanceExchange exchange="okx" />
-                <ViewBalanceExchange exchange="ftx" />
+                <ViewBalanceExchange exchange="okx" key={"okx"}/>
+                <ViewBalanceExchange exchange="ftx" key={"ftx"}/>
             </div>
             <AddScan />
         </div>

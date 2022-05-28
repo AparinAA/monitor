@@ -32,38 +32,26 @@ const dictTicker = {
         'okx': 'ETH-USDT',
         'ftx': 'ETH/USDT',
     },
-    'BTT': {
-        'okx': 'BTT-USDT',
-        'ftx': 'BTT/USD'
-    },
     'ANC': {
         'okx': 'ANC-USDT',
         'ftx': 'ANC/USD'
     },
-    'GOG': {
-        'okx': 'GOG-USDT',
-        'ftx': 'GOG/USD'
-    },
-    'BNT': {
-        'okx': 'BNT-USDT',
-        'ftx': 'BNT/USD'
-    },
-    'ALCX': {
-        'okx': 'ALCX-USDT',
-        'ftx': 'ALCX/USD'
-    },
-    'ALPHA': {
-        'okx': 'ALPHA-USDT',
-        'ftx': 'ALPHA/USD'
-    },
-    'GODS': {
-        'okx': 'GODS-USDT',
-        'ftx': 'GODS/USD'
-    },
     'GMT': {
         'okx': 'GMT-USDT',
         'ftx': 'GMT/USD'
-    }
+    },
+    'JOE': {
+        'okx': 'JOE-USDT',
+        'ftx': 'JOE/USD'
+    },
+    'NEAR': {
+        'okx': 'NEAR-USDT',
+        'ftx': 'NEAR/USD'
+    },
+    'WAVES': {
+        'okx': 'WAVES-USDT',
+        'ftx': 'WAVES/USD'
+    },
     
 }
 
