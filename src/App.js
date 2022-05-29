@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import axios from 'axios';
 import Spinner from 'react-bootstrap/Spinner';
-import {Button, Form, InputGroup, ListGroup, Card,DropdownButton, Dropdown, CardGroup} from 'react-bootstrap';
+import {Button, Form, InputGroup, ListGroup, Card,DropdownButton, Dropdown, Offcanvas, Container, Row, Col} from 'react-bootstrap';
 
 //округление до знака decimalPlaces после запятой
 function truncated(num, decimalPlaces) {    
@@ -20,8 +20,8 @@ class CheckPrice extends React.Component {
     }
 
     render() {
-        const spread_1 = truncated(this.props.price.spread[0],4);
-        const spread_2 = truncated(this.props.price.spread[1],4);
+        const spread_1 = truncated(this.props.price.spread[0],2);
+        const spread_2 = truncated(this.props.price.spread[1],2);
 
         const buyOKX = this.props.exchange === 'okx' && positiveNumber(spread_1);
         const buyFTX = this.props.exchange === 'ftx' && positiveNumber(spread_2);
@@ -29,7 +29,7 @@ class CheckPrice extends React.Component {
         const sellFTX = this.props.exchange === 'ftx' && positiveNumber(spread_1);
         const positiveSpread = positiveNumber(spread_1) ? spread_1 : (positiveNumber(spread_2) ? spread_2 : 0);
 
-        let element = <div className={ (buyOKX || buyFTX) ? 
+        let element = <span className={ (buyOKX || buyFTX) ? 
                                         `triger-spread-green` : 
                                         (sellOKX || sellFTX) ? `triger-spread-red` : ``
                                         }>
@@ -40,38 +40,21 @@ class CheckPrice extends React.Component {
                                         `Sell. Spread: ` + (positiveNumber(positiveSpread) ? `+` : ``) + positiveSpread + `%` :
                                         `Not found spread`                                           
                             }
-                      </div>;
+                      </span>;
         
         return (
-            <Card style={{ width: '15rem' }}>
-                <Card.Header>Биржа {this.props.exchange === 'ftx' ? "FTX" : "OKEX"}</Card.Header>
-                <Card.Body className='data-exchange'>
-                    <div>
-                        <div>Лучшая цена в стакане</div>
-                        <div>
-                            <div>Ask:</div>
-                            <div className='best-order-book ask'>
-                                <div className='price'>{this.props.price?.ask[0][0]}</div>
-                                <div className='size'>{this.props.price?.ask[0][1]}</div>
-                            </div>
-                        </div>
-                        <div>
-                            <div>Bid:</div>
-                            <div className='best-order-book bid'>
-                                <div className='price'>{this.props.price?.bid[0][0]}</div>
-                                <div className='size'>{this.props.price?.bid[0][1]}</div>
-                            </div>
-                        </div>
+            <div>
+                <div><b>Биржа {this.props.exchange === 'ftx' ? "FTX" : "OKEX"}</b></div>
+                <div>{element}</div>
+                <div>
+                    <div>Order price</div>
+                    <div className='best-order-book'>    
+                        <div className='ask'>Ask: {this.props.price?.ask[0][0]}</div>
+                        <div className='bid'>Bid: {this.props.price?.bid[0][0]}</div>
                     </div>
-                    
-                    <div>
-                        <div>
-                            Спред между биржами
-                        </div>
-                        {element}
-                    </div>
-                </Card.Body>
-            </Card>
+                </div>
+            </div>
+                
         );
     }
 }
@@ -139,17 +122,19 @@ class ViewExchange extends React.Component {
             <Dropdown.Item key={item} eventKey={item}>{item}</Dropdown.Item>
         )
         return (
-            <Card>
-                
-                <DropdownButton title={this.state.currency} onSelect={this.handleChangeCurrency} variant='secondary' size='sm'>
-                    {options}
-                </DropdownButton>
-            
-                <CardGroup>
-                    <CheckPrice exchange="okx" price={this.state.price.okx} />
-                    <CheckPrice exchange="ftx" price={this.state.price.ftx} />
-                </CardGroup>
-            </Card>
+            <Col xs={12} sm={4} md={3} xl={2}>
+                <Card bg={'light'}>
+                    <DropdownButton title={this.state.currency} onSelect={this.handleChangeCurrency} variant='secondary' size='sm'>
+                        {options}
+                    </DropdownButton>
+                    <Card.Header><b>{this.state.currency}</b></Card.Header>
+                    <Card.Body bsPrefix={'class-body-new'}>
+                        <CheckPrice exchange="okx" price={this.state.price.okx} />
+                        <CheckPrice exchange="ftx" price={this.state.price.ftx} />
+                    </Card.Body>
+                    
+                </Card>
+            </Col>
             
         );
     }
@@ -184,15 +169,15 @@ class AddScan extends React.Component {
             tableScan.push(<ViewExchange key={i}/>);
         }
         return (
-            <div>
-                <div>
-                    {tableScan}
-                </div>
+            <Container className='table-scaner' fluid={true}>
+                    <Row>
+                        {tableScan}
+                    </Row>
                 <div>
                     <Button onClick={this.AddScanEvent} size='sm' variant='secondary'> Добавить скан </Button>
                     <Button onClick={this.DeleteScanEvent} size='sm' variant='secondary'>Удалить скан</Button>
                 </div>
-            </div>
+            </Container>
             
         );
     }
@@ -204,7 +189,7 @@ class ViewBalanceExchange extends React.Component {
         this.state = {
             balance: ['not found'],
             currencyWithdrawal: this.props.exchange === 'ftx' ? "TON" : "USDT",
-            amount: this.props.exchange === 'ftx' ? "450" : "751",
+            amount: this.props.exchange === 'ftx' ? "0" : "0",
             spinner: 'secondary',
         }
         this.handleWithdrawal = this.handleWithdrawal.bind(this);
@@ -258,7 +243,7 @@ class ViewBalanceExchange extends React.Component {
 
     render() {
         const listBalance = this.state.balance.map( item => 
-            <ListGroup.Item key={this.props.exchange + item.ccy}>{item.ccy} - {truncated(item.avail,2)} ({truncated(item.eqUsd,2)} USD)</ListGroup.Item>
+            <ListGroup.Item key={this.props.exchange + item.ccy}><b>{item.ccy}</b> - {truncated(item.avail,3)} ({truncated(item.eqUsd,2)} USD)</ListGroup.Item>
         );
         const spinner = this.state.spinner;
                 
@@ -274,23 +259,23 @@ class ViewBalanceExchange extends React.Component {
             <Dropdown.Item eventKey={item} key={'' + item + i}>{item}</Dropdown.Item>
         );
         return (
-            <Card style={{ width: '16rem' }}>
-                <Card.Header>Баланс биржы {this.props.exchange === 'ftx' ? "FTX" : "OKX"}</Card.Header>
+            <Card style={{ width: '100%', margin: "0 0 35px" }}>
+                <Card.Header>Balance exchange {this.props.exchange === 'ftx' ? "FTX" : "OKX"}</Card.Header>
                 <ListGroup variant="flush">
                     {listBalance}
                 </ListGroup>
-                Withdrawal from {this.props.exchange === 'ftx' ? "FTX" : "OKX"} to {this.props.exchange === 'ftx' ? "OKX" : "FTX"}
-                
-                <Form onSubmit={this.handleWithdrawal}>
-                    <InputGroup size='sm'>
-                        <DropdownButton onSelect={this.onChangeCurWithdrawal} title={this.state.currencyWithdrawal} variant='secondary'>
-                            {listTikers}
-                        </DropdownButton>
-                        <Form.Control  type="text" placeholder="Amount" value={this.state.amount} onChange={this.onChangeAmount}/>
-                        {input(spinner)}
-                    </InputGroup>
-                </Form>
-                
+                <Card.Footer>
+                    Withdrawal from {this.props.exchange === 'ftx' ? "FTX" : "OKX"} to {this.props.exchange === 'ftx' ? "OKX" : "FTX"}
+                    <Form onSubmit={this.handleWithdrawal}>
+                        <InputGroup size='sm'>
+                            <DropdownButton onSelect={this.onChangeCurWithdrawal} title={this.state.currencyWithdrawal} variant='secondary'>
+                                {listTikers}
+                            </DropdownButton>
+                            <Form.Control  type="text" placeholder="Amount" value={this.state.amount} onChange={this.onChangeAmount}/>
+                            {input(spinner)}
+                        </InputGroup>
+                    </Form>
+                </Card.Footer>    
             </Card>
             
         );
@@ -298,14 +283,53 @@ class ViewBalanceExchange extends React.Component {
 
 }
 
+class OfCansBalance extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            "open": false,
+            "close": false
+        };
+        this.handleOpen = this.handleOpen.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+        
+    }
+
+    handleOpen() {
+        this.setState({"open": true});
+    }
+
+    handleClose() {
+        this.setState({"open": false});
+    }
+
+    render() {
+        const open = this.state.open;
+        return (
+            <div className='list-balance-exchange'>
+                
+                <Button variant="secondary" onClick={this.handleOpen} size='sm'>Show balance</Button>
+
+                <Offcanvas show={open} onHide={this.handleClose} backdrop="static" scroll={true}>
+                    <Offcanvas.Header closeButton>
+                        <Offcanvas.Title>Balance exchanges</Offcanvas.Title>
+                    </Offcanvas.Header>
+                    <Offcanvas.Body>
+                        <ViewBalanceExchange exchange="okx" key={"okx"}/>
+                        <ViewBalanceExchange exchange="ftx" key={"ftx"}/>                        
+                    </Offcanvas.Body>
+                </Offcanvas>`
+            </div>
+            
+        );
+    }
+
+}
 
 function App() {
     return (
         <div>
-            <div className='list-balance-exchange'>
-                <ViewBalanceExchange exchange="okx" key={"okx"}/>
-                <ViewBalanceExchange exchange="ftx" key={"ftx"}/>
-            </div>
+            <OfCansBalance />
             <AddScan />
         </div>
         

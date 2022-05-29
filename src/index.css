@@ -30,18 +30,19 @@ body {
 }
 
 .triger-spread-green {
-    background-color: rgb(28, 136, 22);
+    background-color: rgb(69, 165, 24);
 }
 .triger-spread-red {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.791);
 }
 
 .best-order-book {
     display: flex;
+    flex-direction: column;
 }
 
 .best-order-book > * {
-    margin: 0 5px;
+    margin: 2px 5px 0 0;
 }
 
 .ask {
@@ -80,4 +81,11 @@ body {
 
 .success_withdrawal {
     background-color: green;
+}
+
+.table-scaner {
+    padding: 15px 0;
+}
+.class-body-new {
+    padding: 3px;
 }

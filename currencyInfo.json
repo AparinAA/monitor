@@ -1,0 +1,111 @@
+{
+    "TON": {
+        "okx": {
+            "name": "TON",
+            "idName": "TON-USDT",
+            "method": "TON-TON",
+            "fee": "0.01",
+            "address": "EQBfAN7LfaUYgXZNw5Wc7GBgkEX2yhuJ5ka95J1JJwXXf4a8",
+            "tag": "6000408"
+        },
+        "ftx": {
+            "name": "TONCOIN",
+            "idName": "TONCOIN/USD",
+            "method": "ton",
+            "address": "EQCzFTXpNNsFu8IgJnRnkDyBCL2ry8KgZYiDi3Jt31ie8EIQ",
+            "tag": "54d6f6b3-5224-4f06-b290-eda94e1d07b8"
+        }
+    },
+    "ANC": {
+        "okx": {
+            "name": "ANC",
+            "idName": "ANC-USDT",
+            "method": "ANC-Terra",
+            "fee": "0.4",
+            "address": "terra12jset0aerlz0xld3nc6q7f2cd9t9w8eegrqfxv",
+            "tag": null
+        },
+        "ftx": {
+            "name": "ANC",
+            "idName": "ANC/USD",
+            "method": "terra",
+            "address": "terra1luagdjcr9c9yvp3ak4d7chjm5gldcmgln5rku5",
+            "tag": "148889632"
+        }
+    },
+    "USDT": {
+        "okx": {
+            "cur": "USDT",
+            "method": "USDT-TRC20",
+            "fee": "0.8",
+            "address": "TEc85B1ASueQaNrQhyXqP6qTrdomJP3EuN",
+            "tag": null
+        },
+        "ftx": {
+            "cur": "USDT",
+            "method": "trx",
+            "address": "TRrYRe33KPbJDtxLPwAS3DDUazT3mCEQ55",
+            "tag": null
+        }
+    },
+    "BTC": {
+        "okx": {
+            "cur": "BTC",
+            "idName": "BTC-USDT"
+        },
+        "ftx": {
+            "cur": "BTC",
+            "idName": "BTC/USD"
+        }
+    },
+    "ETH": {
+        "okx": {
+            "cur": "ETH",
+            "idName": "ETH-USDT"
+        },
+        "ftx": {
+            "cur": "ETH",
+            "idName": "ETH/USD"
+        }
+    },
+    "GMT": {
+        "okx": {
+            "cur": "GMT",
+            "idName": "GMT-USDT"
+        },
+        "ftx": {
+            "cur": "GMT",
+            "idName": "GMT/USD"
+        }
+    },
+    "JOE": {
+        "okx": {
+            "cur": "JOE",
+            "idName": "JOE-USDT"
+        },
+        "ftx": {
+            "cur": "JOE",
+            "idName": "JOE/USD"
+        }
+    },
+    "NEAR": {
+        "okx": {
+            "cur": "NEAR",
+            "idName": "NEAR-USDT"
+        },
+        "ftx": {
+            "cur": "NEAR",
+            "idName": "NEAR/USD"
+        }
+    },
+    "WAVES": {
+        "okx": {
+            "cur": "WAVES",
+            "idName": "WAVES-USDT"
+        },
+        "ftx": {
+            "cur": "WAVES",
+            "idName": "WAVES/USD"
+        }
+    }
+}

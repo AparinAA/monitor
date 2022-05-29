@@ -3,6 +3,7 @@ const http = require("http");
 const axios = require('axios');
 const {FTXclient} = require('./FTXclient');
 const {OKXclient} = require('./OKXclient');
+const fs = require('fs'); 
 
 const secretDict_FTX = {
     'api_key_1': process.env.ftx_api_key_1,
@@ -19,88 +20,10 @@ const secretDict_OKX = {
 };
 
 
-const dictTicker = {
-    'TON': {
-        'okx': 'TON-USDT',
-        'ftx': 'TONCOIN/USD',
-    },
-    'BTC': {
-        'okx': 'BTC-USDT',
-        'ftx': 'BTC/USDT',
-    },
-    'ETH': {
-        'okx': 'ETH-USDT',
-        'ftx': 'ETH/USDT',
-    },
-    'ANC': {
-        'okx': 'ANC-USDT',
-        'ftx': 'ANC/USD'
-    },
-    'GMT': {
-        'okx': 'GMT-USDT',
-        'ftx': 'GMT/USD'
-    },
-    'JOE': {
-        'okx': 'JOE-USDT',
-        'ftx': 'JOE/USD'
-    },
-    'NEAR': {
-        'okx': 'NEAR-USDT',
-        'ftx': 'NEAR/USD'
-    },
-    'WAVES': {
-        'okx': 'WAVES-USDT',
-        'ftx': 'WAVES/USD'
-    },
-    
-}
 
-const dictForWithdrawal = {
-    'TON': {
-        'okx': {
-            "cur": "TON",
-            'method': "TON-TON",
-            'fee': 0.01,
-            "address": "EQCzFTXpNNsFu8IgJnRnkDyBCL2ry8KgZYiDi3Jt31ie8EIQ:56e66ef1-a404-4f85-a5da-06e9f5fbb7d8",
-        },
-        'ftx': {
-            "cur": "TONCOIN",
-            "method": "ton",
-            "address": "EQBfAN7LfaUYgXZNw5Wc7GBgkEX2yhuJ5ka95J1JJwXXf4a8",
-            "tag": "6000408"
-        }
-    },
+const rawdata = fs.readFileSync('currencyInfo.json'); 
+const dictCurrency = JSON.parse(rawdata);
 
-    'USDT': {
-        'okx': {
-            "cur": "USDT",
-            "method": "USDT-TRC20",
-            "fee": 0.8,
-            "address": "TRrYRe33KPbJDtxLPwAS3DDUazT3mCEQ55"
-        },
-        'ftx': {
-            "cur": "USDT",
-            "method": "trx",
-            "address": "TEc85B1ASueQaNrQhyXqP6qTrdomJP3EuN",
-            "tag": null
-        }
-    },
-    'ANC': {
-        'okx': {
-            "cur": "ANC",
-            "method": "ANC-Terra",
-            "fee": "0.4",
-            "address": "terra1luagdjcr9c9yvp3ak4d7chjm5gldcmgln5rku5:148889632",
-        },
-        'ftx': {
-            "cur": "ANC",
-            "method": "terra",
-            "address": "terra18edzsh55c4dtgnz5ress6ar0nufs67hazv8ly2",
-            "tag": null
-        }
-    },
-
-}
 
 const ftx_1 = new FTXclient(secretDict_FTX.api_key_1, secretDict_FTX.secret_key_1);
 const ftx_2 = new FTXclient(secretDict_FTX.api_key_2, secretDict_FTX.secret_key_2);
@@ -109,7 +32,7 @@ const okx = new OKXclient(secretDict_OKX.api_key, secretDict_OKX.secret_key, sec
 //const mark = {'buy': {'name': 'ftx', 'price': { 'countOrd': 2, 'orders': [[1, 1], [1.1, 1]] }}, 'sell': {'name': 'okx', 'price': ''}}
 
 //console.info(new URLSearchParams({'ex': 'ftx', 'cur': 'TON', 'sz':2}).toString())
-const host = '195.133.1.56';//'localhost';//
+const host = '195.133.1.56';//'localhost';
 const port = 8090;
 
 const requestListener = function (req, res) {
@@ -120,7 +43,6 @@ const requestListener = function (req, res) {
     let currency;
     let amount;
     let exchange;
-
     if (req.url === '/balance') {
         Promise.all([ftx_1.getBalance(), okx.getBalance()])
         .then(balance => {
@@ -142,9 +64,10 @@ const requestListener = function (req, res) {
     }
     if (parametrsSpread) {
         currency = parametrsSpread[0].split('=').length > 1 ? parametrsSpread[0].split('=')[1] : false;
-        if (dictTicker[currency]) {
+        
+        if (dictCurrency[currency]) {
             
-            Promise.all([okx.getMarket(dictTicker[currency].okx,1), ftx_2.getMarket(dictTicker[currency].ftx,1)])
+            Promise.all([okx.getMarket(dictCurrency[currency].okx.idName,1), ftx_2.getMarket(dictCurrency[currency].ftx.idName,1)])
             .then(market => {
                 const spread_1 = 100 * (market[1].bid[0][0] - market[0].ask[0][0]) / market[1].bid[0][0];
                 const spread_2 = 100 * (market[0].bid[0][0] - market[1].ask[0][0]) / market[0].bid[0][0];
@@ -184,19 +107,27 @@ const requestListener = function (req, res) {
         curBalance
         .then(balance => {
             //console.info(balance, exchange)
-            if (!dictForWithdrawal[currency]) {
+            if (!dictCurrency[currency]) {
                 return false;
             }
             
-            const availbleAmount = balance.find( item => item.ccy === dictForWithdrawal[currency][exchange]?.cur )?.avail;
+            const availbleAmount = balance.find( item => item.ccy === dictCurrency[currency][exchange]?.name )?.avail;
             
             if (Number(availbleAmount) > Number(amount)) {
                 const _withdrawal = exchange === 'ftx' ?
-                                ftx_1.withdrawalToAddress(dictForWithdrawal[currency].ftx.cur, amount,
-                                                          dictForWithdrawal[currency].ftx.method,
-                                                          dictForWithdrawal[currency].ftx.address,
-                                                          dictForWithdrawal[currency].ftx.tag) : 
-                                okx.transferCurrAcc(dictForWithdrawal[currency].okx.cur, Number(amount) + Number(dictForWithdrawal[currency].okx.fee), "18", "6");
+                                ftx_1.withdrawalToAddress(
+                                    dictCurrency[currency].ftx.name,
+                                    amount,
+                                    dictCurrency[currency].ftx.method,
+                                    dictCurrency[currency].okx.address,
+                                    dictCurrency[currency].okx.tag
+                                ) : 
+                                okx.transferCurrAcc(
+                                    dictCurrency[currency].okx.name,
+                                    Number(amount) + Number(dictCurrency[currency].okx.fee),
+                                    "18", 
+                                    "6"
+                                );
                 return _withdrawal.then(() => {
                     return true;
                 }).catch(() => {
@@ -207,19 +138,45 @@ const requestListener = function (req, res) {
         })
         .then( subres => {
             if (exchange === 'okx' && subres) {
-                const withokx = okx.withdrawalToAddress(dictForWithdrawal[currency].okx.cur, Number(amount),
-                                                        dictForWithdrawal[currency].okx.fee,
-                                                        dictForWithdrawal[currency].okx.method,
-                                                        dictForWithdrawal[currency].okx.address);
+
+                //при выводе с OKX адрес записывается как "address:tag"
+                const addrWithFromOKX = dictCurrency[currency].ftx.tag ? 
+                                        dictCurrency[currency].ftx.address + ":" + dictCurrency[currency].ftx.tag :
+                                        dictCurrency[currency].ftx.address;
+                
+                const withokx = okx.withdrawalToAddress(
+                                    dictCurrency[currency].okx.name,
+                                    Number(amount),
+                                    dictCurrency[currency].okx.fee,
+                                    dictCurrency[currency].okx.method,
+                                    addrWithFromOKX
+                                );
                     
-                    return withokx.then( (r) => {
-                        if (r.data.msg != '0') {
-                            okx.transferCurrAcc(dictForWithdrawal[currency].okx.cur, Number(amount) + Number(dictForWithdrawal[currency].okx.fee), "6", "18");
-                            return false;
-                        }
-                        return true;
-                    })
-                    .catch( (e) => {return false});
+                return withokx.then( (r) => {
+                    if (r.data.msg != '0') {
+                        
+                        //не получилось вывести, ждем 0.5 сек и возвращаем обратно на торговый акк
+                        setTimeout(() => {
+                            okx.transferCurrAcc(
+                                dictCurrency[currency].okx.name,
+                                Number(amount) + Number(dictCurrency[currency].okx.fee),
+                                "6",
+                                "18"
+                            )
+                            .then(() => {
+                                return false;
+                            })
+                            .catch(() => {
+                                return false;
+                            });
+                        }, 500);
+                        return false;
+                    }
+                    return true;
+                })
+                .catch( (e) => {
+                    return false;
+                });
             } else {
                 return subres;
             }
