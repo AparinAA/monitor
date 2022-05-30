@@ -1,4 +1,4 @@
-body {
+body, .root {
     font-family: sans-serif;
     background-color: var(--tg-theme-bg-color, #ffffff);
     color: var(--tg-theme-text-color, #222222);
