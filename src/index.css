@@ -31,9 +31,11 @@ body, .root {
 
 .triger-spread-green {
     background-color: rgb(69, 165, 24);
+    border-radius: 4px;
 }
 .triger-spread-red {
     background-color: rgba(255, 0, 0, 0.791);
+    border-radius: 4px;
 }
 
 .best-order-book {
@@ -46,11 +48,11 @@ body, .root {
 }
 
 .ask {
-    color: red;
+    color: rgba(255, 0, 0, 0.791);
 }
 
 .bid {
-    color: green
+    color: rgb(69, 165, 24);
 }
 
 .curruncy-spread {
@@ -77,10 +79,12 @@ body, .root {
 .error_withdrawal {
     background-color: red;
     color: white;
+    border-radius: 5px;
 }
 
 .success_withdrawal {
     background-color: green;
+    border-radius: 5px;
 }
 
 .table-scaner {
@@ -88,4 +92,19 @@ body, .root {
 }
 .class-body-new {
     padding: 3px;
+}
+
+.balance-free-float {
+    padding: 4px;
+    border: #666666 solid 1px;
+    border-radius: 4px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+hr {
+    border: none; 
+    background-color: red; 
+    color: red; 
+    height: 2px;
 }

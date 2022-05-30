@@ -121,6 +121,14 @@ class ViewExchange extends React.Component {
         let options = listCurrency.map( item => 
             <Dropdown.Item key={item} eventKey={item}>{item}</Dropdown.Item>
         )
+        const Line = () => (
+            <hr 
+                style={{
+                    padding: 0,
+                    margin: 0,
+                }}
+            />
+        );
         return (
             <Col xs={12} sm={4} md={3} xl={2}>
                 <Card bg={'light'}>
@@ -130,6 +138,7 @@ class ViewExchange extends React.Component {
                     <Card.Header><b>{this.state.currency}</b></Card.Header>
                     <Card.Body bsPrefix={'class-body-new'}>
                         <CheckPrice exchange="okx" price={this.state.price.okx} />
+                        <Line/>
                         <CheckPrice exchange="ftx" price={this.state.price.ftx} />
                     </Card.Body>
                     
@@ -187,7 +196,7 @@ class ViewBalanceExchange extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            balance: ['not found'],
+            balance: this.props.balance,
             currencyWithdrawal: this.props.exchange === 'ftx' ? "TON" : "USDT",
             amount: this.props.exchange === 'ftx' ? "0" : "0",
             spinner: 'secondary',
@@ -196,11 +205,7 @@ class ViewBalanceExchange extends React.Component {
         this.onChangeCurWithdrawal = this.onChangeCurWithdrawal.bind(this);
         this.onChangeAmount = this.onChangeAmount.bind(this);
     }
-    
-    componentDidMount() {
-        this.getReq();
-    }
-    
+
     onChangeCurWithdrawal(event) {
         this.setState({currencyWithdrawal: event});
     }
@@ -233,13 +238,7 @@ class ViewBalanceExchange extends React.Component {
         event.preventDefault();
     }
 
-    getReq() {
-        axios.get('http://195.133.1.56:8090/balance')
-        .then( res => {
-            this.setState({balance: this.props.exchange === 'ftx' ? res.data[0] : res.data[1]});
-        })
-        .catch(() => this.setState({balance: ['not connect']}));
-    }
+    
 
     render() {
         const listBalance = this.state.balance.map( item => 
@@ -259,7 +258,7 @@ class ViewBalanceExchange extends React.Component {
             <Dropdown.Item eventKey={item} key={'' + item + i}>{item}</Dropdown.Item>
         );
         return (
-            <Card style={{ width: '100%', margin: "0 0 35px" }}>
+            <Card style={{ width: '100%', margin: "10px 0 15px" }}>
                 <Card.Header>Balance exchange {this.props.exchange === 'ftx' ? "FTX" : "OKX"}</Card.Header>
                 <ListGroup variant="flush">
                     {listBalance}
@@ -288,11 +287,24 @@ class OfCansBalance extends React.Component {
         super(props);
         this.state = {
             "open": false,
-            "close": false
+            "close": false,
+            "balance": [ [{"ccy": "", "avail": 0, "eqUsd": 0}], [{"ccy": "", "avail": 0, "eqUsd": 0}]]
         };
         this.handleOpen = this.handleOpen.bind(this);
         this.handleClose = this.handleClose.bind(this);
         
+    }
+
+    componentDidMount() {
+        this.getReq();
+    }
+    
+    getReq() {
+        axios.get('http://195.133.1.56:8090/balance')
+        .then( res => {
+            this.setState({balance: res.data});
+        })
+        .catch(() => this.setState({balance: [[{"ccy": "", "avail": 0, "eqUsd": 0}], [{"ccy": "", "avail": 0, "eqUsd": 0}]]}));
     }
 
     handleOpen() {
@@ -305,18 +317,28 @@ class OfCansBalance extends React.Component {
 
     render() {
         const open = this.state.open;
+        const balanceFTX = this.state.balance[0];
+        const balanceOKX = this.state.balance[1];
+        let floatUSD = 0;
+        floatUSD = balanceFTX?.reduce( (acc, element) => {
+                return acc + (((element.ccy === "USDT") || (element.ccy === "USD")) ? Number(element.eqUsd) : 0);
+        },0);
+        floatUSD = balanceOKX?.reduce( (acc, element) => {
+            return acc + (((element.ccy === "USDT") || (element.ccy === "USD")) ? Number(element.eqUsd) : 0);
+        }, floatUSD);
         return (
             <div className='list-balance-exchange'>
                 
                 <Button variant="secondary" onClick={this.handleOpen} size='sm'>Show balance</Button>
 
-                <Offcanvas show={open} onHide={this.handleClose} backdrop="static" scroll={true}>
+                <Offcanvas show={open} onHide={this.handleClose} backdrop={true} scroll={true}>
                     <Offcanvas.Header closeButton>
                         <Offcanvas.Title>Balance exchanges</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
-                        <ViewBalanceExchange exchange="okx" key={"okx"}/>
-                        <ViewBalanceExchange exchange="ftx" key={"ftx"}/>                        
+                        <div className='balance-free-float'>Free float {truncated(floatUSD,2)} USD</div>
+                        <ViewBalanceExchange exchange="okx" key={"okx"} balance={balanceOKX}/>
+                        <ViewBalanceExchange exchange="ftx" key={"ftx"} balance={balanceFTX}/>                        
                     </Offcanvas.Body>
                 </Offcanvas>`
             </div>

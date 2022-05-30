@@ -50,8 +50,11 @@ const requestListener = function (req, res) {
                 'Access-Control-Allow-Origin' : '*',
                 'Access-Control-Allow-Methods': 'GET'
             });
-            const filterFTX = balance[0].filter( item => item.avail > 0.000001);
-            const filterOKX = balance[1].filter( item => item.avail > 0.000001)
+            const filterFTX = balance[0]?.filter( item => item.avail > 0.000001);
+            const filterOKX = balance[1]?.filter( item => item.avail > 0.000001)
+            if (!filterFTX || !filterOKX) {
+                throw "Error. Balance empty";
+            }
             res.end(JSON.stringify([filterFTX,filterOKX], null, '\t'));
         })
         .catch(() => {
@@ -59,7 +62,7 @@ const requestListener = function (req, res) {
                 'Access-Control-Allow-Origin' : '*',
                 'Access-Control-Allow-Methods': 'GET'
             });
-            res.end(JSON.stringify({'error': 'Error: not found balance'}));
+            res.end(JSON.stringify([[{"ccy": "", "avail": 0, "eqUsd": 0}], [{"ccy": "", "avail": 0, "eqUsd": 0}]]));
         });
     }
     if (parametrsSpread) {
