@@ -183,8 +183,8 @@ class AddScan extends React.Component {
                         {tableScan}
                     </Row>
                 <div>
-                    <Button onClick={this.AddScanEvent} size='sm' variant='secondary'> Добавить скан </Button>
-                    <Button onClick={this.DeleteScanEvent} size='sm' variant='secondary'>Удалить скан</Button>
+                    <Button onClick={this.AddScanEvent} size='sm' > Добавить скан </Button>
+                    <Button onClick={this.DeleteScanEvent} size='sm' >Удалить скан</Button>
                 </div>
             </Container>
             
@@ -329,7 +329,7 @@ class OfCansBalance extends React.Component {
         return (
             <div className='list-balance-exchange'>
                 
-                <Button variant="secondary" onClick={this.handleOpen} size='sm'>Show balance</Button>
+                <Button variant="outline-secondary" onClick={this.handleOpen} size='sm'>Show balance</Button>
 
                 <Offcanvas show={open} onHide={this.handleClose} backdrop={true} scroll={true}>
                     <Offcanvas.Header closeButton>

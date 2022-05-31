@@ -108,3 +108,15 @@ hr {
     color: red; 
     height: 2px;
 }
+
+.btn {
+    background-color: var(--tg-theme-bg-color, rgba(0, 0, 0, 0.072)) !important;
+    color: var(--tg-theme-text-color, #222222) !important;
+    border: var(--tg-theme-text-color, rgba(0, 0, 0, 0.072)) !important;;
+}
+
+.btn:hover {
+    background-color: var(--tg-theme-bg-color, #a2a8a6bd) !important;
+    color: var(--tg-theme-text-color, #222222) !important;
+    border: var(--tg-theme-text-color, #a2a8a6bd) !important;;
+}
