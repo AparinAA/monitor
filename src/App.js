@@ -3,6 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import Spinner from 'react-bootstrap/Spinner';
 import {Button, Form, InputGroup, ListGroup, Card,DropdownButton, Dropdown, Offcanvas, Container, Row, Col} from 'react-bootstrap';
+import { PlusCircle, DashCircle } from 'react-bootstrap-icons';
 
 //округление до знака decimalPlaces после запятой
 function truncated(num, decimalPlaces) {    
@@ -179,13 +180,13 @@ class AddScan extends React.Component {
         }
         return (
             <Container className='table-scaner' fluid={true}>
+                    <Col>
+                        <Button onClick={this.AddScanEvent} size='sm' style={{margin: "5px 5px 5px 0"}}> <b><PlusCircle size={12}/></b> Add </Button>
+                        <Button onClick={this.DeleteScanEvent} size='sm' style={{margin: "5px 5px 5px 0"}}> <b><DashCircle size={12}/></b> Delete</Button>
+                    </Col>
                     <Row>
                         {tableScan}
                     </Row>
-                <div>
-                    <Button onClick={this.AddScanEvent} size='sm' > Добавить скан </Button>
-                    <Button onClick={this.DeleteScanEvent} size='sm' >Удалить скан</Button>
-                </div>
             </Container>
             
         );
@@ -287,7 +288,6 @@ class OfCansBalance extends React.Component {
         super(props);
         this.state = {
             "open": false,
-            "close": false,
             "balance": [ [{"ccy": "", "avail": 0, "eqUsd": 0}], [{"ccy": "", "avail": 0, "eqUsd": 0}]]
         };
         this.handleOpen = this.handleOpen.bind(this);
@@ -326,6 +326,7 @@ class OfCansBalance extends React.Component {
         floatUSD = balanceOKX?.reduce( (acc, element) => {
             return acc + (((element.ccy === "USDT") || (element.ccy === "USD")) ? Number(element.eqUsd) : 0);
         }, floatUSD);
+
         return (
             <div className='list-balance-exchange'>
                 
@@ -340,7 +341,7 @@ class OfCansBalance extends React.Component {
                         <ViewBalanceExchange exchange="okx" key={"okx"} balance={balanceOKX}/>
                         <ViewBalanceExchange exchange="ftx" key={"ftx"} balance={balanceFTX}/>                        
                     </Offcanvas.Body>
-                </Offcanvas>`
+                </Offcanvas>
             </div>
             
         );
