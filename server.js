@@ -207,7 +207,7 @@ const requestListener = function (req, res) {
          
 };
 
-const server = http.createServer(options, requestListener);
+const server = https.createServer(options, requestListener);
 server.listen(port, host, () => {
     console.log(`Server is running on https://${host}:${port}`);
 });
