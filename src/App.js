@@ -16,9 +16,6 @@ function positiveNumber(number) {
 }
 
 class CheckPrice extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         const spread_1 = truncated(this.props.price.spread[0],2);
@@ -123,14 +120,7 @@ class ViewExchange extends React.Component {
         let options = listCurrency.map( item => 
             <Dropdown.Item key={item} eventKey={item}>{item}</Dropdown.Item>
         )
-        const VLine = () => (
-            <vl 
-                style={{
-                    padding: 0,
-                    margin: 0,
-                }}
-            />
-        );
+        
         return (
             <Col xs={12} sm={6} md={6} lg={4} xl={4} xxl={3}>
                 <Card>
@@ -233,17 +223,15 @@ class ViewBalanceExchange extends React.Component {
         this.setState({spinner: 'spinner'});
         axios.get('http://195.133.1.56:8090/withdrawal?'+params)
         .then( result => {
-            
-            if(result.data.withdrawal == true) {
+            if(result.data.withdrawal !== false) {
                 this.setState({spinner: "success"});
             } else {
                 this.setState({spinner: "danger"});
             }
         })
-        .catch((e) => {
-            console.info(e);
-        });
-                
+        .catch(() => {
+            this.setState({spinner: "danger"});
+        });       
         event.preventDefault();
     }
 

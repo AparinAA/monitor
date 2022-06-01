@@ -2,17 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Anek+Odia:wdth,wght@100,100;100,200;100,300;100,400;100,500;100,600;100,700;118.1,453&display=swap');
 
 :root {
-    --accent-bg-color: var(--tg-theme-bg-color, rgb(65, 65, 65));
+    --accent-bg-color: rgb(65, 65, 65);
     --accent-button-color: rgb(189, 189, 189);
     --accent-button-hover-color: rgb(130, 130, 130);
-    --accent-color: var(--tg-theme-text-color, #000000);
-    --accent-hover-color: var(--tg-theme-text-color, #e8e8e8);
-    --accent-text-color: var(--tg-theme-text-color, #d0d0d0);
+    --accent-color: #000000;
+    --accent-hover-color: #e8e8e8;
+    --accent-text-color: #d0d0d0;
 }
 
 body, .root {
     font-family: 'Arial', sans-serif !important;
-    background-color: var(--tg-theme-bg-color, #222222) !important;
+    background-color:#222222 !important;
     color: var(--accent-text-color) !important;
     font-size: 16px !important;
     margin: 0;
@@ -112,7 +112,7 @@ body, .root {
 
 .balance-free-float {
     padding: 4px;
-    border: 1px solid var(--tg-theme-bg-color, rgb(119, 119, 119)) !important;;
+    border: 1px solid rgb(119, 119, 119) !important;;
     border-radius: 4px;
     text-align: center;
     letter-spacing: 1px;
@@ -156,16 +156,16 @@ button {
 
 .card {
     background-color: var(--accent-bg-color) !important;
-    border: 1px solid var(--tg-theme-bg-color, rgb(119, 119, 119)) !important;
+    border: 1px solid rgb(119, 119, 119) !important;
 }
 
 .card-header {
-    background-color: var(--tg-theme-bg-color, rgb(119, 119, 119)) !important;
-    border-bottom: 1px solid var(--tg-theme-bg-color, rgb(119, 119, 119)) !important;
+    background-color: rgb(119, 119, 119) !important;
+    border-bottom: 1px solid rgb(119, 119, 119) !important;
 }
 
 .card-footer {
-    border-top: 1px solid var(--tg-theme-bg-color, rgb(119, 119, 119)) !important;
+    border-top: 1px solid rgb(119, 119, 119) !important;
 }
 
 .offcanvas {
