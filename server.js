@@ -26,8 +26,8 @@ const dictCurrency = JSON.parse(rawdata);
 const https = require('node:https');
 
 const options = {
-    key: fs.readFileSync('ca-key.pem'),
-    cert: fs.readFileSync('ca-cert.pem')
+    key: fs.readFileSync('195.133.1.56-key.pem'),
+    cert: fs.readFileSync('195.133.1.56.pem')
 };
 
 
