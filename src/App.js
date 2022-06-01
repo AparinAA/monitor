@@ -3,7 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import Spinner from 'react-bootstrap/Spinner';
 import {Button, Form, InputGroup, ListGroup, Card,DropdownButton, Dropdown, Offcanvas, Container, Row, Col} from 'react-bootstrap';
-import { PlusCircle, DashCircle } from 'react-bootstrap-icons';
+import { PlusCircle, DashCircle, ChevronRight } from 'react-bootstrap-icons';
 
 //округление до знака decimalPlaces после запятой
 function truncated(num, decimalPlaces) {    
@@ -30,18 +30,19 @@ class CheckPrice extends React.Component {
         const sellFTX = this.props.exchange === 'ftx' && positiveNumber(spread_1);
         const positiveSpread = positiveNumber(spread_1) ? spread_1 : (positiveNumber(spread_2) ? spread_2 : 0);
 
-        let element = <span className={ (buyOKX || buyFTX) ? 
-                                        `triger-spread-green` : 
-                                        (sellOKX || sellFTX) ? `triger-spread-red` : ``
-                                        }>
+        const spreadColor = (buyOKX || buyFTX) ? 
+                            `triger-spread-green` : 
+                            (sellOKX || sellFTX) ? `triger-spread-red` : ``
+
+        const element = <div className={"spread-value " + spreadColor}>
                             { 
                                 (buyOKX || buyFTX) ?
-                                    `Buy. Spread: ` + (positiveNumber(positiveSpread) ? `+` : ``) + positiveSpread + `%` :
+                                    `Buy: ` + (positiveNumber(positiveSpread) ? `+` : ``) + positiveSpread + `%` :
                                     (sellOKX || sellFTX) ? 
-                                        `Sell. Spread: ` + (positiveNumber(positiveSpread) ? `+` : ``) + positiveSpread + `%` :
+                                        `Sell: ` + (positiveNumber(positiveSpread) ? `+` : ``) + positiveSpread + `%` :
                                         `Not found spread`                                           
                             }
-                      </span>;
+                      </div>;
         
         return (
             <div>
@@ -122,8 +123,8 @@ class ViewExchange extends React.Component {
         let options = listCurrency.map( item => 
             <Dropdown.Item key={item} eventKey={item}>{item}</Dropdown.Item>
         )
-        const Line = () => (
-            <hr 
+        const VLine = () => (
+            <vl 
                 style={{
                     padding: 0,
                     margin: 0,
@@ -131,16 +132,23 @@ class ViewExchange extends React.Component {
             />
         );
         return (
-            <Col xs={12} sm={4} md={3} xl={2}>
-                <Card bg={'light'}>
+            <Col xs={12} sm={6} md={6} lg={4} xl={4} xxl={3}>
+                <Card>
                     <DropdownButton title={this.state.currency} onSelect={this.handleChangeCurrency} variant='secondary' size='sm'>
                         {options}
                     </DropdownButton>
                     <Card.Header><b>{this.state.currency}</b></Card.Header>
                     <Card.Body bsPrefix={'class-body-new'}>
-                        <CheckPrice exchange="okx" price={this.state.price.okx} />
-                        <Line/>
-                        <CheckPrice exchange="ftx" price={this.state.price.ftx} />
+                        <Row>
+                            <Col>
+                                <CheckPrice exchange="okx" price={this.state.price.okx} />
+                            </Col>                            
+                            <Col>
+                                <CheckPrice exchange="ftx" price={this.state.price.ftx} />
+                            </Col>
+                            
+                        </Row>
+                        
                     </Card.Body>
                     
                 </Card>
@@ -199,8 +207,8 @@ class ViewBalanceExchange extends React.Component {
         this.state = {
             balance: this.props.balance,
             currencyWithdrawal: this.props.exchange === 'ftx' ? "TON" : "USDT",
-            amount: this.props.exchange === 'ftx' ? "0" : "0",
-            spinner: 'secondary',
+            amount: this.props.exchange === 'ftx' ? "" : "",
+            spinner: '',
         }
         this.handleWithdrawal = this.handleWithdrawal.bind(this);
         this.onChangeCurWithdrawal = this.onChangeCurWithdrawal.bind(this);
@@ -251,6 +259,9 @@ class ViewBalanceExchange extends React.Component {
             if (spinner === 'spinner') {
                 return <Spinner animation='grow' />;
             } else {
+                if (spinner === 'success') {
+                    
+                }
                 return <Button type="submit" id={"withdrawal_"+this.props.exchange} size="sm" variant={spinner}>Withdrawal</Button>;
             }
         };
@@ -271,7 +282,7 @@ class ViewBalanceExchange extends React.Component {
                             <DropdownButton onSelect={this.onChangeCurWithdrawal} title={this.state.currencyWithdrawal} variant='secondary'>
                                 {listTikers}
                             </DropdownButton>
-                            <Form.Control  type="text" placeholder="Amount" value={this.state.amount} onChange={this.onChangeAmount}/>
+                            <Form.Control type="text" placeholder="Amount" value={this.state.amount} onChange={this.onChangeAmount}/>
                             {input(spinner)}
                         </InputGroup>
                     </Form>
@@ -330,10 +341,10 @@ class OfCansBalance extends React.Component {
         return (
             <div className='list-balance-exchange'>
                 
-                <Button variant="outline-secondary" onClick={this.handleOpen} size='sm'>Show balance</Button>
+                <Button onClick={this.handleOpen} size='sm' className='show-balance'><ChevronRight/>Show balance</Button>
 
                 <Offcanvas show={open} onHide={this.handleClose} backdrop={true} scroll={true}>
-                    <Offcanvas.Header closeButton>
+                    <Offcanvas.Header closeButton closeVariant={'white'}>
                         <Offcanvas.Title>Balance exchanges</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
