@@ -23,6 +23,13 @@ const secretDict_OKX = {
 
 const rawdata = fs.readFileSync('currencyInfo.json'); 
 const dictCurrency = JSON.parse(rawdata);
+const https = require('node:https');
+const fs = require('node:fs');
+
+const options = {
+    key: fs.readFileSync('ca-key.pem'),
+    cert: fs.readFileSync('ca-cert.pem')
+};
 
 
 const ftx_1 = new FTXclient(secretDict_FTX.api_key_1, secretDict_FTX.secret_key_1);
@@ -201,9 +208,9 @@ const requestListener = function (req, res) {
          
 };
 
-const server = http.createServer(requestListener);
+const server = http.createServer(options, requestListener);
 server.listen(port, host, () => {
-    console.log(`Server is running on http://${host}:${port}`);
+    console.log(`Server is running on https://${host}:${port}`);
 });
 
 /*

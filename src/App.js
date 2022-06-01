@@ -96,7 +96,7 @@ class ViewExchange extends React.Component {
 
 
     price() {
-        axios.get(`http://195.133.1.56:8090/spread?${this.state.curParams}`)
+        axios.get(`"https://195.133.1.56:8090/spread?${this.state.curParams}`)
         .then( res => {
             this.setState({price: res.data});
         })
@@ -221,7 +221,7 @@ class ViewBalanceExchange extends React.Component {
         }).toString();
         
         this.setState({spinner: 'spinner'});
-        axios.get('http://195.133.1.56:8090/withdrawal?'+params)
+        axios.get('"https://195.133.1.56:8090/withdrawal?'+params)
         .then( result => {
             if(result.data.withdrawal !== false) {
                 this.setState({spinner: "success"});
@@ -299,7 +299,7 @@ class OfCansBalance extends React.Component {
     }
     
     getReq() {
-        axios.get('http://195.133.1.56:8090/balance')
+        axios.get('"https://195.133.1.56:8090/balance')
         .then( res => {
             this.setState({balance: res.data});
         })
