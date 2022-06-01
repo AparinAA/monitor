@@ -24,7 +24,6 @@ const secretDict_OKX = {
 const rawdata = fs.readFileSync('currencyInfo.json'); 
 const dictCurrency = JSON.parse(rawdata);
 const https = require('node:https');
-const fs = require('node:fs');
 
 const options = {
     key: fs.readFileSync('ca-key.pem'),
