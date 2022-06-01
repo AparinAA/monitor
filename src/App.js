@@ -46,7 +46,7 @@ class CheckPrice extends React.Component {
         
         return (
             <div>
-                <div><b>Биржа {this.props.exchange === 'ftx' ? "FTX" : "OKEX"}</b></div>
+                <div><b>Exc. {this.props.exchange === 'ftx' ? "FTX" : "OKEX"}</b></div>
                 <div>{element}</div>
                 <div>
                     <div>Order price</div>
