@@ -13,6 +13,9 @@
     "cheerio": "^1.0.0-rc.10",
     "crypto": "^1.0.1",
     "crypto-js": "^4.1.1",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
+    "https-browserify": "^1.0.0",
     "nodemo": "^1.0.0",
     "pino": "^7.11.0",
     "puppeteer": "^13.7.0",
@@ -24,7 +27,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "HTTPS=true react-scripts start --host 0.0.0.0 --port 8091",
+    "start": "export HTTPS=true&&SSL_CRT_FILE=ca-cert.pem&&SSL_KEY_FILE=ca-key.pem react-scripts start --host 0.0.0.0 --port 8091",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
