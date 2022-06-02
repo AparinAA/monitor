@@ -33,6 +33,23 @@
             "tag": "148889632"
         }
     },
+    "SOL" : {
+        "okx": {
+            "cur": "SOL",
+            "idName": "SOL-USDT",
+            "method": "",
+            "fee": "",
+            "address": "DXd3PYGSESqMsUaPNjU9picvT3GnkXkjbnXrkggn4tZd",
+            "tag": null
+        },
+        "ftx": {
+            "cur": "SOL",
+            "idName": "SOL/USD",
+            "method": "",
+            "address": "BPyZ6UmZz5eWLuFVBFYbzoTGqdNTNp1ApgVRrqrpSt27",
+            "tag": null
+        }
+    },
     "USDT": {
         "okx": {
             "cur": "USDT",

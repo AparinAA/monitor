@@ -61,6 +61,7 @@ class CheckPrice extends React.Component {
 let listCurrency = [
     'ANC',
     'TON',
+    'SOL',
     'BTC',
     'ETH',
     'GMT',
