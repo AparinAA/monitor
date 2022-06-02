@@ -39,12 +39,17 @@ class FTXclient {
         return this.instance.get(endpoint, { params })
             .then(result => {
                 return result.data.result;
+            }, e => {
+                return Promise.reject(e);
+            })
+            .catch(e => {
+                return Promise.reject(e);
             });
     }
 
     //POST request
     postRequest(endpoint, data = {}) {
-        return this.instance.post(endpoint, data);
+        return this.instance.post(endpoint, data).catch(e => Promise.reject({"error": e}));
     }
 
     //Get balance account
@@ -52,6 +57,10 @@ class FTXclient {
     getBalance() {
         return this.getRequest('wallet/balances')
             .then( balance => {
+                if (balance?.error) {
+                    return Promise.reject(balance?.error)
+                }
+
                 return balance.map(element => {
                     return {
                         'ccy': element.coin,
@@ -61,7 +70,12 @@ class FTXclient {
 
                     }
                 })
-            });
+            }, e => {
+                return Promise.reject(e);
+            })
+            .catch(e => {
+                return Promise.reject({"error": e});
+            })
     }
 
     /*
@@ -76,11 +90,20 @@ class FTXclient {
     getMarket(market, depth = null) {
         return this.getRequest(`markets/${market}/orderbook`, { depth })
             .then(result => {
+                if (result?.error) {
+                    return Promise.reject(result?.error);
+                }
+
                 return {
                     'ask': result.asks,
                     'bid': result.bids,
                 }
-            });
+            }, e => {
+                return Promise.reject(e)
+            })
+            .catch(e => {
+                return Promise.reject({"error": e})
+            })
     }
 
     //put orders buy/sell
@@ -123,10 +146,10 @@ class FTXclient {
         }
         
         promises = orders.map( item => {
-            this.postRequest('orders', item )
+            this.postRequest('orders', item ).catch(e => Promise.reject({"error": e}));
         });
 
-        return Promise.all(promises);
+        return Promise.all(promises).catch(e => Promise.reject({"error": e}));
     }
 
     //Withdrawal from FTX to address
@@ -146,14 +169,14 @@ class FTXclient {
             "password": "123511",
             "method": method,
         }
-        return this.postRequest('wallet/withdrawals', body_withdrawal);
+        return this.postRequest('wallet/withdrawals', body_withdrawal).catch(e => Promise.reject({"error": e}));
     }
 
     //Get deposit address
     //coin - 'TONCOIN'
     //method - 'ton'
     getDepositAdrr(coin, method) {
-        return this.getRequest(`wallet/deposit_address/${coin}`, { method });
+        return this.getRequest(`wallet/deposit_address/${coin}`, { method }).catch(e => Promise.reject({"error": e}));
     }
 
 

@@ -50,7 +50,12 @@ class OKXclient {
         return this.instance.get(endpoint, { params })
             .then(result => {
                 return result.data;
-            });
+            }, e => {
+                Promise.reject(e)
+            })
+            .catch( e => {
+                Promise.reject({"error": e});
+            })
     }
 
     //POST request
@@ -63,6 +68,11 @@ class OKXclient {
     getBalance() {
         return this.getRequest('/api/v5/account/balance')
             .then( balance => {
+                
+                if(balance?.error) {
+                    return Promise.reject(balance.error)
+                }
+
                 return balance.data[0].details.map(element => {
                     return {
                         'ccy': element.ccy,
@@ -71,7 +81,10 @@ class OKXclient {
 
                     }
                 })
-            });
+            })
+            .catch( e => {
+                Promise.reject({"error": e})
+            })
     }
 
     /*Get market price with any depth < 400
@@ -85,11 +98,19 @@ class OKXclient {
     getMarket(instId, sz = null) {
         return this.getRequest(`/api/v5/market/books`, { instId, sz })
             .then(result => {
+                if(result?.error) {
+                    return Promise.reject(result?.error);
+                }
                 return {
                     'ask': result.data[0].asks.map( item => item.splice(0,2)),
                     'bid': result.data[0].bids.map( item => item.splice(0,2)),
                 }
-            });
+            }, e => {
+                return Promise.reject(e);
+            })
+            .catch(e => {
+                return Promise.reject({"error": e});
+            })
     }
 
     //put orders buy/sell
@@ -133,8 +154,7 @@ class OKXclient {
                 }
             })
         }
-
-        return this.postRequest(endpoint, order);
+        return this.postRequest(endpoint, order).catch(e => Promise.reject({"error": e}));
     }
 
     //Transfer within account
@@ -149,7 +169,7 @@ class OKXclient {
             "from": from,
             "to": to
         }
-        return this.postRequest("/api/v5/asset/transfer", body_transfer);
+        return this.postRequest("/api/v5/asset/transfer", body_transfer).catch(e => Promise.reject({"error": e}));
     }
     //Withdrawal from FTX to address
     //currency - 'TON'
@@ -168,25 +188,27 @@ class OKXclient {
             "chain": chain,
             "toAddr": address,
         }
-        return this.postRequest('/api/v5/asset/withdrawal', body_withdrawal);
+        return this.postRequest('/api/v5/asset/withdrawal', body_withdrawal).catch(e => Promise.reject({"error": e}));
     }
 
 }
 
-/*
+
 //Init secret api OKX
+/*
 const secretDict_OKX = {
-    'api_key': process.env.api_key,
     'passphrase': process.env.passphrase,
+    'api_key': process.env.api_key,
     'secret_key': process.env.secret_key,
 };
 
 const okx = new OKXclient(secretDict_OKX.api_key, secretDict_OKX.secret_key, secretDict_OKX.passphrase);
-okx.getMarket('TON-USDT',1)
-.then(res => console.info(res))
-.catch(e => console.info(e));
 
+okx.putOrders("ANC-USDT",{'buy': {'name': 'okx', 'price': { 'countOrd': 2, 'orders': [[0.1, 1], [0.11, 1]] }}, 'sell': {'name': 'okx', 'price': [[1, 1]]}})
+.then(()=> console.info("success"))
+.catch((e) => console.info(e));
 */
 module.exports = {
     OKXclient
 }
+
