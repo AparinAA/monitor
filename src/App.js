@@ -200,6 +200,7 @@ class ViewBalanceExchange extends React.Component {
             currencyWithdrawal: this.props.exchange === 'ftx' ? "TON" : "USDT",
             amount: this.props.exchange === 'ftx' ? "" : "",
             spinner: '',
+            validated: false
         }
         this.handleWithdrawal = this.handleWithdrawal.bind(this);
         this.onChangeCurWithdrawal = this.onChangeCurWithdrawal.bind(this);
@@ -215,24 +216,35 @@ class ViewBalanceExchange extends React.Component {
     }
 
     handleWithdrawal(event) {
-        const params = new URLSearchParams({
-            'ex': this.props.exchange,
-            'cur': this.state.currencyWithdrawal,
-            'sz': this.state.amount
-        }).toString();
         
-        this.setState({spinner: 'spinner'});
-        axios.get('http://195.133.1.56:8090/withdrawal?'+params)
-        .then( result => {
-            if(result.data.withdrawal !== false) {
-                this.setState({spinner: "success"});
-            } else {
+        if ((this.state.amount === "") || !Number(this.state.amount) ) {
+            event.stopPropagation();
+        } else {
+            
+            const params = new URLSearchParams({
+                'ex': this.props.exchange,
+                'cur': this.state.currencyWithdrawal,
+                'sz': this.state.amount
+            }).toString();
+            
+            this.setState({spinner: 'spinner'});
+            axios.get('http://195.133.1.56:8090/withdrawal?'+params)
+            .then( result => {
+                if(result.data.withdrawal == true) {
+                    this.setState({validated: true});
+                    this.setState({spinner: "success"});
+                } else {
+                    this.setState({spinner: "danger"});
+                }
+            }, e => {
+                this.setState({validated: false});
+            })
+            .catch(() => {
+                this.setState({validated: false});
                 this.setState({spinner: "danger"});
-            }
-        })
-        .catch(() => {
-            this.setState({spinner: "danger"});
-        });       
+            });       
+        }
+       
         event.preventDefault();
     }
 
@@ -266,12 +278,18 @@ class ViewBalanceExchange extends React.Component {
                 </ListGroup>
                 <Card.Footer>
                     Withdrawal from {this.props.exchange === 'ftx' ? "FTX" : "OKX"} to {this.props.exchange === 'ftx' ? "OKX" : "FTX"}
-                    <Form onSubmit={this.handleWithdrawal}>
-                        <InputGroup size='sm'>
+                    <Form onSubmit={this.handleWithdrawal} noValidate validated={this.state.validated}>
+                        <InputGroup size='sm' hasValidation>
                             <DropdownButton onSelect={this.onChangeCurWithdrawal} title={this.state.currencyWithdrawal} variant='secondary'>
                                 {listTikers}
                             </DropdownButton>
-                            <Form.Control type="text" placeholder="Amount" value={this.state.amount} onChange={this.onChangeAmount}/>
+                            <Form.Control
+                                required
+                                type="text"
+                                placeholder="Amount"
+                                value={this.state.amount}
+                                onChange={this.onChangeAmount}
+                            />
                             {input(spinner)}
                         </InputGroup>
                     </Form>
