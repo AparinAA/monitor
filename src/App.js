@@ -264,6 +264,9 @@ class ViewBalanceExchange extends React.Component {
         const spinner = this.state.spinner;
                 
         const input = (spinner) => {
+            if (spinner === 'spinner') {
+                return <Button type="submit" id={"withdrawal_"+this.props.exchange} size="sm">Loading...</Button>;    
+            }
             return <Button type="submit" id={"withdrawal_"+this.props.exchange} size="sm">Withdrawal</Button>;
         };
 
