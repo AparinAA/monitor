@@ -68,6 +68,7 @@ let listCurrency = [
     'JOE',
     'NEAR',
     'WAVES',
+    'AVAX',
 ]
 
 class ViewExchange extends React.Component {
@@ -200,7 +201,7 @@ class ViewBalanceExchange extends React.Component {
             currencyWithdrawal: this.props.exchange === 'ftx' ? "TON" : "USDT",
             amount: this.props.exchange === 'ftx' ? "" : "",
             spinner: '',
-            validated: false
+            validated: true
         }
         this.handleWithdrawal = this.handleWithdrawal.bind(this);
         this.onChangeCurWithdrawal = this.onChangeCurWithdrawal.bind(this);
@@ -212,15 +213,21 @@ class ViewBalanceExchange extends React.Component {
     }
     
     onChangeAmount(event) {
+        if( (event.target.value == "") || !Number(event.target.value)) {
+            this.setState({validated: false});
+        } else {
+            this.setState({validated: true});
+        }
         this.setState({amount: event.target.value});
     }
 
     handleWithdrawal(event) {
         
         if ((this.state.amount === "") || !Number(this.state.amount) ) {
+            this.setState({validated: false});
             event.stopPropagation();
         } else {
-            
+            this.setState({validated: true});
             const params = new URLSearchParams({
                 'ex': this.props.exchange,
                 'cur': this.state.currencyWithdrawal,
@@ -257,14 +264,7 @@ class ViewBalanceExchange extends React.Component {
         const spinner = this.state.spinner;
                 
         const input = (spinner) => {
-            if (spinner === 'spinner') {
-                return <Spinner animation='grow' />;
-            } else {
-                if (spinner === 'success') {
-                    
-                }
-                return <Button type="submit" id={"withdrawal_"+this.props.exchange} size="sm" variant={spinner}>Withdrawal</Button>;
-            }
+            return <Button type="submit" id={"withdrawal_"+this.props.exchange} size="sm">Withdrawal</Button>;
         };
 
         const listTikers = listCurrency.map( (item, i) => 
@@ -278,8 +278,8 @@ class ViewBalanceExchange extends React.Component {
                 </ListGroup>
                 <Card.Footer>
                     Withdrawal from {this.props.exchange === 'ftx' ? "FTX" : "OKX"} to {this.props.exchange === 'ftx' ? "OKX" : "FTX"}
-                    <Form onSubmit={this.handleWithdrawal} noValidate validated={this.state.validated}>
-                        <InputGroup size='sm' hasValidation>
+                    <Form onSubmit={this.handleWithdrawal} validated={this.state.validated}>
+                        <InputGroup size='sm'>
                             <DropdownButton onSelect={this.onChangeCurWithdrawal} title={this.state.currencyWithdrawal} variant='secondary'>
                                 {listTikers}
                             </DropdownButton>

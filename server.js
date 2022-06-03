@@ -38,7 +38,7 @@ const okx = new OKXclient(secretDict_OKX.api_key, secretDict_OKX.secret_key, sec
 //const mark = {'buy': {'name': 'ftx', 'price': { 'countOrd': 2, 'orders': [[1, 1], [1.1, 1]] }}, 'sell': {'name': 'okx', 'price': ''}}
 
 //console.info(new URLSearchParams({'ex': 'ftx', 'cur': 'TON', 'sz':2}).toString())
-const host = '195.133.1.56';//'localhost';
+const host = '195.133.1.56';//'localhost';//
 const port = 8090;
 
 const requestListener = function (req, res) {
@@ -62,7 +62,7 @@ const requestListener = function (req, res) {
                 throw "Error. Balance empty";
             }
             res.end(JSON.stringify([filterFTX,filterOKX], null, '\t'));
-        })
+        }, e => Promise.reject(e))
         .catch(() => {
             res.writeHead(200, {
                 'Access-Control-Allow-Origin' : '*',
@@ -90,7 +90,7 @@ const requestListener = function (req, res) {
                 buf1['spread'] = [spread_1, spread_2];
                 buf2['spread'] = [spread_1, spread_2];
                 res.end(JSON.stringify({'okx': buf1, 'ftx': buf2}, null, '\t'));
-            })
+            }, e => Promise.reject(e))
             .catch(() => {
                 res.writeHead(200, {
                     'Access-Control-Allow-Origin' : '*',
@@ -102,10 +102,10 @@ const requestListener = function (req, res) {
     }
     // withdrawal?ex=okx&cur=USDT&sz=2
     if(parametrsWithdrawal) {
+        
         currency = parametrsWithdrawal[0].match(/cur=[a-zA-Z0-9]+/g)[0].split('=')[1]
         amount = parametrsWithdrawal[0].match(/sz=[0-9]+/g)[0].split('=')[1];
         exchange = parametrsWithdrawal[0].match(/ex=[a-zA-Z]+/g)[0].split('=')[1];
-
         res.writeHead(200, {
             'Access-Control-Allow-Origin' : '*',
             'Access-Control-Allow-Methods': 'GET'
@@ -121,7 +121,6 @@ const requestListener = function (req, res) {
             }
             
             const availbleAmount = balance.find( item => item.ccy === dictCurrency[currency][exchange]?.name )?.avail;
-            
             if (Number(availbleAmount) > Number(amount)) {
                 const _withdrawal = exchange === 'ftx' ?
                                 ftx_1.withdrawalToAddress(
@@ -139,12 +138,13 @@ const requestListener = function (req, res) {
                                 );
                 return _withdrawal.then(() => {
                     return true;
-                }).catch(() => {
+                }, e => Promise.reject(e))
+                .catch((e) => {
                     return false;
                 })
             }
             return false;
-        })
+        }, e => Promise.reject(e))
         .then( subres => {
             if (exchange === 'okx' && subres) {
 
@@ -162,7 +162,7 @@ const requestListener = function (req, res) {
                                 );
                     
                 return withokx.then( (r) => {
-                    if (r.data.msg != '0') {
+                    if (r.data.code != '0') {
                         
                         //не получилось вывести, ждем 0.5 сек и возвращаем обратно на торговый акк
                         setTimeout(() => {
@@ -174,7 +174,7 @@ const requestListener = function (req, res) {
                             )
                             .then(() => {
                                 return false;
-                            })
+                            }, e => Promise.reject(e))
                             .catch(() => {
                                 return false;
                             });
@@ -182,21 +182,21 @@ const requestListener = function (req, res) {
                         return false;
                     }
                     return true;
-                })
+                }, e => Promise.reject(e))
                 .catch( (e) => {
                     return false;
                 });
             } else {
                 return subres;
             }
-        })
+        }, e => Promise.reject(e))
         .then(result => {
             if (result) {
                 res.end(JSON.stringify({'withdrawal': true}));
             } else {
                 res.end(JSON.stringify({'withdrawal': false}));
             }
-        })
+        }, e => Promise.reject(e))
         .catch((e) => {
             res.end(JSON.stringify({'withdrawal': false}));
         });

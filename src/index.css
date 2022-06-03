@@ -186,3 +186,14 @@ button {
 .show-balance {
     margin: 13px !important;
 }
+
+.form-control {
+    border-radius: 9px !important;
+}
+
+.form-control:active {
+    box-shadow: 2px 2px var(--accent-button-hover-color),
+                2px -2px var(--accent-button-hover-color),
+                -2px 2px var(--accent-button-hover-color),
+                -2px -2px var(--accent-button-hover-color) !important;
+}

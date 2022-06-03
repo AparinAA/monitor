@@ -35,7 +35,7 @@
     },
     "SOL" : {
         "okx": {
-            "cur": "SOL",
+            "name": "SOL",
             "idName": "SOL-USDT",
             "method": "",
             "fee": "",
@@ -43,7 +43,7 @@
             "tag": null
         },
         "ftx": {
-            "cur": "SOL",
+            "name": "SOL",
             "idName": "SOL/USD",
             "method": "",
             "address": "BPyZ6UmZz5eWLuFVBFYbzoTGqdNTNp1ApgVRrqrpSt27",
@@ -52,14 +52,14 @@
     },
     "USDT": {
         "okx": {
-            "cur": "USDT",
+            "name": "USDT",
             "method": "USDT-TRC20",
             "fee": "0.8",
             "address": "TEc85B1ASueQaNrQhyXqP6qTrdomJP3EuN",
             "tag": null
         },
         "ftx": {
-            "cur": "USDT",
+            "name": "USDT",
             "method": "trx",
             "address": "TRrYRe33KPbJDtxLPwAS3DDUazT3mCEQ55",
             "tag": null
@@ -67,62 +67,72 @@
     },
     "BTC": {
         "okx": {
-            "cur": "BTC",
+            "name": "BTC",
             "idName": "BTC-USDT"
         },
         "ftx": {
-            "cur": "BTC",
+            "name": "BTC",
             "idName": "BTC/USD"
         }
     },
     "ETH": {
         "okx": {
-            "cur": "ETH",
+            "name": "ETH",
             "idName": "ETH-USDT"
         },
         "ftx": {
-            "cur": "ETH",
+            "name": "ETH",
             "idName": "ETH/USD"
         }
     },
     "GMT": {
         "okx": {
-            "cur": "GMT",
+            "name": "GMT",
             "idName": "GMT-USDT"
         },
         "ftx": {
-            "cur": "GMT",
+            "name": "GMT",
             "idName": "GMT/USD"
         }
     },
     "JOE": {
         "okx": {
-            "cur": "JOE",
+            "name": "JOE",
             "idName": "JOE-USDT"
         },
         "ftx": {
-            "cur": "JOE",
+            "name": "JOE",
             "idName": "JOE/USD"
         }
     },
     "NEAR": {
         "okx": {
-            "cur": "NEAR",
+            "name": "NEAR",
             "idName": "NEAR-USDT"
         },
         "ftx": {
-            "cur": "NEAR",
+            "name": "NEAR",
             "idName": "NEAR/USD"
         }
     },
     "WAVES": {
         "okx": {
-            "cur": "WAVES",
+            "name": "WAVES",
             "idName": "WAVES-USDT"
         },
         "ftx": {
-            "cur": "WAVES",
+            "name": "WAVES",
             "idName": "WAVES/USD"
+        }
+    },
+    "AVAX": {
+        "okx": {
+            "name": "AVAX",
+            "idName": "AVAX-USDT"
+        },
+        "ftx": {
+            "name": "AVAX",
+            "idName": "AVAX/USD"
         }
     }
 }
