@@ -126,22 +126,24 @@ hr {
 }
 
 .btn {
-    box-sizing: border-box;
-    background-color:  var(--accent-button-color) !important;
-    color: var(--accent-color) !important;
-    border: 1px solid var(--accent-button-color) !important;
     padding: 5px 15px !important;
     text-align: center;
     justify-items: center;
 }
+.btn-primary, .btn-secondary {
+    box-sizing: border-box;
+    background-color:  var(--accent-button-color) !important;
+    color: var(--accent-color) !important;
+    border: 1px solid var(--accent-button-color) !important;
+}
 
-.btn:hover {
+.btn-primary:hover, .btn-secondary:hover {
     background-color: var(--accent-button-hover-color) !important;
     color: var(--accent-hover-color) !important;
     border: 1px solid var(--accent-button-hover-color) !important;
 }
 
-.btn:active {
+.btn-primary:active {
     transform: scale(0.9);
 }
 
@@ -152,6 +154,23 @@ button {
     border-radius: 6px !important;
     margin: 0 5px !important;
 }
+
+.dropdown-item {
+    background-color: var(--accent-button-hover-color) !important;
+    color: var(--accent-hover-color) !important;
+    border-radius: 5px;
+}
+
+.dropdown-item:hover {
+    background-color: var(--accent-button-color) !important;
+    color: var(--accent-color) !important;
+}
+.dropdown-menu {
+    background-color: var(--accent-button-hover-color) !important;
+    color: var(--accent-hover-color) !important;
+    border-radius: 9px !important;
+}
+
 
 .col {
     margin: 0 !important;

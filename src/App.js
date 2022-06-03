@@ -1,7 +1,6 @@
 import './App.css';
 import React from 'react';
 import axios from 'axios';
-import Spinner from 'react-bootstrap/Spinner';
 import {Button, Form, InputGroup, ListGroup, Card,DropdownButton, Dropdown, Offcanvas, Container, Row, Col} from 'react-bootstrap';
 import { PlusCircle, DashCircle, ChevronRight } from 'react-bootstrap-icons';
 
@@ -200,8 +199,8 @@ class ViewBalanceExchange extends React.Component {
             balance: this.props.balance,
             currencyWithdrawal: this.props.exchange === 'ftx' ? "TON" : "USDT",
             amount: this.props.exchange === 'ftx' ? "" : "",
-            spinner: '',
-            validated: true
+            spinner: 'primary',
+            validated: false
         }
         this.handleWithdrawal = this.handleWithdrawal.bind(this);
         this.onChangeCurWithdrawal = this.onChangeCurWithdrawal.bind(this);
@@ -213,7 +212,7 @@ class ViewBalanceExchange extends React.Component {
     }
     
     onChangeAmount(event) {
-        if( (event.target.value == "") || !Number(event.target.value)) {
+        if( (event.target.value === "") || !Number(event.target.value)) {
             this.setState({validated: false});
         } else {
             this.setState({validated: true});
@@ -227,7 +226,6 @@ class ViewBalanceExchange extends React.Component {
             this.setState({validated: false});
             event.stopPropagation();
         } else {
-            this.setState({validated: true});
             const params = new URLSearchParams({
                 'ex': this.props.exchange,
                 'cur': this.state.currencyWithdrawal,
@@ -237,14 +235,17 @@ class ViewBalanceExchange extends React.Component {
             this.setState({spinner: 'spinner'});
             axios.get('http://195.133.1.56:8090/withdrawal?'+params)
             .then( result => {
-                if(result.data.withdrawal == true) {
+                console.info(result.data.withdrawal === true);
+                if(result.data.withdrawal) {
                     this.setState({validated: true});
                     this.setState({spinner: "success"});
                 } else {
+                    this.setState({validated: false});  
                     this.setState({spinner: "danger"});
                 }
-            }, e => {
+            }, () => {
                 this.setState({validated: false});
+                this.setState({spinner: "danger"});
             })
             .catch(() => {
                 this.setState({validated: false});
@@ -267,7 +268,7 @@ class ViewBalanceExchange extends React.Component {
             if (spinner === 'spinner') {
                 return <Button type="submit" id={"withdrawal_"+this.props.exchange} size="sm">Loading...</Button>;    
             }
-            return <Button type="submit" id={"withdrawal_"+this.props.exchange} size="sm">Withdrawal</Button>;
+            return <Button type="submit" id={"withdrawal_"+this.props.exchange} size="sm" variant={spinner}>Withdrawal</Button>;
         };
 
         const listTikers = listCurrency.map( (item, i) => 
@@ -281,13 +282,15 @@ class ViewBalanceExchange extends React.Component {
                 </ListGroup>
                 <Card.Footer>
                     Withdrawal from {this.props.exchange === 'ftx' ? "FTX" : "OKX"} to {this.props.exchange === 'ftx' ? "OKX" : "FTX"}
-                    <Form onSubmit={this.handleWithdrawal} validated={this.state.validated}>
+                    <Form onSubmit={this.handleWithdrawal}>
                         <InputGroup size='sm'>
                             <DropdownButton onSelect={this.onChangeCurWithdrawal} title={this.state.currencyWithdrawal} variant='secondary'>
+                                <Dropdown.Item eventKey={"USDT"} key={"USDT0-1"}>USDT</Dropdown.Item>
                                 {listTikers}
                             </DropdownButton>
                             <Form.Control
                                 required
+                                isValid={this.state.validated}
                                 type="text"
                                 placeholder="Amount"
                                 value={this.state.amount}
