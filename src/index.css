@@ -216,3 +216,10 @@ button {
                 -2px 2px var(--accent-button-hover-color),
                 -2px -2px var(--accent-button-hover-color) !important;
 }
+
+.input-group .dropdown-toggle {
+    overflow: hidden;
+    flex-basis: 100px !important;
+	flex-grow: 0 !important;
+	flex-shrink: 0 !important;
+}
