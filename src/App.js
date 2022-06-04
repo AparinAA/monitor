@@ -68,6 +68,7 @@ let listCurrency = [
     'NEAR',
     'WAVES',
     'AVAX',
+    'TRX'
 ]
 
 class ViewExchange extends React.Component {

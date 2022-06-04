@@ -134,5 +134,20 @@
             "name": "AVAX",
             "idName": "AVAX/USD"
         }
+    },
+    "TRX": {
+        "okx": {
+            "name": "TRX",
+            "idName": "TRX-USDT",
+            "method": "TRX-TRON",
+            "fee": "0.8",
+            "address": "TRrYRe33KPbJDtxLPwAS3DDUazT3mCEQ55"
+        },
+        "ftx": {
+            "name": "TRX",
+            "idName": "TRX/USD",
+            "method": "trx",
+            "address": "TEc85B1ASueQaNrQhyXqP6qTrdomJP3EuN"
+        }
     }
 }
