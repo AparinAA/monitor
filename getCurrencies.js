@@ -22,8 +22,6 @@ const ftx = new FTXclient(secretDict_FTX.api_key_1, secretDict_FTX.secret_key_1)
 const okx = new OKXclient(secretDict_OKX.api_key, secretDict_OKX.secret_key, secretDict_OKX.passphrase);
 */
 
-const tickersAll = fs.readFileSync('tickers.json'); 
-
 function culcSpread(ex1, ex2) {
     if (!ex1?.ask || !ex2?.bid) {
         return false;
