@@ -1,0 +1,473 @@
+{ 
+    "tickers": 
+        [
+            {
+            "nameFTX": "1INCH",
+            "FTX": "1INCH/USD",
+            "OKX": "1INCH-USDT",
+            "nameOKX": "1INCH"
+            },
+            {
+            "nameFTX": "AAVE",
+            "FTX": "AAVE/USD",
+            "OKX": "AAVE-USDT",
+            "nameOKX": "AAVE"
+            },
+            {
+            "nameFTX": "ALGO",
+            "FTX": "ALGO/USD",
+            "OKX": "ALGO-USDT",
+            "nameOKX": "ALGO"
+            },
+            {
+            "nameFTX": "ALPHA",
+            "FTX": "ALPHA/USD",
+            "OKX": "ALPHA-USDT",
+            "nameOKX": "ALPHA"
+            },
+            {
+            "nameFTX": "ANC",
+            "FTX": "ANC/USD",
+            "OKX": "ANC-USDT",
+            "nameOKX": "ANC"
+            },
+            {
+            "nameFTX": "APE",
+            "FTX": "APE/USD",
+            "OKX": "APE-USDT",
+            "nameOKX": "APE"
+            },
+            {
+            "nameFTX": "ATOM",
+            "FTX": "ATOM/USD",
+            "OKX": "ATOM-USDT",
+            "nameOKX": "ATOM"
+            },
+            {
+            "nameFTX": "AVAX",
+            "FTX": "AVAX/USD",
+            "OKX": "AVAX-USDT",
+            "nameOKX": "AVAX"
+            },
+            {
+            "nameFTX": "AXS",
+            "FTX": "AXS/USD",
+            "OKX": "AXS-USDT",
+            "nameOKX": "AXS"
+            },
+            {
+            "nameFTX": "BADGER",
+            "FTX": "BADGER/USD",
+            "OKX": "BADGER-USDT",
+            "nameOKX": "BADGER"
+            },
+            {
+            "nameFTX": "BAND",
+            "FTX": "BAND/USD",
+            "OKX": "BAND-USDT",
+            "nameOKX": "BAND"
+            },
+            {
+            "nameFTX": "BAT",
+            "FTX": "BAT/USD",
+            "OKX": "BAT-USDT",
+            "nameOKX": "BAT"
+            },
+            {
+            "nameFTX": "BCH",
+            "FTX": "BCH/USD",
+            "OKX": "BCH-USDT",
+            "nameOKX": "BCH"
+            },
+            {
+            "nameFTX": "BICO",
+            "FTX": "BICO/USD",
+            "OKX": "BICO-USDT",
+            "nameOKX": "BICO"
+            },
+            {
+            "nameFTX": "BNT",
+            "FTX": "BNT/USD",
+            "OKX": "BNT-USDT",
+            "nameOKX": "BNT"
+            },
+            {
+            "nameFTX": "BTC",
+            "FTX": "BTC/USD",
+            "OKX": "BTC-USDT",
+            "nameOKX": "BTC"
+            },
+            {
+            "nameFTX": "CEL",
+            "FTX": "CEL/USD",
+            "OKX": "CEL-USDT",
+            "nameOKX": "CEL"
+            },
+            {
+            "nameFTX": "CHZ",
+            "FTX": "CHZ/USD",
+            "OKX": "CHZ-USDT",
+            "nameOKX": "CHZ"
+            },
+            {
+            "nameFTX": "COMP",
+            "FTX": "COMP/USD",
+            "OKX": "COMP-USDT",
+            "nameOKX": "COMP"
+            },
+            {
+            "nameFTX": "CONV",
+            "FTX": "CONV/USD",
+            "OKX": "CONV-USDT",
+            "nameOKX": "CONV"
+            },
+            {
+            "nameFTX": "CQT",
+            "FTX": "CQT/USD",
+            "OKX": "CQT-USDT",
+            "nameOKX": "CQT"
+            },
+            {
+            "nameFTX": "CRO",
+            "FTX": "CRO/USD",
+            "OKX": "CRO-USDT",
+            "nameOKX": "CRO"
+            },
+            {
+            "nameFTX": "CRV",
+            "FTX": "CRV/USD",
+            "OKX": "CRV-USDT",
+            "nameOKX": "CRV"
+            },
+            {
+            "nameFTX": "CVX",
+            "FTX": "CVX/USD",
+            "OKX": "CVX-USDT",
+            "nameOKX": "CVX"
+            },
+            {
+            "nameFTX": "DAI",
+            "FTX": "DAI/USD",
+            "OKX": "DAI-USDT",
+            "nameOKX": "DAI"
+            },
+            {
+            "nameFTX": "DOGE",
+            "FTX": "DOGE/USD",
+            "OKX": "DOGE-USDT",
+            "nameOKX": "DOGE"
+            },
+            {
+            "nameFTX": "DOT",
+            "FTX": "DOT/USD",
+            "OKX": "DOT-USDT",
+            "nameOKX": "DOT"
+            },
+            {
+            "nameFTX": "DYDX",
+            "FTX": "DYDX/USD",
+            "OKX": "DYDX-USDT",
+            "nameOKX": "DYDX"
+            },
+            {
+            "nameFTX": "ENJ",
+            "FTX": "ENJ/USD",
+            "OKX": "ENJ-USDT",
+            "nameOKX": "ENJ"
+            },
+            {
+            "nameFTX": "ENS",
+            "FTX": "ENS/USD",
+            "OKX": "ENS-USDT",
+            "nameOKX": "ENS"
+            },
+            {
+            "nameFTX": "ETH",
+            "FTX": "ETH/USD",
+            "OKX": "ETH-USDT",
+            "nameOKX": "ETH"
+            },
+            {
+            "nameFTX": "FTM",
+            "FTX": "FTM/USD",
+            "OKX": "FTM-USDT",
+            "nameOKX": "FTM"
+            },
+            {
+            "nameFTX": "GALA",
+            "FTX": "GALA/USD",
+            "OKX": "GALA-USDT",
+            "nameOKX": "GALA"
+            },
+            {
+            "nameFTX": "GARI",
+            "FTX": "GARI/USD",
+            "OKX": "GARI-USDT",
+            "nameOKX": "GARI"
+            },
+            {
+            "nameFTX": "GMT",
+            "FTX": "GMT/USD",
+            "OKX": "GMT-USDT",
+            "nameOKX": "GMT"
+            },
+            {
+            "nameFTX": "GODS",
+            "FTX": "GODS/USD",
+            "OKX": "GODS-USDT",
+            "nameOKX": "GODS"
+            },
+            {
+            "nameFTX": "GOG",
+            "FTX": "GOG/USD",
+            "OKX": "GOG-USDT",
+            "nameOKX": "GOG"
+            },
+            {
+            "nameFTX": "GRT",
+            "FTX": "GRT/USD",
+            "OKX": "GRT-USDT",
+            "nameOKX": "GRT"
+            },
+            {
+            "nameFTX": "IMX",
+            "FTX": "IMX/USD",
+            "OKX": "IMX-USDT",
+            "nameOKX": "IMX"
+            },
+            {
+            "nameFTX": "JOE",
+            "FTX": "JOE/USD",
+            "OKX": "JOE-USDT",
+            "nameOKX": "JOE"
+            },
+            {
+            "nameFTX": "KNC",
+            "FTX": "KNC/USD",
+            "OKX": "KNC-USDT",
+            "nameOKX": "KNC"
+            },
+            {
+            "nameFTX": "LEO",
+            "FTX": "LEO/USD",
+            "OKX": "LEO-USDT",
+            "nameOKX": "LEO"
+            },
+            {
+            "nameFTX": "LINK",
+            "FTX": "LINK/USD",
+            "OKX": "LINK-USDT",
+            "nameOKX": "LINK"
+            },
+            {
+            "nameFTX": "LOOKS",
+            "FTX": "LOOKS/USD",
+            "OKX": "LOOKS-USDT",
+            "nameOKX": "LOOKS"
+            },
+            {
+            "nameFTX": "LRC",
+            "FTX": "LRC/USD",
+            "OKX": "LRC-USDT",
+            "nameOKX": "LRC"
+            },
+            {
+            "nameFTX": "LTC",
+            "FTX": "LTC/USD",
+            "OKX": "LTC-USDT",
+            "nameOKX": "LTC"
+            },
+            {
+            "nameFTX": "MANA",
+            "FTX": "MANA/USD",
+            "OKX": "MANA-USDT",
+            "nameOKX": "MANA"
+            },
+            {
+            "nameFTX": "MATIC",
+            "FTX": "MATIC/USD",
+            "OKX": "MATIC-USDT",
+            "nameOKX": "MATIC"
+            },
+            {
+            "nameFTX": "MKR",
+            "FTX": "MKR/USD",
+            "OKX": "MKR-USDT",
+            "nameOKX": "MKR"
+            },
+            {
+            "nameFTX": "NEAR",
+            "FTX": "NEAR/USD",
+            "OKX": "NEAR-USDT",
+            "nameOKX": "NEAR"
+            },
+            {
+            "nameFTX": "OMG",
+            "FTX": "OMG/USD",
+            "OKX": "OMG-USDT",
+            "nameOKX": "OMG"
+            },
+            {
+            "nameFTX": "ORBS",
+            "FTX": "ORBS/USD",
+            "OKX": "ORBS-USDT",
+            "nameOKX": "ORBS"
+            },
+            {
+            "nameFTX": "PERP",
+            "FTX": "PERP/USD",
+            "OKX": "PERP-USDT",
+            "nameOKX": "PERP"
+            },
+            {
+            "nameFTX": "RAY",
+            "FTX": "RAY/USD",
+            "OKX": "RAY-USDT",
+            "nameOKX": "RAY"
+            },
+            {
+            "nameFTX": "REN",
+            "FTX": "REN/USD",
+            "OKX": "REN-USDT",
+            "nameOKX": "REN"
+            },
+            {
+            "nameFTX": "RSR",
+            "FTX": "RSR/USD",
+            "OKX": "RSR-USDT",
+            "nameOKX": "RSR"
+            },
+            {
+            "nameFTX": "SAND",
+            "FTX": "SAND/USD",
+            "OKX": "SAND-USDT",
+            "nameOKX": "SAND"
+            },
+            {
+            "nameFTX": "SHIB",
+            "FTX": "SHIB/USD",
+            "OKX": "SHIB-USDT",
+            "nameOKX": "SHIB"
+            },
+            {
+            "nameFTX": "SKL",
+            "FTX": "SKL/USD",
+            "OKX": "SKL-USDT",
+            "nameOKX": "SKL"
+            },
+            {
+            "nameFTX": "SLP",
+            "FTX": "SLP/USD",
+            "OKX": "SLP-USDT",
+            "nameOKX": "SLP"
+            },
+            {
+            "nameFTX": "SNX",
+            "FTX": "SNX/USD",
+            "OKX": "SNX-USDT",
+            "nameOKX": "SNX"
+            },
+            {
+            "nameFTX": "SOL",
+            "FTX": "SOL/USD",
+            "OKX": "SOL-USDT",
+            "nameOKX": "SOL"
+            },
+            {
+            "nameFTX": "SOS",
+            "FTX": "SOS/USD",
+            "OKX": "SOS-USDT",
+            "nameOKX": "SOS"
+            },
+            {
+            "nameFTX": "SPELL",
+            "FTX": "SPELL/USD",
+            "OKX": "SPELL-USDT",
+            "nameOKX": "SPELL"
+            },
+            {
+            "nameFTX": "SRM",
+            "FTX": "SRM/USD",
+            "OKX": "SRM-USDT",
+            "nameOKX": "SRM"
+            },
+            {
+            "nameFTX": "SUSHI",
+            "FTX": "SUSHI/USD",
+            "OKX": "SUSHI-USDT",
+            "nameOKX": "SUSHI"
+            },
+            {
+            "nameFTX": "TONCOIN",
+            "FTX": "TONCOIN/USD",
+            "OKX": "TON-USDT",
+            "nameOKX": "TON"
+            },
+            {
+            "nameFTX": "TRX",
+            "FTX": "TRX/USD",
+            "OKX": "TRX-USDT",
+            "nameOKX": "TRX"
+            },
+            {
+            "nameFTX": "UMEE",
+            "FTX": "UMEE/USD",
+            "OKX": "UMEE-USDT",
+            "nameOKX": "UMEE"
+            },
+            {
+            "nameFTX": "UNI",
+            "FTX": "UNI/USD",
+            "OKX": "UNI-USDT",
+            "nameOKX": "UNI"
+            },
+            {
+            "nameFTX": "WAVES",
+            "FTX": "WAVES/USD",
+            "OKX": "WAVES-USDT",
+            "nameOKX": "WAVES"
+            },
+            {
+            "nameFTX": "WBTC",
+            "FTX": "WBTC/USD",
+            "OKX": "WBTC-USDT",
+            "nameOKX": "WBTC"
+            },
+            {
+            "nameFTX": "XRP",
+            "FTX": "XRP/USD",
+            "OKX": "XRP-USDT",
+            "nameOKX": "XRP"
+            },
+            {
+            "nameFTX": "YFI",
+            "FTX": "YFI/USD",
+            "OKX": "YFI-USDT",
+            "nameOKX": "YFI"
+            },
+            {
+            "nameFTX": "YFII",
+            "FTX": "YFII/USD",
+            "OKX": "YFII-USDT",
+            "nameOKX": "YFII"
+            },
+            {
+            "nameFTX": "YGG",
+            "FTX": "YGG/USD",
+            "OKX": "YGG-USDT",
+            "nameOKX": "YGG"
+            },
+            {
+            "nameFTX": "ZRX",
+            "FTX": "ZRX/USD",
+            "OKX": "ZRX-USDT",
+            "nameOKX": "ZRX"
+            },
+            {
+            "nameFTX": "OKB",
+            "FTX": "OKB/USD",
+            "OKX": "OKB-USDT",
+            "nameOKX": "OKB"
+            }
+        ]
+}

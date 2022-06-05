@@ -1,8 +1,8 @@
 import './App.css';
 import React from 'react';
 import axios from 'axios';
-import {Button, Form, InputGroup, ListGroup, Card,DropdownButton, Dropdown, Offcanvas, Container, Row, Col} from 'react-bootstrap';
-import { PlusCircle, DashCircle, ChevronRight } from 'react-bootstrap-icons';
+import {Button, Form, InputGroup, ListGroup, Card,DropdownButton, Dropdown, Offcanvas, Container, Row, Col, Tooltip, OverlayTrigger, Spinner} from 'react-bootstrap';
+import { ArrowCounterclockwise, ChevronRight } from 'react-bootstrap-icons';
 
 //округление до знака decimalPlaces после запятой
 function truncated(num, decimalPlaces) {    
@@ -75,21 +75,22 @@ class ViewExchange extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currency: "ANC",
+            currency: this.props?.currency?.name || "ANC",
             price: {
-                'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},
-                'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}
+                'okx': this.props?.currency?.okx || {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},
+                'ftx': this.props?.currency?.ftx || {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}
             },
-            curParams: new URLSearchParams({'cur': "ANC"})
+            curParams: new URLSearchParams({'cur': this.props?.currency?.name || "ANC"}),
         }
-        this.handleChangeCurrency = this.handleChangeCurrency.bind(this);
+        //this.handleChangeCurrency = this.handleChangeCurrency.bind(this);
     }
 
+    /*
     componentDidMount() {
         this.timeId = setInterval(
             () => this.price(),
             1000
-        );        
+        );
     }
 
     componentWillUnmount() {
@@ -109,26 +110,28 @@ class ViewExchange extends React.Component {
             }
         }));
     }
-
-
+    
     handleChangeCurrency(event) {
         this.setState({
             currency: event,
             curParams: new URLSearchParams({'cur': event})
         });
     }
-
+    */
     render() {
+        /*
         let options = listCurrency.map( item => 
             <Dropdown.Item key={item} eventKey={item}>{item}</Dropdown.Item>
         )
         
+        
+        <DropdownButton title={this.state.currency} onSelect={this.handleChangeCurrency} variant='secondary' size='sm'>
+            {options}
+        </DropdownButton>
+        */
         return (
             <Col xs={12} sm={6} md={6} lg={4} xl={4} xxl={3}>
                 <Card>
-                    <DropdownButton title={this.state.currency} onSelect={this.handleChangeCurrency} variant='secondary' size='sm'>
-                        {options}
-                    </DropdownButton>
                     <Card.Header><b>{this.state.currency}</b></Card.Header>
                     <Card.Body bsPrefix={'class-body-new'}>
                         <Row>
@@ -155,10 +158,55 @@ class AddScan extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            loading: false,
             countScan: 1,
+            allTickets: [{'name': '', 'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}}]
         }
-        this.AddScanEvent = this.AddScanEvent.bind(this);
-        this.DeleteScanEvent = this.DeleteScanEvent.bind(this);
+        //this.AddScanEvent = this.AddScanEvent.bind(this);
+        //this.DeleteScanEvent = this.DeleteScanEvent.bind(this);
+        this.RefreshInfoSpreads = this.RefreshInfoSpreads.bind(this);
+    }
+
+
+    componentDidMount() {
+        this.timeIdAllCheckPrice();
+        /*
+        this.timeIdAllCheckPriceId = setInterval(
+            () => this.timeIdAllCheckPrice(),
+            15000,
+        )*/
+    }
+    /*
+    componentWillUnmount() {
+        clearInterval(this.timeIdAllCheckPriceId);
+    }
+    */
+
+    timeIdAllCheckPrice() {
+        this.setState({loading: true});
+        axios.get(`http://195.133.1.56:8090/allspread`)
+        .then( res => {
+            this.setState({
+                allTickets: res.data,
+                loading: false
+            });
+        })
+        .catch((e) => {
+            this.setState({
+                allTickets: [
+                    {
+                        'name': '',
+                        'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},
+                        'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}
+                    }
+                ],
+                loading: false
+            })
+        });
+    }
+
+    RefreshInfoSpreads() {
+        this.timeIdAllCheckPrice();
     }
 
     AddScanEvent() {
@@ -174,18 +222,49 @@ class AddScan extends React.Component {
     }
 
     render() {
-        let tableScan = [];
+        //let tableScan = [];
+        let tableScanAll = [];
+
+        this.state.allTickets.forEach( item => {
+            tableScanAll.push(<ViewExchange key={"key" + item.name} currency={item}/>)
+        });
+
+        const renderTooltip = (props) => (
+            <Tooltip id="button-tooltip" {...props}>
+                Refresh once every 15 sec
+            </Tooltip>
+        );
+
+        const spinnerOrButtron = () => {
+            if (this.state.loading) {
+                return  <Spinner animation="border" aria-hidden="true" size='sm'/>
+            }
+            return <b><ArrowCounterclockwise /></b>
+        }
+        /*
         for (let i = 0; i < this.state.countScan; i++) {
             tableScan.push(<ViewExchange key={i}/>);
         }
+        <Col>
+            <Button onClick={this.AddScanEvent} size='sm' style={{margin: "5px 5px 5px 0"}}> <b><PlusCircle size={12}/></b> Add </Button>
+            <Button onClick={this.DeleteScanEvent} size='sm' style={{margin: "5px 5px 5px 0"}}> <b><DashCircle size={12}/></b> Delete</Button>
+        </Col>
+        */
         return (
             <Container className='table-scaner' fluid={true}>
-                    <Col>
-                        <Button onClick={this.AddScanEvent} size='sm' style={{margin: "5px 5px 5px 0"}}> <b><PlusCircle size={12}/></b> Add </Button>
-                        <Button onClick={this.DeleteScanEvent} size='sm' style={{margin: "5px 5px 5px 0"}}> <b><DashCircle size={12}/></b> Delete</Button>
-                    </Col>
+                    <OverlayTrigger
+                        placement="right"
+                        delay={{ show: 250, hide: 400 }}
+                        overlay={renderTooltip}
+                        hide={this.state.loading}
+                    >
+                        <Button onClick={this.RefreshInfoSpreads} size='sm' style={{margin: "5px 5px 5px 0"}}>
+                           {spinnerOrButtron()}
+                        </Button>
+                    </OverlayTrigger>
+                    
                     <Row>
-                        {tableScan}
+                        {tableScanAll}
                     </Row>
             </Container>
             

@@ -4,6 +4,7 @@ const axios = require('axios');
 const {FTXclient} = require('./FTXclient');
 const {OKXclient} = require('./OKXclient');
 const fs = require('fs'); 
+const {promiseTickersWithSpread} = require('./getCurrencies');
 
 const secretDict_FTX = {
     'api_key_1': process.env.ftx_api_key_1,
@@ -21,7 +22,8 @@ const secretDict_OKX = {
 
 
 
-const rawdata = fs.readFileSync('currencyInfo.json'); 
+const rawdata = fs.readFileSync('currencyInfo.json');
+const tickersAll = fs.readFileSync('tickers1.json', {"encoding": "utf-8"}); 
 const dictCurrency = JSON.parse(rawdata);
 const https = require('node:https');
 
@@ -38,17 +40,53 @@ const okx = new OKXclient(secretDict_OKX.api_key, secretDict_OKX.secret_key, sec
 //const mark = {'buy': {'name': 'ftx', 'price': { 'countOrd': 2, 'orders': [[1, 1], [1.1, 1]] }}, 'sell': {'name': 'okx', 'price': ''}}
 
 //console.info(new URLSearchParams({'ex': 'ftx', 'cur': 'TON', 'sz':2}).toString())
-const host = '195.133.1.56';//'localhost';//
+const host = '195.133.1.56';//'localhost';//;;//
 const port = 8090;
+
+let allSpreadJson = [{'name': '', 'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}}];
+const nsscrySpread = 0.1;
+promiseTickersWithSpread(okx, ftx_1, JSON.parse(tickersAll), nsscrySpread)
+.then(response => {
+    allSpreadJson = response
+}, e => {
+    console.info("error allspread", e);
+    return Promise.reject(e);
+})
+.catch( e => {
+    console.info("error 2 allspread");
+    allSpreadJson = [{'name': '', 'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}}];
+});
+
+setInterval( () => {
+    promiseTickersWithSpread(okx, ftx_1, JSON.parse(tickersAll), nsscrySpread)
+    .then(response => {
+        allSpreadJson = response
+    }, e => {
+        console.info("error allspread", e);
+        return Promise.reject(e);
+    })
+    .catch( e => {
+        console.info("error 2 allspread");
+        allSpreadJson = [{'name': '', 'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}}];
+    });
+}, 15000)
 
 const requestListener = function (req, res) {
     res.setHeader("Content-Type", "application/json");
     const parametrsSpread = req.url.match(/(\/spread\?cur=[a-zA-Z0-9]+)/g);
     const parametrsWithdrawal = req.url.match(/(\/withdrawal\?ex=[a-zA-Z]+&cur=[a-zA-Z0-9]+&sz=[0-9]+)/g);
-
+    
     let currency;
     let amount;
     let exchange;
+    if (req.url === '/allspread') {
+        res.writeHead(200, {
+            'Access-Control-Allow-Origin' : '*',
+            'Access-Control-Allow-Methods': 'GET'
+        });
+        res.end(JSON.stringify(allSpreadJson, null, '\t'));
+    }
+
     if (req.url === '/balance') {
         Promise.all([ftx_1.getBalance(), okx.getBalance()])
         .then(balance => {
@@ -211,8 +249,3 @@ const server = http.createServer(requestListener);
 server.listen(port, host, () => {
     console.log(`Server is running on http://${host}:${port}`);
 });
-
-/*
-ftx_api_key=gX2ts8O9WPq_1r-0ykDnQYATeowYce4O4DS-AJ7n
-ftx_api_secret=-qHyMYGDoYCZ7X7Cr7U3CF1ss76trX9vq2e6Hh-K
-*/
