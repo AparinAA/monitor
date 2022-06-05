@@ -44,7 +44,7 @@ const host = '195.133.1.56';//'localhost';//;;//
 const port = 8090;
 
 let allSpreadJson = [{'name': '', 'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}}];
-const nsscrySpread = 0.1;
+const nsscrySpread = 0.5;
 promiseTickersWithSpread(okx, ftx_1, JSON.parse(tickersAll), nsscrySpread)
 .then(response => {
     allSpreadJson = response
