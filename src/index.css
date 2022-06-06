@@ -223,3 +223,10 @@ button {
 	flex-grow: 0 !important;
 	flex-shrink: 0 !important;
 }
+
+.not-found-window {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    text-align: center;
+}

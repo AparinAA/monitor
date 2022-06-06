@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import axios from 'axios';
-import {Button, Form, InputGroup, ListGroup, Card,DropdownButton, Dropdown, Offcanvas, Container, Row, Col, Tooltip, OverlayTrigger, Spinner} from 'react-bootstrap';
+import {Button, Form, InputGroup, ListGroup, Card,DropdownButton, Dropdown, Offcanvas, Container, Row, Col, Spinner} from 'react-bootstrap';
 import { ArrowCounterclockwise, ChevronRight } from 'react-bootstrap-icons';
 
 //округление до знака decimalPlaces после запятой
@@ -225,21 +225,30 @@ class AddScan extends React.Component {
         //let tableScan = [];
         let tableScanAll = [];
 
+        
         this.state.allTickets.forEach( item => {
             tableScanAll.push(<ViewExchange key={"key" + item.name} currency={item}/>)
         });
 
-        const renderTooltip = (props) => (
-            <Tooltip id="button-tooltip" {...props}>
-                Refresh once every 15 sec
-            </Tooltip>
+        const foundScan = tableScanAll.length === 0 ?
+                        <div className="not-found-window">
+                            <span>
+                                Not found cryptocurrencies and pairs exchange with spread 😔  Repeat refreshed for check spreads
+                            </span>
+                        </div> :
+                        tableScanAll;
+
+        const renderTooltip = () => (
+            <span>
+                Refresh available once every 15 sec
+            </span>
         );
 
         const spinnerOrButtron = () => {
             if (this.state.loading) {
                 return  <Spinner animation="border" aria-hidden="true" size='sm'/>
             }
-            return <b><ArrowCounterclockwise /></b>
+            return <b><ArrowCounterclockwise/></b>
         }
         /*
         for (let i = 0; i < this.state.countScan; i++) {
@@ -252,19 +261,13 @@ class AddScan extends React.Component {
         */
         return (
             <Container className='table-scaner' fluid={true}>
-                    <OverlayTrigger
-                        placement="right"
-                        delay={{ show: 250, hide: 400 }}
-                        overlay={renderTooltip}
-                        hide={this.state.loading}
-                    >
-                        <Button onClick={this.RefreshInfoSpreads} size='sm' style={{margin: "5px 5px 5px 0"}}>
-                           {spinnerOrButtron()}
-                        </Button>
-                    </OverlayTrigger>
                     
+                    <Button onClick={this.RefreshInfoSpreads} size='sm' style={{margin: "5px 5px 5px 0"}}>
+                        {spinnerOrButtron()}
+                    </Button>
+                    {renderTooltip()}
                     <Row>
-                        {tableScanAll}
+                        {foundScan}
                     </Row>
             </Container>
             
