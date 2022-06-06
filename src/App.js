@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import axios from 'axios';
-import {Button, Form, InputGroup, ListGroup, Card,DropdownButton, Dropdown, Offcanvas, Container, Row, Col, Spinner} from 'react-bootstrap';
+import {Button, Form, InputGroup, ListGroup, Card,DropdownButton, Dropdown, Offcanvas, Container, Row, Col, Spinner, Stack} from 'react-bootstrap';
 import { ArrowCounterclockwise, ChevronRight } from 'react-bootstrap-icons';
 
 //округление до знака decimalPlaces после запятой
@@ -14,11 +14,31 @@ function positiveNumber(number) {
     return number > 0.00000000000000001;
 }
 
+function sortData(data, sortType) {
+    if(Number(sortType) === 1) {
+        return data.sort( (prev,next) => {
+            const spreadMaxNext = next.spread[0] > next.spread[1] ? next.spread[0] : next.spread[1]
+            const spreadMaxPrev = prev.spread[0] > prev.spread[1] ? prev.spread[0] : prev.spread[1]
+            return spreadMaxNext - spreadMaxPrev;
+        })
+    }
+
+    if(Number(sortType) === 2) {
+        return data.sort( (prev,next) => {
+            const spreadMaxNext = next.spread[0] > next.spread[1] ? next.spread[0] : next.spread[1];
+            const spreadMaxPrev = prev.spread[0] > prev.spread[1] ? prev.spread[0] : prev.spread[1];
+            return spreadMaxPrev - spreadMaxNext;
+        })
+    }
+
+    return data;
+}
+
 class CheckPrice extends React.Component {
 
     render() {
-        const spread_1 = truncated(this.props.price.spread[0],2);
-        const spread_2 = truncated(this.props.price.spread[1],2);
+        const spread_1 = truncated(this.props.spread[0],2);
+        const spread_2 = truncated(this.props.spread[1],2);
 
         const buyOKX = this.props.exchange === 'okx' && positiveNumber(spread_1);
         const buyFTX = this.props.exchange === 'ftx' && positiveNumber(spread_2);
@@ -77,8 +97,9 @@ class ViewExchange extends React.Component {
         this.state = {
             currency: this.props?.currency?.name || "ANC",
             price: {
-                'okx': this.props?.currency?.okx || {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},
-                'ftx': this.props?.currency?.ftx || {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}
+                'okx': this.props?.currency?.okx || {'ask': [['-']], 'bid': [['-']]},
+                'ftx': this.props?.currency?.ftx || {'ask': [['-']], 'bid': [['-']]},
+                'spread': this.props?.currency?.spread
             },
             curParams: new URLSearchParams({'cur': this.props?.currency?.name || "ANC"}),
         }
@@ -136,10 +157,10 @@ class ViewExchange extends React.Component {
                     <Card.Body bsPrefix={'class-body-new'}>
                         <Row>
                             <Col>
-                                <CheckPrice exchange="okx" price={this.state.price.okx} />
+                                <CheckPrice exchange="okx" price={this.state.price.okx} spread={this.state.price.spread} time={this.state.timeRefresh}/>
                             </Col>                            
                             <Col>
-                                <CheckPrice exchange="ftx" price={this.state.price.ftx} />
+                                <CheckPrice exchange="ftx" price={this.state.price.ftx} spread={this.state.price.spread} time={this.state.timeRefresh}/>
                             </Col>
                             
                         </Row>
@@ -160,44 +181,54 @@ class AddScan extends React.Component {
         this.state = {
             loading: false,
             countScan: 1,
-            allTickets: [{'name': '', 'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}}]
+            allTickets: [{'name': '', 'okx': {'ask': [['-']], 'bid': [['-']]} ,'ftx': {'ask': [['-']], 'bid': [['-']]}, 'spread': [0, 0]}],
+            sortBy: 1,
+            timeRefresh: new Date()
+
         }
         //this.AddScanEvent = this.AddScanEvent.bind(this);
         //this.DeleteScanEvent = this.DeleteScanEvent.bind(this);
         this.RefreshInfoSpreads = this.RefreshInfoSpreads.bind(this);
+        this.checkSort = this.checkSort.bind(this);
     }
 
 
     componentDidMount() {
         this.timeIdAllCheckPrice();
-        /*
-        this.timeIdAllCheckPriceId = setInterval(
-            () => this.timeIdAllCheckPrice(),
-            15000,
-        )*/
     }
-    /*
-    componentWillUnmount() {
-        clearInterval(this.timeIdAllCheckPriceId);
+
+    checkSort(event) {
+        if(event) {
+            this.setState( state => ({
+                    sortBy: Number(event),
+                    allTickets: sortData(state.allTickets, Number(event)),
+                    timeRefresh: new Date()
+                })
+            );
+        }        
     }
-    */
 
     timeIdAllCheckPrice() {
         this.setState({loading: true});
+        //axios.get(`http://195.133.1.56:8090/allspread`)
         axios.get(`http://195.133.1.56:8090/allspread`)
         .then( res => {
-            this.setState({
-                allTickets: res.data,
-                loading: false
-            });
+            
+            this.setState( state => ({
+                    allTickets: res.data,
+                    loading: false,
+                    timeRefresh: new Date()
+                })
+            );
         })
         .catch((e) => {
             this.setState({
                 allTickets: [
                     {
                         'name': '',
-                        'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},
-                        'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}
+                        'okx': {'ask': [['-']], 'bid': [['-']]},
+                        'ftx': {'ask': [['-']], 'bid': [['-']]},
+                        'spread': [0, 0],
                     }
                 ],
                 loading: false
@@ -225,9 +256,10 @@ class AddScan extends React.Component {
         //let tableScan = [];
         let tableScanAll = [];
 
+        let allTickets = sortData(this.state.allTickets, this.state.sortBy);
         
-        this.state.allTickets.forEach( item => {
-            tableScanAll.push(<ViewExchange key={"key" + item.name} currency={item}/>)
+        allTickets.forEach( item => {
+            tableScanAll.push(<ViewExchange key={"key" + item.name + this.state.sortBy + this.state.timeRefresh} currency={item}/>)
         });
 
         const foundScan = tableScanAll.length === 0 ?
@@ -259,13 +291,40 @@ class AddScan extends React.Component {
             <Button onClick={this.DeleteScanEvent} size='sm' style={{margin: "5px 5px 5px 0"}}> <b><DashCircle size={12}/></b> Delete</Button>
         </Col>
         */
+
+        const radios = [
+            { name: 'Sort by spread from high to low', value: '1', id: '1' },
+            { name: 'Sort by spread from low to high', value: '2', id: '2' },
+        ];
+
+        const listSort = radios.map( (radio) => 
+                <Dropdown.Item eventKey={radio.value} key={'' + radio.id}>{radio.name}</Dropdown.Item>
+        );
+
+        const titleSort = radios.find(item => Number(item.value) === this.state.sortBy).name;
         return (
             <Container className='table-scaner' fluid={true}>
                     
-                    <Button onClick={this.RefreshInfoSpreads} size='sm' style={{margin: "5px 5px 5px 0"}}>
-                        {spinnerOrButtron()}
-                    </Button>
-                    {renderTooltip()}
+                    <Stack direction="horizontal" gap={3}>
+                        <div style={{width: "60px"}}>
+                            <Button onClick={this.RefreshInfoSpreads} size='sm' style={{margin: "5px 5px 5px 0"}} md={12}>
+                                {spinnerOrButtron()}
+                            </Button>
+                        </div>
+                        
+                        <div className='d-none d-md-block'>
+                            {renderTooltip()}
+                        </div>
+                        
+                        <div className='ms-auto'>
+                            <DropdownButton onSelect={this.checkSort} title={titleSort} variant="secondary" style={{}}>
+                                {listSort}
+                            </DropdownButton>
+                        </div>
+                        
+                    </Stack>
+                    
+                    
                     <Row>
                         {foundScan}
                     </Row>
@@ -318,7 +377,6 @@ class ViewBalanceExchange extends React.Component {
             this.setState({spinner: 'spinner'});
             axios.get('http://195.133.1.56:8090/withdrawal?'+params)
             .then( result => {
-                console.info(result.data.withdrawal === true);
                 if(result.data.withdrawal) {
                     this.setState({validated: true});
                     this.setState({spinner: "success"});
@@ -355,7 +413,7 @@ class ViewBalanceExchange extends React.Component {
         };
 
         const listTikers = listCurrency.map( (item, i) => 
-            <Dropdown.Item eventKey={item} key={'' + item + i}>{item}</Dropdown.Item>
+            <Dropdown.Item eventKey={item} key={'' + item}>{item}</Dropdown.Item>
         );
         return (
             <Card style={{ width: '100%', margin: "10px 0 15px" }}>

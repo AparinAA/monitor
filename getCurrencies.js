@@ -64,8 +64,9 @@ function promiseTickersWithSpread(okx, ftx, tickersAll, nsscrySpread) {
                 genVarTickets.push(
                         {   
                             'name': nameOKX,
-                            'okx': {'ask': [[okxPr.ask]], 'bid': [[okxPr.bid]], 'spread': [spread_1,spread_2]},
-                            'ftx': {'ask': [[ftxPr.ask]], 'bid': [[ftxPr.bid]], 'spread': [spread_1,spread_2]}
+                            'okx': {'ask': [[okxPr.ask]], 'bid': [[okxPr.bid]]},
+                            'ftx': {'ask': [[ftxPr.ask]], 'bid': [[ftxPr.bid]]},
+                            'spread': [spread_1,spread_2]
                         }
                 )
             }

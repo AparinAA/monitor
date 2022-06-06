@@ -40,10 +40,10 @@ const okx = new OKXclient(secretDict_OKX.api_key, secretDict_OKX.secret_key, sec
 //const mark = {'buy': {'name': 'ftx', 'price': { 'countOrd': 2, 'orders': [[1, 1], [1.1, 1]] }}, 'sell': {'name': 'okx', 'price': ''}}
 
 //console.info(new URLSearchParams({'ex': 'ftx', 'cur': 'TON', 'sz':2}).toString())
-const host = '195.133.1.56';//'localhost';//;;//
+const host = '195.133.1.56'//'localhost';;//;;//
 const port = 8090;
 
-let allSpreadJson = [{'name': '', 'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}}];
+let allSpreadJson = [{'name': '', 'okx': {'ask': [['-']], 'bid': [['-']]}, 'spread': [0, 0],'ftx': {'ask': [['-']], 'bid': [['-']]}, 'spread': [0, 0]}];
 const nsscrySpread = process.env.nsscrySpread;
 
 promiseTickersWithSpread(okx, ftx_1, JSON.parse(tickersAll), nsscrySpread)
@@ -55,7 +55,7 @@ promiseTickersWithSpread(okx, ftx_1, JSON.parse(tickersAll), nsscrySpread)
 })
 .catch( e => {
     console.info("error 2 allspread");
-    allSpreadJson = [{'name': '', 'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}}];
+    allSpreadJson = [{'name': '', 'okx': {'ask': [['-']], 'bid': [['-']]}, 'spread': [0, 0], 'ftx': {'ask': [['-']], 'bid': [['-']]}}];
 });
 
 setInterval( () => {
@@ -68,7 +68,7 @@ setInterval( () => {
     })
     .catch( e => {
         console.info("error 2 allspread");
-        allSpreadJson = [{'name': '', 'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}}];
+        allSpreadJson = [{'name': '', 'okx': {'ask': [['-']], 'bid': [['-']]}, 'spread': [0, 0],'ftx': {'ask': [['-']], 'bid': [['-']]}}];
     });
 }, 15000)
 
