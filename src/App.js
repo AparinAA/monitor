@@ -67,8 +67,8 @@ class CheckPrice extends React.Component {
                 <div>
                     <div>Order price</div>
                     <div className='best-order-book'>    
-                        <div className='ask'>Ask: {this.props.price?.ask[0][0]}</div>
-                        <div className='bid'>Bid: {this.props.price?.bid[0][0]}</div>
+                        <div className='ask'>Ask: {truncated(this.props.price?.ask[0][0],6)}</div>
+                        <div className='bid'>Bid: {truncated(this.props.price?.bid[0][0],6)}</div>
                     </div>
                 </div>
             </div>
