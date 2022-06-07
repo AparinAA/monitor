@@ -222,8 +222,8 @@ class AddScan extends React.Component {
 
     timeIdAllCheckPrice() {
         this.setState({loading: true});
-        //axios.get(`http://localhost:8090/allspread`)
-        axios.get(`http://195.133.1.56:8090/allspread`)
+        //axios.get(`http://195.133.1.56:8090/allspread`)
+        axios.get(`http://localhost:8090/allspread`)
         .then( res => {
             
             this.setState( state => ({

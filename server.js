@@ -9,7 +9,7 @@ const {promiseTickersWithSpread} = require('./getCurrencies');
 const API = require('kucoin-node-sdk');
 
 
-const host = '195.133.1.56'//'localhost'//;//;//
+const host = 'localhost';//'195.133.1.56'//;//;//
 const port = 8090;
 
 const secretDict_FTX = {

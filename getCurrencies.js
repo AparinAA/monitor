@@ -50,8 +50,8 @@ function getTickersKuCoin(API, tickers){
             const el = response.data.ticker.find(element => element.symbol === item.tickerLeft)
             return {
                 'instId': el.symbol,
-                'ask': el.buy,
-                'bid': el.sell,
+                'ask': el.sell,
+                'bid': el.buy,
             }
         });
         return res;
