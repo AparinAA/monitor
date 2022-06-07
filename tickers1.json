@@ -2600,6 +2600,3790 @@
          "nameRight": "GAL",
          "tickerRight": "GAL/USD",
          "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "KNC",
+         "tickerLeft": "KNC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "KNC",
+         "tickerRight": "KNC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "AGLD",
+         "tickerLeft": "AGLD-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AGLD",
+         "tickerRight": "AGLD-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "XEC",
+         "tickerLeft": "XEC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "XEC",
+         "tickerRight": "XEC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ETC",
+         "tickerLeft": "ETC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ETC",
+         "tickerRight": "ETC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ASTR",
+         "tickerLeft": "ASTR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ASTR",
+         "tickerRight": "ASTR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BCH",
+         "tickerLeft": "BCH-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BCH",
+         "tickerRight": "BCH-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GAS",
+         "tickerLeft": "GAS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GAS",
+         "tickerRight": "GAS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "TRX",
+         "tickerLeft": "TRX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "TRX",
+         "tickerRight": "TRX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CELO",
+         "tickerLeft": "CELO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CELO",
+         "tickerRight": "CELO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SAND",
+         "tickerLeft": "SAND-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SAND",
+         "tickerRight": "SAND-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "KLAY",
+         "tickerLeft": "KLAY-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "KLAY",
+         "tickerRight": "KLAY-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "T",
+         "tickerLeft": "T-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "T",
+         "tickerRight": "T-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SUN",
+         "tickerLeft": "SUN-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SUN",
+         "tickerRight": "SUN-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "NMR",
+         "tickerLeft": "NMR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "NMR",
+         "tickerRight": "NMR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "AAVE",
+         "tickerLeft": "AAVE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AAVE",
+         "tickerRight": "AAVE-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "TRB",
+         "tickerLeft": "TRB-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "TRB",
+         "tickerRight": "TRB-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "DOGE",
+         "tickerLeft": "DOGE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DOGE",
+         "tickerRight": "DOGE-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BICO",
+         "tickerLeft": "BICO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BICO",
+         "tickerRight": "BICO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ENS",
+         "tickerLeft": "ENS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ENS",
+         "tickerRight": "ENS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LPT",
+         "tickerLeft": "LPT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LPT",
+         "tickerRight": "LPT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SPELL",
+         "tickerLeft": "SPELL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SPELL",
+         "tickerRight": "SPELL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "NEO",
+         "tickerLeft": "NEO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "NEO",
+         "tickerRight": "NEO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CHZ",
+         "tickerLeft": "CHZ-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CHZ",
+         "tickerRight": "CHZ-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "USDC",
+         "tickerLeft": "USDC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "USDC",
+         "tickerRight": "USDC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "DOT",
+         "tickerLeft": "DOT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DOT",
+         "tickerRight": "DOT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "WXT",
+         "tickerLeft": "WXT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "WXT",
+         "tickerRight": "WXT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "EOS",
+         "tickerLeft": "EOS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "EOS",
+         "tickerRight": "EOS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "POLS",
+         "tickerLeft": "POLS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "POLS",
+         "tickerRight": "POLS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "IOST",
+         "tickerLeft": "IOST-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "IOST",
+         "tickerRight": "IOST-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CFG",
+         "tickerLeft": "CFG-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CFG",
+         "tickerRight": "CFG-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BTC",
+         "tickerLeft": "BTC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BTC",
+         "tickerRight": "BTC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "APE",
+         "tickerLeft": "APE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "APE",
+         "tickerRight": "APE-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ZBC",
+         "tickerLeft": "ZBC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ZBC",
+         "tickerRight": "ZBC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "REVV",
+         "tickerLeft": "REVV-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "REVV",
+         "tickerRight": "REVV-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LOOKS",
+         "tickerLeft": "LOOKS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LOOKS",
+         "tickerRight": "LOOKS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GHST",
+         "tickerLeft": "GHST-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GHST",
+         "tickerRight": "GHST-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "DIA",
+         "tickerLeft": "DIA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DIA",
+         "tickerRight": "DIA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ADA",
+         "tickerLeft": "ADA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ADA",
+         "tickerRight": "ADA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ALPHA",
+         "tickerLeft": "ALPHA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ALPHA",
+         "tickerRight": "ALPHA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "AERGO",
+         "tickerLeft": "AERGO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AERGO",
+         "tickerRight": "AERGO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CFX",
+         "tickerLeft": "CFX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CFX",
+         "tickerRight": "CFX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SRM",
+         "tickerLeft": "SRM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SRM",
+         "tickerRight": "SRM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ERN",
+         "tickerLeft": "ERN-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ERN",
+         "tickerRight": "ERN-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "XSR",
+         "tickerLeft": "XSR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "XSR",
+         "tickerRight": "XSR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CQT",
+         "tickerLeft": "CQT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CQT",
+         "tickerRight": "CQT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CLV",
+         "tickerLeft": "CLV-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CLV",
+         "tickerRight": "CLV-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BTT",
+         "tickerLeft": "BTT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BTT",
+         "tickerRight": "BTT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ZEC",
+         "tickerLeft": "ZEC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ZEC",
+         "tickerRight": "ZEC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "WIN",
+         "tickerLeft": "WIN-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "WIN",
+         "tickerRight": "WIN-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "NYM",
+         "tickerLeft": "NYM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "NYM",
+         "tickerRight": "NYM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "REN",
+         "tickerLeft": "REN-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "REN",
+         "tickerRight": "REN-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LUNC",
+         "tickerLeft": "LUNC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LUNC",
+         "tickerRight": "LUNC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ANC",
+         "tickerLeft": "ANC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ANC",
+         "tickerRight": "ANC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "XMR",
+         "tickerLeft": "XMR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "XMR",
+         "tickerRight": "XMR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ZEN",
+         "tickerLeft": "ZEN-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ZEN",
+         "tickerRight": "ZEN-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "FTM",
+         "tickerLeft": "FTM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "FTM",
+         "tickerRight": "FTM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "DYDX",
+         "tickerLeft": "DYDX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DYDX",
+         "tickerRight": "DYDX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "DAO",
+         "tickerLeft": "DAO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DAO",
+         "tickerRight": "DAO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GODS",
+         "tickerLeft": "GODS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GODS",
+         "tickerRight": "GODS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "XPR",
+         "tickerLeft": "XPR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "XPR",
+         "tickerRight": "XPR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "FITFI",
+         "tickerLeft": "FITFI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "FITFI",
+         "tickerRight": "FITFI-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "KAR",
+         "tickerLeft": "KAR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "KAR",
+         "tickerRight": "KAR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SNX",
+         "tickerLeft": "SNX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SNX",
+         "tickerRight": "SNX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ATOM",
+         "tickerLeft": "ATOM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ATOM",
+         "tickerRight": "ATOM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MANA",
+         "tickerLeft": "MANA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MANA",
+         "tickerRight": "MANA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BRWL",
+         "tickerLeft": "BRWL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BRWL",
+         "tickerRight": "BRWL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "KSM",
+         "tickerLeft": "KSM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "KSM",
+         "tickerRight": "KSM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ETH",
+         "tickerLeft": "ETH-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ETH",
+         "tickerRight": "ETH-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "STORJ",
+         "tickerLeft": "STORJ-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "STORJ",
+         "tickerRight": "STORJ-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BLOK",
+         "tickerLeft": "BLOK-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BLOK",
+         "tickerRight": "BLOK-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "PEOPLE",
+         "tickerLeft": "PEOPLE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "PEOPLE",
+         "tickerRight": "PEOPLE-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BAL",
+         "tickerLeft": "BAL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BAL",
+         "tickerRight": "BAL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "FLOW",
+         "tickerLeft": "FLOW-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "FLOW",
+         "tickerRight": "FLOW-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "IMX",
+         "tickerLeft": "IMX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "IMX",
+         "tickerRight": "IMX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GARI",
+         "tickerLeft": "GARI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GARI",
+         "tickerRight": "GARI-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "VRA",
+         "tickerLeft": "VRA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "VRA",
+         "tickerRight": "VRA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "XCH",
+         "tickerLeft": "XCH-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "XCH",
+         "tickerRight": "XCH-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "1INCH",
+         "tickerLeft": "1INCH-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "1INCH",
+         "tickerRight": "1INCH-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "PERP",
+         "tickerLeft": "PERP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "PERP",
+         "tickerRight": "PERP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ANT",
+         "tickerLeft": "ANT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ANT",
+         "tickerRight": "ANT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ONE",
+         "tickerLeft": "ONE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ONE",
+         "tickerRight": "ONE-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "AVAX",
+         "tickerLeft": "AVAX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AVAX",
+         "tickerRight": "AVAX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MASK",
+         "tickerLeft": "MASK-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MASK",
+         "tickerRight": "MASK-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GLMR",
+         "tickerLeft": "GLMR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GLMR",
+         "tickerRight": "GLMR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "STX",
+         "tickerLeft": "STX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "STX",
+         "tickerRight": "STX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LUNA",
+         "tickerLeft": "LUNA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LUNA",
+         "tickerRight": "LUNA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CVX",
+         "tickerLeft": "CVX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CVX",
+         "tickerRight": "CVX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "IOTA",
+         "tickerLeft": "IOTA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "IOTA",
+         "tickerRight": "IOTA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ELON",
+         "tickerLeft": "ELON-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ELON",
+         "tickerRight": "ELON-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "AXS",
+         "tickerLeft": "AXS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AXS",
+         "tickerRight": "AXS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "VELO",
+         "tickerLeft": "VELO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "VELO",
+         "tickerRight": "VELO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "FRONT",
+         "tickerLeft": "FRONT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "FRONT",
+         "tickerRight": "FRONT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CELR",
+         "tickerLeft": "CELR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CELR",
+         "tickerRight": "CELR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "KONO",
+         "tickerLeft": "KONO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "KONO",
+         "tickerRight": "KONO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CRO",
+         "tickerLeft": "CRO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CRO",
+         "tickerRight": "CRO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SOL",
+         "tickerLeft": "SOL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SOL",
+         "tickerRight": "SOL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "API3",
+         "tickerLeft": "API3-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "API3",
+         "tickerRight": "API3-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "YFI",
+         "tickerLeft": "YFI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "YFI",
+         "tickerRight": "YFI-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SWFTC",
+         "tickerLeft": "SWFTC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SWFTC",
+         "tickerRight": "SWFTC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "KOL",
+         "tickerLeft": "KOL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "KOL",
+         "tickerRight": "KOL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MATIC",
+         "tickerLeft": "MATIC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MATIC",
+         "tickerRight": "MATIC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "XRP",
+         "tickerLeft": "XRP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "XRP",
+         "tickerRight": "XRP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "PRQ",
+         "tickerLeft": "PRQ-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "PRQ",
+         "tickerRight": "PRQ-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CRV",
+         "tickerLeft": "CRV-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CRV",
+         "tickerRight": "CRV-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "EGLD",
+         "tickerLeft": "EGLD-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "EGLD",
+         "tickerRight": "EGLD-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GRT",
+         "tickerLeft": "GRT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GRT",
+         "tickerRight": "GRT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "PHA",
+         "tickerLeft": "PHA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "PHA",
+         "tickerRight": "PHA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SKL",
+         "tickerLeft": "SKL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SKL",
+         "tickerRight": "SKL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "FSN",
+         "tickerLeft": "FSN-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "FSN",
+         "tickerRight": "FSN-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "WOO",
+         "tickerLeft": "WOO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "WOO",
+         "tickerRight": "WOO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "RACA",
+         "tickerLeft": "RACA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "RACA",
+         "tickerRight": "RACA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ILV",
+         "tickerLeft": "ILV-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ILV",
+         "tickerRight": "ILV-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "METIS",
+         "tickerLeft": "METIS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "METIS",
+         "tickerRight": "METIS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SHIB",
+         "tickerLeft": "SHIB-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SHIB",
+         "tickerRight": "SHIB-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "UNI",
+         "tickerLeft": "UNI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "UNI",
+         "tickerRight": "UNI-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ACA",
+         "tickerLeft": "ACA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ACA",
+         "tickerRight": "ACA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "REP",
+         "tickerLeft": "REP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "REP",
+         "tickerRight": "REP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "THETA",
+         "tickerLeft": "THETA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "THETA",
+         "tickerRight": "THETA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "HBAR",
+         "tickerLeft": "HBAR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "HBAR",
+         "tickerRight": "HBAR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SUSHI",
+         "tickerLeft": "SUSHI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SUSHI",
+         "tickerRight": "SUSHI-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LTC",
+         "tickerLeft": "LTC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LTC",
+         "tickerRight": "LTC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CELT",
+         "tickerLeft": "CELT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CELT",
+         "tickerRight": "CELT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LINK",
+         "tickerLeft": "LINK-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LINK",
+         "tickerRight": "LINK-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "KDA",
+         "tickerLeft": "KDA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "KDA",
+         "tickerRight": "KDA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "XTZ",
+         "tickerLeft": "XTZ-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "XTZ",
+         "tickerRight": "XTZ-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MIR",
+         "tickerLeft": "MIR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MIR",
+         "tickerRight": "MIR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "OP",
+         "tickerLeft": "OP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "OP",
+         "tickerRight": "OP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ICP",
+         "tickerLeft": "ICP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ICP",
+         "tickerRight": "ICP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BADGER",
+         "tickerLeft": "BADGER-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BADGER",
+         "tickerRight": "BADGER-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "DGB",
+         "tickerLeft": "DGB-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DGB",
+         "tickerRight": "DGB-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LRC",
+         "tickerLeft": "LRC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LRC",
+         "tickerRight": "LRC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "FIL",
+         "tickerLeft": "FIL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "FIL",
+         "tickerRight": "FIL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "RSR",
+         "tickerLeft": "RSR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "RSR",
+         "tickerRight": "RSR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MXC",
+         "tickerLeft": "MXC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MXC",
+         "tickerRight": "MXC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "NFT",
+         "tickerLeft": "NFT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "NFT",
+         "tickerRight": "NFT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ONT",
+         "tickerLeft": "ONT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ONT",
+         "tickerRight": "ONT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "UMA",
+         "tickerLeft": "UMA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "UMA",
+         "tickerRight": "UMA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "FORTH",
+         "tickerLeft": "FORTH-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "FORTH",
+         "tickerRight": "FORTH-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MOVR",
+         "tickerLeft": "MOVR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MOVR",
+         "tickerRight": "MOVR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "AR",
+         "tickerLeft": "AR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AR",
+         "tickerRight": "AR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "USTC",
+         "tickerLeft": "USTC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "USTC",
+         "tickerRight": "USTC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CTC",
+         "tickerLeft": "CTC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CTC",
+         "tickerRight": "CTC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BAND",
+         "tickerLeft": "BAND-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BAND",
+         "tickerRight": "BAND-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "XLM",
+         "tickerLeft": "XLM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "XLM",
+         "tickerRight": "XLM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "YGG",
+         "tickerLeft": "YGG-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "YGG",
+         "tickerRight": "YGG-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BAT",
+         "tickerLeft": "BAT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BAT",
+         "tickerRight": "BAT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SOS",
+         "tickerLeft": "SOS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SOS",
+         "tickerRight": "SOS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SLP",
+         "tickerLeft": "SLP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SLP",
+         "tickerRight": "SLP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "XEM",
+         "tickerLeft": "XEM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "XEM",
+         "tickerRight": "XEM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "OXT",
+         "tickerLeft": "OXT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "OXT",
+         "tickerRight": "OXT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "PSTAKE",
+         "tickerLeft": "PSTAKE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "PSTAKE",
+         "tickerRight": "PSTAKE-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "OM",
+         "tickerLeft": "OM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "OM",
+         "tickerRight": "OM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "RFUEL",
+         "tickerLeft": "RFUEL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "RFUEL",
+         "tickerRight": "RFUEL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GMT",
+         "tickerLeft": "GMT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GMT",
+         "tickerRight": "GMT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "OMG",
+         "tickerLeft": "OMG-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "OMG",
+         "tickerRight": "OMG-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ZIL",
+         "tickerLeft": "ZIL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ZIL",
+         "tickerRight": "ZIL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "COMP",
+         "tickerLeft": "COMP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "COMP",
+         "tickerRight": "COMP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ALGO",
+         "tickerLeft": "ALGO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ALGO",
+         "tickerRight": "ALGO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "WAVES",
+         "tickerLeft": "WAVES-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "WAVES",
+         "tickerRight": "WAVES-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "DASH",
+         "tickerLeft": "DASH-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DASH",
+         "tickerRight": "DASH-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "HEGIC",
+         "tickerLeft": "HEGIC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "HEGIC",
+         "tickerRight": "HEGIC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ENJ",
+         "tickerLeft": "ENJ-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ENJ",
+         "tickerRight": "ENJ-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GLM",
+         "tickerLeft": "GLM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GLM",
+         "tickerRight": "GLM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "JST",
+         "tickerLeft": "JST-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "JST",
+         "tickerRight": "JST-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "NEAR",
+         "tickerLeft": "NEAR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "NEAR",
+         "tickerRight": "NEAR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MKR",
+         "tickerLeft": "MKR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MKR",
+         "tickerRight": "MKR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LITH",
+         "tickerLeft": "LITH-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LITH",
+         "tickerRight": "LITH-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "KP3R",
+         "tickerLeft": "KP3R-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "KP3R",
+         "tickerRight": "KP3R-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "KNC",
+         "tickerLeft": "KNC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "KNC",
+         "tickerRight": "KNC/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "ALICE",
+         "tickerLeft": "ALICE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ALICE",
+         "tickerRight": "ALICE/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "LINA",
+         "tickerLeft": "LINA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LINA",
+         "tickerRight": "LINA/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "RUNE",
+         "tickerLeft": "RUNE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "RUNE",
+         "tickerRight": "RUNE/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "BCH",
+         "tickerLeft": "BCH-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BCH",
+         "tickerRight": "BCH/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "TRX",
+         "tickerLeft": "TRX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "TRX",
+         "tickerRight": "TRX/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SAND",
+         "tickerLeft": "SAND-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SAND",
+         "tickerRight": "SAND/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "AAVE",
+         "tickerLeft": "AAVE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AAVE",
+         "tickerRight": "AAVE/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "DOGE",
+         "tickerLeft": "DOGE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DOGE",
+         "tickerRight": "DOGE/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "BICO",
+         "tickerLeft": "BICO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BICO",
+         "tickerRight": "BICO/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "ENS",
+         "tickerLeft": "ENS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ENS",
+         "tickerRight": "ENS/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SPELL",
+         "tickerLeft": "SPELL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SPELL",
+         "tickerRight": "SPELL/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "CHZ",
+         "tickerLeft": "CHZ-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CHZ",
+         "tickerRight": "CHZ/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "DOT",
+         "tickerLeft": "DOT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DOT",
+         "tickerRight": "DOT/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "BTC",
+         "tickerLeft": "BTC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BTC",
+         "tickerRight": "BTC/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "APE",
+         "tickerLeft": "APE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "APE",
+         "tickerRight": "APE/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "GST",
+         "tickerLeft": "GST-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GST",
+         "tickerRight": "GST/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "LOOKS",
+         "tickerLeft": "LOOKS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LOOKS",
+         "tickerRight": "LOOKS/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "HT",
+         "tickerLeft": "HT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "HT",
+         "tickerRight": "HT/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "HNT",
+         "tickerLeft": "HNT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "HNT",
+         "tickerRight": "HNT/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "ALPHA",
+         "tickerLeft": "ALPHA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ALPHA",
+         "tickerRight": "ALPHA/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SRM",
+         "tickerLeft": "SRM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SRM",
+         "tickerRight": "SRM/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "CQT",
+         "tickerLeft": "CQT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CQT",
+         "tickerRight": "CQT/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SXP",
+         "tickerLeft": "SXP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SXP",
+         "tickerRight": "SXP/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "REN",
+         "tickerLeft": "REN-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "REN",
+         "tickerRight": "REN/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "ANC",
+         "tickerLeft": "ANC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ANC",
+         "tickerRight": "ANC/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "STG",
+         "tickerLeft": "STG-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "STG",
+         "tickerRight": "STG/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "FTM",
+         "tickerLeft": "FTM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "FTM",
+         "tickerRight": "FTM/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "MTL",
+         "tickerLeft": "MTL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MTL",
+         "tickerRight": "MTL/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "DYDX",
+         "tickerLeft": "DYDX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DYDX",
+         "tickerRight": "DYDX/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "GODS",
+         "tickerLeft": "GODS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GODS",
+         "tickerRight": "GODS/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "FXS",
+         "tickerLeft": "FXS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "FXS",
+         "tickerRight": "FXS/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "FTT",
+         "tickerLeft": "FTT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "FTT",
+         "tickerRight": "FTT/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SNX",
+         "tickerLeft": "SNX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SNX",
+         "tickerRight": "SNX/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "ATOM",
+         "tickerLeft": "ATOM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ATOM",
+         "tickerRight": "ATOM/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "MANA",
+         "tickerLeft": "MANA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MANA",
+         "tickerRight": "MANA/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "AUDIO",
+         "tickerLeft": "AUDIO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AUDIO",
+         "tickerRight": "AUDIO/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "ETH",
+         "tickerLeft": "ETH-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ETH",
+         "tickerRight": "ETH/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "IMX",
+         "tickerLeft": "IMX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "IMX",
+         "tickerRight": "IMX/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "CREAM",
+         "tickerLeft": "CREAM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CREAM",
+         "tickerRight": "CREAM/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "GARI",
+         "tickerLeft": "GARI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GARI",
+         "tickerRight": "GARI/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "AURY",
+         "tickerLeft": "AURY-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AURY",
+         "tickerRight": "AURY/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "1INCH",
+         "tickerLeft": "1INCH-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "1INCH",
+         "tickerRight": "1INCH/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "PERP",
+         "tickerLeft": "PERP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "PERP",
+         "tickerRight": "PERP/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "GAL",
+         "tickerLeft": "GAL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GAL",
+         "tickerRight": "GAL/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "AVAX",
+         "tickerLeft": "AVAX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AVAX",
+         "tickerRight": "AVAX/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "CVX",
+         "tickerLeft": "CVX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CVX",
+         "tickerRight": "CVX/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "AXS",
+         "tickerLeft": "AXS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AXS",
+         "tickerRight": "AXS/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "CRO",
+         "tickerLeft": "CRO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CRO",
+         "tickerRight": "CRO/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SOL",
+         "tickerLeft": "SOL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SOL",
+         "tickerRight": "SOL/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "YFI",
+         "tickerLeft": "YFI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "YFI",
+         "tickerRight": "YFI/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "MATIC",
+         "tickerLeft": "MATIC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MATIC",
+         "tickerRight": "MATIC/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "PAXG",
+         "tickerLeft": "PAXG-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "PAXG",
+         "tickerRight": "PAXG/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "XRP",
+         "tickerLeft": "XRP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "XRP",
+         "tickerRight": "XRP/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "BNB",
+         "tickerLeft": "BNB-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BNB",
+         "tickerRight": "BNB/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "CRV",
+         "tickerLeft": "CRV-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CRV",
+         "tickerRight": "CRV/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "KIN",
+         "tickerLeft": "KIN-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "KIN",
+         "tickerRight": "KIN/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "GRT",
+         "tickerLeft": "GRT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GRT",
+         "tickerRight": "GRT/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SKL",
+         "tickerLeft": "SKL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SKL",
+         "tickerRight": "SKL/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "TRU",
+         "tickerLeft": "TRU-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "TRU",
+         "tickerRight": "TRU/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SHIB",
+         "tickerLeft": "SHIB-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SHIB",
+         "tickerRight": "SHIB/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "UNI",
+         "tickerLeft": "UNI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "UNI",
+         "tickerRight": "UNI/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SUSHI",
+         "tickerLeft": "SUSHI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SUSHI",
+         "tickerRight": "SUSHI/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "LTC",
+         "tickerLeft": "LTC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LTC",
+         "tickerRight": "LTC/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "LINK",
+         "tickerLeft": "LINK-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LINK",
+         "tickerRight": "LINK/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "QI",
+         "tickerLeft": "QI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "QI",
+         "tickerRight": "QI/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "BADGER",
+         "tickerLeft": "BADGER-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BADGER",
+         "tickerRight": "BADGER/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "LRC",
+         "tickerLeft": "LRC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LRC",
+         "tickerRight": "LRC/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "C98",
+         "tickerLeft": "C98-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "C98",
+         "tickerRight": "C98/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "RSR",
+         "tickerLeft": "RSR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "RSR",
+         "tickerRight": "RSR/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "BAND",
+         "tickerLeft": "BAND-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BAND",
+         "tickerRight": "BAND/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "YGG",
+         "tickerLeft": "YGG-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "YGG",
+         "tickerRight": "YGG/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "BAT",
+         "tickerLeft": "BAT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BAT",
+         "tickerRight": "BAT/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "STMX",
+         "tickerLeft": "STMX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "STMX",
+         "tickerRight": "STMX/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SOS",
+         "tickerLeft": "SOS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SOS",
+         "tickerRight": "SOS/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SLP",
+         "tickerLeft": "SLP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SLP",
+         "tickerRight": "SLP/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "GMT",
+         "tickerLeft": "GMT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GMT",
+         "tickerRight": "GMT/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "OMG",
+         "tickerLeft": "OMG-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "OMG",
+         "tickerRight": "OMG/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "COMP",
+         "tickerLeft": "COMP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "COMP",
+         "tickerRight": "COMP/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "ALGO",
+         "tickerLeft": "ALGO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ALGO",
+         "tickerRight": "ALGO/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "AMPL",
+         "tickerLeft": "AMPL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AMPL",
+         "tickerRight": "AMPL/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "WAVES",
+         "tickerLeft": "WAVES-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "WAVES",
+         "tickerRight": "WAVES/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "ENJ",
+         "tickerLeft": "ENJ-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ENJ",
+         "tickerRight": "ENJ/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "NEAR",
+         "tickerLeft": "NEAR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "NEAR",
+         "tickerRight": "NEAR/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "MKR",
+         "tickerLeft": "MKR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MKR",
+         "tickerRight": "MKR/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "RNDR",
+         "tickerLeft": "RNDR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "RNDR",
+         "tickerRight": "RNDR/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "NKN",
+         "tickerLeft": "NKN-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "NKN",
+         "tickerRight": "NKNUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "KNC",
+         "tickerLeft": "KNC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "KNC",
+         "tickerRight": "KNCUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "EPX",
+         "tickerLeft": "EPX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "EPX",
+         "tickerRight": "EPXUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "AGLD",
+         "tickerLeft": "AGLD-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AGLD",
+         "tickerRight": "AGLDUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "POWR",
+         "tickerLeft": "POWR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "POWR",
+         "tickerRight": "POWRUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ALICE",
+         "tickerLeft": "ALICE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ALICE",
+         "tickerRight": "ALICEUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "XEC",
+         "tickerLeft": "XEC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "XEC",
+         "tickerRight": "XECUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "LINA",
+         "tickerLeft": "LINA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LINA",
+         "tickerRight": "LINAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ETC",
+         "tickerLeft": "ETC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ETC",
+         "tickerRight": "ETCUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "RUNE",
+         "tickerLeft": "RUNE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "RUNE",
+         "tickerRight": "RUNEUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ASTR",
+         "tickerLeft": "ASTR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ASTR",
+         "tickerRight": "ASTRUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "BCH",
+         "tickerLeft": "BCH-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BCH",
+         "tickerRight": "BCHUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "KAVA",
+         "tickerLeft": "KAVA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "KAVA",
+         "tickerRight": "KAVAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "TRX",
+         "tickerLeft": "TRX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "TRX",
+         "tickerRight": "TRXUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "CELO",
+         "tickerLeft": "CELO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CELO",
+         "tickerRight": "CELOUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "SAND",
+         "tickerLeft": "SAND-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SAND",
+         "tickerRight": "SANDUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "KLAY",
+         "tickerLeft": "KLAY-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "KLAY",
+         "tickerRight": "KLAYUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "T",
+         "tickerLeft": "T-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "T",
+         "tickerRight": "TUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "SUN",
+         "tickerLeft": "SUN-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SUN",
+         "tickerRight": "SUNUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "DATA",
+         "tickerLeft": "DATA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DATA",
+         "tickerRight": "DATAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "BOND",
+         "tickerLeft": "BOND-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BOND",
+         "tickerRight": "BONDUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "NMR",
+         "tickerLeft": "NMR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "NMR",
+         "tickerRight": "NMRUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "AAVE",
+         "tickerLeft": "AAVE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AAVE",
+         "tickerRight": "AAVEUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "TRB",
+         "tickerLeft": "TRB-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "TRB",
+         "tickerRight": "TRBUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "DOGE",
+         "tickerLeft": "DOGE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DOGE",
+         "tickerRight": "DOGEUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "BICO",
+         "tickerLeft": "BICO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BICO",
+         "tickerRight": "BICOUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ENS",
+         "tickerLeft": "ENS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ENS",
+         "tickerRight": "ENSUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "LPT",
+         "tickerLeft": "LPT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LPT",
+         "tickerRight": "LPTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "SPELL",
+         "tickerLeft": "SPELL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SPELL",
+         "tickerRight": "SPELLUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "NEO",
+         "tickerLeft": "NEO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "NEO",
+         "tickerRight": "NEOUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "CHZ",
+         "tickerLeft": "CHZ-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CHZ",
+         "tickerRight": "CHZUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "USDC",
+         "tickerLeft": "USDC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "USDC",
+         "tickerRight": "USDCUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "DOT",
+         "tickerLeft": "DOT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DOT",
+         "tickerRight": "DOTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "EOS",
+         "tickerLeft": "EOS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "EOS",
+         "tickerRight": "EOSUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "POLS",
+         "tickerLeft": "POLS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "POLS",
+         "tickerRight": "POLSUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "IOST",
+         "tickerLeft": "IOST-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "IOST",
+         "tickerRight": "IOSTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "TVK",
+         "tickerLeft": "TVK-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "TVK",
+         "tickerRight": "TVKUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "BTC",
+         "tickerLeft": "BTC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BTC",
+         "tickerRight": "BTCUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "OCEAN",
+         "tickerLeft": "OCEAN-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "OCEAN",
+         "tickerRight": "OCEANUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "APE",
+         "tickerLeft": "APE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "APE",
+         "tickerRight": "APEUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "GHST",
+         "tickerLeft": "GHST-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GHST",
+         "tickerRight": "GHSTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "DIA",
+         "tickerLeft": "DIA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DIA",
+         "tickerRight": "DIAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ADA",
+         "tickerLeft": "ADA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ADA",
+         "tickerRight": "ADAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "HNT",
+         "tickerLeft": "HNT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "HNT",
+         "tickerRight": "HNTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ALPHA",
+         "tickerLeft": "ALPHA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ALPHA",
+         "tickerRight": "ALPHAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "CFX",
+         "tickerLeft": "CFX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CFX",
+         "tickerRight": "CFXUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "SRM",
+         "tickerLeft": "SRM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SRM",
+         "tickerRight": "SRMUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ERN",
+         "tickerLeft": "ERN-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ERN",
+         "tickerRight": "ERNUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "KMD",
+         "tickerLeft": "KMD-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "KMD",
+         "tickerRight": "KMDUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "TOMO",
+         "tickerLeft": "TOMO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "TOMO",
+         "tickerRight": "TOMOUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "CLV",
+         "tickerLeft": "CLV-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CLV",
+         "tickerRight": "CLVUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ZEC",
+         "tickerLeft": "ZEC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ZEC",
+         "tickerRight": "ZECUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "VIDT",
+         "tickerLeft": "VIDT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "VIDT",
+         "tickerRight": "VIDTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "JASMY",
+         "tickerLeft": "JASMY-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "JASMY",
+         "tickerRight": "JASMYUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "WIN",
+         "tickerLeft": "WIN-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "WIN",
+         "tickerRight": "WINUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "SXP",
+         "tickerLeft": "SXP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SXP",
+         "tickerRight": "SXPUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "LTO",
+         "tickerLeft": "LTO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LTO",
+         "tickerRight": "LTOUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "REN",
+         "tickerLeft": "REN-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "REN",
+         "tickerRight": "RENUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ANC",
+         "tickerLeft": "ANC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ANC",
+         "tickerRight": "ANCUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "XMR",
+         "tickerLeft": "XMR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "XMR",
+         "tickerRight": "XMRUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ZEN",
+         "tickerLeft": "ZEN-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ZEN",
+         "tickerRight": "ZENUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "FTM",
+         "tickerLeft": "FTM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "FTM",
+         "tickerRight": "FTMUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "AKRO",
+         "tickerLeft": "AKRO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AKRO",
+         "tickerRight": "AKROUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "CKB",
+         "tickerLeft": "CKB-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CKB",
+         "tickerRight": "CKBUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "MTL",
+         "tickerLeft": "MTL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MTL",
+         "tickerRight": "MTLUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "DYDX",
+         "tickerLeft": "DYDX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DYDX",
+         "tickerRight": "DYDXUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "REQ",
+         "tickerLeft": "REQ-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "REQ",
+         "tickerRight": "REQUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "AMP",
+         "tickerLeft": "AMP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AMP",
+         "tickerRight": "AMPUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "FXS",
+         "tickerLeft": "FXS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "FXS",
+         "tickerRight": "FXSUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "RLC",
+         "tickerLeft": "RLC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "RLC",
+         "tickerRight": "RLCUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "UNFI",
+         "tickerLeft": "UNFI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "UNFI",
+         "tickerRight": "UNFIUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "FTT",
+         "tickerLeft": "FTT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "FTT",
+         "tickerRight": "FTTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "SNX",
+         "tickerLeft": "SNX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SNX",
+         "tickerRight": "SNXUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "INJ",
+         "tickerLeft": "INJ-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "INJ",
+         "tickerRight": "INJUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ATOM",
+         "tickerLeft": "ATOM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ATOM",
+         "tickerRight": "ATOMUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "MANA",
+         "tickerLeft": "MANA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MANA",
+         "tickerRight": "MANAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "BETA",
+         "tickerLeft": "BETA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BETA",
+         "tickerRight": "BETAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "AUDIO",
+         "tickerLeft": "AUDIO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AUDIO",
+         "tickerRight": "AUDIOUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "KSM",
+         "tickerLeft": "KSM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "KSM",
+         "tickerRight": "KSMUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ETH",
+         "tickerLeft": "ETH-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ETH",
+         "tickerRight": "ETHUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "STORJ",
+         "tickerLeft": "STORJ-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "STORJ",
+         "tickerRight": "STORJUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "BURGER",
+         "tickerLeft": "BURGER-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BURGER",
+         "tickerRight": "BURGERUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "PEOPLE",
+         "tickerLeft": "PEOPLE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "PEOPLE",
+         "tickerRight": "PEOPLEUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "BAL",
+         "tickerLeft": "BAL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BAL",
+         "tickerRight": "BALUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "FLOW",
+         "tickerLeft": "FLOW-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "FLOW",
+         "tickerRight": "FLOWUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "SUPER",
+         "tickerLeft": "SUPER-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SUPER",
+         "tickerRight": "SUPERUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "IMX",
+         "tickerLeft": "IMX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "IMX",
+         "tickerRight": "IMXUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "PNT",
+         "tickerLeft": "PNT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "PNT",
+         "tickerRight": "PNTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "DEXE",
+         "tickerLeft": "DEXE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DEXE",
+         "tickerRight": "DEXEUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "1INCH",
+         "tickerLeft": "1INCH-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "1INCH",
+         "tickerRight": "1INCHUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "PERP",
+         "tickerLeft": "PERP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "PERP",
+         "tickerRight": "PERPUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ANT",
+         "tickerLeft": "ANT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ANT",
+         "tickerRight": "ANTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ADX",
+         "tickerLeft": "ADX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ADX",
+         "tickerRight": "ADXUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "MFT",
+         "tickerLeft": "MFT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MFT",
+         "tickerRight": "MFTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "CAKE",
+         "tickerLeft": "CAKE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CAKE",
+         "tickerRight": "CAKEUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "DAR",
+         "tickerLeft": "DAR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DAR",
+         "tickerRight": "DARUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "GAL",
+         "tickerLeft": "GAL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GAL",
+         "tickerRight": "GALUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ONE",
+         "tickerLeft": "ONE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ONE",
+         "tickerRight": "ONEUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "AVAX",
+         "tickerLeft": "AVAX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AVAX",
+         "tickerRight": "AVAXUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "MASK",
+         "tickerLeft": "MASK-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MASK",
+         "tickerRight": "MASKUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "GLMR",
+         "tickerLeft": "GLMR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GLMR",
+         "tickerRight": "GLMRUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "STX",
+         "tickerLeft": "STX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "STX",
+         "tickerRight": "STXUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "MBL",
+         "tickerLeft": "MBL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MBL",
+         "tickerRight": "MBLUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "LUNA",
+         "tickerLeft": "LUNA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LUNA",
+         "tickerRight": "LUNAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "XNO",
+         "tickerLeft": "XNO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "XNO",
+         "tickerRight": "XNOUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "CVX",
+         "tickerLeft": "CVX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CVX",
+         "tickerRight": "CVXUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "IOTA",
+         "tickerLeft": "IOTA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "IOTA",
+         "tickerRight": "IOTAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "PUNDIX",
+         "tickerLeft": "PUNDIX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "PUNDIX",
+         "tickerRight": "PUNDIXUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "AXS",
+         "tickerLeft": "AXS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AXS",
+         "tickerRight": "AXSUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "BNX",
+         "tickerLeft": "BNX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BNX",
+         "tickerRight": "BNXUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "FRONT",
+         "tickerLeft": "FRONT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "FRONT",
+         "tickerRight": "FRONTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "CELR",
+         "tickerLeft": "CELR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CELR",
+         "tickerRight": "CELRUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "HARD",
+         "tickerLeft": "HARD-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "HARD",
+         "tickerRight": "HARDUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "SOL",
+         "tickerLeft": "SOL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SOL",
+         "tickerRight": "SOLUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "API3",
+         "tickerLeft": "API3-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "API3",
+         "tickerRight": "API3USDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "YFI",
+         "tickerLeft": "YFI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "YFI",
+         "tickerRight": "YFIUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "SYS",
+         "tickerLeft": "SYS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SYS",
+         "tickerRight": "SYSUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "MATIC",
+         "tickerLeft": "MATIC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MATIC",
+         "tickerRight": "MATICUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "PAXG",
+         "tickerLeft": "PAXG-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "PAXG",
+         "tickerRight": "PAXGUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "XRP",
+         "tickerLeft": "XRP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "XRP",
+         "tickerRight": "XRPUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "BNB",
+         "tickerLeft": "BNB-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BNB",
+         "tickerRight": "BNBUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "CRV",
+         "tickerLeft": "CRV-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CRV",
+         "tickerRight": "CRVUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "EGLD",
+         "tickerLeft": "EGLD-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "EGLD",
+         "tickerRight": "EGLDUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "GRT",
+         "tickerLeft": "GRT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GRT",
+         "tickerRight": "GRTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "PHA",
+         "tickerLeft": "PHA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "PHA",
+         "tickerRight": "PHAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "SKL",
+         "tickerLeft": "SKL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SKL",
+         "tickerRight": "SKLUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "IDEX",
+         "tickerLeft": "IDEX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "IDEX",
+         "tickerRight": "IDEXUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "LOKA",
+         "tickerLeft": "LOKA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LOKA",
+         "tickerRight": "LOKAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "AVA",
+         "tickerLeft": "AVA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AVA",
+         "tickerRight": "AVAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "COTI",
+         "tickerLeft": "COTI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "COTI",
+         "tickerRight": "COTIUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "WOO",
+         "tickerLeft": "WOO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "WOO",
+         "tickerRight": "WOOUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ACH",
+         "tickerLeft": "ACH-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ACH",
+         "tickerRight": "ACHUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "VET",
+         "tickerLeft": "VET-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "VET",
+         "tickerRight": "VETUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ILV",
+         "tickerLeft": "ILV-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ILV",
+         "tickerRight": "ILVUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "TFUEL",
+         "tickerLeft": "TFUEL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "TFUEL",
+         "tickerRight": "TFUELUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "TKO",
+         "tickerLeft": "TKO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "TKO",
+         "tickerRight": "TKOUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "DUSK",
+         "tickerLeft": "DUSK-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DUSK",
+         "tickerRight": "DUSKUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "TRU",
+         "tickerLeft": "TRU-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "TRU",
+         "tickerRight": "TRUUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "SHIB",
+         "tickerLeft": "SHIB-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SHIB",
+         "tickerRight": "SHIBUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "UNI",
+         "tickerLeft": "UNI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "UNI",
+         "tickerRight": "UNIUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ACA",
+         "tickerLeft": "ACA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ACA",
+         "tickerRight": "ACAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "MBOX",
+         "tickerLeft": "MBOX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MBOX",
+         "tickerRight": "MBOXUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "REP",
+         "tickerLeft": "REP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "REP",
+         "tickerRight": "REPUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ARPA",
+         "tickerLeft": "ARPA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ARPA",
+         "tickerRight": "ARPAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "THETA",
+         "tickerLeft": "THETA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "THETA",
+         "tickerRight": "THETAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "HBAR",
+         "tickerLeft": "HBAR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "HBAR",
+         "tickerRight": "HBARUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "GTC",
+         "tickerLeft": "GTC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GTC",
+         "tickerRight": "GTCUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "SUSHI",
+         "tickerLeft": "SUSHI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SUSHI",
+         "tickerRight": "SUSHIUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "LTC",
+         "tickerLeft": "LTC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LTC",
+         "tickerRight": "LTCUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "SCRT",
+         "tickerLeft": "SCRT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SCRT",
+         "tickerRight": "SCRTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "TLM",
+         "tickerLeft": "TLM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "TLM",
+         "tickerRight": "TLMUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "LINK",
+         "tickerLeft": "LINK-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LINK",
+         "tickerRight": "LINKUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "KDA",
+         "tickerLeft": "KDA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "KDA",
+         "tickerRight": "KDAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ROSE",
+         "tickerLeft": "ROSE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ROSE",
+         "tickerRight": "ROSEUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "XTZ",
+         "tickerLeft": "XTZ-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "XTZ",
+         "tickerRight": "XTZUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "MIR",
+         "tickerLeft": "MIR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MIR",
+         "tickerRight": "MIRUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "OP",
+         "tickerLeft": "OP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "OP",
+         "tickerRight": "OPUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "POND",
+         "tickerLeft": "POND-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "POND",
+         "tickerRight": "PONDUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ICP",
+         "tickerLeft": "ICP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ICP",
+         "tickerRight": "ICPUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "QI",
+         "tickerLeft": "QI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "QI",
+         "tickerRight": "QIUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "BADGER",
+         "tickerLeft": "BADGER-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BADGER",
+         "tickerRight": "BADGERUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "XVS",
+         "tickerLeft": "XVS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "XVS",
+         "tickerRight": "XVSUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "DGB",
+         "tickerLeft": "DGB-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DGB",
+         "tickerRight": "DGBUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "LRC",
+         "tickerLeft": "LRC-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LRC",
+         "tickerRight": "LRCUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "REEF",
+         "tickerLeft": "REEF-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "REEF",
+         "tickerRight": "REEFUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ANKR",
+         "tickerLeft": "ANKR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ANKR",
+         "tickerRight": "ANKRUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "BAKE",
+         "tickerLeft": "BAKE-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BAKE",
+         "tickerRight": "BAKEUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ORN",
+         "tickerLeft": "ORN-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ORN",
+         "tickerRight": "ORNUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "WRX",
+         "tickerLeft": "WRX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "WRX",
+         "tickerRight": "WRXUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "CTSI",
+         "tickerLeft": "CTSI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CTSI",
+         "tickerRight": "CTSIUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "FIL",
+         "tickerLeft": "FIL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "FIL",
+         "tickerRight": "FILUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "C98",
+         "tickerLeft": "C98-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "C98",
+         "tickerRight": "C98USDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "RSR",
+         "tickerLeft": "RSR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "RSR",
+         "tickerRight": "RSRUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "OOKI",
+         "tickerLeft": "OOKI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "OOKI",
+         "tickerRight": "OOKIUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ONT",
+         "tickerLeft": "ONT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ONT",
+         "tickerRight": "ONTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "UMA",
+         "tickerLeft": "UMA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "UMA",
+         "tickerRight": "UMAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "FORTH",
+         "tickerLeft": "FORTH-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "FORTH",
+         "tickerRight": "FORTHUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "MOVR",
+         "tickerLeft": "MOVR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MOVR",
+         "tickerRight": "MOVRUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "AR",
+         "tickerLeft": "AR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "AR",
+         "tickerRight": "ARUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "BAND",
+         "tickerLeft": "BAND-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BAND",
+         "tickerRight": "BANDUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "VOXEL",
+         "tickerLeft": "VOXEL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "VOXEL",
+         "tickerRight": "VOXELUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ATA",
+         "tickerLeft": "ATA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ATA",
+         "tickerRight": "ATAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "XLM",
+         "tickerLeft": "XLM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "XLM",
+         "tickerRight": "XLMUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "YGG",
+         "tickerLeft": "YGG-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "YGG",
+         "tickerRight": "YGGUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "DEGO",
+         "tickerLeft": "DEGO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DEGO",
+         "tickerRight": "DEGOUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "BAT",
+         "tickerLeft": "BAT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BAT",
+         "tickerRight": "BATUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "SFP",
+         "tickerLeft": "SFP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SFP",
+         "tickerRight": "SFPUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "STMX",
+         "tickerLeft": "STMX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "STMX",
+         "tickerRight": "STMXUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "SLP",
+         "tickerLeft": "SLP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "SLP",
+         "tickerRight": "SLPUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "XEM",
+         "tickerLeft": "XEM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "XEM",
+         "tickerRight": "XEMUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "IOTX",
+         "tickerLeft": "IOTX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "IOTX",
+         "tickerRight": "IOTXUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "OXT",
+         "tickerLeft": "OXT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "OXT",
+         "tickerRight": "OXTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "OM",
+         "tickerLeft": "OM-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "OM",
+         "tickerRight": "OMUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "LIT",
+         "tickerLeft": "LIT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "LIT",
+         "tickerRight": "LITUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "BSW",
+         "tickerLeft": "BSW-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BSW",
+         "tickerRight": "BSWUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "GMT",
+         "tickerLeft": "GMT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "GMT",
+         "tickerRight": "GMTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "BIFI",
+         "tickerLeft": "BIFI-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "BIFI",
+         "tickerRight": "BIFIUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "OMG",
+         "tickerLeft": "OMG-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "OMG",
+         "tickerRight": "OMGUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "COCOS",
+         "tickerLeft": "COCOS-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "COCOS",
+         "tickerRight": "COCOSUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ZIL",
+         "tickerLeft": "ZIL-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ZIL",
+         "tickerRight": "ZILUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "COMP",
+         "tickerLeft": "COMP-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "COMP",
+         "tickerRight": "COMPUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "PYR",
+         "tickerLeft": "PYR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "PYR",
+         "tickerRight": "PYRUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ALGO",
+         "tickerLeft": "ALGO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ALGO",
+         "tickerRight": "ALGOUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "WAVES",
+         "tickerLeft": "WAVES-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "WAVES",
+         "tickerRight": "WAVESUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "DASH",
+         "tickerLeft": "DASH-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DASH",
+         "tickerRight": "DASHUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ENJ",
+         "tickerLeft": "ENJ-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ENJ",
+         "tickerRight": "ENJUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "DODO",
+         "tickerLeft": "DODO-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "DODO",
+         "tickerRight": "DODOUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "QUICK",
+         "tickerLeft": "QUICK-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "QUICK",
+         "tickerRight": "QUICKUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "JST",
+         "tickerLeft": "JST-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "JST",
+         "tickerRight": "JSTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "OGN",
+         "tickerLeft": "OGN-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "OGN",
+         "tickerRight": "OGNUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "QNT",
+         "tickerLeft": "QNT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "QNT",
+         "tickerRight": "QNTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "NEAR",
+         "tickerLeft": "NEAR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "NEAR",
+         "tickerRight": "NEARUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "CHR",
+         "tickerLeft": "CHR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "CHR",
+         "tickerRight": "CHRUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "TWT",
+         "tickerLeft": "TWT-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "TWT",
+         "tickerRight": "TWTUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "MKR",
+         "tickerLeft": "MKR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "MKR",
+         "tickerRight": "MKRUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "ALPACA",
+         "tickerLeft": "ALPACA-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "ALPACA",
+         "tickerRight": "ALPACAUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "FLUX",
+         "tickerLeft": "FLUX-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "FLUX",
+         "tickerRight": "FLUXUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "KP3R",
+         "tickerLeft": "KP3R-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "KP3R",
+         "tickerRight": "KP3RUSDT",
+         "exchangeRight": "Binance"
+        },
+        {
+         "nameLeft": "RNDR",
+         "tickerLeft": "RNDR-USDT",
+         "exchangeLeft": "KuCoin",
+         "nameRight": "RNDR",
+         "tickerRight": "RNDRUSDT",
+         "exchangeRight": "Binance"
         }
        ]
 }

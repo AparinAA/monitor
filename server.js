@@ -6,8 +6,10 @@ const {OKXclient} = require('./OKXclient');
 const { Spot } = require('@binance/connector'); //Binance SPOT api
 const fs = require('fs'); 
 const {promiseTickersWithSpread} = require('./getCurrencies');
+const API = require('kucoin-node-sdk');
 
-const host = '195.133.1.56';//'localhost';//
+
+const host = '195.133.1.56'//'localhost'//;//;//
 const port = 8090;
 
 const secretDict_FTX = {
@@ -26,6 +28,18 @@ const secretDict_OKX = {
 
 //Init Binance api
 const BNB = new Spot(process.env.binance_api_key, process.env.binance_api_secret);
+
+//Init KuCoin api
+const kucoin_secret = {
+    baseUrl: 'https://api.kucoin.com',
+    apiAuth: {
+      key: process.env.kucoin_api_key, // KC-API-KEY
+      secret: process.env.kucoin_api_secret, // API-Secret
+      passphrase: process.env.kucoin_api_pass, // KC-API-PASSPHRASE
+    },
+    authVersion: 2, // KC-API-KEY-VERSION. Notice: for v2 API-KEY, not required for v1 version.
+}
+API.init(kucoin_secret);
 
 const rawdata = fs.readFileSync('currencyInfo.json');
 const tickersAll = JSON.parse(fs.readFileSync('tickers1.json', {"encoding": "utf-8"})); 
@@ -67,7 +81,7 @@ const nullSpreadJson = [
 let allSpreadJson = nullSpreadJson;
 const nsscrySpread = process.env.nsscrySpread;
 
-promiseTickersWithSpread([okx, ftx_1, BNB],  tickersAll, nsscrySpread)
+promiseTickersWithSpread([okx, ftx_1, BNB, API],  tickersAll, nsscrySpread)
 .then(response => {
     allSpreadJson = response
 }, e => {
@@ -80,7 +94,7 @@ promiseTickersWithSpread([okx, ftx_1, BNB],  tickersAll, nsscrySpread)
 });
 
 setInterval( () => {
-    promiseTickersWithSpread([okx, ftx_1, BNB], tickersAll, nsscrySpread)
+    promiseTickersWithSpread([okx, ftx_1, BNB, API], tickersAll, nsscrySpread)
     .then(response => {
         allSpreadJson = response
     }, e => {

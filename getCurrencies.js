@@ -41,6 +41,27 @@ function getMarketBNB(client, tickers) {
             });
 }
 
+
+//get market Kucoin
+function getTickersKuCoin(API, tickers){
+    return API.rest.Market.Symbols.getAllTickers()
+    .then(response => {
+        const res = tickers.map( item => {
+            const el = response.data.ticker.find(element => element.symbol === item.tickerLeft)
+            return {
+                'instId': el.symbol,
+                'ask': el.buy,
+                'bid': el.sell,
+            }
+        });
+        return res;
+        //console.info(res);
+    }, (e) => {
+        throw e;
+    });
+}
+
+
 function culcSpread(ex1, ex2) {
     if (!ex1?.ask || !ex2?.bid) {
         return false;
@@ -52,10 +73,13 @@ function culcSpread(ex1, ex2) {
 
 function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
     const tickersBNB = tickersAll.tickers.filter( item => item.exchangeLeft === "Binance");
+    const tickersKuCoin = tickersAll.tickers.filter( item => item.exchangeLeft === "KuCoin");
     return Promise.all([
         exchanges[0].getRequest('/api/v5/market/tickers?instType=SPOT'), //okx
         exchanges[1].getRequest('markets'), //ftx
-        getMarketBNB(exchanges[2],tickersBNB)
+        getMarketBNB(exchanges[2],tickersBNB), //Binance
+        getTickersKuCoin(exchanges[3], tickersKuCoin)
+        
     ])
     .then(response => {
 
@@ -74,10 +98,14 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
         //info tickers of Binance
         const tickersBNB = response[2];
 
+        //info tickers of KuCoin
+        const tickersKuCoin = response[3];
+
         const allExchange = {
             "OKX": tickersOKX,
             "FTX": tickersFTX,
-            "Binance": tickersBNB
+            "Binance": tickersBNB,
+            "KuCoin": tickersKuCoin
         }
 
         let genVarTickets = [];
