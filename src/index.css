@@ -181,10 +181,6 @@ button {
     border: 1px solid var(--accent-bg-color) !important;
     border-radius: 10px !important;
     margin: 10px 0;
-    box-shadow: 0 3px 3px var(--accent-bg-color),
-                0 -3px 3px var(--accent-bg-color),
-                -3px 0 3px var(--accent-bg-color),
-                3px 0 3px var(--accent-bg-color);
                 
 }
 
@@ -193,7 +189,7 @@ button {
 .card-header {
     background-color: rgb(119, 119, 119) !important;
     border-bottom: 1px solid rgb(119, 119, 119) !important;
-    border-radius: 9px !important;
+    border-radius: 9px 9px 4px 4px !important;
 }
 
 .card-footer {
