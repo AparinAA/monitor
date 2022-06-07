@@ -3,8 +3,12 @@ const http = require("http");
 const axios = require('axios');
 const {FTXclient} = require('./FTXclient');
 const {OKXclient} = require('./OKXclient');
+const { Spot } = require('@binance/connector'); //Binance SPOT api
 const fs = require('fs'); 
 const {promiseTickersWithSpread} = require('./getCurrencies');
+
+const host = '195.133.1.56';//'localhost';//
+const port = 8090;
 
 const secretDict_FTX = {
     'api_key_1': process.env.ftx_api_key_1,
@@ -20,10 +24,11 @@ const secretDict_OKX = {
     'secret_key': process.env.secret_key,
 };
 
-
+//Init Binance api
+const BNB = new Spot(process.env.binance_api_key, process.env.binance_api_secret);
 
 const rawdata = fs.readFileSync('currencyInfo.json');
-const tickersAll = fs.readFileSync('tickers1.json', {"encoding": "utf-8"}); 
+const tickersAll = JSON.parse(fs.readFileSync('tickers1.json', {"encoding": "utf-8"})); 
 const dictCurrency = JSON.parse(rawdata);
 const https = require('node:https');
 
@@ -40,13 +45,29 @@ const okx = new OKXclient(secretDict_OKX.api_key, secretDict_OKX.secret_key, sec
 //const mark = {'buy': {'name': 'ftx', 'price': { 'countOrd': 2, 'orders': [[1, 1], [1.1, 1]] }}, 'sell': {'name': 'okx', 'price': ''}}
 
 //console.info(new URLSearchParams({'ex': 'ftx', 'cur': 'TON', 'sz':2}).toString())
-const host = '195.133.1.56'//'localhost';;//;;//
-const port = 8090;
 
-let allSpreadJson = [{'name': '', 'okx': {'ask': [['-']], 'bid': [['-']]}, 'spread': [0, 0],'ftx': {'ask': [['-']], 'bid': [['-']]}, 'spread': [0, 0]}];
+
+const nullSpreadJson = [
+    {
+        'name': '',
+        'leftEx': {
+            'name': '',
+            'ask': [['-']], 
+            'bid': [['-']]
+        },
+        'rightEx': {
+            'name': '',
+            'ask': [['-']],
+            'bid': [['-']]
+        },
+        'spread': [0, 0],
+    }
+];
+
+let allSpreadJson = nullSpreadJson;
 const nsscrySpread = process.env.nsscrySpread;
 
-promiseTickersWithSpread(okx, ftx_1, JSON.parse(tickersAll), nsscrySpread)
+promiseTickersWithSpread([okx, ftx_1, BNB],  tickersAll, nsscrySpread)
 .then(response => {
     allSpreadJson = response
 }, e => {
@@ -55,11 +76,11 @@ promiseTickersWithSpread(okx, ftx_1, JSON.parse(tickersAll), nsscrySpread)
 })
 .catch( e => {
     console.info("error 2 allspread");
-    allSpreadJson = [{'name': '', 'okx': {'ask': [['-']], 'bid': [['-']]}, 'spread': [0, 0], 'ftx': {'ask': [['-']], 'bid': [['-']]}}];
+    allSpreadJson = nullSpreadJson;
 });
 
 setInterval( () => {
-    promiseTickersWithSpread(okx, ftx_1, JSON.parse(tickersAll), nsscrySpread)
+    promiseTickersWithSpread([okx, ftx_1, BNB], tickersAll, nsscrySpread)
     .then(response => {
         allSpreadJson = response
     }, e => {
@@ -68,7 +89,7 @@ setInterval( () => {
     })
     .catch( e => {
         console.info("error 2 allspread");
-        allSpreadJson = [{'name': '', 'okx': {'ask': [['-']], 'bid': [['-']]}, 'spread': [0, 0],'ftx': {'ask': [['-']], 'bid': [['-']]}}];
+        //allSpreadJson = nullSpreadJson;
     });
 }, 15000)
 

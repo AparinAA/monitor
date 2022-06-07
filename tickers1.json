@@ -1,473 +1,2605 @@
 { 
     "tickers": 
-        [
-            {
-            "nameFTX": "1INCH",
-            "FTX": "1INCH/USD",
-            "OKX": "1INCH-USDT",
-            "nameOKX": "1INCH"
-            },
-            {
-            "nameFTX": "AAVE",
-            "FTX": "AAVE/USD",
-            "OKX": "AAVE-USDT",
-            "nameOKX": "AAVE"
-            },
-            {
-            "nameFTX": "ALGO",
-            "FTX": "ALGO/USD",
-            "OKX": "ALGO-USDT",
-            "nameOKX": "ALGO"
-            },
-            {
-            "nameFTX": "ALPHA",
-            "FTX": "ALPHA/USD",
-            "OKX": "ALPHA-USDT",
-            "nameOKX": "ALPHA"
-            },
-            {
-            "nameFTX": "ANC",
-            "FTX": "ANC/USD",
-            "OKX": "ANC-USDT",
-            "nameOKX": "ANC"
-            },
-            {
-            "nameFTX": "APE",
-            "FTX": "APE/USD",
-            "OKX": "APE-USDT",
-            "nameOKX": "APE"
-            },
-            {
-            "nameFTX": "ATOM",
-            "FTX": "ATOM/USD",
-            "OKX": "ATOM-USDT",
-            "nameOKX": "ATOM"
-            },
-            {
-            "nameFTX": "AVAX",
-            "FTX": "AVAX/USD",
-            "OKX": "AVAX-USDT",
-            "nameOKX": "AVAX"
-            },
-            {
-            "nameFTX": "AXS",
-            "FTX": "AXS/USD",
-            "OKX": "AXS-USDT",
-            "nameOKX": "AXS"
-            },
-            {
-            "nameFTX": "BADGER",
-            "FTX": "BADGER/USD",
-            "OKX": "BADGER-USDT",
-            "nameOKX": "BADGER"
-            },
-            {
-            "nameFTX": "BAND",
-            "FTX": "BAND/USD",
-            "OKX": "BAND-USDT",
-            "nameOKX": "BAND"
-            },
-            {
-            "nameFTX": "BAT",
-            "FTX": "BAT/USD",
-            "OKX": "BAT-USDT",
-            "nameOKX": "BAT"
-            },
-            {
-            "nameFTX": "BCH",
-            "FTX": "BCH/USD",
-            "OKX": "BCH-USDT",
-            "nameOKX": "BCH"
-            },
-            {
-            "nameFTX": "BICO",
-            "FTX": "BICO/USD",
-            "OKX": "BICO-USDT",
-            "nameOKX": "BICO"
-            },
-            {
-            "nameFTX": "BNT",
-            "FTX": "BNT/USD",
-            "OKX": "BNT-USDT",
-            "nameOKX": "BNT"
-            },
-            {
-            "nameFTX": "BTC",
-            "FTX": "BTC/USD",
-            "OKX": "BTC-USDT",
-            "nameOKX": "BTC"
-            },
-            {
-            "nameFTX": "CEL",
-            "FTX": "CEL/USD",
-            "OKX": "CEL-USDT",
-            "nameOKX": "CEL"
-            },
-            {
-            "nameFTX": "CHZ",
-            "FTX": "CHZ/USD",
-            "OKX": "CHZ-USDT",
-            "nameOKX": "CHZ"
-            },
-            {
-            "nameFTX": "COMP",
-            "FTX": "COMP/USD",
-            "OKX": "COMP-USDT",
-            "nameOKX": "COMP"
-            },
-            {
-            "nameFTX": "CONV",
-            "FTX": "CONV/USD",
-            "OKX": "CONV-USDT",
-            "nameOKX": "CONV"
-            },
-            {
-            "nameFTX": "CQT",
-            "FTX": "CQT/USD",
-            "OKX": "CQT-USDT",
-            "nameOKX": "CQT"
-            },
-            {
-            "nameFTX": "CRO",
-            "FTX": "CRO/USD",
-            "OKX": "CRO-USDT",
-            "nameOKX": "CRO"
-            },
-            {
-            "nameFTX": "CRV",
-            "FTX": "CRV/USD",
-            "OKX": "CRV-USDT",
-            "nameOKX": "CRV"
-            },
-            {
-            "nameFTX": "CVX",
-            "FTX": "CVX/USD",
-            "OKX": "CVX-USDT",
-            "nameOKX": "CVX"
-            },
-            {
-            "nameFTX": "DAI",
-            "FTX": "DAI/USD",
-            "OKX": "DAI-USDT",
-            "nameOKX": "DAI"
-            },
-            {
-            "nameFTX": "DOGE",
-            "FTX": "DOGE/USD",
-            "OKX": "DOGE-USDT",
-            "nameOKX": "DOGE"
-            },
-            {
-            "nameFTX": "DOT",
-            "FTX": "DOT/USD",
-            "OKX": "DOT-USDT",
-            "nameOKX": "DOT"
-            },
-            {
-            "nameFTX": "DYDX",
-            "FTX": "DYDX/USD",
-            "OKX": "DYDX-USDT",
-            "nameOKX": "DYDX"
-            },
-            {
-            "nameFTX": "ENJ",
-            "FTX": "ENJ/USD",
-            "OKX": "ENJ-USDT",
-            "nameOKX": "ENJ"
-            },
-            {
-            "nameFTX": "ENS",
-            "FTX": "ENS/USD",
-            "OKX": "ENS-USDT",
-            "nameOKX": "ENS"
-            },
-            {
-            "nameFTX": "ETH",
-            "FTX": "ETH/USD",
-            "OKX": "ETH-USDT",
-            "nameOKX": "ETH"
-            },
-            {
-            "nameFTX": "FTM",
-            "FTX": "FTM/USD",
-            "OKX": "FTM-USDT",
-            "nameOKX": "FTM"
-            },
-            {
-            "nameFTX": "GALA",
-            "FTX": "GALA/USD",
-            "OKX": "GALA-USDT",
-            "nameOKX": "GALA"
-            },
-            {
-            "nameFTX": "GARI",
-            "FTX": "GARI/USD",
-            "OKX": "GARI-USDT",
-            "nameOKX": "GARI"
-            },
-            {
-            "nameFTX": "GMT",
-            "FTX": "GMT/USD",
-            "OKX": "GMT-USDT",
-            "nameOKX": "GMT"
-            },
-            {
-            "nameFTX": "GODS",
-            "FTX": "GODS/USD",
-            "OKX": "GODS-USDT",
-            "nameOKX": "GODS"
-            },
-            {
-            "nameFTX": "GOG",
-            "FTX": "GOG/USD",
-            "OKX": "GOG-USDT",
-            "nameOKX": "GOG"
-            },
-            {
-            "nameFTX": "GRT",
-            "FTX": "GRT/USD",
-            "OKX": "GRT-USDT",
-            "nameOKX": "GRT"
-            },
-            {
-            "nameFTX": "IMX",
-            "FTX": "IMX/USD",
-            "OKX": "IMX-USDT",
-            "nameOKX": "IMX"
-            },
-            {
-            "nameFTX": "JOE",
-            "FTX": "JOE/USD",
-            "OKX": "JOE-USDT",
-            "nameOKX": "JOE"
-            },
-            {
-            "nameFTX": "KNC",
-            "FTX": "KNC/USD",
-            "OKX": "KNC-USDT",
-            "nameOKX": "KNC"
-            },
-            {
-            "nameFTX": "LEO",
-            "FTX": "LEO/USD",
-            "OKX": "LEO-USDT",
-            "nameOKX": "LEO"
-            },
-            {
-            "nameFTX": "LINK",
-            "FTX": "LINK/USD",
-            "OKX": "LINK-USDT",
-            "nameOKX": "LINK"
-            },
-            {
-            "nameFTX": "LOOKS",
-            "FTX": "LOOKS/USD",
-            "OKX": "LOOKS-USDT",
-            "nameOKX": "LOOKS"
-            },
-            {
-            "nameFTX": "LRC",
-            "FTX": "LRC/USD",
-            "OKX": "LRC-USDT",
-            "nameOKX": "LRC"
-            },
-            {
-            "nameFTX": "LTC",
-            "FTX": "LTC/USD",
-            "OKX": "LTC-USDT",
-            "nameOKX": "LTC"
-            },
-            {
-            "nameFTX": "MANA",
-            "FTX": "MANA/USD",
-            "OKX": "MANA-USDT",
-            "nameOKX": "MANA"
-            },
-            {
-            "nameFTX": "MATIC",
-            "FTX": "MATIC/USD",
-            "OKX": "MATIC-USDT",
-            "nameOKX": "MATIC"
-            },
-            {
-            "nameFTX": "MKR",
-            "FTX": "MKR/USD",
-            "OKX": "MKR-USDT",
-            "nameOKX": "MKR"
-            },
-            {
-            "nameFTX": "NEAR",
-            "FTX": "NEAR/USD",
-            "OKX": "NEAR-USDT",
-            "nameOKX": "NEAR"
-            },
-            {
-            "nameFTX": "OMG",
-            "FTX": "OMG/USD",
-            "OKX": "OMG-USDT",
-            "nameOKX": "OMG"
-            },
-            {
-            "nameFTX": "ORBS",
-            "FTX": "ORBS/USD",
-            "OKX": "ORBS-USDT",
-            "nameOKX": "ORBS"
-            },
-            {
-            "nameFTX": "PERP",
-            "FTX": "PERP/USD",
-            "OKX": "PERP-USDT",
-            "nameOKX": "PERP"
-            },
-            {
-            "nameFTX": "RAY",
-            "FTX": "RAY/USD",
-            "OKX": "RAY-USDT",
-            "nameOKX": "RAY"
-            },
-            {
-            "nameFTX": "REN",
-            "FTX": "REN/USD",
-            "OKX": "REN-USDT",
-            "nameOKX": "REN"
-            },
-            {
-            "nameFTX": "RSR",
-            "FTX": "RSR/USD",
-            "OKX": "RSR-USDT",
-            "nameOKX": "RSR"
-            },
-            {
-            "nameFTX": "SAND",
-            "FTX": "SAND/USD",
-            "OKX": "SAND-USDT",
-            "nameOKX": "SAND"
-            },
-            {
-            "nameFTX": "SHIB",
-            "FTX": "SHIB/USD",
-            "OKX": "SHIB-USDT",
-            "nameOKX": "SHIB"
-            },
-            {
-            "nameFTX": "SKL",
-            "FTX": "SKL/USD",
-            "OKX": "SKL-USDT",
-            "nameOKX": "SKL"
-            },
-            {
-            "nameFTX": "SLP",
-            "FTX": "SLP/USD",
-            "OKX": "SLP-USDT",
-            "nameOKX": "SLP"
-            },
-            {
-            "nameFTX": "SNX",
-            "FTX": "SNX/USD",
-            "OKX": "SNX-USDT",
-            "nameOKX": "SNX"
-            },
-            {
-            "nameFTX": "SOL",
-            "FTX": "SOL/USD",
-            "OKX": "SOL-USDT",
-            "nameOKX": "SOL"
-            },
-            {
-            "nameFTX": "SOS",
-            "FTX": "SOS/USD",
-            "OKX": "SOS-USDT",
-            "nameOKX": "SOS"
-            },
-            {
-            "nameFTX": "SPELL",
-            "FTX": "SPELL/USD",
-            "OKX": "SPELL-USDT",
-            "nameOKX": "SPELL"
-            },
-            {
-            "nameFTX": "SRM",
-            "FTX": "SRM/USD",
-            "OKX": "SRM-USDT",
-            "nameOKX": "SRM"
-            },
-            {
-            "nameFTX": "SUSHI",
-            "FTX": "SUSHI/USD",
-            "OKX": "SUSHI-USDT",
-            "nameOKX": "SUSHI"
-            },
-            {
-            "nameFTX": "TONCOIN",
-            "FTX": "TONCOIN/USD",
-            "OKX": "TON-USDT",
-            "nameOKX": "TON"
-            },
-            {
-            "nameFTX": "TRX",
-            "FTX": "TRX/USD",
-            "OKX": "TRX-USDT",
-            "nameOKX": "TRX"
-            },
-            {
-            "nameFTX": "UMEE",
-            "FTX": "UMEE/USD",
-            "OKX": "UMEE-USDT",
-            "nameOKX": "UMEE"
-            },
-            {
-            "nameFTX": "UNI",
-            "FTX": "UNI/USD",
-            "OKX": "UNI-USDT",
-            "nameOKX": "UNI"
-            },
-            {
-            "nameFTX": "WAVES",
-            "FTX": "WAVES/USD",
-            "OKX": "WAVES-USDT",
-            "nameOKX": "WAVES"
-            },
-            {
-            "nameFTX": "WBTC",
-            "FTX": "WBTC/USD",
-            "OKX": "WBTC-USDT",
-            "nameOKX": "WBTC"
-            },
-            {
-            "nameFTX": "XRP",
-            "FTX": "XRP/USD",
-            "OKX": "XRP-USDT",
-            "nameOKX": "XRP"
-            },
-            {
-            "nameFTX": "YFI",
-            "FTX": "YFI/USD",
-            "OKX": "YFI-USDT",
-            "nameOKX": "YFI"
-            },
-            {
-            "nameFTX": "YFII",
-            "FTX": "YFII/USD",
-            "OKX": "YFII-USDT",
-            "nameOKX": "YFII"
-            },
-            {
-            "nameFTX": "YGG",
-            "FTX": "YGG/USD",
-            "OKX": "YGG-USDT",
-            "nameOKX": "YGG"
-            },
-            {
-            "nameFTX": "ZRX",
-            "FTX": "ZRX/USD",
-            "OKX": "ZRX-USDT",
-            "nameOKX": "ZRX"
-            },
-            {
-            "nameFTX": "OKB",
-            "FTX": "OKB/USD",
-            "OKX": "OKB-USDT",
-            "nameOKX": "OKB"
-            }
-        ]
+    [
+        {
+         "nameLeft": "1INCH",
+         "tickerLeft": "1INCH/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "1INCH",
+         "tickerRight": "1INCH-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "AAVE",
+         "tickerLeft": "AAVE/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "AAVE",
+         "tickerRight": "AAVE-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ALGO",
+         "tickerLeft": "ALGO/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "ALGO",
+         "tickerRight": "ALGO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ALPHA",
+         "tickerLeft": "ALPHA/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "ALPHA",
+         "tickerRight": "ALPHA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ANC",
+         "tickerLeft": "ANC/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "ANC",
+         "tickerRight": "ANC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "APE",
+         "tickerLeft": "APE/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "APE",
+         "tickerRight": "APE-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ATOM",
+         "tickerLeft": "ATOM/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "ATOM",
+         "tickerRight": "ATOM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "AVAX",
+         "tickerLeft": "AVAX/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "AVAX",
+         "tickerRight": "AVAX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "AXS",
+         "tickerLeft": "AXS/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "AXS",
+         "tickerRight": "AXS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BADGER",
+         "tickerLeft": "BADGER/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "BADGER",
+         "tickerRight": "BADGER-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BAND",
+         "tickerLeft": "BAND/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "BAND",
+         "tickerRight": "BAND-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BAT",
+         "tickerLeft": "BAT/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "BAT",
+         "tickerRight": "BAT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BCH",
+         "tickerLeft": "BCH/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "BCH",
+         "tickerRight": "BCH-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BICO",
+         "tickerLeft": "BICO/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "BICO",
+         "tickerRight": "BICO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BNT",
+         "tickerLeft": "BNT/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "BNT",
+         "tickerRight": "BNT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BTC",
+         "tickerLeft": "BTC/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "BTC",
+         "tickerRight": "BTC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CEL",
+         "tickerLeft": "CEL/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "CEL",
+         "tickerRight": "CEL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CHZ",
+         "tickerLeft": "CHZ/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "CHZ",
+         "tickerRight": "CHZ-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "COMP",
+         "tickerLeft": "COMP/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "COMP",
+         "tickerRight": "COMP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CONV",
+         "tickerLeft": "CONV/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "CONV",
+         "tickerRight": "CONV-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CQT",
+         "tickerLeft": "CQT/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "CQT",
+         "tickerRight": "CQT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CRO",
+         "tickerLeft": "CRO/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "CRO",
+         "tickerRight": "CRO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CRV",
+         "tickerLeft": "CRV/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "CRV",
+         "tickerRight": "CRV-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CVX",
+         "tickerLeft": "CVX/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "CVX",
+         "tickerRight": "CVX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "DAI",
+         "tickerLeft": "DAI/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "DAI",
+         "tickerRight": "DAI-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "DOGE",
+         "tickerLeft": "DOGE/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "DOGE",
+         "tickerRight": "DOGE-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "DOT",
+         "tickerLeft": "DOT/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "DOT",
+         "tickerRight": "DOT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "DYDX",
+         "tickerLeft": "DYDX/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "DYDX",
+         "tickerRight": "DYDX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ENJ",
+         "tickerLeft": "ENJ/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "ENJ",
+         "tickerRight": "ENJ-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ENS",
+         "tickerLeft": "ENS/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "ENS",
+         "tickerRight": "ENS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ETH",
+         "tickerLeft": "ETH/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "ETH",
+         "tickerRight": "ETH-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "FTM",
+         "tickerLeft": "FTM/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "FTM",
+         "tickerRight": "FTM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GALA",
+         "tickerLeft": "GALA/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "GALA",
+         "tickerRight": "GALA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GARI",
+         "tickerLeft": "GARI/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "GARI",
+         "tickerRight": "GARI-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GMT",
+         "tickerLeft": "GMT/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "GMT",
+         "tickerRight": "GMT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GODS",
+         "tickerLeft": "GODS/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "GODS",
+         "tickerRight": "GODS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GOG",
+         "tickerLeft": "GOG/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "GOG",
+         "tickerRight": "GOG-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GRT",
+         "tickerLeft": "GRT/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "GRT",
+         "tickerRight": "GRT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "IMX",
+         "tickerLeft": "IMX/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "IMX",
+         "tickerRight": "IMX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "JOE",
+         "tickerLeft": "JOE/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "JOE",
+         "tickerRight": "JOE-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "KNC",
+         "tickerLeft": "KNC/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "KNC",
+         "tickerRight": "KNC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LEO",
+         "tickerLeft": "LEO/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "LEO",
+         "tickerRight": "LEO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LINK",
+         "tickerLeft": "LINK/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "LINK",
+         "tickerRight": "LINK-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LOOKS",
+         "tickerLeft": "LOOKS/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "LOOKS",
+         "tickerRight": "LOOKS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LRC",
+         "tickerLeft": "LRC/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "LRC",
+         "tickerRight": "LRC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LTC",
+         "tickerLeft": "LTC/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "LTC",
+         "tickerRight": "LTC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MANA",
+         "tickerLeft": "MANA/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "MANA",
+         "tickerRight": "MANA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MATIC",
+         "tickerLeft": "MATIC/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "MATIC",
+         "tickerRight": "MATIC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MKR",
+         "tickerLeft": "MKR/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "MKR",
+         "tickerRight": "MKR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "NEAR",
+         "tickerLeft": "NEAR/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "NEAR",
+         "tickerRight": "NEAR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "OMG",
+         "tickerLeft": "OMG/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "OMG",
+         "tickerRight": "OMG-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ORBS",
+         "tickerLeft": "ORBS/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "ORBS",
+         "tickerRight": "ORBS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "PERP",
+         "tickerLeft": "PERP/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "PERP",
+         "tickerRight": "PERP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "RAY",
+         "tickerLeft": "RAY/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "RAY",
+         "tickerRight": "RAY-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "REN",
+         "tickerLeft": "REN/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "REN",
+         "tickerRight": "REN-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "RSR",
+         "tickerLeft": "RSR/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "RSR",
+         "tickerRight": "RSR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SAND",
+         "tickerLeft": "SAND/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "SAND",
+         "tickerRight": "SAND-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SHIB",
+         "tickerLeft": "SHIB/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "SHIB",
+         "tickerRight": "SHIB-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SKL",
+         "tickerLeft": "SKL/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "SKL",
+         "tickerRight": "SKL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SLP",
+         "tickerLeft": "SLP/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "SLP",
+         "tickerRight": "SLP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SNX",
+         "tickerLeft": "SNX/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "SNX",
+         "tickerRight": "SNX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SOL",
+         "tickerLeft": "SOL/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "SOL",
+         "tickerRight": "SOL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SOS",
+         "tickerLeft": "SOS/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "SOS",
+         "tickerRight": "SOS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SPELL",
+         "tickerLeft": "SPELL/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "SPELL",
+         "tickerRight": "SPELL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SRM",
+         "tickerLeft": "SRM/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "SRM",
+         "tickerRight": "SRM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SUSHI",
+         "tickerLeft": "SUSHI/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "SUSHI",
+         "tickerRight": "SUSHI-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "TONCOIN",
+         "tickerLeft": "TONCOIN/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "TON",
+         "tickerRight": "TON-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "TRX",
+         "tickerLeft": "TRX/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "TRX",
+         "tickerRight": "TRX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "UMEE",
+         "tickerLeft": "UMEE/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "UMEE",
+         "tickerRight": "UMEE-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "UNI",
+         "tickerLeft": "UNI/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "UNI",
+         "tickerRight": "UNI-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "WAVES",
+         "tickerLeft": "WAVES/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "WAVES",
+         "tickerRight": "WAVES-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "WBTC",
+         "tickerLeft": "WBTC/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "WBTC",
+         "tickerRight": "WBTC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "XRP",
+         "tickerLeft": "XRP/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "XRP",
+         "tickerRight": "XRP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "YFI",
+         "tickerLeft": "YFI/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "YFI",
+         "tickerRight": "YFI-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "YFII",
+         "tickerLeft": "YFII/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "YFII",
+         "tickerRight": "YFII-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "YGG",
+         "tickerLeft": "YGG/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "YGG",
+         "tickerRight": "YGG-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ZRX",
+         "tickerLeft": "ZRX/USD",
+         "exchangeLeft": "FTX",
+         "nameRight": "ZRX",
+         "tickerRight": "ZRX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "OKB",
+         "tickerLeft": "OKB/UST",
+         "exchangeLeft": "FTX",
+         "nameRight": "OKB",
+         "tickerRight": "OKB-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BTC",
+         "tickerLeft": "BTCUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "BTC",
+         "tickerRight": "BTC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ETH",
+         "tickerLeft": "ETHUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ETH",
+         "tickerRight": "ETH-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "NEO",
+         "tickerLeft": "NEOUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "NEO",
+         "tickerRight": "NEO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LTC",
+         "tickerLeft": "LTCUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "LTC",
+         "tickerRight": "LTC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "QTUM",
+         "tickerLeft": "QTUMUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "QTUM",
+         "tickerRight": "QTUM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ADA",
+         "tickerLeft": "ADAUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ADA",
+         "tickerRight": "ADA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "XRP",
+         "tickerLeft": "XRPUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "XRP",
+         "tickerRight": "XRP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "EOS",
+         "tickerLeft": "EOSUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "EOS",
+         "tickerRight": "EOS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "TUSD",
+         "tickerLeft": "TUSDUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "TUSD",
+         "tickerRight": "TUSD-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "IOTA",
+         "tickerLeft": "IOTAUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "IOTA",
+         "tickerRight": "IOTA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "XLM",
+         "tickerLeft": "XLMUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "XLM",
+         "tickerRight": "XLM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ONT",
+         "tickerLeft": "ONTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ONT",
+         "tickerRight": "ONT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "TRX",
+         "tickerLeft": "TRXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "TRX",
+         "tickerRight": "TRX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ETC",
+         "tickerLeft": "ETCUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ETC",
+         "tickerRight": "ETC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ICX",
+         "tickerLeft": "ICXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ICX",
+         "tickerRight": "ICX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "NULS",
+         "tickerLeft": "NULSUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "NULS",
+         "tickerRight": "NULS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "USDC",
+         "tickerLeft": "USDCUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "USDC",
+         "tickerRight": "USDC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LINK",
+         "tickerLeft": "LINKUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "LINK",
+         "tickerRight": "LINK-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "WAVES",
+         "tickerLeft": "WAVESUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "WAVES",
+         "tickerRight": "WAVES-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ZIL",
+         "tickerLeft": "ZILUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ZIL",
+         "tickerRight": "ZIL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ZRX",
+         "tickerLeft": "ZRXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ZRX",
+         "tickerRight": "ZRX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BAT",
+         "tickerLeft": "BATUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "BAT",
+         "tickerRight": "BAT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "XMR",
+         "tickerLeft": "XMRUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "XMR",
+         "tickerRight": "XMR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ZEC",
+         "tickerLeft": "ZECUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ZEC",
+         "tickerRight": "ZEC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "IOST",
+         "tickerLeft": "IOSTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "IOST",
+         "tickerRight": "IOST-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CELR",
+         "tickerLeft": "CELRUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "CELR",
+         "tickerRight": "CELR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "DASH",
+         "tickerLeft": "DASHUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "DASH",
+         "tickerRight": "DASH-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "OMG",
+         "tickerLeft": "OMGUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "OMG",
+         "tickerRight": "OMG-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "THETA",
+         "tickerLeft": "THETAUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "THETA",
+         "tickerRight": "THETA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ENJ",
+         "tickerLeft": "ENJUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ENJ",
+         "tickerRight": "ENJ-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MITH",
+         "tickerLeft": "MITHUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "MITH",
+         "tickerRight": "MITH-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MATIC",
+         "tickerLeft": "MATICUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "MATIC",
+         "tickerRight": "MATIC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ATOM",
+         "tickerLeft": "ATOMUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ATOM",
+         "tickerRight": "ATOM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ONE",
+         "tickerLeft": "ONEUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ONE",
+         "tickerRight": "ONE-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "FTM",
+         "tickerLeft": "FTMUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "FTM",
+         "tickerRight": "FTM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ALGO",
+         "tickerLeft": "ALGOUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ALGO",
+         "tickerRight": "ALGO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GTO",
+         "tickerLeft": "GTOUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "GTO",
+         "tickerRight": "GTO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "DOGE",
+         "tickerLeft": "DOGEUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "DOGE",
+         "tickerRight": "DOGE-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "WIN",
+         "tickerLeft": "WINUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "WIN",
+         "tickerRight": "WIN-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CVC",
+         "tickerLeft": "CVCUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "CVC",
+         "tickerRight": "CVC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CHZ",
+         "tickerLeft": "CHZUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "CHZ",
+         "tickerRight": "CHZ-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BAND",
+         "tickerLeft": "BANDUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "BAND",
+         "tickerRight": "BAND-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "XTZ",
+         "tickerLeft": "XTZUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "XTZ",
+         "tickerRight": "XTZ-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "REN",
+         "tickerLeft": "RENUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "REN",
+         "tickerRight": "REN-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "RVN",
+         "tickerLeft": "RVNUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "RVN",
+         "tickerRight": "RVN-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "HBAR",
+         "tickerLeft": "HBARUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "HBAR",
+         "tickerRight": "HBAR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "STX",
+         "tickerLeft": "STXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "STX",
+         "tickerRight": "STX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CTXC",
+         "tickerLeft": "CTXCUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "CTXC",
+         "tickerRight": "CTXC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BCH",
+         "tickerLeft": "BCHUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "BCH",
+         "tickerRight": "BCH-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "TCT",
+         "tickerLeft": "TCTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "TCT",
+         "tickerRight": "TCT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LSK",
+         "tickerLeft": "LSKUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "LSK",
+         "tickerRight": "LSK-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BNT",
+         "tickerLeft": "BNTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "BNT",
+         "tickerRight": "BNT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "WTC",
+         "tickerLeft": "WTCUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "WTC",
+         "tickerRight": "WTC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SOL",
+         "tickerLeft": "SOLUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SOL",
+         "tickerRight": "SOL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MDT",
+         "tickerLeft": "MDTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "MDT",
+         "tickerRight": "MDT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "KNC",
+         "tickerLeft": "KNCUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "KNC",
+         "tickerRight": "KNC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "REP",
+         "tickerLeft": "REPUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "REP",
+         "tickerRight": "REP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LRC",
+         "tickerLeft": "LRCUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "LRC",
+         "tickerRight": "LRC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "COMP",
+         "tickerLeft": "COMPUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "COMP",
+         "tickerRight": "COMP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SC",
+         "tickerLeft": "SCUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SC",
+         "tickerRight": "SC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ZEN",
+         "tickerLeft": "ZENUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ZEN",
+         "tickerRight": "ZEN-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SNX",
+         "tickerLeft": "SNXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SNX",
+         "tickerRight": "SNX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "DGB",
+         "tickerLeft": "DGBUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "DGB",
+         "tickerRight": "DGB-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MKR",
+         "tickerLeft": "MKRUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "MKR",
+         "tickerRight": "MKR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "DCR",
+         "tickerLeft": "DCRUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "DCR",
+         "tickerRight": "DCR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "STORJ",
+         "tickerLeft": "STORJUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "STORJ",
+         "tickerRight": "STORJ-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MANA",
+         "tickerLeft": "MANAUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "MANA",
+         "tickerRight": "MANA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "YFI",
+         "tickerLeft": "YFIUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "YFI",
+         "tickerRight": "YFI-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BAL",
+         "tickerLeft": "BALUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "BAL",
+         "tickerRight": "BAL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "JST",
+         "tickerLeft": "JSTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "JST",
+         "tickerRight": "JST-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SRM",
+         "tickerLeft": "SRMUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SRM",
+         "tickerRight": "SRM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ANT",
+         "tickerLeft": "ANTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ANT",
+         "tickerRight": "ANT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CRV",
+         "tickerLeft": "CRVUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "CRV",
+         "tickerRight": "CRV-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SAND",
+         "tickerLeft": "SANDUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SAND",
+         "tickerRight": "SAND-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "NMR",
+         "tickerLeft": "NMRUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "NMR",
+         "tickerRight": "NMR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "DOT",
+         "tickerLeft": "DOTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "DOT",
+         "tickerRight": "DOT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LUNA",
+         "tickerLeft": "LUNAUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "LUNA",
+         "tickerRight": "LUNA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "RSR",
+         "tickerLeft": "RSRUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "RSR",
+         "tickerRight": "RSR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "WNXM",
+         "tickerLeft": "WNXMUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "WNXM",
+         "tickerRight": "WNXM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "TRB",
+         "tickerLeft": "TRBUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "TRB",
+         "tickerRight": "TRB-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SUSHI",
+         "tickerLeft": "SUSHIUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SUSHI",
+         "tickerRight": "SUSHI-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "YFII",
+         "tickerLeft": "YFIIUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "YFII",
+         "tickerRight": "YFII-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "KSM",
+         "tickerLeft": "KSMUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "KSM",
+         "tickerRight": "KSM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "EGLD",
+         "tickerLeft": "EGLDUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "EGLD",
+         "tickerRight": "EGLD-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "DIA",
+         "tickerLeft": "DIAUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "DIA",
+         "tickerRight": "DIA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "UMA",
+         "tickerLeft": "UMAUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "UMA",
+         "tickerRight": "UMA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "WING",
+         "tickerLeft": "WINGUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "WING",
+         "tickerRight": "WING-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "UNI",
+         "tickerLeft": "UNIUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "UNI",
+         "tickerRight": "UNI-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "OXT",
+         "tickerLeft": "OXTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "OXT",
+         "tickerRight": "OXT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SUN",
+         "tickerLeft": "SUNUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SUN",
+         "tickerRight": "SUN-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "AVAX",
+         "tickerLeft": "AVAXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "AVAX",
+         "tickerRight": "AVAX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "FLM",
+         "tickerLeft": "FLMUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "FLM",
+         "tickerRight": "FLM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "UTK",
+         "tickerLeft": "UTKUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "UTK",
+         "tickerRight": "UTK-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ALPHA",
+         "tickerLeft": "ALPHAUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ALPHA",
+         "tickerRight": "ALPHA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "AAVE",
+         "tickerLeft": "AAVEUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "AAVE",
+         "tickerRight": "AAVE-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "NEAR",
+         "tickerLeft": "NEARUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "NEAR",
+         "tickerRight": "NEAR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "FIL",
+         "tickerLeft": "FILUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "FIL",
+         "tickerRight": "FIL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "AXS",
+         "tickerLeft": "AXSUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "AXS",
+         "tickerRight": "AXS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "XEM",
+         "tickerLeft": "XEMUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "XEM",
+         "tickerRight": "XEM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SKL",
+         "tickerLeft": "SKLUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SKL",
+         "tickerRight": "SKL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GRT",
+         "tickerLeft": "GRTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "GRT",
+         "tickerRight": "GRT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "1INCH",
+         "tickerLeft": "1INCHUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "1INCH",
+         "tickerRight": "1INCH-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CELO",
+         "tickerLeft": "CELOUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "CELO",
+         "tickerRight": "CELO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BADGER",
+         "tickerLeft": "BADGERUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "BADGER",
+         "tickerRight": "BADGER-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "OM",
+         "tickerLeft": "OMUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "OM",
+         "tickerRight": "OM-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "PERP",
+         "tickerLeft": "PERPUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "PERP",
+         "tickerRight": "PERP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CFX",
+         "tickerLeft": "CFXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "CFX",
+         "tickerRight": "CFX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BTG",
+         "tickerLeft": "BTGUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "BTG",
+         "tickerRight": "BTG-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MIR",
+         "tickerLeft": "MIRUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "MIR",
+         "tickerRight": "MIR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "FORTH",
+         "tickerLeft": "FORTHUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "FORTH",
+         "tickerRight": "FORTH-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SLP",
+         "tickerLeft": "SLPUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SLP",
+         "tickerRight": "SLP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SHIB",
+         "tickerLeft": "SHIBUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SHIB",
+         "tickerRight": "SHIB-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ICP",
+         "tickerLeft": "ICPUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ICP",
+         "tickerRight": "ICP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "AR",
+         "tickerLeft": "ARUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "AR",
+         "tickerRight": "AR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "POLS",
+         "tickerLeft": "POLSUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "POLS",
+         "tickerRight": "POLS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MASK",
+         "tickerLeft": "MASKUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "MASK",
+         "tickerRight": "MASK-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "LPT",
+         "tickerLeft": "LPTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "LPT",
+         "tickerRight": "LPT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "TORN",
+         "tickerLeft": "TORNUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "TORN",
+         "tickerRight": "TORN-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ERN",
+         "tickerLeft": "ERNUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ERN",
+         "tickerRight": "ERN-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "KLAY",
+         "tickerLeft": "KLAYUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "KLAY",
+         "tickerRight": "KLAY-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "PHA",
+         "tickerLeft": "PHAUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "PHA",
+         "tickerRight": "PHA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MLN",
+         "tickerLeft": "MLNUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "MLN",
+         "tickerRight": "MLN-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CLV",
+         "tickerLeft": "CLVUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "CLV",
+         "tickerRight": "CLV-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "FLOW",
+         "tickerLeft": "FLOWUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "FLOW",
+         "tickerRight": "FLOW-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MINA",
+         "tickerLeft": "MINAUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "MINA",
+         "tickerRight": "MINA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "RAY",
+         "tickerLeft": "RAYUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "RAY",
+         "tickerRight": "RAY-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GHST",
+         "tickerLeft": "GHSTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "GHST",
+         "tickerRight": "GHST-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "WAXP",
+         "tickerLeft": "WAXPUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "WAXP",
+         "tickerRight": "WAXP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "XEC",
+         "tickerLeft": "XECUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "XEC",
+         "tickerRight": "XEC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ELF",
+         "tickerLeft": "ELFUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ELF",
+         "tickerRight": "ELF-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "DYDX",
+         "tickerLeft": "DYDXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "DYDX",
+         "tickerRight": "DYDX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "USDP",
+         "tickerLeft": "USDPUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "USDP",
+         "tickerRight": "USDP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GALA",
+         "tickerLeft": "GALAUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "GALA",
+         "tickerRight": "GALA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ILV",
+         "tickerLeft": "ILVUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ILV",
+         "tickerRight": "ILV-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "YGG",
+         "tickerLeft": "YGGUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "YGG",
+         "tickerRight": "YGG-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "FRONT",
+         "tickerLeft": "FRONTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "FRONT",
+         "tickerRight": "FRONT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CVP",
+         "tickerLeft": "CVPUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "CVP",
+         "tickerRight": "CVP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "AGLD",
+         "tickerLeft": "AGLDUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "AGLD",
+         "tickerRight": "AGLD-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "AUCTION",
+         "tickerLeft": "AUCTIONUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "AUCTION",
+         "tickerRight": "AUCTION-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "MOVR",
+         "tickerLeft": "MOVRUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "MOVR",
+         "tickerRight": "MOVR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ENS",
+         "tickerLeft": "ENSUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ENS",
+         "tickerRight": "ENS-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "KP3R",
+         "tickerLeft": "KP3RUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "KP3R",
+         "tickerRight": "KP3R-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ALCX",
+         "tickerLeft": "ALCXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ALCX",
+         "tickerRight": "ALCX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BICO",
+         "tickerLeft": "BICOUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "BICO",
+         "tickerRight": "BICO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "CVX",
+         "tickerLeft": "CVXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "CVX",
+         "tickerRight": "CVX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "PEOPLE",
+         "tickerLeft": "PEOPLEUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "PEOPLE",
+         "tickerRight": "PEOPLE-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "SPELL",
+         "tickerLeft": "SPELLUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SPELL",
+         "tickerRight": "SPELL-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "JOE",
+         "tickerLeft": "JOEUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "JOE",
+         "tickerRight": "JOE-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "IMX",
+         "tickerLeft": "IMXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "IMX",
+         "tickerRight": "IMX-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GLMR",
+         "tickerLeft": "GLMRUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "GLMR",
+         "tickerRight": "GLMR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "API3",
+         "tickerLeft": "API3USDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "API3",
+         "tickerRight": "API3-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ACA",
+         "tickerLeft": "ACAUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ACA",
+         "tickerRight": "ACA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ANC",
+         "tickerLeft": "ANCUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ANC",
+         "tickerRight": "ANC-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "WOO",
+         "tickerLeft": "WOOUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "WOO",
+         "tickerRight": "WOO-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "T",
+         "tickerLeft": "TUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "T",
+         "tickerRight": "T-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "ASTR",
+         "tickerLeft": "ASTRUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ASTR",
+         "tickerRight": "ASTR-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "GMT",
+         "tickerLeft": "GMTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "GMT",
+         "tickerRight": "GMT-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "KDA",
+         "tickerLeft": "KDAUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "KDA",
+         "tickerRight": "KDA-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "APE",
+         "tickerLeft": "APEUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "APE",
+         "tickerRight": "APE-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "OP",
+         "tickerLeft": "OPUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "OP",
+         "tickerRight": "OP-USDT",
+         "exchangeRight": "OKX"
+        },
+        {
+         "nameLeft": "BTC",
+         "tickerLeft": "BTCUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "BTC",
+         "tickerRight": "BTC/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "ETH",
+         "tickerLeft": "ETHUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ETH",
+         "tickerRight": "ETH/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "BNB",
+         "tickerLeft": "BNBUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "BNB",
+         "tickerRight": "BNB/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "LTC",
+         "tickerLeft": "LTCUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "LTC",
+         "tickerRight": "LTC/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "XRP",
+         "tickerLeft": "XRPUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "XRP",
+         "tickerRight": "XRP/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "TRX",
+         "tickerLeft": "TRXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "TRX",
+         "tickerRight": "TRX/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "LINK",
+         "tickerLeft": "LINKUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "LINK",
+         "tickerRight": "LINK/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "WAVES",
+         "tickerLeft": "WAVESUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "WAVES",
+         "tickerRight": "WAVES/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "ZRX",
+         "tickerLeft": "ZRXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ZRX",
+         "tickerRight": "ZRX/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "BAT",
+         "tickerLeft": "BATUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "BAT",
+         "tickerRight": "BAT/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "OMG",
+         "tickerLeft": "OMGUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "OMG",
+         "tickerRight": "OMG/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "ENJ",
+         "tickerLeft": "ENJUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ENJ",
+         "tickerRight": "ENJ/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "MATIC",
+         "tickerLeft": "MATICUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "MATIC",
+         "tickerRight": "MATIC/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "ATOM",
+         "tickerLeft": "ATOMUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ATOM",
+         "tickerRight": "ATOM/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "FTM",
+         "tickerLeft": "FTMUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "FTM",
+         "tickerRight": "FTM/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "ALGO",
+         "tickerLeft": "ALGOUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ALGO",
+         "tickerRight": "ALGO/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "DOGE",
+         "tickerLeft": "DOGEUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "DOGE",
+         "tickerRight": "DOGE/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "MTL",
+         "tickerLeft": "MTLUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "MTL",
+         "tickerRight": "MTL/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "DENT",
+         "tickerLeft": "DENTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "DENT",
+         "tickerRight": "DENT/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "CHZ",
+         "tickerLeft": "CHZUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "CHZ",
+         "tickerRight": "CHZ/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "BAND",
+         "tickerLeft": "BANDUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "BAND",
+         "tickerRight": "BAND/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "REN",
+         "tickerLeft": "RENUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "REN",
+         "tickerRight": "REN/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "BCH",
+         "tickerLeft": "BCHUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "BCH",
+         "tickerRight": "BCH/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "FTT",
+         "tickerLeft": "FTTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "FTT",
+         "tickerRight": "FTT/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "EUR",
+         "tickerLeft": "EURUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "EUR",
+         "tickerRight": "EUR/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "BNT",
+         "tickerLeft": "BNTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "BNT",
+         "tickerRight": "BNT/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SOL",
+         "tickerLeft": "SOLUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SOL",
+         "tickerRight": "SOL/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "STMX",
+         "tickerLeft": "STMXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "STMX",
+         "tickerRight": "STMX/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "KNC",
+         "tickerLeft": "KNCUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "KNC",
+         "tickerRight": "KNC/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "LRC",
+         "tickerLeft": "LRCUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "LRC",
+         "tickerRight": "LRC/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "COMP",
+         "tickerLeft": "COMPUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "COMP",
+         "tickerRight": "COMP/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SNX",
+         "tickerLeft": "SNXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SNX",
+         "tickerRight": "SNX/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "GBP",
+         "tickerLeft": "GBPUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "GBP",
+         "tickerRight": "GBP/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SXP",
+         "tickerLeft": "SXPUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SXP",
+         "tickerRight": "SXP/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "MKR",
+         "tickerLeft": "MKRUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "MKR",
+         "tickerRight": "MKR/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "MANA",
+         "tickerLeft": "MANAUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "MANA",
+         "tickerRight": "MANA/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "YFI",
+         "tickerLeft": "YFIUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "YFI",
+         "tickerRight": "YFI/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SRM",
+         "tickerLeft": "SRMUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SRM",
+         "tickerRight": "SRM/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "CRV",
+         "tickerLeft": "CRVUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "CRV",
+         "tickerRight": "CRV/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SAND",
+         "tickerLeft": "SANDUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SAND",
+         "tickerRight": "SAND/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "DOT",
+         "tickerLeft": "DOTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "DOT",
+         "tickerRight": "DOT/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "RSR",
+         "tickerLeft": "RSRUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "RSR",
+         "tickerRight": "RSR/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "PAXG",
+         "tickerLeft": "PAXGUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "PAXG",
+         "tickerRight": "PAXG/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SUSHI",
+         "tickerLeft": "SUSHIUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SUSHI",
+         "tickerRight": "SUSHI/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "YFII",
+         "tickerLeft": "YFIIUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "YFII",
+         "tickerRight": "YFII/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "RUNE",
+         "tickerLeft": "RUNEUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "RUNE",
+         "tickerRight": "RUNE/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "UNI",
+         "tickerLeft": "UNIUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "UNI",
+         "tickerRight": "UNI/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "AVAX",
+         "tickerLeft": "AVAXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "AVAX",
+         "tickerRight": "AVAX/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "HNT",
+         "tickerLeft": "HNTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "HNT",
+         "tickerRight": "HNT/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "ALPHA",
+         "tickerLeft": "ALPHAUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ALPHA",
+         "tickerRight": "ALPHA/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "AAVE",
+         "tickerLeft": "AAVEUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "AAVE",
+         "tickerRight": "AAVE/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "NEAR",
+         "tickerLeft": "NEARUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "NEAR",
+         "tickerRight": "NEAR/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "AUDIO",
+         "tickerLeft": "AUDIOUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "AUDIO",
+         "tickerRight": "AUDIO/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "AXS",
+         "tickerLeft": "AXSUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "AXS",
+         "tickerRight": "AXS/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SKL",
+         "tickerLeft": "SKLUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SKL",
+         "tickerRight": "SKL/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "GRT",
+         "tickerLeft": "GRTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "GRT",
+         "tickerRight": "GRT/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "1INCH",
+         "tickerLeft": "1INCHUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "1INCH",
+         "tickerRight": "1INCH/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "TRU",
+         "tickerLeft": "TRUUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "TRU",
+         "tickerRight": "TRU/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "BADGER",
+         "tickerLeft": "BADGERUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "BADGER",
+         "tickerRight": "BADGER/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "ALICE",
+         "tickerLeft": "ALICEUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ALICE",
+         "tickerRight": "ALICE/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "LINA",
+         "tickerLeft": "LINAUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "LINA",
+         "tickerRight": "LINA/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "PERP",
+         "tickerLeft": "PERPUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "PERP",
+         "tickerRight": "PERP/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "RAMP",
+         "tickerLeft": "RAMPUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "RAMP",
+         "tickerRight": "RAMP/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SLP",
+         "tickerLeft": "SLPUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SLP",
+         "tickerRight": "SLP/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SHIB",
+         "tickerLeft": "SHIBUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SHIB",
+         "tickerRight": "SHIB/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "C98",
+         "tickerLeft": "C98USDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "C98",
+         "tickerRight": "C98/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "RAY",
+         "tickerLeft": "RAYUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "RAY",
+         "tickerRight": "RAY/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "DYDX",
+         "tickerLeft": "DYDXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "DYDX",
+         "tickerRight": "DYDX/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "GALA",
+         "tickerLeft": "GALAUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "GALA",
+         "tickerRight": "GALA/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "YGG",
+         "tickerLeft": "YGGUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "YGG",
+         "tickerRight": "YGG/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "FIDA",
+         "tickerLeft": "FIDAUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "FIDA",
+         "tickerRight": "FIDA/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "ENS",
+         "tickerLeft": "ENSUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ENS",
+         "tickerRight": "ENS/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "QI",
+         "tickerLeft": "QIUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "QI",
+         "tickerRight": "QI/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "VGX",
+         "tickerLeft": "VGXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "VGX",
+         "tickerRight": "VGX/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "RNDR",
+         "tickerLeft": "RNDRUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "RNDR",
+         "tickerRight": "RNDR/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "BICO",
+         "tickerLeft": "BICOUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "BICO",
+         "tickerRight": "BICO/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "FXS",
+         "tickerLeft": "FXSUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "FXS",
+         "tickerRight": "FXS/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "CVX",
+         "tickerLeft": "CVXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "CVX",
+         "tickerRight": "CVX/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "SPELL",
+         "tickerLeft": "SPELLUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "SPELL",
+         "tickerRight": "SPELL/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "JOE",
+         "tickerLeft": "JOEUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "JOE",
+         "tickerRight": "JOE/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "IMX",
+         "tickerLeft": "IMXUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "IMX",
+         "tickerRight": "IMX/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "ANC",
+         "tickerLeft": "ANCUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "ANC",
+         "tickerRight": "ANC/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "GMT",
+         "tickerLeft": "GMTUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "GMT",
+         "tickerRight": "GMT/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "APE",
+         "tickerLeft": "APEUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "APE",
+         "tickerRight": "APE/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "MOB",
+         "tickerLeft": "MOBUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "MOB",
+         "tickerRight": "MOB/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "NEXO",
+         "tickerLeft": "NEXOUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "NEXO",
+         "tickerRight": "NEXO/USD",
+         "exchangeRight": "FTX"
+        },
+        {
+         "nameLeft": "GAL",
+         "tickerLeft": "GALUSDT",
+         "exchangeLeft": "Binance",
+         "nameRight": "GAL",
+         "tickerRight": "GAL/USD",
+         "exchangeRight": "FTX"
+        }
+       ]
 }

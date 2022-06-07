@@ -52,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@binance/connector": "^1.10.0",
     "body-parser": "^1.20.0",
     "express": "^4.18.1",
     "express-pino-logger": "^7.0.0",

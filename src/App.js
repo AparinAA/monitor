@@ -40,21 +40,21 @@ class CheckPrice extends React.Component {
         const spread_1 = truncated(this.props.spread[0],2);
         const spread_2 = truncated(this.props.spread[1],2);
 
-        const buyOKX = this.props.exchange === 'okx' && positiveNumber(spread_1);
-        const buyFTX = this.props.exchange === 'ftx' && positiveNumber(spread_2);
-        const sellOKX = this.props.exchange === 'okx' && positiveNumber(spread_2);
-        const sellFTX = this.props.exchange === 'ftx' && positiveNumber(spread_1);
+        const buyLeftEx = this.props.side === 'leftEx' && positiveNumber(spread_1);
+        const buyRightEx = this.props.side === 'rightEx' && positiveNumber(spread_2);
+        const sellLeftEx = this.props.side === 'leftEx' && positiveNumber(spread_2);
+        const sellRightEx = this.props.side === 'rightEx' && positiveNumber(spread_1);
         const positiveSpread = positiveNumber(spread_1) ? spread_1 : (positiveNumber(spread_2) ? spread_2 : 0);
 
-        const spreadColor = (buyOKX || buyFTX) ? 
+        const spreadColor = (buyLeftEx || buyRightEx) ? 
                             `triger-spread-green` : 
-                            (sellOKX || sellFTX) ? `triger-spread-red` : ``
+                            (sellLeftEx || sellRightEx) ? `triger-spread-red` : ``
 
         const element = <div className={"spread-value " + spreadColor}>
                             { 
-                                (buyOKX || buyFTX) ?
+                                (buyLeftEx || buyRightEx) ?
                                     `Buy: ` + (positiveNumber(positiveSpread) ? `+` : ``) + positiveSpread + `%` :
-                                    (sellOKX || sellFTX) ? 
+                                    (sellLeftEx || sellRightEx) ? 
                                         `Sell: ` + (positiveNumber(positiveSpread) ? `+` : ``) + positiveSpread + `%` :
                                         `Not found spread`                                           
                             }
@@ -62,7 +62,7 @@ class CheckPrice extends React.Component {
         
         return (
             <div>
-                <div><b>Exc. {this.props.exchange === 'ftx' ? "FTX" : "OKEX"}</b></div>
+                <div><b>Exc. {this.props.exchange}</b></div>
                 <div>{element}</div>
                 <div>
                     <div>Order price</div>
@@ -97,9 +97,9 @@ class ViewExchange extends React.Component {
         this.state = {
             currency: this.props?.currency?.name || "ANC",
             price: {
-                'okx': this.props?.currency?.okx || {'ask': [['-']], 'bid': [['-']]},
-                'ftx': this.props?.currency?.ftx || {'ask': [['-']], 'bid': [['-']]},
-                'spread': this.props?.currency?.spread
+                    'leftEx': this.props?.currency?.leftEx || {'nane': '', 'ask': [['-']], 'bid': [['-']]},
+                    'rightEx': this.props?.currency?.rightEx || {'nane': '', 'ask': [['-']], 'bid': [['-']]},
+                    'spread': this.props?.currency?.spread || [0, 0],
             },
             curParams: new URLSearchParams({'cur': this.props?.currency?.name || "ANC"}),
         }
@@ -157,10 +157,22 @@ class ViewExchange extends React.Component {
                     <Card.Body bsPrefix={'class-body-new'}>
                         <Row>
                             <Col>
-                                <CheckPrice exchange="okx" price={this.state.price.okx} spread={this.state.price.spread} time={this.state.timeRefresh}/>
+                                <CheckPrice
+                                    exchange={this.state.price.leftEx.name}
+                                    price={this.state.price.leftEx}
+                                    spread={this.state.price.spread}
+                                    time={this.state.timeRefresh}
+                                    side="leftEx"
+                                />
                             </Col>                            
                             <Col>
-                                <CheckPrice exchange="ftx" price={this.state.price.ftx} spread={this.state.price.spread} time={this.state.timeRefresh}/>
+                                <CheckPrice
+                                    exchange={this.state.price.rightEx.name}
+                                    price={this.state.price.rightEx}
+                                    spread={this.state.price.spread}
+                                    time={this.state.timeRefresh}
+                                    side="rightEx"
+                                />
                             </Col>
                             
                         </Row>
@@ -181,9 +193,9 @@ class AddScan extends React.Component {
         this.state = {
             loading: false,
             countScan: 1,
-            allTickets: [{'name': '', 'okx': {'ask': [['-']], 'bid': [['-']]} ,'ftx': {'ask': [['-']], 'bid': [['-']]}, 'spread': [0, 0]}],
+            allTickets: [{'name': '','leftEx': {'name': '','ask': [['-']], 'bid': [['-']]},'rightEx': {'name': '','ask': [['-']],'bid': [['-']]},'spread': [0, 0]}],
             sortBy: 1,
-            timeRefresh: new Date()
+            timeRefresh: Date.now()
 
         }
         //this.AddScanEvent = this.AddScanEvent.bind(this);
@@ -202,7 +214,7 @@ class AddScan extends React.Component {
             this.setState( state => ({
                     sortBy: Number(event),
                     allTickets: sortData(state.allTickets, Number(event)),
-                    timeRefresh: new Date()
+                    timeRefresh: Date.now()
                 })
             );
         }        
@@ -210,27 +222,19 @@ class AddScan extends React.Component {
 
     timeIdAllCheckPrice() {
         this.setState({loading: true});
-        //axios.get(`http://195.133.1.56:8090/allspread`)
         axios.get(`http://195.133.1.56:8090/allspread`)
         .then( res => {
             
             this.setState( state => ({
                     allTickets: res.data,
                     loading: false,
-                    timeRefresh: new Date()
+                    timeRefresh: Date.now()
                 })
             );
         })
         .catch((e) => {
             this.setState({
-                allTickets: [
-                    {
-                        'name': '',
-                        'okx': {'ask': [['-']], 'bid': [['-']]},
-                        'ftx': {'ask': [['-']], 'bid': [['-']]},
-                        'spread': [0, 0],
-                    }
-                ],
+                allTickets: [{'name': '','leftEx': {'name': '','ask': [['-']], 'bid': [['-']]},'rightEx': {'name': '','ask': [['-']],'bid': [['-']]},'spread': [0, 0]}],
                 loading: false
             })
         });
@@ -258,11 +262,16 @@ class AddScan extends React.Component {
 
         let allTickets = sortData(this.state.allTickets, this.state.sortBy);
         
+        let keyId;
         allTickets.forEach( item => {
-            tableScanAll.push(<ViewExchange key={"key" + item.name + this.state.sortBy + this.state.timeRefresh} currency={item}/>)
+            keyId = item.name + item.leftEx.name + item.rightEx.name + this.state.sortBy + this.state.timeRefresh;
+            tableScanAll.push(<ViewExchange
+                key={"key-" + keyId}
+                currency={item}
+            />)
         });
 
-        const foundScan = tableScanAll.length === 0 ?
+        const foundScan = ((tableScanAll.length === 0) || (allTickets[0]?.name === '')) ?
                         <div className="not-found-window">
                             <span>
                                 Not found cryptocurrencies and pairs exchange with spread 😔  Repeat refreshed for check spreads

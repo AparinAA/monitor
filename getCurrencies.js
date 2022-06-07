@@ -22,6 +22,25 @@ const ftx = new FTXclient(secretDict_FTX.api_key_1, secretDict_FTX.secret_key_1)
 const okx = new OKXclient(secretDict_OKX.api_key, secretDict_OKX.secret_key, secretDict_OKX.passphrase);
 */
 
+//get market Binance
+function getMarketBNB(client, tickers) {
+    return client.ticker24hr()
+            .then(response => {
+                const res = tickers.map( item => {
+                    const el = response.data.find(element => element.symbol === item.tickerLeft)
+                    return {
+                        'instId': el.symbol,
+                        'ask': el.askPrice,
+                        'bid': el.bidPrice,
+                    }
+                });
+                return res;
+                //console.info(res);
+            }, (e) => {
+                throw e;
+            });
+}
+
 function culcSpread(ex1, ex2) {
     if (!ex1?.ask || !ex2?.bid) {
         return false;
@@ -31,42 +50,66 @@ function culcSpread(ex1, ex2) {
 
 //let nsscrySpread = 0.2;
 
-function promiseTickersWithSpread(okx, ftx, tickersAll, nsscrySpread) {
-    return Promise.all([okx.getRequest('/api/v5/market/tickers?instType=SPOT'), ftx.getRequest('markets')])
+function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
+    const tickersBNB = tickersAll.tickers.filter( item => item.exchangeLeft === "Binance");
+    return Promise.all([
+        exchanges[0].getRequest('/api/v5/market/tickers?instType=SPOT'), //okx
+        exchanges[1].getRequest('markets'), //ftx
+        getMarketBNB(exchanges[2],tickersBNB)
+    ])
     .then(response => {
 
-        
+        //info tickers of OKX
         const tickersOKX = response[0].data
         .map(item => {
             return {"instId": item.instId, "ask": Number(item.askPx), "bid": Number(item.bidPx), "vol24": Number(item.vol24h)};
         });
 
-        
+        //info tickers of FTX
         const tickersFTX = response[1].filter(item => (item.type === "spot" && item.quoteCurrency === "USD") )
         .map(item => {
             return {"instId": item.name, "ask": item.ask, "bid": item.bid, "vol24": item.quoteVolume24h}
         });
         
+        //info tickers of Binance
+        const tickersBNB = response[2];
+
+        const allExchange = {
+            "OKX": tickersOKX,
+            "FTX": tickersFTX,
+            "Binance": tickersBNB
+        }
+
         let genVarTickets = [];
         tickersAll.tickers.forEach( item => {
-            const nameFTX = item.nameFTX;
-            const nameOKX = item.nameOKX;
-            const instIdFTX = item.FTX;
-            const instIdOKX = item.OKX;
-
-            const ftxPr = tickersFTX.find( element => element.instId === instIdFTX);
-            const okxPr = tickersOKX.find( element => element.instId === instIdOKX);
+            const nameLeft = item.nameLeft;
+            const nameRight = item.nameRight;
+            const instIdLeft = item.tickerLeft;
+            const instIdRight = item.tickerRight;
+            const exchangeLeft = item.exchangeLeft;
+            const exchangeRight = item.exchangeRight;
             
-            const spread_1 = culcSpread(okxPr,ftxPr);
-            const spread_2 = culcSpread(ftxPr,okxPr);
+            const leftPr = allExchange[exchangeLeft].find( element => element.instId === instIdLeft);
+            const rightPr = allExchange[exchangeRight].find( element => element.instId === instIdRight);
+            
+            const spread_1 = culcSpread(leftPr,rightPr);
+            const spread_2 = culcSpread(rightPr,leftPr);
 
             if ( (spread_1 > nsscrySpread) || (spread_2 > nsscrySpread) ) {
                 genVarTickets.push(
                         {   
-                            'name': nameOKX,
-                            'okx': {'ask': [[okxPr.ask]], 'bid': [[okxPr.bid]]},
-                            'ftx': {'ask': [[ftxPr.ask]], 'bid': [[ftxPr.bid]]},
-                            'spread': [spread_1,spread_2]
+                            'name': nameRight,
+                            'leftEx': {
+                                'name': exchangeLeft,
+                                'ask': [[leftPr.ask]],
+                                'bid': [[leftPr.bid]]
+                            },
+                            'rightEx': {
+                                'name': exchangeRight,
+                                'ask': [[rightPr.ask]],
+                                'bid': [[rightPr.bid]],
+                            },
+                            'spread': [spread_1, spread_2]
                         }
                 )
             }
