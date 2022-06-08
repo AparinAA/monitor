@@ -222,7 +222,6 @@ class AddScan extends React.Component {
     }
 
     changeSpreadMin(event) {
-        console.info(event.target.value);
         if(Number(event.target.value) > 0) {
             this.setState({spreadMin: Number(event.target.value)});
         } else if (event.target.value === '') {
@@ -279,23 +278,34 @@ class AddScan extends React.Component {
     //======================================================
 
     render() {
-        const filter = this.state.filter;
+        const filter = this.state.filter.split(',');
+        //const len = (filter.length > 1 && filter[filter.length-1] === '') ? filter.length - 1 : filter.length;
+        const len = filter.length;
         let tableScanAll = [];
         const spreadMin = this.state.spreadMin;
         const spreadMax = this.state.spreadMax;
-
+        
         let allTickets = sortData(
                                 this.state.allTickets,
                                 this.state.sortBy
                             )
-                            .filter(item => item.name.indexOf(filter) !== -1)
+                            .filter(item => {
+                                for(let i = 0; i < len; i++ ){
+                                    if (item.name.indexOf(filter[i]) !== -1) {
+                                        return true;
+                                    }
+                                }
+                                return false;
+                                
+                            })
                             .filter(item => {
                                 if ( 
                                     (item.spread[0] >= spreadMin && item.spread[0] <= spreadMax) ||
                                     (item.spread[1] >= spreadMin && item.spread[1] <= spreadMax)
                                 ) {
-                                    return item;
+                                    return true;
                                 }
+                                return false;
                             })
                              
         let keyId;
@@ -376,10 +386,10 @@ class AddScan extends React.Component {
                                 type="text"
                                 className="ms-auto"
                                 onChange={this.filterChange}
-                                placeholder="Filter currency"
+                                placeholder="Cur1,Cur2,..."
                                 aria-describedby="textForFindCurrency"
                             />
-                            <Form.Text style={{padding: "2px 3px"}} id="textForFindCurrency" muted> Tap name</Form.Text>
+                            <Form.Text style={{padding: "2px 3px"}} id="textForFindCurrency" muted>Tap name</Form.Text>
                         </Col>
                         <Col md={3}>
                             <Form.Control
