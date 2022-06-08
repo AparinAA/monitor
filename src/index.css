@@ -232,3 +232,12 @@ button {
     transform: translate(0, -50%);
     text-align: center;
 }
+
+input {
+    background-color: var(--accent-button-color) !important;
+    color: var(--accent-color) !important;
+}
+input:focus {
+    background-color: var(--accent-button-color) !important;
+    box-shadow: var(--accent-button-hover-color) !important;
+}

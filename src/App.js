@@ -195,13 +195,19 @@ class AddScan extends React.Component {
             countScan: 1,
             allTickets: [{'name': '','leftEx': {'name': '','ask': [['-']], 'bid': [['-']]},'rightEx': {'name': '','ask': [['-']],'bid': [['-']]},'spread': [0, 0]}],
             sortBy: 1,
-            timeRefresh: Date.now()
-
+            timeRefresh: Date.now(),
+            filter: '',
+            spreadMin: 0.01,
+            spreadMax: 1000
         }
         //this.AddScanEvent = this.AddScanEvent.bind(this);
         //this.DeleteScanEvent = this.DeleteScanEvent.bind(this);
         this.RefreshInfoSpreads = this.RefreshInfoSpreads.bind(this);
         this.checkSort = this.checkSort.bind(this);
+        this.filterChange = this.filterChange.bind(this);
+        this.changeSpreadMin = this.changeSpreadMin.bind(this);
+        this.changeSpreadMax = this.changeSpreadMax.bind(this);
+
     }
 
 
@@ -209,6 +215,30 @@ class AddScan extends React.Component {
         this.timeIdAllCheckPrice();
     }
 
+    //======================================================
+    //Обработчики изменения фильтра
+    filterChange(event) {
+        this.setState({filter: event.target.value.toUpperCase()});
+    }
+
+    changeSpreadMin(event) {
+        console.info(event.target.value);
+        if(Number(event.target.value) > 0) {
+            this.setState({spreadMin: Number(event.target.value)});
+        } else if (event.target.value === '') {
+            this.setState({spreadMin: 0});
+        }
+    }
+    changeSpreadMax(event) {
+        if(Number(event.target.value) > 0) {
+            this.setState({spreadMax: Number(event.target.value)});
+        }else if (event.target.value === '') {
+            this.setState({spreadMax: 1000});
+        }
+    }
+    //======================================================
+
+    //Обработчки сортировки
     checkSort(event) {
         if(event) {
             this.setState( state => ({
@@ -220,6 +250,8 @@ class AddScan extends React.Component {
         }        
     }
 
+    //======================================================
+    //Обработчки обновления данных
     timeIdAllCheckPrice() {
         this.setState({loading: true});
         //axios.get(`http://localhost:8090/allspread`)
@@ -244,25 +276,28 @@ class AddScan extends React.Component {
     RefreshInfoSpreads() {
         this.timeIdAllCheckPrice();
     }
-
-    AddScanEvent() {
-        this.setState( (state) => ({
-            countScan: state.countScan + 1
-        }));
-    }
-
-    DeleteScanEvent() {
-        this.setState( (state) => ({
-            countScan: state.countScan - 1
-        }));
-    }
+    //======================================================
 
     render() {
-        //let tableScan = [];
+        const filter = this.state.filter;
         let tableScanAll = [];
+        const spreadMin = this.state.spreadMin;
+        const spreadMax = this.state.spreadMax;
 
-        let allTickets = sortData(this.state.allTickets, this.state.sortBy);
-        
+        let allTickets = sortData(
+                                this.state.allTickets,
+                                this.state.sortBy
+                            )
+                            .filter(item => item.name.indexOf(filter) !== -1)
+                            .filter(item => {
+                                if ( 
+                                    (item.spread[0] >= spreadMin && item.spread[0] <= spreadMax) ||
+                                    (item.spread[1] >= spreadMin && item.spread[1] <= spreadMax)
+                                ) {
+                                    return item;
+                                }
+                            })
+                             
         let keyId;
         allTickets.forEach( item => {
             keyId = item.name + item.leftEx.name + item.rightEx.name + this.state.sortBy + this.state.timeRefresh;
@@ -325,7 +360,7 @@ class AddScan extends React.Component {
                         <div className='d-none d-md-block'>
                             {renderTooltip()}
                         </div>
-                        
+
                         <div className='ms-auto'>
                             <DropdownButton onSelect={this.checkSort} title={titleSort} variant="secondary" style={{}}>
                                 {listSort}
@@ -334,6 +369,38 @@ class AddScan extends React.Component {
                         
                     </Stack>
                     
+                    <Stack direction="horizontal" gap={3} style={{padding: "10px 3px"}} className="col-sm-8">
+                        
+                        <Col md={6}>
+                            <Form.Control
+                                type="text"
+                                className="ms-auto"
+                                onChange={this.filterChange}
+                                placeholder="Filter currency"
+                                aria-describedby="textForFindCurrency"
+                            />
+                            <Form.Text style={{padding: "2px 3px"}} id="textForFindCurrency" muted> Tap name</Form.Text>
+                        </Col>
+                        <Col md={3}>
+                            <Form.Control
+                                type="text"
+                                onChange={this.changeSpreadMin}
+                                placeholder="Filter Min"
+                                aria-describedby="textForMinSpread"
+                            />
+                            <Form.Text style={{padding: "2px 3px"}} id="textForMinSpread" muted>Tap min spread</Form.Text>
+                        </Col>
+                        <Col md={3}>
+                            <Form.Control
+                                type="text"
+                                onChange={this.changeSpreadMax}
+                                placeholder="Filter Max"
+                                aria-describedby="textForMaxSpread"
+                            />
+                            <Form.Text style={{padding: "2px 3px"}} id="textForMaxSpread" muted>Tap max spread</Form.Text>
+                        </Col>
+                        
+                    </Stack>
                     
                     <Row>
                         {foundScan}

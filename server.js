@@ -104,7 +104,6 @@ setInterval( () => {
     })
     .catch( e => {
         console.info("error 2 allspread");
-        //allSpreadJson = nullSpreadJson;
     });
 }, 15000)
 

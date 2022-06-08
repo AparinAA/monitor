@@ -1,5 +1,7 @@
 require('dotenv').config();
 const fs = require('fs');
+const {getTickersKuCoin} = require('./KuCoinclient');
+const {getMarketBNB} = require('./BNBclient');
 /*
 const {OKXclient} = require('./OKXclient');
 const {FTXclient} = require('./FTXclient');
@@ -21,46 +23,6 @@ const ftx = new FTXclient(secretDict_FTX.api_key_1, secretDict_FTX.secret_key_1)
 
 const okx = new OKXclient(secretDict_OKX.api_key, secretDict_OKX.secret_key, secretDict_OKX.passphrase);
 */
-
-//get market Binance
-function getMarketBNB(client, tickers) {
-    return client.ticker24hr()
-            .then(response => {
-                const res = tickers.map( item => {
-                    const el = response.data.find(element => element.symbol === item.tickerLeft)
-                    return {
-                        'instId': el.symbol,
-                        'ask': el.askPrice,
-                        'bid': el.bidPrice,
-                    }
-                });
-                return res;
-                //console.info(res);
-            }, (e) => {
-                throw e;
-            });
-}
-
-
-//get market Kucoin
-function getTickersKuCoin(API, tickers){
-    return API.rest.Market.Symbols.getAllTickers()
-    .then(response => {
-        const res = tickers.map( item => {
-            const el = response.data.ticker.find(element => element.symbol === item.tickerLeft)
-            return {
-                'instId': el.symbol,
-                'ask': el.sell,
-                'bid': el.buy,
-            }
-        });
-        return res;
-        //console.info(res);
-    }, (e) => {
-        throw e;
-    });
-}
-
 
 function culcSpread(ex1, ex2) {
     if (!ex1?.ask || !ex2?.bid) {
