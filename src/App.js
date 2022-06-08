@@ -103,53 +103,11 @@ class ViewExchange extends React.Component {
             },
             curParams: new URLSearchParams({'cur': this.props?.currency?.name || "ANC"}),
         }
-        //this.handleChangeCurrency = this.handleChangeCurrency.bind(this);
+       
     }
 
-    /*
-    componentDidMount() {
-        this.timeId = setInterval(
-            () => this.price(),
-            1000
-        );
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.timeId);
-    }
-
-
-    price() {
-        axios.get(`http://195.133.1.56:8090/spread?${this.state.curParams}`)
-        .then( res => {
-            this.setState({price: res.data});
-        })
-        .catch(() => this.setState({
-            price: {
-                'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},
-                'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}
-            }
-        }));
-    }
     
-    handleChangeCurrency(event) {
-        this.setState({
-            currency: event,
-            curParams: new URLSearchParams({'cur': event})
-        });
-    }
-    */
     render() {
-        /*
-        let options = listCurrency.map( item => 
-            <Dropdown.Item key={item} eventKey={item}>{item}</Dropdown.Item>
-        )
-        
-        
-        <DropdownButton title={this.state.currency} onSelect={this.handleChangeCurrency} variant='secondary' size='sm'>
-            {options}
-        </DropdownButton>
-        */
         return (
             <Col xs={12} sm={6} md={6} lg={4} xl={4} xxl={3}>
                 <Card>
@@ -220,18 +178,24 @@ class AddScan extends React.Component {
     //Обработчики изменения фильтра
     filterChange(event) {
         const e = event.target.value.toUpperCase();
-        this.setState({
-            filter: e
-        });
-        if(this.state.filter.length === 0 || this.state.filter[this.state.filter.length - 1] !== e[e.length - 1]) {
-            this.setState({
-                showMenuSelectTickers: true
-            })            
+        const len = this.state.filter.length 
+        
+        if (e.length !== 0) {
+            if (e[e.length - 1] !== this.state.filter[len - 1]) {
+                this.setState({
+                    filter: e,
+                    showMenuSelectTickers: true
+                })
+            }
         } else {
             this.setState({
+                filter: e,
                 showMenuSelectTickers: false
             });
         }
+        this.setState({
+            filter: e
+        })
         
     }
 
@@ -378,15 +342,6 @@ class AddScan extends React.Component {
             }
             return <b><ArrowCounterclockwise/></b>
         }
-        /*
-        for (let i = 0; i < this.state.countScan; i++) {
-            tableScan.push(<ViewExchange key={i}/>);
-        }
-        <Col>
-            <Button onClick={this.AddScanEvent} size='sm' style={{margin: "5px 5px 5px 0"}}> <b><PlusCircle size={12}/></b> Add </Button>
-            <Button onClick={this.DeleteScanEvent} size='sm' style={{margin: "5px 5px 5px 0"}}> <b><DashCircle size={12}/></b> Delete</Button>
-        </Col>
-        */
 
         const radios = [
             { name: 'Sort by spread from high to low', value: '1', id: '1' },
@@ -414,7 +369,7 @@ class AddScan extends React.Component {
                             {renderTooltip()}
                         </div>
 
-                        <div className='ms-auto'>
+                        <div className='ms-auto d-sm-block d-md-none'>
                             <DropdownButton onSelect={this.checkSort} title={titleSort} variant="secondary" size='sm'>
                                 {listSort}
                             </DropdownButton>
@@ -422,9 +377,9 @@ class AddScan extends React.Component {
                         
                     </Stack>
                     
-                    <Row direction="horizontal" gap={3} style={{padding: "10px 3px"}} className="col-md-10" >
+                    <Row direction="horizontal" gap={4} style={{padding: "10px 3px"}} className="col-md-9" >
                         
-                        <Col md={6} sm={12} xs={12}>
+                        <Col md={4} sm={12} xs={12}>
                             <Form.Control
                                 type="text"
                                 className="ms-auto"
@@ -434,6 +389,7 @@ class AddScan extends React.Component {
                                 value={this.state.filter}
                                 size='sm'
                             />
+
                             <Form.Text style={{padding: "2px 3px"}} id="textForFindCurrency" muted>Tap name</Form.Text>
                             <Dropdown
                                 onSelect={this.selectDropFilter}
@@ -468,6 +424,11 @@ class AddScan extends React.Component {
                             <Form.Text style={{padding: "2px 3px"}} id="textForMaxSpread" muted>Tap max spread</Form.Text>
                         </Col>
                         
+                        <div className='d-none d-md-block col-md-2'>
+                            <DropdownButton onSelect={this.checkSort} title={titleSort} variant="secondary" size='sm'>
+                                {listSort}
+                            </DropdownButton>
+                        </div>
                     </Row>
                     
                     <Row>
