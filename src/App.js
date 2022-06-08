@@ -198,7 +198,8 @@ class AddScan extends React.Component {
             timeRefresh: Date.now(),
             filter: '',
             spreadMin: 0.01,
-            spreadMax: 1000
+            spreadMax: 1000,
+            showMenuSelectTickers: false
         }
         //this.AddScanEvent = this.AddScanEvent.bind(this);
         //this.DeleteScanEvent = this.DeleteScanEvent.bind(this);
@@ -207,7 +208,7 @@ class AddScan extends React.Component {
         this.filterChange = this.filterChange.bind(this);
         this.changeSpreadMin = this.changeSpreadMin.bind(this);
         this.changeSpreadMax = this.changeSpreadMax.bind(this);
-
+        this.selectDropFilter = this.selectDropFilter.bind(this);
     }
 
 
@@ -218,7 +219,20 @@ class AddScan extends React.Component {
     //======================================================
     //Обработчики изменения фильтра
     filterChange(event) {
-        this.setState({filter: event.target.value.toUpperCase()});
+        const e = event.target.value.toUpperCase();
+        this.setState({
+            filter: e
+        });
+        if(this.state.filter.length === 0 || this.state.filter[this.state.filter.length - 1] !== e[e.length - 1]) {
+            this.setState({
+                showMenuSelectTickers: true
+            })            
+        } else {
+            this.setState({
+                showMenuSelectTickers: false
+            });
+        }
+        
     }
 
     changeSpreadMin(event) {
@@ -234,6 +248,24 @@ class AddScan extends React.Component {
         }else if (event.target.value === '') {
             this.setState({spreadMax: 1000});
         }
+    }
+
+    selectDropFilter(event) {
+        this.setState( state => {
+                const len = state.filter.split(',').length;
+                if(len === 1) {
+                    return {
+                        filter: event,
+                        showMenuSelectTickers: false
+                    }
+                } else {
+                    return {
+                        filter: state.filter.split(',').slice(0,-1).join(',') + "," + event,
+                        showMenuSelectTickers: false
+                    }
+                }
+            }
+        )
     }
     //======================================================
 
@@ -285,6 +317,11 @@ class AddScan extends React.Component {
         const spreadMin = this.state.spreadMin;
         const spreadMax = this.state.spreadMax;
         
+        const setTickets = Array.from(new Set(this.state.allTickets
+                                .map(element => element.name)
+                                .filter(item => item.indexOf(filter[filter.length-1]) !== -1)
+                                .sort()
+                            ));
         let allTickets = sortData(
                                 this.state.allTickets,
                                 this.state.sortBy
@@ -307,7 +344,9 @@ class AddScan extends React.Component {
                                 }
                                 return false;
                             })
-                             
+        
+        const flagShowDropMenu = setTickets.length && this.state.showMenuSelectTickers ? true : false;
+
         let keyId;
         allTickets.forEach( item => {
             keyId = item.name + item.leftEx.name + item.rightEx.name + this.state.sortBy + this.state.timeRefresh;
@@ -316,6 +355,8 @@ class AddScan extends React.Component {
                 currency={item}
             />)
         });
+
+        const dropTickers = setTickets.map( item => <Dropdown.Item eventKey={item} key={item}>{item}</Dropdown.Item>);
 
         const foundScan = ((tableScanAll.length === 0) || (allTickets[0]?.name === '')) ?
                         <div className="not-found-window">
@@ -357,11 +398,13 @@ class AddScan extends React.Component {
         );
 
         const titleSort = radios.find(item => Number(item.value) === this.state.sortBy).name;
+        
+        
         return (
             <Container className='table-scaner' fluid={true}>
                     
                     <Stack direction="horizontal" gap={3}>
-                        <div style={{width: "60px"}}>
+                        <div style={{width: "60px" }}>
                             <Button onClick={this.RefreshInfoSpreads} size='sm' style={{margin: "5px 5px 5px 0"}} md={12}>
                                 {spinnerOrButtron()}
                             </Button>
@@ -372,45 +415,60 @@ class AddScan extends React.Component {
                         </div>
 
                         <div className='ms-auto'>
-                            <DropdownButton onSelect={this.checkSort} title={titleSort} variant="secondary" style={{}}>
+                            <DropdownButton onSelect={this.checkSort} title={titleSort} variant="secondary" size='sm'>
                                 {listSort}
                             </DropdownButton>
                         </div>
                         
                     </Stack>
                     
-                    <Stack direction="horizontal" gap={3} style={{padding: "10px 3px"}} className="col-sm-8">
+                    <Row direction="horizontal" gap={3} style={{padding: "10px 3px"}} className="col-md-10" >
                         
-                        <Col md={6}>
+                        <Col md={6} sm={12} xs={12}>
                             <Form.Control
                                 type="text"
                                 className="ms-auto"
                                 onChange={this.filterChange}
                                 placeholder="Cur1,Cur2,..."
                                 aria-describedby="textForFindCurrency"
+                                value={this.state.filter}
+                                size='sm'
                             />
                             <Form.Text style={{padding: "2px 3px"}} id="textForFindCurrency" muted>Tap name</Form.Text>
+                            <Dropdown
+                                onSelect={this.selectDropFilter}
+                                style={{position: "absolute", zIndex: "1000"}}
+                                show={flagShowDropMenu}
+                                size='sm'
+                            >
+                                <Dropdown.Menu show={flagShowDropMenu} size='sm'>
+                                    {dropTickers}
+                                </Dropdown.Menu>
+                            </Dropdown>
+                            
                         </Col>
-                        <Col md={3}>
+                        <Col md={3} sm={6} xs={6}>
                             <Form.Control
                                 type="text"
                                 onChange={this.changeSpreadMin}
                                 placeholder="Filter Min"
                                 aria-describedby="textForMinSpread"
+                                size='sm'
                             />
                             <Form.Text style={{padding: "2px 3px"}} id="textForMinSpread" muted>Tap min spread</Form.Text>
                         </Col>
-                        <Col md={3}>
+                        <Col md={3} sm={6} xs={6}>
                             <Form.Control
                                 type="text"
                                 onChange={this.changeSpreadMax}
                                 placeholder="Filter Max"
                                 aria-describedby="textForMaxSpread"
+                                size='sm'
                             />
                             <Form.Text style={{padding: "2px 3px"}} id="textForMaxSpread" muted>Tap max spread</Form.Text>
                         </Col>
                         
-                    </Stack>
+                    </Row>
                     
                     <Row>
                         {foundScan}
