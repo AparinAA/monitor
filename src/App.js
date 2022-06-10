@@ -171,6 +171,7 @@ class AddScan extends React.Component {
         this.changeSpreadMax = this.changeSpreadMax.bind(this);
         this.selectDropFilter = this.selectDropFilter.bind(this);
         this.checkboxExchange = this.checkboxExchange.bind(this);
+        this.clickCheck = this.clickCheck.bind(this);
     }
 
 
@@ -255,6 +256,10 @@ class AddScan extends React.Component {
         }
 
     }
+
+    clickCheck(event) {
+        console.info(event);
+    }
     //======================================================
 
     //Обработчки сортировки
@@ -320,6 +325,7 @@ class AddScan extends React.Component {
                                             type='checkbox'
                                             label={item}
                                             name={item}
+                                            id={`checkEx+${item}`}
                                         />
                             )
                             
@@ -468,7 +474,7 @@ class AddScan extends React.Component {
                         </div>
                     </Row>
                     
-                    <Row style={{padding: "5px 9px 0"}} className="col-md-12">
+                    <Row style={{padding: "5px 9px"}} className="col-md-12">
                         <Form>
                             {allExchanges}
                         </Form>
