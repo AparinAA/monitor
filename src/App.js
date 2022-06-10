@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import axios from 'axios';
-import {Button, Form, InputGroup, ListGroup, Card,DropdownButton, Dropdown, Offcanvas, Container, Row, Col, Spinner, Stack} from 'react-bootstrap';
+import {Button, Form, InputGroup, ListGroup, Card,DropdownButton, Dropdown, Offcanvas, Container, Row, Col, Spinner} from 'react-bootstrap';
 import { ArrowCounterclockwise, ChevronRight } from 'react-bootstrap-icons';
 
 //округление до знака decimalPlaces после запятой
@@ -60,15 +60,17 @@ class CheckPrice extends React.Component {
                             }
                       </div>;
         
+        const trunceAsk = truncated(this.props.price?.ask[0][0],7);
+        const trunceBid = truncated(this.props.price?.bid[0][0],7);
         return (
             <div>
-                <div><b>Exc. {this.props.exchange}</b></div>
+                <div><b>{this.props.exchange}</b></div>
                 <div>{element}</div>
                 <div>
                     <div>Order price</div>
                     <div className='best-order-book'>    
-                        <div className='ask'>Ask: {truncated(this.props.price?.ask[0][0],6)}</div>
-                        <div className='bid'>Bid: {truncated(this.props.price?.bid[0][0],6)}</div>
+                        <div className='ask'>Ask: {!trunceAsk ? this.props.price?.ask[0][0] : trunceAsk}</div>
+                        <div className='bid'>Bid: {!trunceBid ? this.props.price?.bid[0][0] : trunceBid}</div>
                     </div>
                 </div>
             </div>
@@ -157,7 +159,8 @@ class AddScan extends React.Component {
             filter: '',
             spreadMin: 0.01,
             spreadMax: 1000,
-            showMenuSelectTickers: false
+            showMenuSelectTickers: false,
+            selectExchanges: new Set(["OKX","FTX","Binance","KuCoin","Huobi"])
         }
         //this.AddScanEvent = this.AddScanEvent.bind(this);
         //this.DeleteScanEvent = this.DeleteScanEvent.bind(this);
@@ -167,6 +170,7 @@ class AddScan extends React.Component {
         this.changeSpreadMin = this.changeSpreadMin.bind(this);
         this.changeSpreadMax = this.changeSpreadMax.bind(this);
         this.selectDropFilter = this.selectDropFilter.bind(this);
+        this.checkboxExchange = this.checkboxExchange.bind(this);
     }
 
 
@@ -231,6 +235,26 @@ class AddScan extends React.Component {
             }
         )
     }
+    checkboxExchange(event) {
+        const check = event.target.checked;
+        const exchange = event.target.name;
+        if (check) {
+            this.setState( state => ({
+                    selectExchanges: state.selectExchanges.add(exchange)
+                })
+            )
+        } else {
+            this.setState( state => {
+                    const buf = state.selectExchanges;
+                    buf.delete(exchange);
+                    return {
+                        selectExchanges: buf
+                    }
+                }
+            )
+        }
+
+    }
     //======================================================
 
     //Обработчки сортировки
@@ -260,7 +284,7 @@ class AddScan extends React.Component {
                 })
             );
         })
-        .catch((e) => {
+        .catch( () => {
             this.setState({
                 allTickets: [{'name': '','leftEx': {'name': '','ask': [['-']], 'bid': [['-']]},'rightEx': {'name': '','ask': [['-']],'bid': [['-']]},'spread': [0, 0]}],
                 loading: false
@@ -286,6 +310,19 @@ class AddScan extends React.Component {
                                 .filter(item => item.indexOf(filter[filter.length-1]) !== -1)
                                 .sort()
                             ));
+
+        const allExchanges = ["OKX","FTX","Binance","KuCoin","Huobi"]
+                            .map(item => <Form.Check
+                                            onChange={this.checkboxExchange}
+                                            checked={this.state.selectExchanges.has(item)}
+                                            inline
+                                            key={item}
+                                            type='checkbox'
+                                            label={item}
+                                            name={item}
+                                        />
+                            )
+                            
         let allTickets = sortData(
                                 this.state.allTickets,
                                 this.state.sortBy
@@ -308,12 +345,12 @@ class AddScan extends React.Component {
                                 }
                                 return false;
                             })
+                            .filter(item => (this.state.selectExchanges.has(item.leftEx.name) || this.state.selectExchanges.has(item.rightEx.name)) );
         
         const flagShowDropMenu = setTickets.length && this.state.showMenuSelectTickers ? true : false;
-
-        let keyId;
+        
         allTickets.forEach( item => {
-            keyId = item.name + item.leftEx.name + item.rightEx.name + this.state.sortBy + this.state.timeRefresh;
+            const keyId = item.name + item.leftEx.name + item.rightEx.name + this.state.sortBy + this.state.timeRefresh;
             tableScanAll.push(<ViewExchange
                 key={"key-" + keyId}
                 currency={item}
@@ -354,32 +391,32 @@ class AddScan extends React.Component {
 
         const titleSort = radios.find(item => Number(item.value) === this.state.sortBy).name;
         
-        
+
         return (
             <Container className='table-scaner' fluid={true}>
                     
-                    <Stack direction="horizontal" gap={3}>
-                        <div style={{width: "60px" }}>
+                    <Row style={{padding: "0 9px"}}>
+                        <Col style={{width: "60px", padding: "0px"}} sm={1} xs={2}>
                             <Button onClick={this.RefreshInfoSpreads} size='sm' style={{margin: "5px 5px 5px 0"}} md={12}>
                                 {spinnerOrButtron()}
                             </Button>
-                        </div>
+                        </Col>
                         
-                        <div className='d-none d-md-block'>
+                        <Col className='d-none d-md-block'>
                             {renderTooltip()}
-                        </div>
+                        </Col>
 
-                        <div className='ms-auto d-sm-block d-md-none'>
-                            <DropdownButton onSelect={this.checkSort} title={titleSort} variant="secondary" size='sm'>
+                        <Col className='d-sm-block d-md-none sort-position'>
+                            <DropdownButton onSelect={this.checkSort} title={titleSort} variant="secondary" size='sm' className='sort-position-drop'>
                                 {listSort}
                             </DropdownButton>
-                        </div>
+                        </Col>
                         
-                    </Stack>
+                    </Row>
                     
-                    <Row direction="horizontal" gap={4} style={{padding: "10px 3px"}} className="col-md-9" >
+                    <Row style={{padding: "5px 9px 0"}} className="col-md-12" >
                         
-                        <Col md={4} sm={12} xs={12}>
+                        <Col md={4} sm={12} xs={12} className='p-1'>
                             <Form.Control
                                 type="text"
                                 className="ms-auto"
@@ -403,7 +440,7 @@ class AddScan extends React.Component {
                             </Dropdown>
                             
                         </Col>
-                        <Col md={3} sm={6} xs={6}>
+                        <Col md={2} sm={6} xs={6} className='p-1'>
                             <Form.Control
                                 type="text"
                                 onChange={this.changeSpreadMin}
@@ -411,9 +448,9 @@ class AddScan extends React.Component {
                                 aria-describedby="textForMinSpread"
                                 size='sm'
                             />
-                            <Form.Text style={{padding: "2px 3px"}} id="textForMinSpread" muted>Tap min spread</Form.Text>
+                            <Form.Text style={{padding: "0 0 0 3px"}} id="textForMinSpread" muted>Tap min spread</Form.Text>
                         </Col>
-                        <Col md={3} sm={6} xs={6}>
+                        <Col md={2} sm={6} xs={6} className='p-1'>
                             <Form.Control
                                 type="text"
                                 onChange={this.changeSpreadMax}
@@ -421,16 +458,22 @@ class AddScan extends React.Component {
                                 aria-describedby="textForMaxSpread"
                                 size='sm'
                             />
-                            <Form.Text style={{padding: "2px 3px"}} id="textForMaxSpread" muted>Tap max spread</Form.Text>
+                            <Form.Text style={{padding: "0"}} id="textForMaxSpread" muted>Tap max spread</Form.Text>
                         </Col>
                         
-                        <div className='d-none d-md-block col-md-2'>
+                        <div className='d-none d-md-block col-md-4 p-1 sort-position'>
                             <DropdownButton onSelect={this.checkSort} title={titleSort} variant="secondary" size='sm'>
                                 {listSort}
                             </DropdownButton>
                         </div>
                     </Row>
                     
+                    <Row style={{padding: "5px 9px 0"}} className="col-md-12">
+                        <Form>
+                            {allExchanges}
+                        </Form>
+                    </Row>
+
                     <Row>
                         {foundScan}
                     </Row>

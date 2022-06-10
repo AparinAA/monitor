@@ -2,6 +2,7 @@ require('dotenv').config();
 const fs = require('fs');
 const {getTickersKuCoin} = require('./KuCoinclient');
 const {getMarketBNB} = require('./BNBclient');
+const {getMarketHuobi} = require('./huobi');
 /*
 const {OKXclient} = require('./OKXclient');
 const {FTXclient} = require('./FTXclient');
@@ -34,14 +35,29 @@ function culcSpread(ex1, ex2) {
 //let nsscrySpread = 0.2;
 
 function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
-    const tickersBNB = tickersAll.tickers.filter( item => item.exchangeLeft === "Binance");
-    const tickersKuCoin = tickersAll.tickers.filter( item => item.exchangeLeft === "KuCoin");
+
+    const tickersBNB = tickersAll.tickers.filter( item => ((item.exchangeLeft === "Binance") || (item.exchangeRight === "Binance")) );
+    const tickersKuCoin = tickersAll.tickers.filter( item => ((item.exchangeLeft === "KuCoin") || (item.exchangeRight === "KuCoin")) );
+    //const tickersDigifinex = tickersAll.tickers.filter( item => ((item.exchangeLeft === "Digifinex") || (item.exchangeRight === "Digifinex")) );
+    const tickersHuobi = tickersAll.tickers.filter( item => ((item.exchangeLeft === "Huobi") || (item.exchangeRight === "Huobi")) )
+                        .map(item => (item.exchangeLeft === "Huobi" ? item.tickerLeft : item.tickerRight) )
+    /*
+    const nameListDigifinex = tickersDigifinex.map(item => {
+        if (item.exchangeLeft === 'Digifinex') {
+            return item.tickerLeft
+        }
+        if (item.exchangeRight === 'Digifinex') {
+            return item.tickerRight
+        }
+    })
+    */
     return Promise.all([
         exchanges[0].getRequest('/api/v5/market/tickers?instType=SPOT'), //okx
         exchanges[1].getRequest('markets'), //ftx
         getMarketBNB(exchanges[2],tickersBNB), //Binance
-        getTickersKuCoin(exchanges[3], tickersKuCoin)
-        
+        getTickersKuCoin(exchanges[3], tickersKuCoin), //KuCoin
+        //exchanges[4].getMarket(new Set(nameListDigifinex)), //Digifinex
+        getMarketHuobi(new Set(tickersHuobi)) //Huobi 
     ])
     .then(response => {
 
@@ -63,22 +79,32 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
         //info tickers of KuCoin
         const tickersKuCoin = response[3];
 
+        //info tickers of Digifinex
+        //const tickersDigifinex = response[4];
+
+        //info tickers of Huobi
+        const tickersHuobi = response[4];
+
         const allExchange = {
             "OKX": tickersOKX,
             "FTX": tickersFTX,
             "Binance": tickersBNB,
-            "KuCoin": tickersKuCoin
+            "KuCoin": tickersKuCoin,
+            //"Digifinex": tickersDigifinex,
+            "Huobi": tickersHuobi
         }
 
         let genVarTickets = [];
         tickersAll.tickers.forEach( item => {
-            const nameLeft = item.nameLeft;
             const nameRight = item.nameRight;
             const instIdLeft = item.tickerLeft;
             const instIdRight = item.tickerRight;
             const exchangeLeft = item.exchangeLeft;
             const exchangeRight = item.exchangeRight;
             
+            if(exchangeLeft === 'Digifinex' || exchangeRight === 'Digifinex') {
+                return;
+            }
             const leftPr = allExchange[exchangeLeft].find( element => element.instId === instIdLeft);
             const rightPr = allExchange[exchangeRight].find( element => element.instId === instIdRight);
             

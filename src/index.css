@@ -151,7 +151,7 @@ button {
     outline: 0 !important;
     outline-offset: 0 !important;
     box-shadow: none !important;
-    border-radius: 6px !important;
+    border-radius: 9px !important;
     margin: 0 5px !important;
 }
 
@@ -240,4 +240,17 @@ input {
 input:focus {
     background-color: var(--accent-button-color) !important;
     box-shadow: var(--accent-button-hover-color) !important;
+}
+
+.sort-position {
+    padding: 0 !important;
+}
+
+.sort-position-drop {
+    float: right;
+    
+}
+
+.form-check-label {
+    color: var(--accent-text-color) !important;
 }

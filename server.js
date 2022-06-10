@@ -3,6 +3,7 @@ const http = require("http");
 const axios = require('axios');
 const {FTXclient} = require('./FTXclient');
 const {OKXclient} = require('./OKXclient');
+const {Digifinex} = require('./digifinex');
 const { Spot } = require('@binance/connector'); //Binance SPOT api
 const fs = require('fs'); 
 const {promiseTickersWithSpread} = require('./getCurrencies');
@@ -41,6 +42,13 @@ const kucoin_secret = {
     authVersion: 2, // KC-API-KEY-VERSION. Notice: for v2 API-KEY, not required for v1 version.
 }
 API.init(kucoin_secret);
+
+//Init Digifinex API
+const digifinex_secret = process.env.digifinex_api_secret;
+const digifinex_key = process.env.digifinex_api_key;
+
+const digifinex = new Digifinex(digifinex_key, digifinex_secret);
+
 
 const rawdata = fs.readFileSync('currencyInfo.json');
 const tickersAll = JSON.parse(fs.readFileSync('tickers1.json', {"encoding": "utf-8"})); 
@@ -82,7 +90,7 @@ const nullSpreadJson = [
 let allSpreadJson = nullSpreadJson;
 const nsscrySpread = process.env.nsscrySpread;
 
-promiseTickersWithSpread([okx, ftx_1, BNB, API],  tickersAll, nsscrySpread)
+promiseTickersWithSpread([okx, ftx_1, BNB, API, /* -digifinex  +huobi whitout api */],  tickersAll, nsscrySpread)
 .then(response => {
     allSpreadJson = response
 }, e => {
@@ -95,7 +103,7 @@ promiseTickersWithSpread([okx, ftx_1, BNB, API],  tickersAll, nsscrySpread)
 });
 
 setInterval( () => {
-    promiseTickersWithSpread([okx, ftx_1, BNB, API], tickersAll, nsscrySpread)
+    promiseTickersWithSpread([okx, ftx_1, BNB, API, /*digifinex*/], tickersAll, nsscrySpread)
     .then(response => {
         allSpreadJson = response
     }, e => {
