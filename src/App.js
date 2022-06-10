@@ -345,7 +345,7 @@ class AddScan extends React.Component {
                                 }
                                 return false;
                             })
-                            .filter(item => (this.state.selectExchanges.has(item.leftEx.name) || this.state.selectExchanges.has(item.rightEx.name)) );
+                            .filter(item => (this.state.selectExchanges.has(item.leftEx.name) && this.state.selectExchanges.has(item.rightEx.name)) );
         
         const flagShowDropMenu = setTickets.length && this.state.showMenuSelectTickers ? true : false;
         
