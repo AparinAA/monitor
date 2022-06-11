@@ -61,8 +61,8 @@ class ExchangeInfo extends React.Component {
                             }
                       </div>;
         
-        const trunceAsk = this.props.price?.ask[0][0] > 10 ? this.props.price?.ask[0][0] : truncated(this.props.price?.ask[0][0],7);
-        const trunceBid = this.props.price?.bid[0][0] > 10 ? this.props.price?.bid[0][0] : truncated(this.props.price?.bid[0][0],7);
+        const trunceAsk = this.props.price?.ask[0][0] > 100 ? this.props.price?.ask[0][0] : truncated(this.props.price?.ask[0][0],6);
+        const trunceBid = this.props.price?.bid[0][0] > 100 ? this.props.price?.bid[0][0] : truncated(this.props.price?.bid[0][0],6);
         
         return (
             <div>
@@ -180,6 +180,10 @@ class TablePairExchanges extends React.Component {
         );
         
     }
+}
+
+class Filter extends React.Component {
+    
 }
 
 class SearchTable extends React.Component {
