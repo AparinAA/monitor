@@ -60,8 +60,9 @@ class CheckPrice extends React.Component {
                             }
                       </div>;
         
-        const trunceAsk = truncated(this.props.price?.ask[0][0],7);
-        const trunceBid = truncated(this.props.price?.bid[0][0],7);
+        const trunceAsk = this.props.price?.ask[0][0] > 10 ? this.props.price?.ask[0][0] : truncated(this.props.price?.ask[0][0],7);
+        const trunceBid = this.props.price?.bid[0][0] > 10 ? this.props.price?.bid[0][0] : truncated(this.props.price?.bid[0][0],7);
+        
         return (
             <div>
                 <div><b>{this.props.exchange}</b></div>
@@ -69,8 +70,8 @@ class CheckPrice extends React.Component {
                 <div>
                     <div>Order price</div>
                     <div className='best-order-book'>    
-                        <div className='ask'>Ask: {!trunceAsk ? this.props.price?.ask[0][0] : trunceAsk}</div>
-                        <div className='bid'>Bid: {!trunceBid ? this.props.price?.bid[0][0] : trunceBid}</div>
+                        <div className='ask'>Ask: {!trunceAsk ? Number(this.props.price?.ask[0][0]) : trunceAsk}</div>
+                        <div className='bid'>Bid: {!trunceBid ? Number(this.props.price?.bid[0][0]) : trunceBid}</div>
                     </div>
                 </div>
             </div>
@@ -108,6 +109,7 @@ class ViewExchange extends React.Component {
        
     }
 
+    
     
     render() {
         return (
@@ -147,6 +149,13 @@ class ViewExchange extends React.Component {
 
 }
 
+class AddFilter extends React.Component {
+    constructor(props) {
+        super(props);
+        
+    }
+}
+
 class AddScan extends React.Component {
     constructor(props) {
         super(props);
@@ -160,7 +169,7 @@ class AddScan extends React.Component {
             spreadMin: 0.01,
             spreadMax: 1000,
             showMenuSelectTickers: false,
-            selectExchanges: new Set(["OKX","FTX","Binance","KuCoin","Huobi"])
+            selectExchanges: new Set(["OKX","FTX","Binance","KuCoin","Gateio"])
         }
         //this.AddScanEvent = this.AddScanEvent.bind(this);
         //this.DeleteScanEvent = this.DeleteScanEvent.bind(this);
@@ -316,7 +325,7 @@ class AddScan extends React.Component {
                                 .sort()
                             ));
 
-        const allExchanges = ["OKX","FTX","Binance","KuCoin","Huobi"]
+        const allExchanges = ["OKX","FTX","Binance","KuCoin","Huobi","Gateio"]
                             .map(item => <Form.Check
                                             onChange={this.checkboxExchange}
                                             checked={this.state.selectExchanges.has(item)}

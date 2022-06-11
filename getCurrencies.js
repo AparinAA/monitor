@@ -3,6 +3,8 @@ const fs = require('fs');
 const {getTickersKuCoin} = require('./KuCoinclient');
 const {getMarketBNB} = require('./BNBclient');
 const {getMarketHuobi} = require('./huobi');
+const {getMarketGateio} =require('./gateio');
+
 /*
 const {OKXclient} = require('./OKXclient');
 const {FTXclient} = require('./FTXclient');
@@ -41,6 +43,8 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
     //const tickersDigifinex = tickersAll.tickers.filter( item => ((item.exchangeLeft === "Digifinex") || (item.exchangeRight === "Digifinex")) );
     const tickersHuobi = tickersAll.tickers.filter( item => ((item.exchangeLeft === "Huobi") || (item.exchangeRight === "Huobi")) )
                         .map(item => (item.exchangeLeft === "Huobi" ? item.tickerLeft : item.tickerRight) )
+    const tickersGateio = tickersAll.tickers.filter( item => ((item.exchangeLeft === "Gateio") || (item.exchangeRight === "Gateio")) )
+                        .map(item => (item.exchangeLeft === "Gateio" ? item.tickerLeft : item.tickerRight) )
     /*
     const nameListDigifinex = tickersDigifinex.map(item => {
         if (item.exchangeLeft === 'Digifinex') {
@@ -57,7 +61,8 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
         getMarketBNB(exchanges[2],tickersBNB), //Binance
         getTickersKuCoin(exchanges[3], tickersKuCoin), //KuCoin
         //exchanges[4].getMarket(new Set(nameListDigifinex)), //Digifinex
-        getMarketHuobi(new Set(tickersHuobi)) //Huobi 
+        getMarketHuobi(new Set(tickersHuobi)), //Huobi 
+        getMarketGateio(Array.from(new Set(tickersGateio))), //Gateio
     ])
     .then(response => {
 
@@ -85,13 +90,17 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
         //info tickers of Huobi
         const tickersHuobi = response[4];
 
+        //info tickers of Gate.io
+        const tickersGateio = response[5];
+
         const allExchange = {
             "OKX": tickersOKX,
             "FTX": tickersFTX,
             "Binance": tickersBNB,
             "KuCoin": tickersKuCoin,
             //"Digifinex": tickersDigifinex,
-            "Huobi": tickersHuobi
+            "Huobi": tickersHuobi,
+            "Gateio": tickersGateio,
         }
 
         let genVarTickets = [];

@@ -90,7 +90,7 @@ const nullSpreadJson = [
 let allSpreadJson = nullSpreadJson;
 const nsscrySpread = process.env.nsscrySpread;
 
-promiseTickersWithSpread([okx, ftx_1, BNB, API, /* -digifinex  +huobi whitout api */],  tickersAll, nsscrySpread)
+promiseTickersWithSpread([okx, ftx_1, BNB, API, /* -digifinex  +huobi whitout api + gateio*/],  tickersAll, nsscrySpread)
 .then(response => {
     allSpreadJson = response
 }, e => {
