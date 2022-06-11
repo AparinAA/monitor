@@ -246,9 +246,8 @@ input:focus {
     padding: 0 !important;
 }
 
-.sort-position-drop {
+.sort-position-drop > *{
     float: right;
-    
 }
 
 
