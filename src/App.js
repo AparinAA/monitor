@@ -246,12 +246,13 @@ class SearchTable extends React.Component {
                             size='sm'
                             style={{margin: "5px 5px 5px 0"}}
                             md={12}
+                            disabled={this.props.loading}
                         >
                             {spinnerOrButtron()}
                         </Button>
                     </Col>
                     
-                    <Col className='d-none d-md-block'>
+                    <Col className='d-none d-md-block set-text-refresh'>
                         {renderTooltip()}
                     </Col>
 
@@ -343,6 +344,7 @@ class ScanerPlot extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            loading: false,
             sortBy: 1,
             timeRefresh: Date.now(),
             filter: '',
@@ -387,7 +389,9 @@ class ScanerPlot extends React.Component {
     }
 
     RefreshInfoSpreads() {
-        this.timeIdAllCheckPrice();
+        this.setState({loading: true});
+        setTimeout( () => this.timeIdAllCheckPrice(), 1000);
+        
     }
 
     //======================================================
@@ -485,7 +489,8 @@ class ScanerPlot extends React.Component {
     render() {
         return (
             <Container className='table-scaner' fluid={true}>
-                <SearchTable 
+                <SearchTable
+                    loading={this.state.loading}
                     sortBy={this.state.sortBy}
                     timeRefresh={this.state.timeRefresh}
                     filter={this.state.filter}

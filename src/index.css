@@ -254,3 +254,12 @@ input:focus {
 .form-check-label {
     color: var(--accent-text-color) !important;
 }
+
+.set-text-refresh {
+    position: relative;
+}
+
+.set-text-refresh > * {
+    position: absolute;
+    top: calc(50% - 12px);
+}
