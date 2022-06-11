@@ -20,12 +20,6 @@ body, .root {
     color-scheme: var(--tg-color-scheme);
 }
 
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-select:focus, textarea:focus, input:focus {
-        font-size: 14px !important;
-    }
-}
-
 
 .list-exchange {
     display: grid;
