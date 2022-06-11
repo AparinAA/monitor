@@ -26,6 +26,7 @@ select:focus, textarea:focus, input:focus {
     }
 }
 
+
 .list-exchange {
     display: grid;
     grid-gap: 10px;
