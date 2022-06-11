@@ -21059,7 +21059,7 @@
         },
         {
          "nameLeft": "TON",
-         "tickerLeft": "TON_USDT",
+         "tickerLeft": "TONCOIN_USDT",
          "exchangeLeft": "Gateio",
          "nameRight": "TON",
          "tickerRight": "TON-USDT",
@@ -22795,7 +22795,7 @@
         },
         {
          "nameLeft": "TON",
-         "tickerLeft": "TON_USDT",
+         "tickerLeft": "TONCOIN_USDT",
          "exchangeLeft": "Gateio",
          "nameRight": "TON",
          "tickerRight": "TONCOIN/USD",
