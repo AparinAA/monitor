@@ -182,10 +182,6 @@ class TablePairExchanges extends React.Component {
     }
 }
 
-class Filter extends React.Component {
-    
-}
-
 class SearchTable extends React.Component {
 
     render() {
@@ -197,7 +193,7 @@ class SearchTable extends React.Component {
                                 .sort()
                             ));
 
-        const allExchanges = ["OKX","FTX","Binance","KuCoin","Huobi","Gateio"]
+        const allExchanges = ["OKX","FTX","Binance","KuCoin","Huobi","Gateio","Mexc"]
                             .map(item => <Form.Check
                                             onChange={this.props.checkboxExchange}
                                             checked={this.props.selectExchanges.has(item)}
@@ -353,7 +349,7 @@ class ScanerPlot extends React.Component {
             spreadMin: 0.01,
             spreadMax: 1000,
             showMenuSelectTickers: false,
-            selectExchanges: new Set(["OKX","FTX","Binance","KuCoin","Gateio"]),
+            selectExchanges: new Set(["OKX","FTX","Binance","KuCoin","Gateio","Mexc"]),
             allTickets: [{'name': '','leftEx': {'name': '','ask': [['-']], 'bid': [['-']]},'rightEx': {'name': '','ask': [['-']],'bid': [['-']]},'spread': [0, 0]}],
         }
         this.RefreshInfoSpreads = this.RefreshInfoSpreads.bind(this);
