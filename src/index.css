@@ -236,6 +236,7 @@ button {
 input {
     background-color: var(--accent-button-color) !important;
     color: var(--accent-color) !important;
+    outline: none;
 }
 input:focus {
     background-color: var(--accent-button-color) !important;
