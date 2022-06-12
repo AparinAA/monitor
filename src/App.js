@@ -480,7 +480,7 @@ class ScanerPlot extends React.Component {
     deleteCurs() {
         this.setState({
             filter: '',
-            selectDropFilter: false
+            showMenuSelectTickers: false
         });
     }
     //======================================================
