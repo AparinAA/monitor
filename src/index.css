@@ -275,3 +275,13 @@ input:focus {
     z-index: 10;
     border-radius: 0 0 15px 15px;
 }
+
+.position-relative {
+    position: relative;
+}
+
+.delete-close-curs {
+    position: absolute;
+    top: 7px;
+    right: 5px;
+}

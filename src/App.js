@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import axios from 'axios';
-import {Button, Form, InputGroup, ListGroup, Card,DropdownButton, Dropdown, Offcanvas, Container, Row, Col, Spinner} from 'react-bootstrap';
+import {Button, Form, InputGroup, ListGroup, Card,DropdownButton, Dropdown, Offcanvas, Container, Row, Col, Spinner, CloseButton} from 'react-bootstrap';
 import { ArrowCounterclockwise, ChevronRight } from 'react-bootstrap-icons';
 
 //округление до знака decimalPlaces после запятой
@@ -272,7 +272,7 @@ class SearchTable extends React.Component {
                         
                 <Row style={{padding: "5px 9px 0"}} className="col-md-12" >
                     
-                    <Col md={4} sm={12} xs={12} className='p-1'>
+                    <Col md={4} sm={12} xs={12} className='p-1 position-relative'>
                         <Form.Control
                             type="text"
                             className="ms-auto"
@@ -281,7 +281,8 @@ class SearchTable extends React.Component {
                             aria-describedby="textForFindCurrency"
                             value={this.props.filter}
                             size='sm'
-                        />
+                        /><CloseButton onClick={this.props.deleteCurs} className="delete-close-curs"/>
+                        
 
                         <Form.Text style={{padding: "2px 3px"}} id="textForFindCurrency" muted>Tap name</Form.Text>
                         <Dropdown
@@ -289,8 +290,11 @@ class SearchTable extends React.Component {
                             style={{position: "absolute", zIndex: "1000"}}
                             show={flagShowDropMenu}
                             size='sm'
+                            
                         >
-                            <Dropdown.Menu show={flagShowDropMenu} size='sm'>
+                            <Dropdown.Menu
+                                show={flagShowDropMenu} size='sm'
+                            >
                                 {dropTickers}
                             </Dropdown.Menu>
                         </Dropdown>
@@ -361,6 +365,7 @@ class ScanerPlot extends React.Component {
         this.changeSpreadMin = this.changeSpreadMin.bind(this);
         this.changeSpreadMax = this.changeSpreadMax.bind(this);
         this.checkboxExchange = this.checkboxExchange.bind(this);
+        this.deleteCurs = this.deleteCurs.bind(this);
         
     }
 
@@ -471,6 +476,10 @@ class ScanerPlot extends React.Component {
         }
 
     }
+
+    deleteCurs() {
+        this.setState({filter: ''});
+    }
     //======================================================
 
     //Обработчки сортировки
@@ -506,6 +515,7 @@ class ScanerPlot extends React.Component {
                     changeSpreadMin = {this.changeSpreadMin}
                     changeSpreadMax = {this.changeSpreadMax}
                     checkboxExchange = {this.checkboxExchange}
+                    deleteCurs = {this.deleteCurs}
                 /> 
                 <TablePairExchanges 
                     sortBy={this.state.sortBy}
