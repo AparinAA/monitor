@@ -41434,14 +41434,6 @@
          "exchangeRight": "Gateio"
         },
         {
-         "nameLeft": "BTL",
-         "tickerLeft": "BTL_USDT",
-         "exchangeLeft": "Mexc",
-         "nameRight": "BTL",
-         "tickerRight": "BTL_USDT",
-         "exchangeRight": "Gateio"
-        },
-        {
          "nameLeft": "DPET",
          "tickerLeft": "DPET_USDT",
          "exchangeLeft": "Mexc",

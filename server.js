@@ -76,12 +76,14 @@ const nullSpreadJson = [
         'leftEx': {
             'name': '',
             'ask': [['-']], 
-            'bid': [['-']]
+            'bid': [['-']],
+            'vol24': 0
         },
         'rightEx': {
             'name': '',
             'ask': [['-']],
-            'bid': [['-']]
+            'bid': [['-']],
+            'vol24': 0
         },
         'spread': [0, 0],
     }

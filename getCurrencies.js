@@ -135,7 +135,7 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
                             'leftEx': {
                                 'name': exchangeLeft,
                                 'ask': [[leftPr.ask]],
-                                'bid': [[leftPr.bid]]
+                                'bid': [[leftPr.bid]],
                             },
                             'rightEx': {
                                 'name': exchangeRight,
