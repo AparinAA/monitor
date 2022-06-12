@@ -26130,14 +26130,6 @@
          "exchangeRight": "KuCoin"
         },
         {
-         "nameLeft": "STC",
-         "tickerLeft": "STC_USDT",
-         "exchangeLeft": "Gateio",
-         "nameRight": "STC",
-         "tickerRight": "STC-USDT",
-         "exchangeRight": "KuCoin"
-        },
-        {
          "nameLeft": "XCAD",
          "tickerLeft": "XCAD_USDT",
          "exchangeLeft": "Gateio",
