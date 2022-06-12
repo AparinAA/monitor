@@ -238,7 +238,7 @@ class SearchTable extends React.Component {
         
 
         return (
-            <div style={{padding: "0", margin: "0"}}>
+            <div className="filter-menu">
                 <Row style={{padding: "0 9px"}}>
                     <Col style={{width: "60px", padding: "0px"}} sm={1} xs={2}>
                         <Button 
@@ -702,7 +702,10 @@ class OfCansBalance extends React.Component {
         return (
             <div className='list-balance-exchange'>
                 
-                <Button onClick={this.handleOpen} size='sm' className='show-balance'><ChevronRight/>Show balance</Button>
+                <Button onClick={this.handleOpen} size='sm' className='show-balance'>
+                    <ChevronRight/>
+                    Show balance
+                </Button>
 
                 <Offcanvas show={open} onHide={this.handleClose} backdrop={true} scroll={true}>
                     <Offcanvas.Header closeButton closeVariant={'white'}>

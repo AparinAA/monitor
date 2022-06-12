@@ -206,7 +206,7 @@ button {
 }
 
 .show-balance {
-    margin: 13px !important;
+    margin: 13px 13px 0 13px !important;
 }
 
 .form-control {
@@ -264,4 +264,14 @@ input:focus {
 .set-text-refresh > * {
     position: absolute;
     top: calc(50% - 12px);
+}
+
+.filter-menu {
+    position: sticky;
+    top: 0;
+    padding: 10px 0 5px 0;
+    margin: 0;
+    background-color: #222222 !important;
+    z-index: 10;
+    border-radius: 0 0 15px 15px;
 }
