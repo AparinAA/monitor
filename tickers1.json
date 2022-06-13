@@ -42618,14 +42618,6 @@
          "exchangeRight": "Gateio"
         },
         {
-         "nameLeft": "SB",
-         "tickerLeft": "SB_USDT",
-         "exchangeLeft": "Mexc",
-         "nameRight": "SB",
-         "tickerRight": "SB_USDT",
-         "exchangeRight": "Gateio"
-        },
-        {
          "nameLeft": "OKT",
          "tickerLeft": "OKT_USDT",
          "exchangeLeft": "Mexc",
