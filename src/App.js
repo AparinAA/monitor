@@ -51,7 +51,7 @@ class ExchangeInfo extends React.Component {
                             `triger-spread-green` : 
                             (sellLeftEx || sellRightEx) ? `triger-spread-red` : ``
 
-        const element = <div className={"spread-value " + spreadColor}>
+        const spreadInfo = <div className={"spread-value " + spreadColor}>
                             { 
                                 (buyLeftEx || buyRightEx) ?
                                     `Buy: ` + (positiveNumber(positiveSpread) ? `+` : ``) + positiveSpread + `%` :
@@ -64,10 +64,11 @@ class ExchangeInfo extends React.Component {
         const trunceAsk = +this.props.price?.ask[0][0] > 100 ? +this.props.price?.ask[0][0] : truncated(this.props.price?.ask[0][0],6);
         const trunceBid = +this.props.price?.bid[0][0] > 100 ? +this.props.price?.bid[0][0] : truncated(this.props.price?.bid[0][0],6);
         const volume = Math.round(+this.props.price?.vol24);
+        const url = this.props.price?.url;
         return (
             <div>
-                <div><b>{this.props.exchange}</b></div>
-                <div>{element}</div>
+                <div><b><a href={url} target="_blank" className='url-exchange-stock'>{this.props.exchange}</a></b></div>
+                <div>{spreadInfo}</div>
                 <div>
                     <div>Order price</div>
                     <div className='best-order-book'>    
@@ -75,7 +76,7 @@ class ExchangeInfo extends React.Component {
                         <div className='bid'>Bid: {!trunceBid ? Number(this.props.price?.bid[0][0]) : trunceBid}</div>
                         <div className='vol24'>
                             <div className='vol24-title'>Volume USDT</div>
-                            <div className='vol24-quote'>{volume}</div>
+                            <div className='vol24-quote'>~{volume.toLocaleString('ru')}</div>
                         </div>
                     </div>
                 </div>

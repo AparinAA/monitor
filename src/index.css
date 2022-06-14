@@ -300,3 +300,12 @@ input {
 .vol24 > .vol24-quote {
     color: #d0d0d07b;
 }
+
+.url-exchange-stock {
+    text-decoration: none;
+    color: var(--accent-text-color);
+}
+
+.url-exchange-stock:hover {
+    color: var(--accent-button-hover-color);
+}

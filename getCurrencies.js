@@ -118,7 +118,9 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
             const instIdRight = item.tickerRight;
             const exchangeLeft = item.exchangeLeft;
             const exchangeRight = item.exchangeRight;
-            
+            const urlLeft = item.urlLeft;
+            const urlRight = item.urlRight;
+
             if(exchangeLeft === 'Digifinex' || exchangeRight === 'Digifinex') {
                 return;
             }
@@ -134,12 +136,14 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
                             'name': nameRight,
                             'leftEx': {
                                 'name': exchangeLeft,
+                                'url': urlLeft,
                                 'ask': [[leftPr.ask]],
                                 'bid': [[leftPr.bid]],
                                 'vol24': leftPr.base_vol,
                             },
                             'rightEx': {
                                 'name': exchangeRight,
+                                'url': urlRight,
                                 'ask': [[rightPr.ask]],
                                 'bid': [[rightPr.bid]],
                                 'vol24': rightPr.base_vol,
