@@ -41098,14 +41098,6 @@
          "exchangeRight": "Gateio"
         },
         {
-         "nameLeft": "ASTRO",
-         "tickerLeft": "ASTRO_USDT",
-         "exchangeLeft": "Mexc",
-         "nameRight": "ASTRO",
-         "tickerRight": "ASTRO_USDT",
-         "exchangeRight": "Gateio"
-        },
-        {
          "nameLeft": "ZCX",
          "tickerLeft": "ZCX_USDT",
          "exchangeLeft": "Mexc",
@@ -42831,14 +42823,6 @@
          "exchangeLeft": "Mexc",
          "nameRight": "ROSN",
          "tickerRight": "ROSN_USDT",
-         "exchangeRight": "Gateio"
-        },
-        {
-         "nameLeft": "STR",
-         "tickerLeft": "STR_USDT",
-         "exchangeLeft": "Mexc",
-         "nameRight": "STR",
-         "tickerRight": "STR_USDT",
          "exchangeRight": "Gateio"
         },
         {
