@@ -25,9 +25,9 @@ function getMarketGateio(tickers = undefined) {
                     current.push(
                         {
                             'instId': element,
-                            'ask': curTicker.lowestAsk,
-                            'bid': curTicker.highestBid,
-                            'base_vol': curTicker.baseVolume
+                            'ask': +curTicker.lowestAsk,
+                            'bid': +curTicker.highestBid,
+                            'base_vol': +curTicker.baseVolume
                         }
                     )
                 }

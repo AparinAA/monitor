@@ -61,9 +61,9 @@ class ExchangeInfo extends React.Component {
                             }
                       </div>;
         
-        const trunceAsk = this.props.price?.ask[0][0] > 100 ? this.props.price?.ask[0][0] : truncated(this.props.price?.ask[0][0],6);
-        const trunceBid = this.props.price?.bid[0][0] > 100 ? this.props.price?.bid[0][0] : truncated(this.props.price?.bid[0][0],6);
-        
+        const trunceAsk = +this.props.price?.ask[0][0] > 100 ? +this.props.price?.ask[0][0] : truncated(this.props.price?.ask[0][0],6);
+        const trunceBid = +this.props.price?.bid[0][0] > 100 ? +this.props.price?.bid[0][0] : truncated(this.props.price?.bid[0][0],6);
+        const volume = +this.props.price?.vol24 > 100 ? +this.props.price?.vol24[0][0] : truncated(this.props.price?.vol24,6);
         return (
             <div>
                 <div><b>{this.props.exchange}</b></div>
@@ -73,6 +73,7 @@ class ExchangeInfo extends React.Component {
                     <div className='best-order-book'>    
                         <div className='ask'>Ask: {!trunceAsk ? Number(this.props.price?.ask[0][0]) : trunceAsk}</div>
                         <div className='bid'>Bid: {!trunceBid ? Number(this.props.price?.bid[0][0]) : trunceBid}</div>
+                        <div className='vol24'>Vol. {volume}</div>
                     </div>
                 </div>
             </div>
@@ -344,6 +345,7 @@ class SearchTable extends React.Component {
     }
 }
 
+let emptyPrice = [{'name': '','leftEx': {'name': '','ask': [['-']], 'bid': [['-']], 'vol24' : 0},'rightEx': {'name': '','ask': [['-']],'bid': [['-']], 'vol24' : 0},'spread': [0, 0]}];
 class ScanerPlot extends React.Component {
     constructor(props) {
         super(props);
@@ -356,7 +358,7 @@ class ScanerPlot extends React.Component {
             spreadMax: 1000,
             showMenuSelectTickers: false,
             selectExchanges: new Set(["OKX","FTX","Binance","KuCoin","Gateio","Mexc"]),
-            allTickets: [{'name': '','leftEx': {'name': '','ask': [['-']], 'bid': [['-']]},'rightEx': {'name': '','ask': [['-']],'bid': [['-']]},'spread': [0, 0]}],
+            allTickets: emptyPrice,
         }
         this.RefreshInfoSpreads = this.RefreshInfoSpreads.bind(this);
         this.checkSort = this.checkSort.bind(this);
@@ -387,7 +389,7 @@ class ScanerPlot extends React.Component {
         })
         .catch( () => {
             this.setState({
-                allTickets: [{'name': '','leftEx': {'name': '','ask': [['-']], 'bid': [['-']]},'rightEx': {'name': '','ask': [['-']],'bid': [['-']]},'spread': [0, 0]}],
+                allTickets: emptyPrice,
                 loading: false
             })
         });

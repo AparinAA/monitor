@@ -73,13 +73,13 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
         //info tickers of OKX
         const tickersOKX = response[0].data
         .map(item => {
-            return {"instId": item.instId, "ask": Number(item.askPx), "bid": Number(item.bidPx), "base_vol": Number(item.vol24h)};
+            return {"instId": item.instId, "ask": +item.askPx, "bid": +item.bidPx, "base_vol": +item.vol24h};
         });
 
         //info tickers of FTX
         const tickersFTX = response[1].filter(item => (item.type === "spot" && item.quoteCurrency === "USD") )
         .map(item => {
-            return {"instId": item.name, "ask": item.ask, "bid": item.bid, "base_vol": item.quoteVolume24h}
+            return {"instId": item.name, "ask": +item.ask, "bid": +item.bid, "base_vol": +item.quoteVolume24h}
         });
         
         //info tickers of Binance
@@ -136,11 +136,13 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
                                 'name': exchangeLeft,
                                 'ask': [[leftPr.ask]],
                                 'bid': [[leftPr.bid]],
+                                'vol24': leftPr.base_vol,
                             },
                             'rightEx': {
                                 'name': exchangeRight,
                                 'ask': [[rightPr.ask]],
                                 'bid': [[rightPr.bid]],
+                                'vol24': rightPr.base_vol,
                             },
                             'spread': [spread_1, spread_2]
                         }
