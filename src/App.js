@@ -63,7 +63,7 @@ class ExchangeInfo extends React.Component {
         
         const trunceAsk = +this.props.price?.ask[0][0] > 100 ? +this.props.price?.ask[0][0] : truncated(this.props.price?.ask[0][0],6);
         const trunceBid = +this.props.price?.bid[0][0] > 100 ? +this.props.price?.bid[0][0] : truncated(this.props.price?.bid[0][0],6);
-        const volume = +this.props.price?.vol24 > 100 ? +this.props.price?.vol24[0][0] : truncated(this.props.price?.vol24,6);
+        const volume = +this.props.price?.vol24 > 100 ? +this.props.price?.vol24 : truncated(this.props.price?.vol24,6);
         return (
             <div>
                 <div><b>{this.props.exchange}</b></div>
