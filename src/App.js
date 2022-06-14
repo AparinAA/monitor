@@ -15,7 +15,7 @@ function positiveNumber(number) {
 }
 
 function sortData(data, sortType) {
-    if(Number(sortType) === 1) {
+    if (+sortType === 1) {
         return data.sort( (prev,next) => {
             const spreadMaxNext = next.spread[0] > next.spread[1] ? next.spread[0] : next.spread[1]
             const spreadMaxPrev = prev.spread[0] > prev.spread[1] ? prev.spread[0] : prev.spread[1]
@@ -23,7 +23,7 @@ function sortData(data, sortType) {
         })
     }
 
-    if(Number(sortType) === 2) {
+    if (+sortType === 2) {
         return data.sort( (prev,next) => {
             const spreadMaxNext = next.spread[0] > next.spread[1] ? next.spread[0] : next.spread[1];
             const spreadMaxPrev = prev.spread[0] > prev.spread[1] ? prev.spread[0] : prev.spread[1];
@@ -31,6 +31,18 @@ function sortData(data, sortType) {
         })
     }
 
+    if (+sortType === 3) {
+        return data.sort( (prev,next) => {
+            return next.leftEx.vol24 + next.rightEx.vol24 - prev.leftEx.vol24 - prev.rightEx.vol24;
+            
+        })
+    }
+
+    if (+sortType === 4) {
+        return data.sort( (prev,next) => {
+            return prev.leftEx.vol24 + prev.rightEx.vol24 - next.leftEx.vol24 - next.rightEx.vol24;
+        })
+    }
     return data;
 }
 
@@ -233,6 +245,8 @@ class SearchTable extends React.Component {
         const radios = [
             { name: 'Sort by spread from high to low', value: '1', id: '1' },
             { name: 'Sort by spread from low to high', value: '2', id: '2' },
+            { name: 'Sort by volume from high to low', value: '3', id: '3' },
+            { name: 'Sort by volume from low to high', value: '4', id: '4' },
         ];
 
         const listSort = radios.map( (radio) => 
@@ -286,7 +300,12 @@ class SearchTable extends React.Component {
                             aria-describedby="textForFindCurrency"
                             value={this.props.filter}
                             size='sm'
-                        /><CloseButton onClick={this.props.deleteCurs} className="delete-close-curs"/>
+                        />
+                        <CloseButton 
+                            onClick={this.props.deleteCurs}
+                            className="delete-close-curs"
+                            hidden={this.props.filter.length === 0}
+                        />
                         
 
                         <Form.Text style={{padding: "2px 3px"}} id="textForFindCurrency" muted>Tap name</Form.Text>

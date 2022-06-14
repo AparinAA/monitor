@@ -282,8 +282,10 @@ input:focus {
 
 .delete-close-curs {
     position: absolute;
-    top: 9px;
-    right: 5px;
+    top: 12px;
+    right: 6px;
+    height: 10px !important;
+    width: 10px !important;
 }
 
 input[type='text'],
