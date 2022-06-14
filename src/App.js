@@ -63,7 +63,7 @@ class ExchangeInfo extends React.Component {
         
         const trunceAsk = +this.props.price?.ask[0][0] > 100 ? +this.props.price?.ask[0][0] : truncated(this.props.price?.ask[0][0],6);
         const trunceBid = +this.props.price?.bid[0][0] > 100 ? +this.props.price?.bid[0][0] : truncated(this.props.price?.bid[0][0],6);
-        const volume = +this.props.price?.vol24 > 100 ? +this.props.price?.vol24 : truncated(this.props.price?.vol24,6);
+        const volume = Math.round(+this.props.price?.vol24);
         return (
             <div>
                 <div><b>{this.props.exchange}</b></div>
@@ -73,7 +73,10 @@ class ExchangeInfo extends React.Component {
                     <div className='best-order-book'>    
                         <div className='ask'>Ask: {!trunceAsk ? Number(this.props.price?.ask[0][0]) : trunceAsk}</div>
                         <div className='bid'>Bid: {!trunceBid ? Number(this.props.price?.bid[0][0]) : trunceBid}</div>
-                        <div className='vol24'>Vol. {volume}</div>
+                        <div className='vol24'>
+                            <div className='vol24-title'>Volume USDT</div>
+                            <div className='vol24-quote'>{volume}</div>
+                        </div>
                     </div>
                 </div>
             </div>

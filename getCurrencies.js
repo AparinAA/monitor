@@ -73,7 +73,7 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
         //info tickers of OKX
         const tickersOKX = response[0].data
         .map(item => {
-            return {"instId": item.instId, "ask": +item.askPx, "bid": +item.bidPx, "base_vol": +item.vol24h};
+            return {"instId": item.instId, "ask": +item.askPx, "bid": +item.bidPx, "base_vol": +item.volCcy24h};
         });
 
         //info tickers of FTX

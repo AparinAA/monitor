@@ -13,7 +13,7 @@ function getMarketMexc(setTickers = undefined) {
         } else {
             current = tickers.filter(item => item.volume > 10000);
         }
-        return current.map(item => ({"instId": item.symbol, "ask": +item.ask, "bid": +item.bid, "base_vol": +item.volume}))
+        return current.map(item => ({"instId": item.symbol, "ask": +item.ask, "bid": +item.bid, "base_vol": +item.volume * +item.last}))
     
     })
 }
