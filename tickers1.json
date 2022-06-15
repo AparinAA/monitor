@@ -55431,16 +55431,6 @@
       "exchangeRight": "Gateio"
      },
      {
-      "nameLeft": "ZONE",
-      "tickerLeft": "ZONE_USDT",
-      "urlLeft": "https://www.mexc.com/exchange/ZONE_USDT",
-      "exchangeLeft": "Mexc",
-      "nameRight": "ZONE",
-      "tickerRight": "ZONE_USDT",
-      "urlRight": "https://www.gate.io/trade/ZONE_USDT",
-      "exchangeRight": "Gateio"
-     },
-     {
       "nameLeft": "VDR",
       "tickerLeft": "VDR_USDT",
       "urlLeft": "https://www.mexc.com/exchange/VDR_USDT",
