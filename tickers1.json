@@ -54781,16 +54781,6 @@
       "exchangeRight": "Gateio"
      },
      {
-      "nameLeft": "MPH",
-      "tickerLeft": "MPH_USDT",
-      "urlLeft": "https://www.mexc.com/exchange/MPH_USDT",
-      "exchangeLeft": "Mexc",
-      "nameRight": "MPH",
-      "tickerRight": "MPH_USDT",
-      "urlRight": "https://www.gate.io/trade/MPH_USDT",
-      "exchangeRight": "Gateio"
-     },
-     {
       "nameLeft": "DOP",
       "tickerLeft": "DOP_USDT",
       "urlLeft": "https://www.mexc.com/exchange/DOP_USDT",
