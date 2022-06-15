@@ -136,6 +136,11 @@ hr {
     background-color:  var(--accent-button-color) !important;
     color: var(--accent-color) !important;
     border: 1px solid var(--accent-button-color) !important;
+    outline: 0 !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+    border-radius: 9px !important;
+    margin: 0 5px !important;
 }
 
 .btn-primary:hover, .btn-secondary:hover {
@@ -252,9 +257,27 @@ input:focus {
     float: right;
 }
 
+.check-exchanges {
+    padding: 0 !important;
+}
+.form-check {
+    margin: 5px!important;
+    padding: 0 !important;
+}
+
+.form-check-input {
+    opacity: 0;
+}
+.form-check-input:checked ~ .form-check-label {
+    background-color: rgb(119, 119, 119);
+}
 
 .form-check-label {
     color: var(--accent-text-color) !important;
+    cursor: pointer;
+    padding: 2px 16px;
+    border-radius: 9px;
+    margin: 1px 0;
 }
 
 .set-text-refresh {

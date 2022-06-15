@@ -79,7 +79,7 @@ class ExchangeInfo extends React.Component {
         const url = this.props.price?.url;
         return (
             <div>
-                <div><b><a href={url} target="_blank" className='url-exchange-stock'>{this.props.exchange}</a></b></div>
+                <div><b><a href={url} target="_blank" rel="noreferrer" className='url-exchange-stock'>{this.props.exchange}</a></b></div>
                 <div>{spreadInfo}</div>
                 <div>
                     <div>Order price</div>
@@ -219,7 +219,7 @@ class SearchTable extends React.Component {
                                             type='checkbox'
                                             label={item}
                                             name={item}
-                                            id={`checkEx+${item}`}
+                                            id={`checkEx-${item}`}
                                         />
                             )
                             
@@ -260,7 +260,8 @@ class SearchTable extends React.Component {
             <div className="filter-menu">
                 <Row style={{padding: "0 9px"}}>
                     <Col style={{width: "60px", padding: "0px"}} sm={1} xs={2}>
-                        <Button 
+                        <Button  
+                            className='btn btn-secondary'
                             onClick={this.props.RefreshInfoSpreads}
                             size='sm'
                             style={{margin: "5px 5px 5px 0"}}
@@ -312,12 +313,13 @@ class SearchTable extends React.Component {
                         <Dropdown
                             onSelect={this.props.selectDropFilter}
                             style={{position: "absolute", zIndex: "1000"}}
-                            show={flagShowDropMenu}
                             size='sm'
+                            show={flagShowDropMenu}
                             
                         >
                             <Dropdown.Menu
-                                show={flagShowDropMenu} size='sm'
+                                show={flagShowDropMenu}
+                                size='sm'
                             >
                                 {dropTickers}
                             </Dropdown.Menu>
@@ -358,7 +360,7 @@ class SearchTable extends React.Component {
                 </Row>
                         
                 <Row style={{padding: "5px 9px"}} className="col-md-12">
-                    <Form>
+                    <Form className='check-exchanges'>
                         {allExchanges}
                     </Form>
                 </Row>
@@ -418,10 +420,9 @@ class ScanerPlot extends React.Component {
         });
     }
 
-    RefreshInfoSpreads() {
+    RefreshInfoSpreads(e) {
         this.setState({loading: true});
         setTimeout( () => this.timeIdAllCheckPrice(), 1000);
-        
     }
 
     //======================================================
