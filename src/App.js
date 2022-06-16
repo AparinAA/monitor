@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import axios from 'axios';
 import {Button, Form, InputGroup, ListGroup, Card,DropdownButton, Dropdown, Offcanvas, Container, Row, Col, Spinner, CloseButton} from 'react-bootstrap';
-import { ArrowCounterclockwise, ChevronRight } from 'react-bootstrap-icons';
+import { ArrowCounterclockwise, ChevronRight, ChevronUp, ChevronDown } from 'react-bootstrap-icons';
 
 //округление до знака decimalPlaces после запятой
 function truncated(num, decimalPlaces) {    
@@ -255,6 +255,7 @@ class SearchTable extends React.Component {
 
         const titleSort = radios.find(item => Number(item.value) === this.props.sortBy).name;
         
+        const hiddenSymbol = this.props.hiddenFilter ? <ChevronDown /> : <ChevronUp />
 
         return (
             <div className="filter-menu">
@@ -289,81 +290,94 @@ class SearchTable extends React.Component {
                     </Col>
                     
                 </Row>
-                        
-                <Row style={{padding: "5px 9px 0"}} className="col-md-12" >
-                    
-                    <Col md={4} sm={12} xs={12} className='p-1 position-relative'>
-                        <Form.Control
-                            type="text"
-                            className="ms-auto"
-                            onChange={this.props.filterChange}
-                            placeholder="Cur1,Cur2,..."
-                            aria-describedby="textForFindCurrency"
-                            value={this.props.filter}
-                            size='sm'
-                        />
-                        <CloseButton 
-                            onClick={this.props.deleteCurs}
-                            className="delete-close-curs"
-                            hidden={this.props.filter.length === 0}
-                        />
-                        
 
-                        <Form.Text style={{padding: "2px 3px"}} id="textForFindCurrency" muted>Tap name</Form.Text>
-                        <Dropdown
-                            onSelect={this.props.selectDropFilter}
-                            style={{position: "absolute", zIndex: "1000"}}
-                            size='sm'
-                            show={flagShowDropMenu}
+                <Row hidden={this.props.hiddenFilter} style={{padding: "5px 9px"}}>
+                    <Row style={{padding: "0", margin: "0"}} className="col-md-12">
+                        
+                        <Col md={4} sm={12} xs={12} className='p-1 position-relative'>
+                            <Form.Control
+                                type="text"
+                                className="ms-auto"
+                                onChange={this.props.filterChange}
+                                placeholder="Cur1,Cur2,..."
+                                aria-describedby="textForFindCurrency"
+                                value={this.props.filter}
+                                size='sm'
+                            />
+                            <CloseButton 
+                                onClick={this.props.deleteCurs}
+                                className="delete-close-curs"
+                                hidden={this.props.filter.length === 0}
+                            />
                             
-                        >
-                            <Dropdown.Menu
+
+                            <Form.Text style={{padding: "2px 3px"}} id="textForFindCurrency" muted>Tap name</Form.Text>
+                            <Dropdown
+                                onSelect={this.props.selectDropFilter}
+                                style={{position: "absolute", zIndex: "1000"}}
+                                size='sm'
                                 show={flagShowDropMenu}
+                                
+                            >
+                                <Dropdown.Menu
+                                    show={flagShowDropMenu}
+                                    size='sm'
+                                >
+                                    {dropTickers}
+                                </Dropdown.Menu>
+                            </Dropdown>
+                            
+                        </Col>
+                        <Col md={2} sm={6} xs={6} className='p-1'>
+                            <Form.Control
+                                type="text"
+                                onChange={this.props.changeSpreadMin}
+                                placeholder="Filter Min"
+                                aria-describedby="textForMinSpread"
+                                size='sm'
+                            />
+                            <Form.Text style={{padding: "0 0 0 3px"}} id="textForMinSpread" muted>Tap min spread</Form.Text>
+                        </Col>
+                        <Col md={2} sm={6} xs={6} className='p-1'>
+                            <Form.Control
+                                type="text"
+                                onChange={this.props.changeSpreadMax}
+                                placeholder="Filter Max"
+                                aria-describedby="textForMaxSpread"
+                                size='sm'
+                            />
+                            <Form.Text style={{padding: "0"}} id="textForMaxSpread" muted>Tap max spread</Form.Text>
+                        </Col>
+                        
+                        <div className='d-none d-md-block col-md-4 p-1 sort-position'>
+                            <DropdownButton 
+                                onSelect={this.props.checkSort}
+                                title={titleSort}
+                                variant="secondary"
                                 size='sm'
                             >
-                                {dropTickers}
-                            </Dropdown.Menu>
-                        </Dropdown>
-                        
-                    </Col>
-                    <Col md={2} sm={6} xs={6} className='p-1'>
-                        <Form.Control
-                            type="text"
-                            onChange={this.props.changeSpreadMin}
-                            placeholder="Filter Min"
-                            aria-describedby="textForMinSpread"
-                            size='sm'
-                        />
-                        <Form.Text style={{padding: "0 0 0 3px"}} id="textForMinSpread" muted>Tap min spread</Form.Text>
-                    </Col>
-                    <Col md={2} sm={6} xs={6} className='p-1'>
-                        <Form.Control
-                            type="text"
-                            onChange={this.props.changeSpreadMax}
-                            placeholder="Filter Max"
-                            aria-describedby="textForMaxSpread"
-                            size='sm'
-                        />
-                        <Form.Text style={{padding: "0"}} id="textForMaxSpread" muted>Tap max spread</Form.Text>
-                    </Col>
-                    
-                    <div className='d-none d-md-block col-md-4 p-1 sort-position'>
-                        <DropdownButton 
-                            onSelect={this.props.checkSort}
-                            title={titleSort}
-                            variant="secondary"
-                            size='sm'
-                        >
-                            {listSort}
-                        </DropdownButton>
-                    </div>
+                                {listSort}
+                            </DropdownButton>
+                        </div>
+                    </Row>
+                            
+                    <Row style={{padding: "0", margin: "0"}} className="col-md-12">
+                        <Form className='check-exchanges'>
+                            {allExchanges}
+                        </Form>
+                    </Row>
                 </Row>
-                        
-                <Row style={{padding: "5px 9px"}} className="col-md-12">
-                    <Form className='check-exchanges'>
-                        {allExchanges}
-                    </Form>
+
+
+                <Row style={{padding: "0", margin: "0"}} className="col-12 d-block d-sm-none">
+                    <Button 
+                        className='btn-close-exchange'
+                        onClick={this.props.hiddenFilterHandler}
+                    > 
+                        {hiddenSymbol}
+                    </Button>             
                 </Row>
+                
             </div>                  
             
         );
@@ -384,6 +398,7 @@ class ScanerPlot extends React.Component {
             showMenuSelectTickers: false,
             selectExchanges: new Set(["OKX","FTX","Binance","KuCoin","Gateio","Mexc"]),
             allTickets: emptyPrice,
+            hiddenFilter: false,
         }
         this.RefreshInfoSpreads = this.RefreshInfoSpreads.bind(this);
         this.checkSort = this.checkSort.bind(this);
@@ -393,6 +408,7 @@ class ScanerPlot extends React.Component {
         this.changeSpreadMax = this.changeSpreadMax.bind(this);
         this.checkboxExchange = this.checkboxExchange.bind(this);
         this.deleteCurs = this.deleteCurs.bind(this);
+        this.hiddenFilterHandler = this.hiddenFilterHandler.bind(this);
         
     }
 
@@ -509,6 +525,13 @@ class ScanerPlot extends React.Component {
             showMenuSelectTickers: false
         });
     }
+
+    hiddenFilterHandler() {
+        this.setState( state => ({
+                hiddenFilter: !state.hiddenFilter
+            })
+        )
+    }
     //======================================================
 
     //Обработчки сортировки
@@ -545,6 +568,8 @@ class ScanerPlot extends React.Component {
                     changeSpreadMax = {this.changeSpreadMax}
                     checkboxExchange = {this.checkboxExchange}
                     deleteCurs = {this.deleteCurs}
+                    hiddenFilterHandler = {this.hiddenFilterHandler}
+                    hiddenFilter = {this.state.hiddenFilter}
                 /> 
                 <TablePairExchanges 
                     sortBy={this.state.sortBy}

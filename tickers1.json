@@ -55811,16 +55811,6 @@
       "exchangeRight": "Gateio"
      },
      {
-      "nameLeft": "BAS",
-      "tickerLeft": "BAS_USDT",
-      "urlLeft": "https://www.mexc.com/exchange/BAS_USDT",
-      "exchangeLeft": "Mexc",
-      "nameRight": "BAS",
-      "tickerRight": "BAS_USDT",
-      "urlRight": "https://www.gate.io/trade/BAS_USDT",
-      "exchangeRight": "Gateio"
-     },
-     {
       "nameLeft": "SHOPX",
       "tickerLeft": "SHOPX_USDT",
       "urlLeft": "https://www.mexc.com/exchange/SHOPX_USDT",
