@@ -233,9 +233,6 @@ button {
 }
 
 .not-found-window {
-    position: absolute;
-    top: calc(50% + 100px);
-    transform: translate(0, -50%);
     text-align: center;
 }
 

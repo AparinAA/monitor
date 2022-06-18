@@ -370,7 +370,7 @@ class SearchTable extends React.Component {
                 </Row>
 
 
-                <Row style={{padding: "0", margin: "0"}} className="col-12 d-block d-sm-none">
+                <Row style={{padding: "0", margin: "0"}} className="col-12">
                     <Button 
                         className='btn-close-exchange'
                         onClick={this.props.hiddenFilterHandler}
@@ -410,37 +410,10 @@ class ScanerPlot extends React.Component {
         this.checkboxExchange = this.checkboxExchange.bind(this);
         this.deleteCurs = this.deleteCurs.bind(this);
         this.hiddenFilterHandler = this.hiddenFilterHandler.bind(this);
-        this.updateDimensions = this.updateDimensions.bind(this);
-    }
-
-    updateDimensions () {
-        const debounce = (fn, ms) => {
-            let timer;
-            return _ => {
-                clearTimeout(timer);
-                timer = setTimeout(_ => {
-                    timer = null;
-                    fn.apply(this, arguments);
-                }, ms);
-            };
-        }
-        debounce(() => {
-            if (document.documentElement.scrollWidth > 576) {
-                this.setState({ hiddenFilter: false });
-            }
-        }, 200); // 100ms
-        
-        
     }
 
     componentDidMount() {
         this.timeIdAllCheckPrice();
-        window.addEventListener('resize', this.updateDimensions);
-        window.addEventListener("orientationchange", this.updateDimensions, false);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.updateDimensions);
     }
 
     timeIdAllCheckPrice() {
