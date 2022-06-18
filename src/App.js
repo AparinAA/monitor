@@ -436,6 +436,7 @@ class ScanerPlot extends React.Component {
     componentDidMount() {
         this.timeIdAllCheckPrice();
         window.addEventListener('resize', this.updateDimensions);
+        window.addEventListener("orientationchange", this.updateDimensions, false);
     }
 
     componentWillUnmount() {
