@@ -243,10 +243,10 @@ class SearchTable extends React.Component {
         }
 
         const radios = [
-            { name: 'Sort by spread from high to low', value: '1', id: '1' },
-            { name: 'Sort by spread from low to high', value: '2', id: '2' },
-            { name: 'Sort by volume from high to low', value: '3', id: '3' },
-            { name: 'Sort by volume from low to high', value: '4', id: '4' },
+            { name: 'Sort by sp. from high to low', value: '1', id: '1' },
+            { name: 'Sort by sp. from low to high', value: '2', id: '2' },
+            { name: 'Sort by vol. from high to low', value: '3', id: '3' },
+            { name: 'Sort by vol. from low to high', value: '4', id: '4' },
         ];
 
         const listSort = radios.map( (radio) => 
@@ -328,6 +328,7 @@ class SearchTable extends React.Component {
                             </Dropdown>
                             
                         </Col>
+
                         <Col md={2} sm={6} xs={6} className='p-1'>
                             <Form.Control
                                 type="text"
@@ -409,13 +410,38 @@ class ScanerPlot extends React.Component {
         this.checkboxExchange = this.checkboxExchange.bind(this);
         this.deleteCurs = this.deleteCurs.bind(this);
         this.hiddenFilterHandler = this.hiddenFilterHandler.bind(this);
+        this.updateDimensions = this.updateDimensions.bind(this);
+    }
+
+    updateDimensions () {
+        const debounce = (fn, ms) => {
+            let timer;
+            return _ => {
+                clearTimeout(timer);
+                timer = setTimeout(_ => {
+                    timer = null;
+                    fn.apply(this, arguments);
+                }, ms);
+            };
+        }
+        debounce(() => {
+            if (document.documentElement.scrollWidth > 576) {
+                this.setState({ hiddenFilter: false });
+            }
+        }, 200); // 100ms
+        
         
     }
 
     componentDidMount() {
         this.timeIdAllCheckPrice();
+        window.addEventListener('resize', this.updateDimensions);
     }
-    
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateDimensions);
+    }
+
     timeIdAllCheckPrice() {
         this.setState({loading: true});
         //axios.get(`http://localhost:8090/allspread`)
