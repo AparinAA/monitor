@@ -175,6 +175,11 @@ button {
     background-color: var(--accent-button-hover-color) !important;
     color: var(--accent-hover-color) !important;
     border-radius: 9px !important;
+    box-sizing: border-box;
+    max-height: 300px;
+    position: absolute !important;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 
@@ -350,4 +355,11 @@ input {
 
 .btn-close-exchange:active {
     transform: scale(0.99) !important;
+}
+
+.list-pair-spread {
+    position: relative;
+    overflow: hidden;
+    max-height: 100%;
+    overflow-y: scroll;
 }

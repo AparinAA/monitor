@@ -191,7 +191,7 @@ class TablePairExchanges extends React.Component {
 
 
         return (
-            <Row>
+            <Row className='list-pair-spread'>
                 {foundScan}
             </Row>
         );
