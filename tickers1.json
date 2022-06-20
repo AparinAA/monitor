@@ -34102,7 +34102,7 @@
      },
      {
       "nameLeft": "DOG",
-      "tickerLeft": "DOG_USDT",
+      "tickerLeft": "DOGNFT_USDT",
       "urlLeft": "https://www.gate.io/trade/DOG_USDT",
       "exchangeLeft": "Gateio",
       "nameRight": "DOG",
@@ -56196,7 +56196,7 @@
       "urlLeft": "https://www.mexc.com/exchange/DOG_USDT",
       "exchangeLeft": "Mexc",
       "nameRight": "DOG",
-      "tickerRight": "DOG_USDT",
+      "tickerRight": "DOGNFT_USDT",
       "urlRight": "https://www.gate.io/trade/DOG_USDT",
       "exchangeRight": "Gateio"
      },

@@ -356,10 +356,3 @@ input {
 .btn-close-exchange:active {
     transform: scale(0.99) !important;
 }
-
-.list-pair-spread {
-    position: relative;
-    overflow: hidden;
-    max-height: 100%;
-    overflow-y: scroll;
-}
