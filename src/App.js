@@ -438,7 +438,7 @@ class ScanerPlot extends React.Component {
 
     RefreshInfoSpreads(e) {
         this.setState({loading: true});
-        setTimeout( () => this.timeIdAllCheckPrice(), 1000);
+        setTimeout( () => this.timeIdAllCheckPrice(), 500);
     }
 
     //======================================================

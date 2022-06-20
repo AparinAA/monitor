@@ -314,6 +314,7 @@ input:focus {
     right: 6px;
     height: 10px !important;
     width: 10px !important;
+    background-color: rgb(132, 132, 132) !important;
 }
 
 input[type='text'],
