@@ -23572,7 +23572,7 @@
      },
      {
       "nameLeft": "GTC",
-      "tickerLeft": "GTC_USDT",
+      "tickerLeft": "GITCOIN_USDT",
       "urlLeft": "https://www.gate.io/trade/GTC_USDT",
       "exchangeLeft": "Gateio",
       "nameRight": "GTC",
@@ -31192,7 +31192,7 @@
      },
      {
       "nameLeft": "GTC",
-      "tickerLeft": "GTC_USDT",
+      "tickerLeft": "GITCOIN_USDT",
       "urlLeft": "https://www.gate.io/trade/GTC_USDT",
       "exchangeLeft": "Gateio",
       "nameRight": "GTC",
@@ -51576,7 +51576,7 @@
       "urlLeft": "https://www.mexc.com/exchange/GTC_USDT",
       "exchangeLeft": "Mexc",
       "nameRight": "GTC",
-      "tickerRight": "GTC_USDT",
+      "tickerRight": "GITCOIN_USDT",
       "urlRight": "https://www.gate.io/trade/GTC_USDT",
       "exchangeRight": "Gateio"
      },
