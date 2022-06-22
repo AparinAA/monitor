@@ -8,10 +8,10 @@ const { Spot } = require('@binance/connector'); //Binance SPOT api
 const fs = require('fs'); 
 const {promiseTickersWithSpread} = require('./getCurrencies');
 const API = require('kucoin-node-sdk');
+const { addSpreadList } = require('./addSpreadList');
 
-
-//const host = 'localhost';
-const host = '195.133.1.56';
+const host = 'localhost';
+//const host = '195.133.1.56';
 const port = 8090;
 
 const secretDict_FTX = {
@@ -73,21 +73,23 @@ const okx = new OKXclient(secretDict_OKX.api_key, secretDict_OKX.secret_key, sec
 const nullSpreadJson = [
     {
         'name': '',
+        'idPair': 0,
         'leftEx': {
             'name': '',
             'url': '',
-            'ask': [['-']], 
-            'bid': [['-']],
+            'ask': [[0,0]], 
+            'bid': [[0,0]],
             'vol24': 0
         },
         'rightEx': {
             'name': '',
             'url': '',
-            'ask': [['-']],
-            'bid': [['-']],
+            'ask': [[0,0]],
+            'bid': [[0,0]],
             'vol24': 0
         },
         'spread': [0, 0],
+        'listSpread': [[0,0]]
     }
 ];
 
@@ -96,12 +98,12 @@ const nsscrySpread = process.env.nsscrySpread;
 
 promiseTickersWithSpread([okx, ftx_1, BNB, API, /* -digifinex  +huobi whitout api + gateio*/],  tickersAll, nsscrySpread)
 .then(response => {
-    allSpreadJson = response
+    allSpreadJson = response;
 }, e => {
     console.info("error allspread", e);
     return Promise.reject(e);
 })
-.catch( e => {
+.catch( () => {
     console.info("error 2 allspread");
     allSpreadJson = nullSpreadJson;
 });
@@ -109,15 +111,20 @@ promiseTickersWithSpread([okx, ftx_1, BNB, API, /* -digifinex  +huobi whitout ap
 setInterval( () => {
     promiseTickersWithSpread([okx, ftx_1, BNB, API, /*digifinex*/], tickersAll, nsscrySpread)
     .then(response => {
-        allSpreadJson = response
+        if (!response) {
+            return Promise.reject(false);
+        }
+        allSpreadJson = addSpreadList(allSpreadJson,response, 10);
+        //console.info(allSpreadJson[0]);
     }, e => {
         console.info("error allspread", e);
         return Promise.reject(e);
     })
-    .catch( e => {
+    .catch( (e) => {
+        console.info(e);
         console.info("error 2 allspread");
     });
-}, 15000)
+}, 15 * 1000)
 
 const requestListener = function (req, res) {
     res.setHeader("Content-Type", "application/json");

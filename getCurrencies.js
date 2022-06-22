@@ -41,8 +41,8 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
     const tickersBNB = tickersAll.tickers.filter( item => ((item.exchangeLeft === "Binance") || (item.exchangeRight === "Binance")) );
     const tickersKuCoin = tickersAll.tickers.filter( item => ((item.exchangeLeft === "KuCoin") || (item.exchangeRight === "KuCoin")) );
     //const tickersDigifinex = tickersAll.tickers.filter( item => ((item.exchangeLeft === "Digifinex") || (item.exchangeRight === "Digifinex")) );
-    const tickersHuobi = tickersAll.tickers.filter( item => ((item.exchangeLeft === "Huobi") || (item.exchangeRight === "Huobi")) )
-        .map(item => (item.exchangeLeft === "Huobi" ? item.tickerLeft : item.tickerRight) )
+    //const tickersHuobi = tickersAll.tickers.filter( item => ((item.exchangeLeft === "Huobi") || (item.exchangeRight === "Huobi")) )
+    //    .map(item => (item.exchangeLeft === "Huobi" ? item.tickerLeft : item.tickerRight) )
     const tickersGateio = tickersAll.tickers.filter( item => ((item.exchangeLeft === "Gateio") || (item.exchangeRight === "Gateio")) )
         .map(item => (item.exchangeLeft === "Gateio" ? item.tickerLeft : item.tickerRight) )
     const tickersMexc = tickersAll.tickers.filter( item => ((item.exchangeLeft === "Mexc") || (item.exchangeRight === "Mexc")) )
@@ -64,7 +64,7 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
         getMarketBNB(exchanges[2],tickersBNB), //Binance
         getTickersKuCoin(exchanges[3], tickersKuCoin), //KuCoin
         //exchanges[4].getMarket(new Set(nameListDigifinex)), //Digifinex
-        getMarketHuobi(new Set(tickersHuobi)), //Huobi 
+        //getMarketHuobi(new Set(tickersHuobi)), //Huobi 
         getMarketGateio(Array.from(new Set(tickersGateio))), //Gateio
         getMarketMexc(new Set(tickersMexc)), //Mexc
     ])
@@ -94,13 +94,13 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
         //const tickersDigifinex = response[4];
 
         //info tickers of Huobi
-        const tickersHuobi = response[4];
+        //const tickersHuobi = response[4];
 
         //info tickers of Gate.io
-        const tickersGateio = response[5];
+        const tickersGateio = response[4];
 
         //info tickers of Mexc
-        const tickersMexc = response[6];
+        const tickersMexc = response[5];
 
         const allExchange = {
             "OKX": tickersOKX,
@@ -108,7 +108,7 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
             "Binance": tickersBNB,
             "KuCoin": tickersKuCoin,
             //"Digifinex": tickersDigifinex,
-            "Huobi": tickersHuobi,
+            //"Huobi": tickersHuobi,
             "Gateio": tickersGateio,
             "Mexc": tickersMexc,
         }
@@ -122,13 +122,18 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
             const exchangeRight = item.exchangeRight;
             const urlLeft = item.urlLeft;
             const urlRight = item.urlRight;
+            const idPair = item.idPair;
 
-            if(exchangeLeft === 'Digifinex' || exchangeRight === 'Digifinex') {
+            if(exchangeLeft === 'Digifinex' || exchangeRight === 'Digifinex' || exchangeLeft === 'Huobi' || exchangeRight === 'Huobi') {
                 return;
             }
-            const leftPr = allExchange[exchangeLeft].find( element => element.instId === instIdLeft);
-            const rightPr = allExchange[exchangeRight].find( element => element.instId === instIdRight);
+            const leftPr = allExchange[exchangeLeft]?.find( element => element.instId === instIdLeft);
+            const rightPr = allExchange[exchangeRight]?.find( element => element.instId === instIdRight);
             
+            if (!leftPr || !rightPr) {
+                return;
+            }
+
             const spread_1 = culcSpread(leftPr,rightPr);
             const spread_2 = culcSpread(rightPr,leftPr);
 
@@ -136,6 +141,7 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
                 genVarTickets.push(
                         {   
                             'name': nameRight,
+                            'idPair': idPair,
                             'leftEx': {
                                 'name': exchangeLeft,
                                 'url': urlLeft,
@@ -150,7 +156,8 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
                                 'bid': [[rightPr.bid]],
                                 'vol24': rightPr.base_vol,
                             },
-                            'spread': [spread_1, spread_2]
+                            'spread': [spread_1, spread_2],
+                            'listSpread': [[spread_1, spread_2]]
                         }
                 )
             }
@@ -159,13 +166,13 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
         });
 
         return genVarTickets;
-    }, e => {
-        console.info("error get tickets");
+    }, (e) => {
+        console.info("error get tickets",e);
         return Promise.reject(e);
     })
-    .catch( e => {
+    .catch( (e) => {
         console.info("! Error: ", e);
-        return false;
+        return Promise.reject(false);
     })
 }
 

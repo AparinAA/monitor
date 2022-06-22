@@ -190,8 +190,8 @@ button {
 .card {
     background-color: var(--accent-bg-color) !important;
     border: 1px solid var(--accent-bg-color) !important;
-    border-radius: 10px !important;
-    margin: 10px 0;             
+    border-radius: 0 0 10px 10px !important;
+    margin: 0;             
 }
 
 
@@ -356,4 +356,70 @@ input {
 
 .btn-close-exchange:active {
     transform: scale(0.99) !important;
+}
+
+.grah {
+    display: flex !important;
+    flex-direction: row !important;
+    position: relative !important;
+    height: "150px" !important;
+}
+
+.nav-pills {
+    display: flex;
+    background-color: rgb(119, 119, 119) !important;
+    border-bottom: 1px solid rgb(119, 119, 119) !important;
+    border-radius: 9px 9px 0px 0px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.tab-content {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.nav-link {
+    padding: 0 !important;
+}
+
+.nav-link:not(.disabled) {
+    box-sizing: border-box;
+    background-color:  rgb(119, 119, 119) !important;
+    color: var(--accent-color) !important;
+    outline: 0 !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0px !important;
+    text-align: center;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    padding: 0 !important;    
+}
+
+.nav-link.active {
+    border-bottom: 1px solid var(--accent-button-color) !important;
+}
+
+.nav-pills:first-child {
+    margin-right: auto !important;
+}
+
+.disabled {
+    background-color: none !important;
+    color: var(--accent-text-color) !important;
+    margin: 5px 10px !important;
+}
+
+.list-pair-spread > * {
+    margin: 10px 0 !important;
+}
+
+.nameGraph {
+    color: var(--accent-text-color);
+    text-decoration: none;
+    width: 60px !important;
+}
+.nameGraph:hover {
+    color: var(--accent-button-hover-color);
 }

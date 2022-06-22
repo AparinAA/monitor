@@ -1,10 +1,12 @@
 import './App.css';
 import React from 'react';
 import axios from 'axios';
-import {Button, Form, Card,DropdownButton, Dropdown, Container, Row, Col, Spinner, CloseButton} from 'react-bootstrap';
+import {Button, Form, Card,DropdownButton, Dropdown, Container, Row, Col, Spinner, CloseButton, Tabs, Tab} from 'react-bootstrap';
 import { ArrowCounterclockwise, ChevronUp, ChevronDown } from 'react-bootstrap-icons';
 import { truncated, positiveNumber, sortData} from './additionFunc';
 import { OfCansBalance } from './ViewBalanceCans';
+import { listAllExchanges, availListExchanges, emptyPrice} from './availVar';
+import { Graphics } from './ModelGraphics';
 
 class ExchangeInfo extends React.Component {
     
@@ -59,39 +61,94 @@ class ExchangeInfo extends React.Component {
 
 class BlockPairExchanges extends React.Component {
     
+    constructor(props) {
+        super(props);
+        this.state = {
+            tabActive: "stat",
+            hiddenGraph: true,
+        }
+        this.selectStatOrGraph = this.selectStatOrGraph.bind(this);
+    }
+
+    selectStatOrGraph(eventKey) {
+        this.setState(state => ({
+                tabActive: eventKey,
+                hiddenGraph: !state.hiddenGraph
+            })
+        );
+    }
+    
     render() {
+        const genGraph = (gen, leftEx, rightEx) => {
+            if (gen) {
+                return  <Row>
+                    <Graphics
+                        listSpread={this.props?.currency?.listSpread}
+                        exchange={leftEx}
+                        side={"leftEx"}
+                        id={this.props?.currency?.idPair}
+                        url={this.props?.currency?.leftEx?.url}
+                    />
+                    <Graphics
+                        listSpread={this.props?.currency?.listSpread}
+                        exchange={rightEx}
+                        side={"rightEx"}
+                        id={this.props?.currency?.idPair}
+                        url={this.props?.currency?.rightEx?.url}
+                    />
+                </Row>;
+            }
+           
+        }
         return (
             <Col xs={12} sm={6} md={6} lg={4} xl={4} xxl={3}>
-                <Card>
-                    <Card.Header><b>{this.props?.currency?.name}</b></Card.Header>
-                    <Card.Body bsPrefix={'class-body-new'}>
-                        <Row>
-                            <Col>
-                                <ExchangeInfo
-                                    exchange={this.props?.currency?.leftEx?.name}
-                                    price={this.props?.currency?.leftEx}
-                                    spread={this.props?.currency?.spread}
-                                    time={this.props?.timeRefresh}
-                                    side="leftEx"
-                                />
-                            </Col>                            
-                            <Col>
-                                <ExchangeInfo
-                                    exchange={this.props?.currency?.rightEx?.name}
-                                    price={this.props?.currency?.rightEx}
-                                    spread={this.props?.currency?.spread}
-                                    time={this.props?.timeRefresh}
-                                    side="rightEx"
-                                />
-                            </Col>
-                            
-                        </Row>
+                
+                    <Tabs
+                        id="tabs"
+                        defaultActiveKey="stat"
+                        variant="pills"
+                        onSelect={this.selectStatOrGraph}
+                    >   
+                        <Tab disabled title={this.props?.currency?.name}></Tab>
+                        <Tab eventKey="stat" title="Stat">
+                            <Card>
+                                <Card.Body bsPrefix={'class-body-new'}>
+                                    <Row>
+                                        <Col>
+                                            <ExchangeInfo
+                                                exchange={this.props?.currency?.leftEx?.name}
+                                                price={this.props?.currency?.leftEx}
+                                                spread={this.props?.currency?.spread}
+                                                time={this.props?.timeRefresh}
+                                                listSpread={this.props?.currency?.listSpread}
+                                                side="leftEx"
+                                            />
+                                        </Col>                            
+                                        <Col>
+                                            <ExchangeInfo
+                                                exchange={this.props?.currency?.rightEx?.name}
+                                                price={this.props?.currency?.rightEx}
+                                                spread={this.props?.currency?.spread}
+                                                time={this.props?.timeRefresh}
+                                                listSpread={this.props?.currency?.listSpread}
+                                                side="rightEx"
+                                            />
+                                        </Col>
+                                    </Row>
+                                </Card.Body>
+                            </Card>
+                        </Tab>
+                        <Tab eventKey="graph" title="Graph">
+                            <Card>
+                                <Card.Body bsPrefix={'class-body-new'}>
+                                    {genGraph(!this.state.hiddenGraph, this.props?.currency?.leftEx?.name, this.props?.currency?.rightEx?.name)}
+                                </Card.Body>
+                            </Card>
+                        </Tab>
                         
-                    </Card.Body>
+                    </Tabs>
                     
-                </Card>
             </Col>
-            
         );
     }
 
@@ -169,7 +226,7 @@ class SearchTable extends React.Component {
                                 .sort()
                             ));
 
-        const allExchanges = ["OKX","FTX","Binance","KuCoin","Huobi","Gateio","Mexc"]
+        const allExchanges = listAllExchanges
                             .map(item => <Form.Check
                                             onChange={this.props.checkboxExchange}
                                             checked={this.props.selectExchanges.has(item)}
@@ -344,7 +401,6 @@ class SearchTable extends React.Component {
     }
 }
 
-let emptyPrice = [{'name': '','leftEx': {'name': '','ask': [['-']], 'bid': [['-']], 'vol24' : 0},'rightEx': {'name': '','ask': [['-']],'bid': [['-']], 'vol24' : 0},'spread': [0, 0]}];
 class ScanerPlot extends React.Component {
     constructor(props) {
         super(props);
@@ -356,7 +412,7 @@ class ScanerPlot extends React.Component {
             spreadMin: 0.01,
             spreadMax: 1000,
             showMenuSelectTickers: false,
-            selectExchanges: new Set(["OKX","FTX","Binance","KuCoin","Gateio","Mexc"]),
+            selectExchanges: new Set(availListExchanges),
             allTickets: emptyPrice,
             hiddenFilter: false,
         }
@@ -380,7 +436,6 @@ class ScanerPlot extends React.Component {
         //axios.get(`http://localhost:8090/allspread`)
         axios.get(`http://195.133.1.56:8090/allspread`)
         .then( res => {
-            
             this.setState({
                 allTickets: res.data,
                 loading: false,
