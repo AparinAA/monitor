@@ -362,7 +362,7 @@ input {
     display: flex !important;
     flex-direction: row !important;
     position: relative !important;
-    height: "150px" !important;
+    justify-content: center !important;
 }
 
 .nav-pills {
@@ -419,6 +419,7 @@ input {
     color: var(--accent-text-color);
     text-decoration: none;
     width: 60px !important;
+    align-self: center;
 }
 .nameGraph:hover {
     color: var(--accent-button-hover-color);
