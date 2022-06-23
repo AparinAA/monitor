@@ -166,12 +166,12 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
         });
 
         return genVarTickets;
-    }, (e) => {
-        console.info("error get tickets",e);
-        return Promise.reject(e);
+    }, () => {
+        console.info("error get tickets");
+        return Promise.reject(false);
     })
-    .catch( (e) => {
-        console.info("! Error: ", e);
+    .catch( () => {
+        console.info("! Error: ");
         return Promise.reject(false);
     })
 }

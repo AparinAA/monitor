@@ -99,9 +99,9 @@ const nsscrySpread = process.env.nsscrySpread;
 promiseTickersWithSpread([okx, ftx_1, BNB, API, /* -digifinex  +huobi whitout api + gateio*/],  tickersAll, nsscrySpread)
 .then(response => {
     allSpreadJson = response;
-}, e => {
-    console.info("error allspread", e);
-    return Promise.reject(e);
+}, () => {
+    console.info("error allspread");
+    return Promise.reject(false);
 })
 .catch( () => {
     console.info("error 2 allspread");
@@ -116,12 +116,11 @@ setInterval( () => {
         }
         allSpreadJson = addSpreadList(allSpreadJson,response, 15);
         //console.info(allSpreadJson[0]);
-    }, e => {
-        console.info("error allspread", e);
-        return Promise.reject(e);
+    }, () => {
+        console.info("error allspread");
+        return Promise.reject(false);
     })
-    .catch( (e) => {
-        console.info(e);
+    .catch( () => {
         console.info("error 2 allspread");
     });
 }, 15 * 1000)
