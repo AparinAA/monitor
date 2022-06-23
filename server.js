@@ -114,7 +114,7 @@ setInterval( () => {
         if (!response) {
             return Promise.reject(false);
         }
-        allSpreadJson = addSpreadList(allSpreadJson,response, 10);
+        allSpreadJson = addSpreadList(allSpreadJson,response, 15);
         //console.info(allSpreadJson[0]);
     }, e => {
         console.info("error allspread", e);
