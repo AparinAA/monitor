@@ -13,8 +13,8 @@ const { startTrade } = require(path.resolve("../typescript-arb/prod/index"));
 const FTXclient = require(path.resolve("../typescript-arb/prod/FTXclient")).default;
 const OKXclient = require(path.resolve("../typescript-arb/prod/OKXclient")).default;
 
-const host = 'localhost';
-//const host = '195.133.1.56';
+//const host = 'localhost';
+const host = '195.133.1.56';
 const port = 8090;
 
 const secretDict_FTX = {
