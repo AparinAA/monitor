@@ -1,12 +1,13 @@
 import './App.css';
 import React from 'react';
 import axios from 'axios';
-import {Button, Form, Card,DropdownButton, Dropdown, Container, Row, Col, Spinner, CloseButton, Tabs, Tab} from 'react-bootstrap';
+import { Button, Form, Card, DropdownButton, Dropdown, Container, Row, Col, Spinner, CloseButton, Tabs, Tab } from 'react-bootstrap';
 import { ArrowCounterclockwise, ChevronUp, ChevronDown } from 'react-bootstrap-icons';
 import { truncated, positiveNumber, sortData} from './additionFunc';
 import { OfCansBalance } from './ViewBalanceCans';
 import { listAllExchanges, availListExchanges, emptyPrice} from './availVar';
 import { Graphics } from './ModelGraphics';
+import { TradeCard } from './TradeCard';
 
 class ExchangeInfo extends React.Component {
     
@@ -27,9 +28,9 @@ class ExchangeInfo extends React.Component {
         const spreadInfo = <div className={"spread-value " + spreadColor}>
                             { 
                                 (buyLeftEx || buyRightEx) ?
-                                    `Buy: ` + (positiveNumber(positiveSpread) ? `+` : ``) + positiveSpread + `%` :
+                                    `Buy ` + (positiveNumber(positiveSpread) ? `+` : ``) + positiveSpread + `%` :
                                     (sellLeftEx || sellRightEx) ? 
-                                        `Sell: ` + (positiveNumber(positiveSpread) ? `+` : ``) + positiveSpread + `%` :
+                                        `Sell ` + (positiveNumber(positiveSpread) ? `+` : ``) + positiveSpread + `%` :
                                         `Not found spread`                                           
                             }
                       </div>;
@@ -66,18 +67,67 @@ class BlockPairExchanges extends React.Component {
         this.state = {
             tabActive: "stat",
             hiddenGraph: true,
+            valueTrade: 3,
+            resultTrade: [],
+            spinner: false
         }
         this.selectStatOrGraph = this.selectStatOrGraph.bind(this);
+        this.tradeStart = this.tradeStart.bind(this);
+        this.onChangeValueTrade = this.onChangeValueTrade.bind(this);
     }
 
     selectStatOrGraph(eventKey) {
-        this.setState(state => ({
-                tabActive: eventKey,
-                hiddenGraph: !state.hiddenGraph
-            })
-        );
+
+        this.setState({
+            tabActive: eventKey,
+            hiddenGraph: eventKey === "graph" ? false : true
+        });
     }
     
+    tradeStart(event) {
+        const params = new URLSearchParams({
+            'cur': this.props?.currency?.name,
+            'ex1': this.props?.currency?.leftEx?.name,
+            'ex2': this.props?.currency?.rightEx?.name,
+            'it': this.state.valueTrade,
+        }).toString();
+
+        this.setState({ spinner: true});
+        //axios.post('http://localhost:8090/trade1', { 'cur': this.props?.currency?.name,
+        //  'ex1': this.props?.currency?.leftEx?.name,
+        //  'ex2': this.props?.currency?.rightEx?.name,
+        //  'it': this.state.valueTrade})
+        axios.get('http://localhost:8090/trade?'+params)
+        .then( res => {
+            const result = res.data;
+            this.setState({
+                resultTrade: result?.error ? result?.error : result?.ready,
+                spinner: false
+            })
+        }, () => {
+            this.setState({
+                resultTrade: "Ooops. Unknown error",
+                spinner: false
+            });
+        })
+        .catch( () => {
+            this.setState({
+                resultTrade: "Ooops. Unknown error",
+                spinner: false
+            });
+        });
+
+        event.preventDefault();
+    }
+
+    onChangeValueTrade(event) {
+        if (+event.target.value > 0) {
+            this.setState({ 
+                valueTrade: +event.target.value,
+            });
+        }
+    }
+
     render() {
         const genGraph = (gen, leftEx, rightEx) => {
             if (gen) {
@@ -97,8 +147,20 @@ class BlockPairExchanges extends React.Component {
                         url={this.props?.currency?.rightEx?.url}
                     />
                 </Row>;
+            }  
+        }
+        const tradeTab = (trade) => {
+            if (trade) {
+                return <Tab eventKey="trade" title="Trade">
+                        <TradeCard
+                            valueTrade={this.state.valueTrade}
+                            onChangeValueTrade={this.onChangeValueTrade}
+                            tradeStart={this.tradeStart}
+                            resultTrade={this.state.resultTrade}
+                            spinner={this.state.spinner}
+                        />
+                    </Tab>
             }
-           
         }
         return (
             <Col xs={12} sm={6} md={6} lg={4} xl={4} xxl={3}>
@@ -145,7 +207,9 @@ class BlockPairExchanges extends React.Component {
                                 </Card.Body>
                             </Card>
                         </Tab>
+
                         
+                        {tradeTab(this.props?.currency?.availTrade)}
                     </Tabs>
                     
             </Col>
@@ -433,8 +497,8 @@ class ScanerPlot extends React.Component {
 
     timeIdAllCheckPrice() {
         this.setState({loading: true});
-        //axios.get(`http://localhost:8090/allspread`)
-        axios.get(`http://195.133.1.56:8090/allspread`)
+        axios.get(`http://localhost:8090/allspread`)
+        //axios.get(`http://195.133.1.56:8090/allspread`)
         .then( res => {
             this.setState({
                 allTickets: res.data,

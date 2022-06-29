@@ -1,17 +1,20 @@
 require('dotenv').config();
 const http = require("http");
 const axios = require('axios');
-const {FTXclient} = require('./FTXclient');
-const {OKXclient} = require('./OKXclient');
-const {Digifinex} = require('./digifinex');
+//const {Digifinex} = require('../typescript-arb/prod/index');
 const { Spot } = require('@binance/connector'); //Binance SPOT api
 const fs = require('fs'); 
 const {promiseTickersWithSpread} = require('./getCurrencies');
 const API = require('kucoin-node-sdk');
 const { addSpreadList } = require('./addSpreadList');
+const path = require('path');
 
-//const host = 'localhost';
-const host = '195.133.1.56';
+const { startTrade } = require(path.resolve("../typescript-arb/prod/index"));
+const FTXclient = require(path.resolve("../typescript-arb/prod/FTXclient")).default;
+const OKXclient = require(path.resolve("../typescript-arb/prod/OKXclient")).default;
+
+const host = 'localhost';
+//const host = '195.133.1.56';
 const port = 8090;
 
 const secretDict_FTX = {
@@ -47,7 +50,7 @@ API.init(kucoin_secret);
 const digifinex_secret = process.env.digifinex_api_secret;
 const digifinex_key = process.env.digifinex_api_key;
 
-const digifinex = new Digifinex(digifinex_key, digifinex_secret);
+//const digifinex = new Digifinex(digifinex_key, digifinex_secret);
 
 
 const rawdata = fs.readFileSync('currencyInfo.json');
@@ -89,6 +92,7 @@ const nullSpreadJson = [
             'vol24': 0
         },
         'spread': [0, 0],
+        'availTrade': false,
         'listSpread': [[0,0]]
     }
 ];
@@ -101,7 +105,7 @@ promiseTickersWithSpread([okx, ftx_1, BNB, API, /* -digifinex  +huobi whitout ap
     allSpreadJson = response;
 }, () => {
     console.info("error allspread");
-    return Promise.reject(false);
+    //return Promise.reject(false);
 })
 .catch( () => {
     console.info("error 2 allspread");
@@ -125,20 +129,73 @@ setInterval( () => {
     });
 }, 15 * 1000)
 
+//send res 200 on response in JSON
+const toResJSON = (res, json) => {
+    res.writeHead(200, {
+        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Methods': 'GET'
+    });
+    res.end(JSON.stringify(json, null, '\t'));
+}
+
 const requestListener = function (req, res) {
     res.setHeader("Content-Type", "application/json");
+
     const parametrsSpread = req.url.match(/(\/spread\?cur=[a-zA-Z0-9]+)/g);
     const parametrsWithdrawal = req.url.match(/(\/withdrawal\?ex=[a-zA-Z]+&cur=[a-zA-Z0-9]+&sz=[0-9]+)/g);
-    
+    const parametrTrade = req.url.match(/(\/trade\?cur=[a-zA-Z0-9]+&ex1=[a-zA-Z0-9]+&ex2=[a-zA-Z0-9]+&it=[0-9]+)/g)
+
     let currency;
     let amount;
     let exchange;
+
+    
     if (req.url === '/allspread') {
-        res.writeHead(200, {
-            'Access-Control-Allow-Origin' : '*',
-            'Access-Control-Allow-Methods': 'GET'
-        });
-        res.end(JSON.stringify(allSpreadJson, null, '\t'));
+        toResJSON(res, allSpreadJson);
+    }
+
+    
+    if (parametrTrade) {
+        currency = parametrTrade[0].match(/cur=[a-zA-Z0-9]+/g)[0].split('=')[1]
+        const iteration = +parametrTrade[0].match(/it=[0-9]+/g)[0].split('=')[1];
+        const ex1 = parametrTrade[0].match(/ex1=[a-zA-Z0-9]+/g)[0].split('=')[1];
+        const ex2 = parametrTrade[0].match(/ex2=[a-zA-Z0-9]+/g)[0].split('=')[1];
+
+        console.info(ex1,ex2);
+        if ( (currency === "TON" || currency === "ANC") && (ex1 + ex2 === "FTXOKX" || ex1 + ex2 === "OKXFTX")) {
+            let resultTrade = []
+            let countIt = 0;
+            for (let i = 0; i < iteration; i++) {
+                setTimeout( () => {                    
+                    startTrade(currency, i)
+                    .then( r => {
+                        resultTrade.push( +(i+1) + (r ? " - true" : " - false") );
+                        countIt++;
+                        if (countIt === iteration) {
+                            toResJSON(res, {"ready": resultTrade.join('\n')});
+                        }
+                    }, () => {
+                        resultTrade.push( +(i+1) + " - false");
+                        countIt++;
+                        if (countIt === iteration) {
+                            toResJSON(res, {"ready": resultTrade.join('\n')});
+                        }
+                    })
+                    .catch( () => {
+                        resultTrade.push( +(i+1) + " - false");
+                        countIt++;
+                        if (countIt === iteration) {
+                            toResJSON(res, {"ready": resultTrade.join('\n')});
+                        }
+                    });
+                    
+                }, i * 1200 );
+            }
+
+        } else {
+            toResJSON(res, {"error": "Unfortunately currency or exchange not trade."});
+        }
+        //
     }
 
     if (req.url === '/balance') {
@@ -156,11 +213,7 @@ const requestListener = function (req, res) {
             res.end(JSON.stringify([filterFTX,filterOKX], null, '\t'));
         }, e => Promise.reject(e))
         .catch(() => {
-            res.writeHead(200, {
-                'Access-Control-Allow-Origin' : '*',
-                'Access-Control-Allow-Methods': 'GET'
-            });
-            res.end(JSON.stringify([[{"ccy": "", "avail": 0, "eqUsd": 0}], [{"ccy": "", "avail": 0, "eqUsd": 0}]]));
+            toResJSON(res, [[{"ccy": "", "avail": 0, "eqUsd": 0}], [{"ccy": "", "avail": 0, "eqUsd": 0}]]);
         });
     }
     if (parametrsSpread) {
@@ -173,22 +226,15 @@ const requestListener = function (req, res) {
                 const spread_1 = 100 * (market[1].bid[0][0] - market[0].ask[0][0]) / market[1].bid[0][0];
                 const spread_2 = 100 * (market[0].bid[0][0] - market[1].ask[0][0]) / market[0].bid[0][0];
 
-                res.writeHead(200, {
-                    'Access-Control-Allow-Origin' : '*',
-                    'Access-Control-Allow-Methods': 'GET'
-                });
                 let buf1 = market[0];
                 let buf2 = market[1];
                 buf1['spread'] = [spread_1, spread_2];
                 buf2['spread'] = [spread_1, spread_2];
-                res.end(JSON.stringify({'okx': buf1, 'ftx': buf2}, null, '\t'));
+                
+                toResJSON(res, {'okx': buf1, 'ftx': buf2});
             }, e => Promise.reject(e))
             .catch(() => {
-                res.writeHead(200, {
-                    'Access-Control-Allow-Origin' : '*',
-                    'Access-Control-Allow-Methods': 'GET'
-                });
-                res.end(JSON.stringify({'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}}, null, '\t'));
+                toResJSON(res, {'okx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]},'ftx': {'ask': [['-']], 'bid': [['-']], 'spread': [0, 0]}});
             });
         }
     }

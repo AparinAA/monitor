@@ -71,7 +71,7 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
     .then(response => {
 
         //info tickers of OKX
-        const tickersOKX = response[0].data
+        const tickersOKX = response[0]
         .filter(item => +item.volCcy24h > 10000)
         .map(item => {
             return {"instId": item.instId, "ask": +item.askPx, "bid": +item.bidPx, "base_vol": +item.volCcy24h};
@@ -127,8 +127,10 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
             if(exchangeLeft === 'Digifinex' || exchangeRight === 'Digifinex' || exchangeLeft === 'Huobi' || exchangeRight === 'Huobi') {
                 return;
             }
-            const leftPr = allExchange[exchangeLeft]?.find( element => element.instId === instIdLeft);
-            const rightPr = allExchange[exchangeRight]?.find( element => element.instId === instIdRight);
+            
+            
+            const leftPr = allExchange[exchangeLeft]?.find( element => element?.instId === instIdLeft);
+            const rightPr = allExchange[exchangeRight]?.find( element => element?.instId === instIdRight);
             
             if (!leftPr || !rightPr) {
                 return;
@@ -138,6 +140,10 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
             const spread_2 = culcSpread(rightPr,leftPr);
 
             if ( (spread_1 > nsscrySpread) || (spread_2 > nsscrySpread) ) {
+                const trade = (exchangeLeft + exchangeRight === "OKXFTX" || 
+                              exchangeLeft + exchangeRight === "FTXOKX") &&
+                              (nameRight === "ANC" || nameRight === "TON");
+
                 genVarTickets.push(
                         {   
                             'name': nameRight,
@@ -157,6 +163,7 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
                                 'vol24': rightPr.base_vol,
                             },
                             'spread': [spread_1, spread_2],
+                            'availTrade': trade,
                             'listSpread': [[spread_1, spread_2]]
                         }
                 )
@@ -166,12 +173,12 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
         });
 
         return genVarTickets;
-    }, () => {
-        console.info("error get tickets");
+    }, (e) => {
+        console.info("error get tickets",e);
         return Promise.reject(false);
     })
-    .catch( () => {
-        console.info("! Error: ");
+    .catch( (e) => {
+        console.info("! Error: ",e);
         return Promise.reject(false);
     })
 }

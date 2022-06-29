@@ -107,7 +107,9 @@ body, .root {
 .table-scaner {
     padding: 15px 0;
 }
+
 .class-body-new {
+    height: 100%;
     padding: 7px;
 }
 
@@ -191,7 +193,8 @@ button {
     background-color: var(--accent-bg-color) !important;
     border: 1px solid var(--accent-bg-color) !important;
     border-radius: 0 0 10px 10px !important;
-    margin: 0;             
+    margin: 0;
+    height: 190px !important;
 }
 
 
@@ -423,4 +426,26 @@ input {
 }
 .nameGraph:hover {
     color: var(--accent-button-hover-color);
+}
+
+.form-trade {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.form-trade > input {
+    width: 110px;
+    padding-left: 50px;
+}
+
+.form-trade > button {
+    margin: 5px !important;
+    padding: 5px 36px !important;
+}
+
+.trade-result {
+    text-align: center;
 }
