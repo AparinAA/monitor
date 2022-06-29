@@ -62459,17 +62459,6 @@
       "exchangeRight": "Gateio"
      },
      {
-      "idPair": 5680,
-      "nameLeft": "REAL",
-      "tickerLeft": "REAL_USDT",
-      "urlLeft": "https://www.mexc.com/exchange/REAL_USDT",
-      "exchangeLeft": "Mexc",
-      "nameRight": "REAL",
-      "tickerRight": "REAL_USDT",
-      "urlRight": "https://www.gate.io/trade/REAL_USDT",
-      "exchangeRight": "Gateio"
-     },
-     {
       "idPair": 5681,
       "nameLeft": "GEL",
       "tickerLeft": "GEL_USDT",
