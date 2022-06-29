@@ -5985,17 +5985,6 @@
       "exchangeRight": "FTX"
      },
      {
-      "idPair": 545,
-      "nameLeft": "KIN",
-      "tickerLeft": "KIN-USDT",
-      "urlLeft": "https://www.kucoin.com/trade/KIN-USDT",
-      "exchangeLeft": "KuCoin",
-      "nameRight": "KIN",
-      "tickerRight": "KIN/USD",
-      "urlRight": "https://ftx.com/trade/TONCOIN/USDKIN/USD",
-      "exchangeRight": "FTX"
-     },
-     {
       "idPair": 546,
       "nameLeft": "GRT",
       "tickerLeft": "GRT-USDT",
