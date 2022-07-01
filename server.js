@@ -149,7 +149,6 @@ const requestListener = function (req, res) {
     let amount;
     let exchange;
 
-    
     if (req.url === '/allspread') {
         toResJSON(res, allSpreadJson);
     }
@@ -198,6 +197,7 @@ const requestListener = function (req, res) {
         //
     }
 
+    
     if (req.url === '/balance') {
         Promise.all([ftx_1.getBalance(), okx.getBalance()])
         .then(balance => {
@@ -205,14 +205,14 @@ const requestListener = function (req, res) {
                 'Access-Control-Allow-Origin' : '*',
                 'Access-Control-Allow-Methods': 'GET'
             });
-            const filterFTX = balance[0]?.filter( item => item.avail > 0.000001);
-            const filterOKX = balance[1]?.filter( item => item.avail > 0.000001)
+            const filterFTX = balance[0]?.filter( item => item.eqUsd > 0.000001);
+            const filterOKX = balance[1]?.filter( item => item.eqUsd > 0.000001)
             if (!filterFTX || !filterOKX) {
                 throw "Error. Balance empty";
             }
             res.end(JSON.stringify([filterFTX,filterOKX], null, '\t'));
         }, e => Promise.reject(e))
-        .catch(() => {
+        .catch((e) => {
             toResJSON(res, [[{"ccy": "", "avail": 0, "eqUsd": 0}], [{"ccy": "", "avail": 0, "eqUsd": 0}]]);
         });
     }

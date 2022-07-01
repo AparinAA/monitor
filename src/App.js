@@ -4,10 +4,13 @@ import axios from 'axios';
 import { Button, Form, Card, DropdownButton, Dropdown, Container, Row, Col, Spinner, CloseButton, Tabs, Tab } from 'react-bootstrap';
 import { ArrowCounterclockwise, ChevronUp, ChevronDown } from 'react-bootstrap-icons';
 import { truncated, positiveNumber, sortData} from './additionFunc';
-import { OfCansBalance } from './ViewBalanceCans';
+
+//import { OfCansBalance } from './ViewBalanceCans';
 import { listAllExchanges, availListExchanges, emptyPrice} from './availVar';
 import { Graphics } from './ModelGraphics';
 import { TradeCard } from './TradeCard';
+const OfCansBalance = React.lazy(() => import('./ViewBalanceCans'));
+
 
 class ExchangeInfo extends React.Component {
     
