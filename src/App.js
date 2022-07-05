@@ -6,9 +6,9 @@ import { ArrowCounterclockwise, ChevronUp, ChevronDown } from 'react-bootstrap-i
 import { truncated, positiveNumber, sortData} from './additionFunc';
 
 //import { OfCansBalance } from './ViewBalanceCans';
+import TradeCard from './TradeCard';
+import Graphics from './ModelGraphics';
 import { listAllExchanges, availListExchanges, emptyPrice} from './availVar';
-import { Graphics } from './ModelGraphics';
-import { TradeCard } from './TradeCard';
 const OfCansBalance = React.lazy(() => import('./ViewBalanceCans'));
 
 
@@ -100,7 +100,8 @@ class BlockPairExchanges extends React.Component {
         //  'ex1': this.props?.currency?.leftEx?.name,
         //  'ex2': this.props?.currency?.rightEx?.name,
         //  'it': this.state.valueTrade})
-        axios.get('http://localhost:8090/trade?'+params)
+        //axios.get('http://localhost:8090/trade?'+params)
+        axios.get('http://195.133.1.56:8090/trade?'+params)
         .then( res => {
             const result = res.data;
             this.setState({

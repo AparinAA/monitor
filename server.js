@@ -10,8 +10,10 @@ const { addSpreadList } = require('./addSpreadList');
 const path = require('path');
 
 const { startTrade } = require(path.resolve("../typescript-arb/prod/index"));
-const FTXclient = require(path.resolve("../typescript-arb/prod/FTXclient")).default;
-const OKXclient = require(path.resolve("../typescript-arb/prod/OKXclient")).default;
+//const FTXclient = require(path.resolve("../typescript-arb/prod/FTXclient")).default;
+//const OKXclient = require(path.resolve("../typescript-arb/prod/OKXclient")).default;
+const FTXclient = require('ftx-public-api').default;
+const OKXclient = require('okx-public-api').default;
 
 //const host = 'localhost';
 const host = '195.133.1.56';
@@ -52,17 +54,9 @@ const digifinex_key = process.env.digifinex_api_key;
 
 //const digifinex = new Digifinex(digifinex_key, digifinex_secret);
 
-
 const rawdata = fs.readFileSync('currencyInfo.json');
 const tickersAll = JSON.parse(fs.readFileSync('tickers1.json', {"encoding": "utf-8"})); 
 const dictCurrency = JSON.parse(rawdata);
-const https = require('node:https');
-
-const options = {
-    key: fs.readFileSync('195.133.1.56-key.pem'),
-    cert: fs.readFileSync('195.133.1.56.pem')
-};
-
 
 const ftx_1 = new FTXclient(secretDict_FTX.api_key_1, secretDict_FTX.secret_key_1);
 const ftx_2 = new FTXclient(secretDict_FTX.api_key_2, secretDict_FTX.secret_key_2);
@@ -118,7 +112,7 @@ setInterval( () => {
         if (!response) {
             return Promise.reject(false);
         }
-        allSpreadJson = addSpreadList(allSpreadJson,response, 15);
+        allSpreadJson = addSpreadList(allSpreadJson, response, 15);
         //console.info(allSpreadJson[0]);
     }, () => {
         console.info("error allspread");
