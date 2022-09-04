@@ -9,7 +9,7 @@ import { truncated, positiveNumber, sortData} from './additionFunc';
 import TradeCard from './TradeCard';
 import Graphics from './ModelGraphics';
 import { listAllExchanges, availListExchanges, emptyPrice} from './availVar';
-const OfCansBalance = React.lazy(() => import('./ViewBalanceCans'));
+//const OfCansBalance = React.lazy(() => import('./ViewBalanceCans'));
 
 
 class ExchangeInfo extends React.Component {
@@ -673,9 +673,9 @@ class ScanerPlot extends React.Component {
 
 
 function App() {
+//    <OfCansBalance />
     return (
         <div>
-            <OfCansBalance />
             <ScanerPlot />
         </div>
         
