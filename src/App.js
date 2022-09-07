@@ -675,8 +675,11 @@ class ScanerPlot extends React.Component {
 function App() {
 //    <OfCansBalance />
     return (
-        <div>
+        <div id='container'>
             <ScanerPlot />
+            <footer id="footer">
+                © X6P
+            </footer>
         </div>
         
     )

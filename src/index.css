@@ -105,7 +105,8 @@ body, .root {
 }
 
 .table-scaner {
-    padding: 15px 0;
+    min-height: 95vh !important;
+    padding: 15px 0 0;
 }
 
 .class-body-new {
@@ -448,4 +449,18 @@ input {
 
 .trade-result {
     text-align: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh !important;
+}
+
+#footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4vh;
+    font-size: 16px;
 }
