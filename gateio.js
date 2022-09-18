@@ -21,7 +21,7 @@ function getMarketGateio(tickers = undefined) {
             
             if (curTicker) {
                 
-                if (curTicker.baseVolume > 10000) {
+                if (curTicker.baseVolume > 100000) {
                     current.push(
                         {
                             'instId': element,

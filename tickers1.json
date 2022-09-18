@@ -30757,17 +30757,6 @@
       "exchangeRight": "FTX"
      },
      {
-      "idPair": 2798,
-      "nameLeft": "DFL",
-      "tickerLeft": "DFL_USDT",
-      "urlLeft": "https://www.gate.io/trade/DFL_USDT",
-      "exchangeLeft": "Gateio",
-      "nameRight": "DFL",
-      "tickerRight": "DFL/USD",
-      "urlRight": "https://ftx.com/trade/TONCOIN/USDDFL/USD",
-      "exchangeRight": "FTX"
-     },
-     {
       "idPair": 2799,
       "nameLeft": "DENT",
       "tickerLeft": "DENT_USDT",
@@ -47554,17 +47543,6 @@
       "exchangeRight": "FTX"
      },
      {
-      "idPair": 4325,
-      "nameLeft": "DFL",
-      "tickerLeft": "DFL_USDT",
-      "urlLeft": "https://www.mexc.com/exchange/DFL_USDT",
-      "exchangeLeft": "Mexc",
-      "nameRight": "DFL",
-      "tickerRight": "DFL/USD",
-      "urlRight": "https://ftx.com/trade/TONCOIN/USDDFL/USD",
-      "exchangeRight": "FTX"
-     },
-     {
       "idPair": 4326,
       "nameLeft": "CQT",
       "tickerLeft": "CQT_USDT",
@@ -55782,17 +55760,6 @@
       "exchangeRight": "Gateio"
      },
      {
-      "idPair": 5074,
-      "nameLeft": "PROS",
-      "tickerLeft": "PROS_USDT",
-      "urlLeft": "https://www.mexc.com/exchange/PROS_USDT",
-      "exchangeLeft": "Mexc",
-      "nameRight": "PROS",
-      "tickerRight": "PROS_USDT",
-      "urlRight": "https://www.gate.io/trade/PROS_USDT",
-      "exchangeRight": "Gateio"
-     },
-     {
       "idPair": 5075,
       "nameLeft": "RING",
       "tickerLeft": "RING_USDT",
@@ -59486,17 +59453,6 @@
       "nameRight": "DDIM",
       "tickerRight": "DDIM_USDT",
       "urlRight": "https://www.gate.io/trade/DDIM_USDT",
-      "exchangeRight": "Gateio"
-     },
-     {
-      "idPair": 5411,
-      "nameLeft": "CORE",
-      "tickerLeft": "CORE_USDT",
-      "urlLeft": "https://www.mexc.com/exchange/CORE_USDT",
-      "exchangeLeft": "Mexc",
-      "nameRight": "CORE",
-      "tickerRight": "CORE_USDT",
-      "urlRight": "https://www.gate.io/trade/CORE_USDT",
       "exchangeRight": "Gateio"
      },
      {

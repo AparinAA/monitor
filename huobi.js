@@ -5,7 +5,7 @@ function getMarketHuobi(setTickers = undefined) {
         .then(response => {
             if (setTickers) {
                 return  response.data.data
-                .filter( item => ( (setTickers.has(item.symbol.toUpperCase()) && (item.vol > 10000)) ) )
+                .filter( item => ( (setTickers.has(item.symbol.toUpperCase()) && (item.vol > 100000)) ) )
                 .map(item => (
                     {
                         'instId': item.symbol.toUpperCase(),
@@ -16,7 +16,7 @@ function getMarketHuobi(setTickers = undefined) {
                 ))
             } else {
                 return response.data.data
-                .filter( item => item.vol > 10000 )
+                .filter( item => item.vol > 100000 )
                 .map(item => (
                     {
                         'instId': item.symbol.toUpperCase(),

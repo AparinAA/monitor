@@ -72,14 +72,14 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
 
         //info tickers of OKX
         const tickersOKX = response
-        .filter(item => +item.volCcy24h > 10000)
+        .filter(item => +item.volCcy24h > 100000)
         .map(item => {
             return {"instId": item.instId, "ask": +item.askPx, "bid": +item.bidPx, "base_vol": +item.volCcy24h};
         });
 
         //info tickers of FTX
         const tickersFTX = response[1].filter(item => (item.type === "spot" && item.quoteCurrency === "USD") )
-        .filter(item => +item.quoteVolume24h > 10000)
+        .filter(item => +item.quoteVolume24h > 100000)
         .map(item => {
             return {"instId": item.name, "ask": +item.ask, "bid": +item.bid, "base_vol": +item.quoteVolume24h}
         });

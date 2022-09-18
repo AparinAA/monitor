@@ -3,6 +3,6 @@ const axios = require('axios');
 let count = 0;
 setInterval( () => {
     axios.get('http://195.133.1.56:8090/allspread')
-    .then(() => console.info("OK", count++))
+    .then((d) => console.info("OK", count++, d.data[0].name))
     .catch(e => console.info(e));
-}, 100)
+}, 1)
