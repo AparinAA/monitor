@@ -6,7 +6,7 @@ function getTickersKuCoin(API, tickers){
         
         const res = tickers.map( item => {
             
-            const el = response.data.ticker.find(element => ((element.symbol === item.tickerLeft) || (element.symbol === item.tickerRight)) );
+            const el = response?.data?.ticker?.find(element => ( ((element.symbol === item.tickerLeft) || (element.symbol === item.tickerRight)) ) && (element.volValue > 100000) );
             //Если криптомонета пропала с биржи
             if (!el) {
                 return;
