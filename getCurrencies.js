@@ -71,7 +71,7 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
     .then(response => {
 
         //info tickers of OKX
-        console.info(response)
+        console.info(response[0])
         const tickersOKX = response
         .filter(item => +item.volCcy24h > 100000)
         .map(item => {
