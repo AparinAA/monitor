@@ -139,7 +139,7 @@ const requestListener = function (req, res) {
             'Access-Control-Allow-Origin' : '*',
             'Access-Control-Allow-Methods': 'GET'
         });
-        res.end(JSON.stringify(res, null, '\t'));
+        res.end(JSON.stringify(allSpreadJson, null, '\t'));
     }
 
     
