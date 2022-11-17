@@ -15,8 +15,8 @@ const { startTrade } = require(path.resolve("../typescript-arb/prod/index"));
 
 const OKXclient = require('okx-public-api').default;
 
-const host = 'localhost';
-//const host = '195.133.1.56';
+//const host = 'localhost';
+const host = '195.133.1.56';
 const port = 8090;
 
 //Init secret api OKX
