@@ -137,7 +137,8 @@ const requestListener = function (req, res) {
     if (req.url === '/allspread') {
         res.writeHead(200, {
             'Access-Control-Allow-Origin' : '*',
-            'Access-Control-Allow-Methods': 'GET'
+            'Access-Control-Allow-Methods': 'GET',
+            "Access-Control-Allow-Headers": "X-Requested-With",
         });
         res.end(JSON.stringify(allSpreadJson, null, '\t'));
     }
