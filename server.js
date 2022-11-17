@@ -125,7 +125,6 @@ const toResJSON = (res, json) => {
 
 const requestListener = function (req, res) {
     res.setHeader("Content-Type", "application/json");
-    res.setHeader('Access-Control-Allow-Origin','*');
     
     const parametrsSpread = req.url.match(/(\/spread\?cur=[a-zA-Z0-9]+)/g);
     const parametrsWithdrawal = req.url.match(/(\/withdrawal\?ex=[a-zA-Z]+&cur=[a-zA-Z0-9]+&sz=[0-9]+)/g);
@@ -138,9 +137,8 @@ const requestListener = function (req, res) {
     if (req.url === '/allspread') {
         console.info("!!!!");
         res.writeHead(200, {
-            'Access-Control-Allow-Origin' : '*',
+            'Access-Control-Allow-Origin' : 'http://localhost:8091/',
             'Access-Control-Allow-Methods': 'GET',
-            "Access-Control-Allow-Headers": "X-Requested-With",
         });
         res.end(JSON.stringify(allSpreadJson, null, '\t'));
     }
