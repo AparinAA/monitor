@@ -125,7 +125,8 @@ const toResJSON = (res, json) => {
 
 const requestListener = function (req, res) {
     res.setHeader("Content-Type", "application/json");
-
+    res.setHeader('Access-Control-Allow-Origin','*');
+    
     const parametrsSpread = req.url.match(/(\/spread\?cur=[a-zA-Z0-9]+)/g);
     const parametrsWithdrawal = req.url.match(/(\/withdrawal\?ex=[a-zA-Z]+&cur=[a-zA-Z0-9]+&sz=[0-9]+)/g);
     const parametrTrade = req.url.match(/(\/trade\?cur=[a-zA-Z0-9]+&ex1=[a-zA-Z0-9]+&ex2=[a-zA-Z0-9]+&it=[0-9]+)/g)
