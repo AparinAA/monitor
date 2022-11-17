@@ -61,8 +61,8 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
     return Promise.all([
         exchanges[0].getRequest('/api/v5/market/tickers?instType=SPOT'), //okx
         //exchanges[1].getRequest('markets'), //ftx
-        getMarketBNB(exchanges[2],tickersBNB), //Binance
-        getTickersKuCoin(exchanges[3], tickersKuCoin), //KuCoin
+        getMarketBNB(exchanges[1],tickersBNB), //Binance
+        getTickersKuCoin(exchanges[2], tickersKuCoin), //KuCoin
         //exchanges[4].getMarket(new Set(nameListDigifinex)), //Digifinex
         //getMarketHuobi(new Set(tickersHuobi)), //Huobi 
         getMarketGateio(Array.from(new Set(tickersGateio))), //Gateio
