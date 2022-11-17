@@ -135,7 +135,11 @@ const requestListener = function (req, res) {
     let exchange;
 
     if (req.url === '/allspread') {
-        toResJSON(res, allSpreadJson);
+        res.writeHead(200, {
+            'Access-Control-Allow-Origin' : '*',
+            'Access-Control-Allow-Methods': 'GET'
+        });
+        res.end(JSON.stringify(res, null, '\t'));
     }
 
     

@@ -504,13 +504,15 @@ class ScanerPlot extends React.Component {
         //axios.get(`http://localhost:8090/allspread`)
         axios.get(`http://195.133.1.56:8090/allspread`)
         .then( res => {
+            console.info(res);
             this.setState({
                 allTickets: res.data,
                 loading: false,
                 timeRefresh: Date.now()
             })
         })
-        .catch( () => {
+        .catch( (e) => {
+            console.info(e);
             this.setState({
                 allTickets: emptyPrice,
                 loading: false
