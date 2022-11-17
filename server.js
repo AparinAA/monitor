@@ -133,7 +133,7 @@ const requestListener = function (req, res) {
     let currency;
     let amount;
     let exchange;
-
+    console.info("EEE");
     if (req.url === '/allspread') {
         console.info("!!!!");
         res.writeHead(200, {
