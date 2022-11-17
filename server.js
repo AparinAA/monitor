@@ -135,6 +135,7 @@ const requestListener = function (req, res) {
     let exchange;
 
     if (req.url === '/allspread') {
+        console.info("!!!!");
         res.writeHead(200, {
             'Access-Control-Allow-Origin' : '*',
             'Access-Control-Allow-Methods': 'GET',
