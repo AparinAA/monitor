@@ -143,6 +143,12 @@ const requestListener = function (req, res) {
         res.end(JSON.stringify(allSpreadJson, null, '\t'));
     }
 
+    res.writeHead(200, {
+        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Methods': 'GET',
+    });
+    res.end();
+
     
     
     if (parametrTrade) {
