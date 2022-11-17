@@ -60,7 +60,7 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
     */
     return Promise.all([
         exchanges[0].getRequest('/api/v5/market/tickers?instType=SPOT'), //okx
-        exchanges[1].getRequest('markets'), //ftx
+        //exchanges[1].getRequest('markets'), //ftx
         getMarketBNB(exchanges[2],tickersBNB), //Binance
         getTickersKuCoin(exchanges[3], tickersKuCoin), //KuCoin
         //exchanges[4].getMarket(new Set(nameListDigifinex)), //Digifinex
@@ -71,24 +71,24 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
     .then(response => {
 
         //info tickers of OKX
-        const tickersOKX = response
+        const tickersOKX = response[0]
         .filter(item => +item.volCcy24h > 100000)
         .map(item => {
             return {"instId": item.instId, "ask": +item.askPx, "bid": +item.bidPx, "base_vol": +item.volCcy24h};
         });
-
+        /*
         //info tickers of FTX
         const tickersFTX = response[1].filter(item => (item.type === "spot" && item.quoteCurrency === "USD") )
         .filter(item => +item.quoteVolume24h > 100000)
         .map(item => {
             return {"instId": item.name, "ask": +item.ask, "bid": +item.bid, "base_vol": +item.quoteVolume24h}
         });
-        
+        */
         //info tickers of Binance
-        const tickersBNB = response[2];
+        const tickersBNB = response[1];
 
         //info tickers of KuCoin
-        const tickersKuCoin = response[3];
+        const tickersKuCoin = response[2];
 
         //info tickers of Digifinex
         //const tickersDigifinex = response[4];
@@ -97,14 +97,14 @@ function promiseTickersWithSpread(exchanges, tickersAll, nsscrySpread) {
         //const tickersHuobi = response[4];
 
         //info tickers of Gate.io
-        const tickersGateio = response[4];
+        const tickersGateio = response[3];
 
         //info tickers of Mexc
-        const tickersMexc = response[5];
+        const tickersMexc = response[4];
 
         const allExchange = {
             "OKX": tickersOKX,
-            "FTX": tickersFTX,
+            //"FTX": tickersFTX,
             "Binance": tickersBNB,
             "KuCoin": tickersKuCoin,
             //"Digifinex": tickersDigifinex,

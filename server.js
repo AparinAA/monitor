@@ -12,19 +12,12 @@ const path = require('path');
 const { startTrade } = require(path.resolve("../typescript-arb/prod/index"));
 //const FTXclient = require(path.resolve("../typescript-arb/prod/FTXclient")).default;
 //const OKXclient = require(path.resolve("../typescript-arb/prod/OKXclient")).default;
-const FTXclient = require('ftx-public-api').default;
+
 const OKXclient = require('okx-public-api').default;
 
-//const host = 'localhost';
-const host = '195.133.1.56';
+const host = 'localhost';
+//const host = '195.133.1.56';
 const port = 8090;
-
-const secretDict_FTX = {
-    'api_key_1': process.env.ftx_api_key_1,
-    'secret_key_1': process.env.ftx_api_secret_1,
-    'api_key_2': process.env.ftx_api_key_2,
-    'secret_key_2': process.env.ftx_api_secret_2,
-};
 
 //Init secret api OKX
 const secretDict_OKX = {
@@ -58,8 +51,6 @@ const rawdata = fs.readFileSync('currencyInfo.json');
 const tickersAll = JSON.parse(fs.readFileSync('tickers1.json', {"encoding": "utf-8"})); 
 const dictCurrency = JSON.parse(rawdata);
 
-const ftx_1 = new FTXclient(secretDict_FTX.api_key_1, secretDict_FTX.secret_key_1);
-const ftx_2 = new FTXclient(secretDict_FTX.api_key_2, secretDict_FTX.secret_key_2);
 const okx = new OKXclient(secretDict_OKX.api_key, secretDict_OKX.secret_key, secretDict_OKX.passphrase);
 
 //const mark = {'buy': {'name': 'ftx', 'price': { 'countOrd': 2, 'orders': [[1, 1], [1.1, 1]] }}, 'sell': {'name': 'okx', 'price': ''}}
@@ -94,7 +85,7 @@ const nullSpreadJson = [
 let allSpreadJson = nullSpreadJson;
 const nsscrySpread = process.env.nsscrySpread;
 
-promiseTickersWithSpread([okx, ftx_1, BNB, API, /* -digifinex  +huobi whitout api + gateio*/],  tickersAll, nsscrySpread)
+promiseTickersWithSpread([okx, BNB, API, /* -digifinex  +huobi whitout api + gateio*/],  tickersAll, nsscrySpread)
 .then(response => {
     allSpreadJson = response;
 }, () => {
@@ -107,7 +98,7 @@ promiseTickersWithSpread([okx, ftx_1, BNB, API, /* -digifinex  +huobi whitout ap
 });
 
 setInterval( () => {
-    promiseTickersWithSpread([okx, ftx_1, BNB, API, /*digifinex*/], tickersAll, nsscrySpread)
+    promiseTickersWithSpread([okx, BNB, API, /*digifinex*/], tickersAll, nsscrySpread)
     .then(response => {
         if (!response) {
             return Promise.reject(false);
@@ -148,13 +139,13 @@ const requestListener = function (req, res) {
     }
 
     
+    
     if (parametrTrade) {
         currency = parametrTrade[0].match(/cur=[a-zA-Z0-9]+/g)[0].split('=')[1]
         const iteration = +parametrTrade[0].match(/it=[0-9]+/g)[0].split('=')[1];
         const ex1 = parametrTrade[0].match(/ex1=[a-zA-Z0-9]+/g)[0].split('=')[1];
         const ex2 = parametrTrade[0].match(/ex2=[a-zA-Z0-9]+/g)[0].split('=')[1];
 
-        console.info(ex1,ex2);
         if ( (currency === "TON" || currency === "ANC") && (ex1 + ex2 === "FTXOKX" || ex1 + ex2 === "OKXFTX")) {
             let resultTrade = []
             let countIt = 0;
@@ -190,26 +181,8 @@ const requestListener = function (req, res) {
         }
         //
     }
-
     
-    if (req.url === '/balance') {
-        Promise.all([ftx_1.getBalance(), okx.getBalance()])
-        .then(balance => {
-            res.writeHead(200, {
-                'Access-Control-Allow-Origin' : '*',
-                'Access-Control-Allow-Methods': 'GET'
-            });
-            const filterFTX = balance[0]?.filter( item => item.eqUsd > 0.000001);
-            const filterOKX = balance[1]?.filter( item => item.eqUsd > 0.000001)
-            if (!filterFTX || !filterOKX) {
-                throw "Error. Balance empty";
-            }
-            res.end(JSON.stringify([filterFTX,filterOKX], null, '\t'));
-        }, e => Promise.reject(e))
-        .catch((e) => {
-            toResJSON(res, [[{"ccy": "", "avail": 0, "eqUsd": 0}], [{"ccy": "", "avail": 0, "eqUsd": 0}]]);
-        });
-    }
+    /*
     if (parametrsSpread) {
         currency = parametrsSpread[0].split('=').length > 1 ? parametrsSpread[0].split('=')[1] : false;
         
@@ -232,7 +205,9 @@ const requestListener = function (req, res) {
             });
         }
     }
+    */
     // withdrawal?ex=okx&cur=USDT&sz=2
+    /*
     if(parametrsWithdrawal) {
         
         currency = parametrsWithdrawal[0].match(/cur=[a-zA-Z0-9]+/g)[0].split('=')[1]
@@ -332,7 +307,7 @@ const requestListener = function (req, res) {
         .catch((e) => {
             res.end(JSON.stringify({'withdrawal': false}));
         });
-    }
+    }*/
 
 
     
