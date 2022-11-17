@@ -141,13 +141,15 @@ const requestListener = function (req, res) {
             'Access-Control-Allow-Methods': 'GET',
         });
         res.end(JSON.stringify(allSpreadJson, null, '\t'));
+    } else {
+        res.writeHead(200, {
+            'Access-Control-Allow-Origin' : '*',
+            'Access-Control-Allow-Methods': 'GET',
+        });
+        res.end();
     }
 
-    res.writeHead(200, {
-        'Access-Control-Allow-Origin' : '*',
-        'Access-Control-Allow-Methods': 'GET',
-    });
-    res.end();
+    
 
     
     
