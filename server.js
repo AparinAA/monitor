@@ -146,13 +146,13 @@ const requestListener = function (req, res) {
             'Access-Control-Allow-Origin' : '*',
             'Access-Control-Allow-Methods': 'GET',
         });
-        res.end();
+        res.end(JSON.stringify([], null, '\t'));
     }
 
     
 
     
-    
+    /*
     if (parametrTrade) {
         currency = parametrTrade[0].match(/cur=[a-zA-Z0-9]+/g)[0].split('=')[1]
         const iteration = +parametrTrade[0].match(/it=[0-9]+/g)[0].split('=')[1];
@@ -194,7 +194,7 @@ const requestListener = function (req, res) {
         }
         //
     }
-    
+    */
     /*
     if (parametrsSpread) {
         currency = parametrsSpread[0].split('=').length > 1 ? parametrsSpread[0].split('=')[1] : false;

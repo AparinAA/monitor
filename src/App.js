@@ -501,6 +501,7 @@ class ScanerPlot extends React.Component {
 
     timeIdAllCheckPrice() {
         this.setState({loading: true});
+        console.info("!");
         //axios.get(`http://localhost:8090/allspread`)
         axios.get(`http://195.133.1.56:8090/allspread`)
         .then( res => {
