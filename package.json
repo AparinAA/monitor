@@ -1,7 +1,6 @@
 {
   "name": "webapp",
   "version": "0.1.0",
-  "homepage": "https://aparinaa.github.io/monitor",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -26,6 +25,7 @@
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
     "recharts": "^2.1.10",
+    "styled-component": "^2.8.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -58,7 +58,7 @@
   "devDependencies": {
     "@binance/connector": "^1.10.0",
     "body-parser": "^1.20.0",
-    "express": "^4.18.1",
+    "express": "^4.18.2",
     "express-pino-logger": "^7.0.0",
     "ftx-public-api": "^1.0.4",
     "gh-pages": "^4.0.0",
